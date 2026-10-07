@@ -74,6 +74,14 @@ const pctTxt = (a: number | null, b: number | null) => {
 const aggNote = (n?: string) => (n && !/^창\(window\)은|^데이터 포인트가/.test(n) ? n : '');
 const lowSample = (v: any) => v.zero_months * 3 > v.months;
 const wbTxt = (c: any) => (c.wayback_months ? `Wayback ${c.wayback_months}${c.wayback_mode === '연' ? '개 연도' : '개월'} 수집` : c.group === '경쟁사 사이트' || c.domain ? 'Wayback 미수집' : null);
+const krRows = (w: string) => {
+  const wk = winKey[w];
+  const mx = Math.max(...krTerms.map(([s, t]) => Math.max(kr[s][t][wk] ?? 0, kr[s][t]['prev'] ?? 0)));
+  return krTerms.map(([s, t]) => {
+    const v = kr[s][t][wk] ?? 0, p = kr[s][t]['prev'] ?? 0;
+    return { t, v, p, ch: pct(v, p), vw: Math.max(0.6, (v / mx) * 100), pw: (p / mx) * 100 };
+  });
+};
 const oaColor = (y: string) => (y >= '2024' ? '#13808a' : y >= '2021' ? '#3cc1b4' : '#a9d8d2');
 const oaBars = oaRows.map((r, i) =>
   oaYears.map((y, j) => {
@@ -142,25 +150,19 @@ const reco: any = K.reco;
     <!-- 기간 탭 -->
     {['w10', 'w5', 'w2'].map((w) => {
       const wk = winKey[w];
-      const barMax = Math.max(...krTerms.map(([s, t]) => Math.max(kr[s][t][wk] ?? 0, kr[s][t]['prev'] ?? 0)));
       return (
       <section class="tabpanel ipanel" role="tabpanel" id={`p-${w}`} aria-labelledby={`t-${w}`} tabindex="0">
         <h2>{winLabel[w]} 기간 비교</h2>
         <p class="lead">{K.findings[wk]}</p>
         <h3>한국 검색 관심도 (Google Trends, KR) <span class="bdg best">상대지수</span></h3>
         <figure class="svgc">
-          <svg viewBox={`0 0 760 ${krTerms.length * 34 + 30}`} role="img" aria-label={`${winLabel[w]} 평균 관심도와 2016–2020 기준 비교 막대 그래프`}>
-            {krTerms.map(([s, t], i) => {
-              const v = kr[s][t][wk] ?? 0, p = kr[s][t]['prev'] ?? 0, y = 10 + i * 34;
-              const ch = pct(v, p);
-              return (<g font-size="13">
-                <text x="0" y={y + 15} fill="#3b4d58" font-weight="700">{t}</text>
-                <rect x="110" y={y} width={(p / barMax) * 440} height="10" rx="5" fill="#c7d6db" />
-                <rect x="110" y={y + 12} width={Math.max(1, (v / barMax) * 440)} height="12" rx="6" fill="#13808a" />
-                <text x={118 + (Math.max(v, p) / barMax) * 440} y={y + 22} fill="#0d1f2a">{fmt(v, 1)} <tspan fill="#6b7d87">(기준 {fmt(p, 1)}{ch !== null ? `, ${ch > 0 ? '+' : ''}${ch}%` : ''})</tspan></text>
-              </g>);
-            })}
-          </svg>
+          <div class="hbars" role="list" aria-label={`${winLabel[w]} 평균 관심도와 2016–2020 기준 비교`}>
+            {krRows(w).map((r) => <div class="hb" role="listitem">
+              <span class="hl">{r.t}</span>
+              <div class="ht" aria-hidden="true"><i class="hbase" style={`width:${r.pw}%`}></i><i class="hcur" style={`width:${r.vw}%`}></i></div>
+              <span class="hv"><b>{fmt(r.v, 1)}</b> <small>기준 {fmt(r.p, 1)}{r.ch !== null ? ` · ${r.ch > 0 ? '+' : ''}${r.ch}%` : ''}</small></span>
+            </div>)}
+          </div>
           <figcaption>진한 막대 = {winLabel[w]} 월평균, 옅은 막대 = 2016–2020 월평균. 위 4개(녹조·토양오염·수질개선·악취제거)는 한 묶음, 아래 4개(수질정화·녹조제거·축산악취·미생물제제)는 '녹조'와 함께 조회한 다른 묶음이라 묶음 간 절대 비교는 할 수 없습니다(수집 2026-10-08, pytrends).</figcaption>
         </figure>
         {w === 'w10' && (

@@ -368,3 +368,15 @@ details.grp summary{cursor:pointer;font-weight:700;padding:13px 0}
 details.grp[open] summary{border-bottom:1px solid var(--line)}
 details.grp .tblwrap{border:0;margin:6px -14px 0;border-radius:0}
 @media (max-width:640px){.tabbar{top:68px}.tabpanel{padding:28px 0 50px}.ipanel h2{font-size:1.35rem}}
+
+/* insights: responsive HTML bars + scrollable SVG */
+.hbars{display:grid;gap:12px;padding:6px 2px}
+.hb{display:grid;grid-template-columns:96px 1fr 170px;gap:12px;align-items:center}
+.hl{font-weight:700;color:#3b4d58;font-size:.92rem}
+.ht{position:relative;height:24px}
+.ht i{position:absolute;left:0;border-radius:6px;display:block}
+.ht .hbase{top:0;height:9px;background:#c7d6db}
+.ht .hcur{top:11px;height:12px;background:#13808a}
+.hv{font-size:.92rem;color:#0d1f2a}.hv small{color:#6b7d87}
+.svgc{overflow-x:auto}.svgc svg{min-width:640px}
+@media (max-width:640px){.hb{grid-template-columns:72px 1fr;gap:4px 10px}.hv{grid-column:2}.hl{font-size:.85rem}}
