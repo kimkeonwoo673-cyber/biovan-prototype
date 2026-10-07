@@ -1,0 +1,32 @@
+---
+import { u } from '../lib/url';
+import meta from '../data/korea-map.json';
+const { projects, labels = true } = Astro.props;
+// 같은 좌표를 공유하는 현장은 하나의 점으로 묶음
+const pts: Record<string, { x: number; y: number; items: any[] }> = {};
+for (const p of projects) {
+  const { lat, lon } = p.data;
+  if (lat == null || lon == null) continue;
+  const x = (lon - meta.lon0) * meta.k * meta.s, y = (meta.lat1 - lat) * meta.s;
+  const key = `${Math.round(x / 14)}-${Math.round(y / 14)}`;
+  (pts[key] ??= { x, y, items: [] }).items.push(p);
+}
+const groups = Object.values(pts);
+const label = (g: any) => {
+  const loc = g.items[0].data.location as string;
+  const m = loc.match(/(평택|군포|계양|승기천|학익|전소천|운남|낙섬|중구|연평|백령|덕적|부여|부산|괴산|파주|심곡천|안양천|갈치천)/);
+  return m ? m[1] : '';
+};
+---
+<div class="map" role="img" aria-label="국내 현장 분포 지도">
+  <img src={u('/img/korea.svg')} alt="" width={meta.w} height={meta.h} loading="lazy" />
+  <svg class="dots" viewBox={meta.viewBox} aria-hidden="false">
+    {groups.map((g) => (
+      <a href={u(`/projects/${g.items[0].id}/`)}>
+        <title>{g.items.map((p) => p.data.title).join(' / ')}</title>
+        <circle class="dot-halo" cx={g.x} cy={g.y} r="7" />
+        <circle class="dot" cx={g.x} cy={g.y} r={Math.min(6 + g.items.length * 1.2, 11)} />
+      </a>
+    ))}
+  </svg>
+</div>

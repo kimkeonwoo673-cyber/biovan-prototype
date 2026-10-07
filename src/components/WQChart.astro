@@ -1,0 +1,23 @@
+---
+// 예시 데이터: 실제 측정값 아님. 현장별 수질 측정표(T-N, T-P, COD, Chl-a)를 받으면 교체.
+const data = [
+  { k: 'T-N', before: 100, after: 58 },
+  { k: 'T-P', before: 100, after: 46 },
+  { k: 'COD', before: 100, after: 63 },
+  { k: 'Chl-a', before: 100, after: 31 },
+];
+---
+<div class="chart rv">
+  <h3>작업 전·후 수질 지표 <span class="ph">예시 데이터 · 실제 측정값 아님</span></h3>
+  <p class="muted" style="font-size:.88rem">작업 전 값을 100으로 놓은 상대 지수. 현장별 측정표를 받으면 실제 값으로 바뀝니다.</p>
+  <div class="wq">
+    {data.map((d) => (
+      <div class="g">
+        <div class="b bf" style={`--h:${d.before * 0.8}%`}><span>{d.before}</span></div>
+        <div class="b af" style={`--h:${d.after * 0.8}%`}><span>{d.after}</span></div>
+      </div>
+    ))}
+  </div>
+  <div class="wq-x">{data.map((d) => <div>{d.k}</div>)}</div>
+  <div class="legend"><span><i style="background:#c7d6db"></i>작업 전</span><span><i style="background:linear-gradient(180deg,#3cc1b4,#13808a)"></i>작업 후</span></div>
+</div>

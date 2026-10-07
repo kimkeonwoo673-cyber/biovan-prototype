@@ -1,0 +1,8 @@
+---
+// Lite YouTube: 클릭 전에는 썸네일(약 15KB)만 로드, 클릭 시 youtube-nocookie iframe 삽입
+const { id, title } = Astro.props;
+---
+<button class="yt" type="button" data-yt={id} aria-label={`영상 재생: ${title}`}>
+  <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" width="480" height="360" />
+  <span class="play"><i></i></span>
+</button>

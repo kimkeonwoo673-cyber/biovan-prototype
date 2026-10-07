@@ -1,0 +1,85 @@
+---
+import { u } from '../lib/url';
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import history from '../data/history.json';
+const certs = [
+  { icon: 'shield', t: 'ISO 9001', s: '품질경영 시스템 인증', d: '2001.12' },
+  { icon: 'shield', t: 'ISO 14001', s: '환경경영 시스템 인증', d: '2001.12' },
+  { icon: 'doc', t: '특허 제0451939호', s: '생물학적 오폐수처리', d: '연혁표 2008.9 표기', chk: '등록연도 확인 필요' },
+  { icon: 'doc', t: '특허 제10-1238262호', s: '미생물 제제 제조방법', d: '2013.2' },
+  { icon: 'award', t: '기술혁신 경영대상', s: '수상', d: '2006.8' },
+  { icon: 'award', t: "상표 '바이오밴'", s: '특허청 상표등록', d: '2018.5' },
+  { icon: 'doc', t: '조달청 나라장터', s: '쇼핑몰 등재 (Eco Polis)', d: '2019.7' },
+  { icon: 'globe', t: '미국법인', s: '바이오밴코리아(주) 미국법인 설립', d: '2015.8' },
+];
+---
+<Layout title="회사소개" description="바이오밴코리아(주) 인사말, 비전, 1999년부터의 연혁, 인증·특허">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href={u('/')}>홈</a> / 회사소개</div>
+    <h1>회사소개</h1>
+    <p>독자적인 기술과 자연재생의 시너지로, 후손에게 물려줄 아름다운 자연을 지킵니다.</p>
+  </div></div>
+
+  <section class="bg-white">
+    <div class="wrap two">
+      <div class="sticky">
+        <span class="eyebrow">Greeting</span>
+        <h2>인사말</h2>
+        <p class="muted">바이오밴코리아(주) CTO 김준홍</p>
+        <div class="grid" style="gap:12px;margin-top:26px">
+          <div class="card" style="padding:18px 20px"><b style="color:var(--teal-2)">01</b> 사용해 보고 싶은 — 제품 그 자체만으로도 독창적인 매력</div>
+          <div class="card" style="padding:18px 20px"><b style="color:var(--teal-2)">02</b> 계속 사용하고 싶은 — 지속적인 사용을 추구하는 퀄리티</div>
+          <div class="card" style="padding:18px 20px"><b style="color:var(--teal-2)">03</b> 세계적인 명성을 얻는 — 지역 어디서든 두각</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p class="quote">이 시대를 살아가는 우리 모두에게 가장 큰 사명이 있다면, 후손에게 아름다운 자연을 보존하여 유산으로 물려주는 것이라 생각합니다.</p>
+        <p>산업발달과 농경사업, 인구증가로 인한 T-N, T-P의 과다 발생으로 토양과 수질의 오염은 정도를 벗어나 심각한 수준에 도달하였습니다. 3면이 바다인 우리나라, 우리는 바다 양식의 보고를 지켜내야 할 책임과 의무를 다해야 합니다. 매년 발생하고 있는 적조와 유기물 등의 오염으로 해조류 및 어패류가 사라져가고 있으며, 매년 오염의 범위가 확대되어 가고 있습니다.</p>
+        <p>저희 바이오밴코리아(주)는 ISO14001이 표방하고 있는 "국제환경품질관리기준"에 기업환경 목표를 설정하고, 자연친화적으로 하천, 강, 저수지의 하상 슬러지를 정화시켜 자정능력을 높이고, 지구 환경생태계의 균형을 살려내는 것입니다.</p>
+        <p>응집제 등 1회성 수질관리가 아닌, 생물학적 토양정화와 수질관리방법으로 T-N, T-P를 효과적으로 저감시키는 기술력을 발휘하고 있습니다. 감사합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vision" class="bg-deep">
+    <div class="wrap two">
+      <div><span class="eyebrow">Vision</span><h2 style="color:#fff">21세기 환경개선을 선도하는 환경회사</h2></div>
+      <div class="prose" style="color:#c3d8de">
+        <p>오염된 수질 속에 녹아 있는 질소와 인을 잡을 수 있는 방법을 고안하여, 고농도 폐수는 물론 제2의 오염을 일으키지 않는 생물학적 오·폐수 처리기술을 개발하였습니다.</p>
+        <p>이 공법을 응용하면 오염된 저수지나 호소를 준설작업을 거치지 않고도 바닥에 쌓여 있는 유기성 슬러지를 제거할 수 있습니다. 살아 있는 미생물을 반응시켜, 특별한 물리적 방법 없이 물밑에 누적된 오염물질을 부유케 하여 물의 순수성을 지켜내는 환경복원 방법입니다.</p>
+        <p>바이오밴코리아(주)는 ISO 국제인증기관이 요구하는 품질/환경방침을 최우선으로 하여, 21세기 환경개선을 선도하는 환경회사로서 고객만족을 위해 최선을 다하는 기업으로 성장해 나가고자 합니다.</p>
+        <p style="font-size:.85rem;color:#86a6b0">※ 기존 사이트 '비전' 페이지 원문 요약. 원문 일부 수치(2001년 기준 폐수 통계 등)는 최신 자료로 교체 권장.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="history">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">History</span><h2>연혁</h2></div><p>2020년까지는 기존 연혁표, 2021년 이후는 포트폴리오·공지 게시물 기준으로 정리했습니다. <span class="ph">2021~2026 공식 연혁 확인 필요</span></p></div>
+      <div class="tl">
+        {history.map((y) => (
+          <div class="tl-y rv">
+            <b>{y.year}</b>
+            <ul>
+              {y.items.map((it: any) => (
+                <li class={it.key ? 'key' : ''}><em>{it.m}</em>{it.t}{it.src && <small class="muted" style="font-size:.75rem">· {it.src}</small>}{it.check && <small class="ph">{it.check}</small>}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="certs" class="bg-white">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">Certification</span><h2>인증 · 특허 · 수상</h2></div><p>인증서·등록증 이미지는 원본을 받으면 썸네일로 추가합니다.</p></div>
+      <div class="grid g4">
+        {certs.map((c) => (
+          <div class="card rv"><div class="icon"><Icon name={c.icon} /></div><h3>{c.t}</h3><p>{c.s}</p><p class="muted" style="margin-top:8px;font-size:.85rem">{c.d}</p>{c.chk && <span class="ph" style="margin-top:8px">{c.chk}</span>}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

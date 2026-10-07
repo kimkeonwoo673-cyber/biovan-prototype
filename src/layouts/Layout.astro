@@ -1,0 +1,102 @@
+---
+import { u } from '../lib/url';
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import Icon from '../components/Icon.astro';
+import site from '../data/site.json';
+interface Props { title?: string; description?: string }
+const { title, description = '바이오밴코리아(주) — 1999년부터 환경미생물 제제 SUBION으로 녹조·악취 제거, 하천·저수지 정화, 토양 복원, 축산환경 개선을 수행합니다.' } = Astro.props;
+const fullTitle = title ? `${title} | 바이오밴코리아` : '바이오밴코리아 | 환경미생물 수질·토양 정화';
+const path = Astro.url.pathname;
+const nav = [
+  ['/about/', '회사소개'], ['/technology/', '기술'], ['/solutions/', '솔루션'],
+  ['/projects/', '프로젝트'], ['/videos/', '영상'], ['/news/', '소식'],
+];
+---
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="theme-color" content="#08243a" />
+  <meta name="robots" content="noindex" /><!-- 프로토타입: 검색 노출 방지. 정식 배포 시 제거 -->
+  <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
+  <script is:inline>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body>
+  <div class="proto"><b>시안(프로토타입)</b> · 실제 운영 사이트가 아닙니다 · 노란 표시는 확인·입력이 필요한 자리입니다</div>
+  <header class="hdr">
+    <div class="wrap">
+      <Logo />
+      <input type="checkbox" id="menu" class="sr" aria-label="메뉴 열기" />
+      <label for="menu" class="menu-btn" aria-hidden="true"><Icon name="menu" /></label>
+      <nav class="nav" aria-label="주 메뉴">
+        {nav.map(([href, label]) => <a href={u(href)} aria-current={path.startsWith(u(href)) ? 'page' : undefined}>{label}</a>)}
+        <a href={u('/contact/')} class="cta" aria-current={path.startsWith(u('/contact')) ? 'page' : undefined}>문의하기</a>
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="ftr">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <Logo />
+          <p>{site.name} · {site.nameEn}<br />{site.ceo} · 사업자등록번호 {site.bizNo}</p>
+          {/* TODO(주소 확정): 홈·오시는길=부평대로 337 607호 / 보도자료 푸터=부평북로 236번길 12 / 외부 등록공장=연수구 한나루로 190 — 회사 확인 후 src/data/site.json 수정 */}
+          <p>{site.address} <span class="ph">주소 확인 필요</span></p>
+        </div>
+        <div>
+          <h4>연락처</h4>
+          <ul>
+            <li>T. <a href={`tel:${site.telIntl}`}>{site.tel}</a></li>
+            <li>F. {site.fax}</li>
+            <li>E. <a href={`mailto:${site.email}`}>{site.email}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>바로가기</h4>
+          <ul>
+            {nav.map(([href, label]) => <li><a href={u(href)}>{label}</a></li>)}
+            <li><a href={u('/contact/')}>문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom"><span>© {new Date().getFullYear()} BIOVANKOREA Co., Ltd. All rights reserved.</span><span>Prototype build · 정적 HTML (WordPress 미사용)</span></div>
+    </div>
+  </footer>
+  <script is:inline>
+  (function(){
+    // 스크롤 등장 + 숫자 카운터 + 막대 애니메이션 (IntersectionObserver, ~1KB)
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function count(el){
+      var end = parseFloat(el.dataset.count), dec = +(el.dataset.dec||0), t0 = null, dur = 1400;
+      if (reduce) { el.textContent = end.toFixed(dec); return; }
+      function step(t){ t0 = t0 || t; var p = Math.min((t - t0)/dur, 1), e = 1 - Math.pow(1-p, 3);
+        el.textContent = (end*e).toFixed(dec); if (p < 1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(!e.isIntersecting) return; var el = e.target; el.classList.add('in');
+        el.querySelectorAll('[data-count]').forEach(count); if (el.dataset.count) count(el); io.unobserve(el); });
+    }, {threshold:.18}) : null;
+    document.querySelectorAll('.rv,[data-count]').forEach(function(el){ io ? io.observe(el) : el.classList.add('in'); });
+    // Lite YouTube
+    document.addEventListener('click', function(ev){
+      var b = ev.target.closest && ev.target.closest('[data-yt]'); if(!b) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'; f.allowFullscreen = true;
+      f.title = b.getAttribute('aria-label') || 'YouTube';
+      var w = document.createElement('div'); w.className = 'yt'; w.appendChild(f); b.replaceWith(w);
+    });
+  })();
+  </script>
+</body>
+</html>

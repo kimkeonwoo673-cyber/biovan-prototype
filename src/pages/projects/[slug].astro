@@ -1,0 +1,62 @@
+---
+import { u } from '../../lib/url';
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import YouTube from '../../components/YouTube.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const all = (await getCollection('projects')).sort((a, b) => b.data.no - a.data.no);
+  return all.map((p, i) => ({ params: { slug: p.id }, props: { p, prev: all[i + 1], next: all[i - 1] } }));
+}
+const { p, prev, next } = Astro.props;
+const d = p.data;
+const { Content } = await render(p);
+---
+<Layout title={d.title} description={`${d.location} · ${d.period} — 바이오밴코리아 현장`}>
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href={u('/')}>홈</a> / <a href={u('/projects/')}>프로젝트</a> / {d.posted.slice(0, 4)}</div>
+    <h1 style="max-width:22em">{d.title}</h1>
+    <div class="tags">{d.fields.map((f) => <span>{f}</span>)}<span>{d.region}</span></div>
+  </div></div>
+  <section class="bg-white">
+    <div class="wrap two">
+      <div>
+        <dl class="dl">
+          <dt>사업기간</dt><dd>{d.period}</dd>
+          <dt>위치</dt><dd>{d.location}</dd>
+          <dt>분야</dt><dd>{d.fields.join(' · ')}</dd>
+          <dt>게시일</dt><dd>{d.posted.replaceAll('-', '.')}</dd>
+          <dt>발주처</dt><dd><span class="ph">입력 필요</span></dd>
+          <dt>성과 수치</dt><dd><span class="ph">측정값 입력 필요 (T-N·T-P·COD 등)</span></dd>
+        </dl>
+        {d.source && <p style="margin-top:16px;font-size:.85rem" class="muted">기존 게시물: <a href={d.source} rel="nofollow noopener" target="_blank">{d.source.replace('http://', '')}</a></p>}
+      </div>
+      <div>
+        <div class="prose"><Content /></div>
+        {d.beforeAfter && (
+          <div style="margin-top:28px">
+            <h3>작업 전 · 후 비교 <span class="ph">사진 자리 (원본 이전 후 교체)</span></h3>
+            <div class="ba" id="ba">
+              <div class="s bef"><span>{d.beforeAfter[0]}</span></div>
+              <div class="s aft"><span>{d.beforeAfter[1]}</span></div>
+              <div class="h"></div>
+              <input type="range" min="0" max="100" value="50" aria-label="전후 비교 슬라이더" oninput="this.parentNode.style.setProperty('--p', this.value + '%')" />
+            </div>
+          </div>
+        )}
+        {d.youtube && (<div style="margin-top:28px"><h3>관련 영상</h3><YouTube id={d.youtube} title={d.title} /></div>)}
+        <div style="margin-top:28px">
+          <h3 style="font-size:1rem">현장 사진 <span class="ph">저용량 시안: 사진 생략</span></h3>
+          <div class="gallery-ph"><div>사진 1</div><div>사진 2</div><div>사진 3</div><div>사진 4</div></div>
+          <p class="muted" style="font-size:.82rem;margin-top:8px">정식 버전에서는 원본을 640/1280px WebP로 자동 변환해 표시합니다 (장당 약 60~180KB).</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <nav class="pn" aria-label="이전/다음 현장">
+        {prev ? <a href={u(`/projects/${prev.id}/`)}><small>← 이전 현장</small>{prev.data.title}</a> : <span></span>}
+        {next ? <a href={u(`/projects/${next.id}/`)}><small>다음 현장 →</small>{next.data.title}</a> : <span></span>}
+      </nav>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import { u } from '../../lib/url';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import KoreaMap from '../../components/KoreaMap.astro';
+import { getCollection } from 'astro:content';
+import { FIELDS, REGIONS } from '../../components/FieldIcon';
+const projects = (await getCollection('projects')).sort((a, b) => b.data.no - a.data.no);
+const overseas = projects.filter((p) => p.data.region === '해외');
+const cnt = (k: 'f' | 'r', v: string) => projects.filter((p) => (k === 'f' ? p.data.fields.includes(v) : p.data.region === v)).length;
+const cc: Record<string, string> = { '키르기스스탄': 'KG', '중국': 'CN', '아이티 · 미국': 'HT·US', '미국': 'US' };
+---
+<Layout title="프로젝트" description="바이오밴코리아 녹조·악취·하천·저수지·토양 정화 현장 포트폴리오 30건">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href={u('/')}>홈</a> / 프로젝트</div>
+    <h1>프로젝트</h1>
+    <p>2014년부터 2026년까지 게시된 사업 현장 {projects.length}건. 사진은 최소화하고 현장 정보 중심으로 정리했습니다.</p>
+  </div></div>
+
+  <section class="bg-white" style="padding:64px 0">
+    <div class="wrap mapbox">
+      <div>
+        <KoreaMap projects={projects} />
+        <p class="muted" style="font-size:.78rem;margin-top:8px">점을 누르면 현장 상세로 이동 · 위치는 시·군 단위 근사치</p>
+      </div>
+      <div>
+        <span class="eyebrow">Where we work</span>
+        <h2>국내 {projects.length - overseas.length}건 · 해외 {overseas.length}건</h2>
+        <p class="muted">인천·경기 수도권 하천·호수를 중심으로, 옹진군 섬 지역과 충청·부산, 그리고 미국·아이티·중국·키르기스스탄까지.</p>
+        <div class="overseas" style="margin-top:20px">
+          {overseas.map((p) => (
+            <a class="os" href={u(`/projects/${p.id}/`)}><span class="cc">{cc[p.data.country ?? ''] ?? '—'}</span><span><b>{p.data.title}</b><span>{p.data.location} · {p.data.period}</span></span></a>
+          ))}
+          <div class="os"><span class="cc">KH</span><span><b>캄보디아 농토개량 사업 추진</b><span>연혁 2012.7 · 포트폴리오 게시물 없음</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:56px">
+    <div class="wrap">
+      <div class="filters" id="filters">
+        <div class="frow" data-group="f"><b>분야</b>
+          <button class="fbtn" type="button" data-v="" aria-pressed="true">전체<span class="c">{projects.length}</span></button>
+          {FIELDS.map((f) => <button class="fbtn" type="button" data-v={f} aria-pressed="false">{f}<span class="c">{cnt('f', f)}</span></button>)}
+        </div>
+        <div class="frow" data-group="r"><b>지역</b>
+          <button class="fbtn" type="button" data-v="" aria-pressed="true">전체</button>
+          {REGIONS.map((r) => <button class="fbtn" type="button" data-v={r} aria-pressed="false">{r}<span class="c">{cnt('r', r)}</span></button>)}
+        </div>
+        <div class="result" aria-live="polite"><span id="rc">{projects.length}</span>건 표시</div>
+      </div>
+      <div class="grid g3" id="plist">{projects.map((p) => <ProjectCard p={p} />)}</div>
+    </div>
+  </section>
+
+  <script is:inline>
+  (function(){
+    var st = {f:'', r:''}, cards = [].slice.call(document.querySelectorAll('#plist .pcard'));
+    function apply(){
+      var n = 0;
+      cards.forEach(function(c){
+        var ok = (!st.f || c.dataset.fields.split('|').indexOf(st.f) > -1) && (!st.r || c.dataset.region === st.r);
+        c.hidden = !ok; if (ok) n++;
+      });
+      document.getElementById('rc').textContent = n;
+    }
+    document.querySelectorAll('#filters .frow').forEach(function(row){
+      row.addEventListener('click', function(e){
+        var b = e.target.closest('.fbtn'); if(!b) return;
+        row.querySelectorAll('.fbtn').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+        st[row.dataset.group] = b.dataset.v; apply();
+      });
+    });
+  })();
+  </script>
+</Layout>

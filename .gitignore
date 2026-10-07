@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-gh/
+.astro/
+server.log
+server.pid
+screens/
+.DS_Store

@@ -1,0 +1,35 @@
+---
+import { u } from '../lib/url';
+import Layout from '../layouts/Layout.astro';
+import YouTube from '../components/YouTube.astro';
+import videos from '../data/videos.json';
+import pending from '../data/videos_pending.json';
+---
+<Layout title="영상" description="바이오밴코리아 현장 및 회사 소개 영상">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href={u('/')}>홈</a> / 영상</div>
+    <h1>영상</h1>
+    <p>영상은 YouTube에 두고 연결합니다. 클릭하기 전에는 썸네일만 불러와 페이지가 가볍고, 호스팅 트래픽을 쓰지 않습니다.</p>
+  </div></div>
+  <section class="bg-white">
+    <div class="wrap">
+      <div class="grid g2">
+        {videos.map((v) => (
+          <article class="vcard rv">
+            <YouTube id={v.id} title={v.title} />
+            <h3>{v.title}</h3>
+            <p><span class="muted">{v.date.replaceAll('-', '.')}{v.en && ` · ${v.en}`}</span><br />{v.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">To do</span><h2>연결이 필요한 영상</h2></div><p>기존 영상 게시판 8건 중 아래 4건은 YouTube ID를 확인하지 못했습니다.</p></div>
+      <ul class="nlist">
+        {pending.map((v) => <li><time>{v.date.replaceAll('-', '.')}</time><span class="tt">{v.title}</span><span class="lk"><span class="ph">{v.note}</span></span></li>)}
+      </ul>
+    </div>
+  </section>
+</Layout>

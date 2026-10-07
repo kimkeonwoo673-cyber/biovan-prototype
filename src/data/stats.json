@@ -1,0 +1,9 @@
+[
+  { "value": 27, "suffix": "년+", "label": "환경미생물 업력", "note": "1999년 11월 미생물 사업 착수 (연혁)" },
+  { "value": 30, "suffix": "건", "label": "포트폴리오 게시 현장", "note": "2014–2026 PHOTO 게시판 기준" },
+  { "value": 2, "suffix": "건", "label": "등록 특허", "note": "제0451939호 · 제10-1238262호" },
+  { "value": 2, "suffix": "종", "label": "ISO 인증", "note": "ISO 9001 · ISO 14001 (2001.12)" },
+  { "value": 5, "suffix": "개국", "label": "해외 활동 국가", "note": "미국 · 아이티 · 중국 · 캄보디아 · 키르기스스탄" },
+  { "value": 9.7, "decimals": 1, "suffix": "km", "label": "하천 정화 구간 (연혁 기재분)", "note": "성복천 4.2 + 안양천 3 + 당정천 2.5" },
+  { "value": null, "suffix": "", "label": "누적 처리 수량", "note": "수치 입력 필요", "placeholder": true }
+]
