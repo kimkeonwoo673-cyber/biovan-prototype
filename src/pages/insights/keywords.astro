@@ -9,7 +9,31 @@ import T from '../../content/insights/research/nextgen_tech.json';
 const vidMods = import.meta.glob('../../content/insights/video/*.json', { eager: true }) as Record<string, any>;
 const vid: Record<string, any> = {};
 for (const [p, m] of Object.entries(vidMods)) vid[p.split('/').pop()!.replace('.json', '')] = (m as any).default ?? m;
-const hasVideo = Object.keys(vid).length > 0;
+const recsOf = (x: any): any[] => (Array.isArray(x) ? x : Array.isArray(x?.records) ? x.records : Array.isArray(x?.videos) ? x.videos : Array.isArray(x?.channels) ? x.channels : []);
+const vVideos = recsOf(vid.videos).slice().sort((a: any, b: any) => (b.view_count ?? b.views ?? 0) - (a.view_count ?? a.views ?? 0));
+const vChannels = recsOf(vid.video_channels);
+const vSummary: string[] = vid.videos?.meta?.summary || vid.video_channels?.meta?.summary || vid.videos?.summary || [];
+const hasVideo = vVideos.length > 0 || vChannels.length > 0;
+const PREF = ['title', 'name', 'channel', 'channel_name', 'uploader', 'platform', 'country', 'region', 'lang', 'language', 'category', 'topic', 'theme', 'upload_date', 'published', 'date', 'view_count', 'views', 'subscribers', 'subscriber_count', 'follower_count', 'video_count', 'duration', 'duration_s', 'relevance', 'note', 'url', 'webpage_url', 'channel_url'];
+const pickCols = (rows: any[], max: number) => {
+  const keys = new Set<string>(); rows.slice(0, 50).forEach((r) => Object.keys(r || {}).forEach((k) => keys.add(k)));
+  const pref = PREF.filter((k) => keys.has(k));
+  const rest = [...keys].filter((k) => !pref.includes(k) && !/id$|^_|description|tags|thumbnail/i.test(k));
+  return [...pref, ...rest].slice(0, max);
+};
+const vVidCols = pickCols(vVideos, 9);
+const vChanCols = pickCols(vChannels, 8);
+const LBL: Record<string, string> = { title: '제목', name: '이름', channel: '채널', channel_name: '채널', uploader: '게시자', platform: '플랫폼', country: '국가', region: '지역', lang: '언어', language: '언어', category: '분류', topic: '주제', theme: '주제', upload_date: '게시일', published: '게시일', date: '날짜', view_count: '조회수', views: '조회수', subscribers: '구독자', subscriber_count: '구독자', follower_count: '팔로워', video_count: '영상 수', duration: '길이', duration_s: '길이(초)', relevance: '관련성', note: '메모', url: '링크', webpage_url: '링크', channel_url: '채널 링크' };
+const isLink = (r: any, k: string) => typeof r?.[k] === 'string' && r[k].startsWith('http');
+const colLabel = (k: string) => LBL[k] || k;
+const cell = (r: any, k: string) => {
+  const v = r?.[k];
+  if (v == null || v === '') return '—';
+  if (typeof v === 'number') return fmt(v);
+  if (typeof v === 'string' && /^\d{8}$/.test(v)) return `${v.slice(0, 4)}-${v.slice(4, 6)}-${v.slice(6)}`;
+  if (typeof v === 'object') return JSON.stringify(v).slice(0, 120);
+  return String(v);
+};
 
 const fmt = (n: number | null | undefined, d = 0) => (n === null || n === undefined || Number.isNaN(n) ? '—' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d }));
 const usd = (m: number | null | undefined) => (m === null || m === undefined ? '—' : m >= 1000 ? `$${fmt(m / 1000, 2)}B` : `$${fmt(m, m < 10 ? 1 : 0)}M`);
@@ -286,16 +310,21 @@ const reco: any = K.reco;
       <h2>영상 자료 분석</h2>
       {hasVideo ? (
         <>
-          {vid.videos_meta?.summary && <ul class="ilist">{vid.videos_meta.summary.map((s: string) => <li>{s}</li>)}</ul>}
-          {vid.video_channels && (<><h3>채널</h3><div class="tblwrap"><table class="tbl"><thead><tr>{Object.keys((vid.video_channels.records ?? vid.video_channels)[0] ?? {}).slice(0, 8).map((k) => <th>{k}</th>)}</tr></thead><tbody>
-            {(vid.video_channels.records ?? vid.video_channels).map((r: any) => <tr>{Object.keys((vid.video_channels.records ?? vid.video_channels)[0]).slice(0, 8).map((k) => <td><small>{typeof r[k] === 'object' ? JSON.stringify(r[k]) : String(r[k] ?? '—')}</small></td>)}</tr>)}
-          </tbody></table></div></>)}
-          {vid.videos && (<><h3>영상</h3><div class="tblwrap"><table class="tbl"><thead><tr>{Object.keys((vid.videos.records ?? vid.videos)[0] ?? {}).slice(0, 8).map((k) => <th>{k}</th>)}</tr></thead><tbody>
-            {(vid.videos.records ?? vid.videos).map((r: any) => <tr>{Object.keys((vid.videos.records ?? vid.videos)[0]).slice(0, 8).map((k) => <td><small>{typeof r[k] === 'object' ? JSON.stringify(r[k]) : String(r[k] ?? '—')}</small></td>)}</tr>)}
-          </tbody></table></div></>)}
+          <p class="note">출처: 별도 영상 조사(/research/videos.json · video_channels.json). 조회수·구독자 수는 수집 시점의 플랫폼 공개값이며, 플랫폼마다 집계 방식이 다릅니다.</p>
+          {vSummary.length > 0 && <ul class="ilist">{vSummary.map((s: string) => <li>{s}</li>)}</ul>}
+          {vChannels.length > 0 && (<>
+            <h3>채널 ({vChannels.length})</h3>
+            <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr>{vChanCols.map((k) => <th>{colLabel(k)}</th>)}</tr></thead><tbody>
+              {vChannels.map((r: any) => <tr>{vChanCols.map((k) => <td>{isLink(r, k) ? <a href={r[k]} rel="noopener nofollow" target="_blank">열기</a> : cell(r, k)}</td>)}</tr>)}
+            </tbody></table></div></>)}
+          {vVideos.length > 0 && (<>
+            <h3>영상 ({vVideos.length}{vVideos.length > 150 ? ', 상위 150개 표시' : ''})</h3>
+            <div class="tblwrap"><table class="tbl" style="min-width:1000px"><thead><tr>{vVidCols.map((k) => <th>{colLabel(k)}</th>)}</tr></thead><tbody>
+              {vVideos.slice(0, 150).map((r: any) => <tr>{vVidCols.map((k) => <td>{isLink(r, k) ? <a href={r[k]} rel="noopener nofollow" target="_blank">열기</a> : cell(r, k)}</td>)}</tr>)}
+            </tbody></table></div></>)}
         </>
       ) : (
-        <div class="notice-box">영상 자료 분석은 별도로 조사 중이며 아직 반영되지 않았습니다. <code>src/content/insights/video/</code>에 <code>videos.json</code>·<code>video_channels.json</code>을 넣고 다시 빌드하면 이 탭에 자동으로 표시됩니다.</div>
+        <div class="notice-box"><b>준비 중 — 아직 데이터 없음.</b> 영상 자료 분석(국내외 경쟁사·기관 영상, 채널, 주제·조회 추이)은 별도로 조사하고 있어 이번 배포에는 반영되지 않았습니다. 조사 파일(<code>videos.json</code>·<code>video_channels.json</code>)을 <code>src/content/insights/video/</code>에 넣고 다시 빌드하면 이 탭에 자동으로 표시됩니다. 숫자를 미리 채워 넣지 않았습니다.</div>
       )}
     </section>
 

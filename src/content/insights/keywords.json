@@ -468,10 +468,10 @@
    "langs": "en",
    "https": true,
    "reg_date": "2004-04-12",
-   "wayback_first": null,
-   "wayback_months": null,
-   "wayback_mode": null,
-   "wayback_status": "미수집(응답 없음)",
+   "wayback_first": "2004-08",
+   "wayback_months": 65,
+   "wayback_mode": "월",
+   "wayback_status": null,
    "domain_age": 22,
    "age_basis": "RDAP 등록일",
    "tranco": null,
@@ -3800,6 +3800,106 @@
     "wastewater"
    ],
    "error": null
+  },
+  {
+   "domain": "biowishtechnologies.com",
+   "year": "2021",
+   "title": "Biological Solutions | Agronomy, Aquaculture, Animal Production & Water",
+   "h1": [
+    "Biotechnology For A Sustainable Future",
+    "BIOTECHNOLOGY FOR A SUSTAINABLE FUTURE"
+   ],
+   "terms": [
+    "biowish",
+    "crop",
+    "treatment",
+    "odor",
+    "water",
+    "aquaculture",
+    "agriculture",
+    "waste",
+    "islands",
+    "management"
+   ],
+   "error": null
+  },
+  {
+   "domain": "biowishtechnologies.com",
+   "year": "2024",
+   "title": "BiOWiSH® Fertilizer Enhancement",
+   "h1": [
+    "Your Trusted Fertilizer. Our Cutting-Edge Biologicals. Better Yields for a Sustainable Future."
+   ],
+   "terms": [
+    "biowish",
+    "fertilizer",
+    "crop",
+    "treatment",
+    "program",
+    "technologies",
+    "enhanced",
+    "yield",
+    "fertility",
+    "over"
+   ],
+   "error": null
+  },
+  {
+   "domain": "sukahan.com",
+   "year": "2016",
+   "title": "山东苏柯汉生物工程股份有限公司",
+   "h1": [],
+   "terms": [
+    "苏柯",
+    "柯汉",
+    "制剂",
+    "生物",
+    "科研",
+    "酶制",
+    "产品",
+    "山东",
+    "公司",
+    "招商"
+   ],
+   "error": null
+  },
+  {
+   "domain": "sukahan.com",
+   "year": "2021",
+   "title": "山东苏柯汉生物工程股份有限公司",
+   "h1": [],
+   "terms": [
+    "苏柯",
+    "柯汉",
+    "产品",
+    "制剂",
+    "酶制",
+    "生物",
+    "山东",
+    "公司",
+    "招商",
+    "中心"
+   ],
+   "error": null
+  },
+  {
+   "domain": "sukahan.com",
+   "year": "2024",
+   "title": "山东苏柯汉生物工程股份有限公司",
+   "h1": [],
+   "terms": [
+    "生物",
+    "苏柯",
+    "柯汉",
+    "公司",
+    "制剂",
+    "山东",
+    "产品",
+    "酶制",
+    "东苏",
+    "汉生"
+   ],
+   "error": null
   }
  ],
  "events": {
@@ -3811,7 +3911,7 @@
   ],
   "5y": [
    "2021–2026: 한국 '수질개선' 관심 1.9(2016–20) → 3.6, '토양오염' 18.3 → 24.3 상승, '녹조'는 25.3 → 20.3 하락(비교 세트 내 상대값)",
-   "2021년 Wayback: 北京邦源 제목이 '水环境综合整治·水生态系统构建·水质提升'으로 바뀜(통합 거버넌스형) / Aqua Link 'Lake Management Services Company'",
+   "2021년 Wayback: 北京邦源 제목이 '水环境综合整治·水生态系统构建·水质提升'으로 바뀜(통합 거버넌스형) / Aqua Link 'Lake Management Services Company' / Organica 'Waste Water Treatment, Open Drain Cleaner'(2016) → 'Sustainable Future…'(2021) / Ecological Labs 제품명 'MICROBE-LIFT'(2016) → 회사명(2021)",
    "2022: BlueGreen Water Technologies 도메인 등록(RDAP) — HAB 처리·위성감시형 경쟁 등장",
    "2023–24: Novonesis(Novozymes+Chr. Hansen) 출범, 도메인 2023-09 등록",
    "2022 군포 반월호수 드론 살포 등 지자체 미생물 녹조 방지 사업 보도(외부 기사)"
@@ -3820,6 +3920,7 @@
    "2024–2026: 한국 '녹조' 관심 18.9로 세 기간 중 최저, '녹조제거' 0.6·'축산악취' 0.2로 낮음 / '수질개선' 4.1·'토양오염' 25.6은 최고",
    "2024.12: EnviroZyme이 BiOWiSH 환경관리 자산 인수 발표 — 미국 미생물 수처리 시장 재편",
    "2024.12: 중국 단체표준 'T/SDEPI 046-2024 微生物菌剂修复河道水体技术规程' 발표 — 중국어 SERP 상위",
+   "2024년 Wayback: BiOWiSH 홈 제목이 'Biological Solutions | Agronomy, Aquaculture…'(2021) → 'BiOWiSH® Fertilizer Enhancement'로 바뀜 — 환경(수처리) 사업 매각과 일치하는 비료 중심 전환 / Organica 'Biotechnology Company | Providing Biological Solutions' / Aqua Link 'Pond Management and Lake Management'",
    "2025: 진바이오틱스 신규 도메인(첫 수집 2025-04), '조달청 등록'·AI+미생물 축산 실증 강조",
    "2026: 국내 언론 KIST 녹조 자율방제 로봇, 대청호 저온 플라즈마 보도 — 장치·AI형 기술이 '녹조 제거' 뉴스 상위",
    "Wikipedia 'Harmful algal bloom'(en) 월평균 5,858로 세 기간 중 최고(일반 수질 주제는 하락)",
@@ -6885,8 +6986,8 @@
    "tranco": null,
    "popularity": 1,
    "serp_hits": 0,
-   "wayback_months": null,
-   "wayback_mode": null,
+   "wayback_months": 65,
+   "wayback_mode": "월",
    "domain_age": 22,
    "https": true,
    "date": "2026-10-08 관찰"
