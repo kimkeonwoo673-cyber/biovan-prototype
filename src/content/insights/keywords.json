@@ -1,0 +1,8758 @@
+{
+ "meta": {
+  "generated": "2026-10-08",
+  "tz": "KST",
+  "note": "모든 순위·관심도는 관찰/상대지수이며 실제 검색량·순위가 아닙니다. 값이 없으면 미수집으로 표기."
+ },
+ "summary": [
+  "자사 도메인 biovankorea.com은 관찰한 38개 검색(국·영·중·베·인니·러)에서 한 번도 상위 5위 안에 나오지 않았습니다. 회사명 '바이오밴코리아' 검색에서도 기업정보 사이트 4곳만 나왔습니다. 제3자 기사(워터저널)만 2개 질의에서 보였습니다.",
+  "한국어 일반 키워드(녹조 제거, 수질개선 미생물, 하천 정화 미생물)는 논문·뉴스·정부 페이지가 상위를 차지합니다. 업체 사이트는 '업체·제제·제거제·회사' 같은 상업 수식어가 붙을 때 나옵니다(진바이오틱스, 디엔텍, 힐링바이오).",
+  "Google Trends(KR) 비교 세트에서 '녹조'가 가장 큰 관심어지만 2016–20 평균 25.3 → 2024–26 평균 18.9로 하락했습니다. '수질개선'(1.9→4.1), '수질정화'(4.0→5.4), '토양오염'(18.3→25.6)은 올랐습니다. 모두 같은 질의 안의 상대값이며 검색량이 아닙니다.",
+  "영어권은 미국·캐나다·인도 업체가 'pond & lake management, bioaugmentation, odor control'을 제목·설명문에 넣어 SERP를 차지합니다. 'Harmful algal bloom' 위키 조회는 10년간 상승한 드문 주제입니다.",
+  "중국어는 '蓝藻治理·黑臭水体治理·水体修复'가 핵심인데, 자사 중문 페이지는 '绿藻'만 쓰고 '治理·修复'는 0회입니다.",
+  "경쟁사 대비 가장 큰 차이: ① 제목·설명문(meta) 부재 ② HTTPS 미적용 ③ 구조화 데이터 없음 ④ 현장 사례에 지역+문제+결과 수치 키워드 부재 ⑤ 영문·중문 방치 ⑥ 'Biovan' 동명 식품기업과 브랜드 혼동"
+ ],
+ "competitors": [
+  {
+   "id": "biovan",
+   "name": "바이오밴코리아 (우리)",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://biovankorea.com/",
+   "domain": "biovankorea.com",
+   "positioning": "환경미생물 제제(SUBION·BROST·BWAT-21)로 녹조·악취·하천·저수지·토양·축산 정화. B2G 현장 30건 포트폴리오",
+   "keywords": "녹조, 악취제거, 수질개선, 호수, 토양, 미생물 (본문 기준) / 제목은 슬러그(k-app1-green 등)",
+   "title": "바이오밴코리아 (홈) / k-app1-green – 바이오밴코리아 (하위)",
+   "meta_desc": "없음",
+   "schema": "없음",
+   "langs": "ko·en·zh (en/zh 2021 이후 방치)",
+   "https": false,
+   "reg_date": "2002-04-01",
+   "wayback_first": "2002-06",
+   "wayback_months": 73,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 24,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용",
+    "+0.5 제3자 확인: 워터저널(업계지) 기사 2건 SERP 노출"
+   ],
+   "self": true,
+   "obs_src": "자사 수집본 2026-10-07"
+  },
+  {
+   "id": "jinbiotics",
+   "name": "진바이오틱스",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://jinbiotics.co.kr/home",
+   "domain": "jinbiotics.co.kr",
+   "positioning": "MCOD 복합미생물 브랜드. 축산 악취·슬러지, 골프장 해저드, 산업폐수, 원예·반려 제품. '조달청 등록', AI+미생물 축산 실증 강조",
+   "keywords": "MCOD, 미생물, 악취 저감, 슬러지 분해, 축산, 골프장 해저드, 수질 개선, 조달청 등록, ESG, 탄소중립",
+   "title": "진바이오틱스 | 친환경 미생물 솔루션 전문 브랜드",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko+en 병기",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": "2025-04",
+   "wayback_months": 1,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 1,
+   "age_basis": "Wayback 첫 수집",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "WebFetch 홈 2026-10-08"
+  },
+  {
+   "id": "dean",
+   "name": "디엔텍",
+   "country": "KR",
+   "region": "한국",
+   "url": "https://de-an.co.kr/",
+   "domain": "de-an.co.kr",
+   "positioning": "녹·적조 제거제(옥시월드)+미생물 배양장치(MCS)+하천정화·인공습지. 저수지 '녹조방제' 시공사례 노출",
+   "keywords": "녹조방제사업, 수질개선, 저질개선, 하천정화, 인공습지, 녹·적조 제거, 골프장 POND, 양식장",
+   "title": "디엔텍",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko·en·zh 메뉴",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": "2003-08",
+   "wayback_months": 41,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 23,
+   "age_basis": "Wayback 첫 수집",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 4,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈 2026-10-08"
+  },
+  {
+   "id": "ilshin",
+   "name": "일신바이오케미칼",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://www.ilshinbiochemical.com/",
+   "domain": "ilshinbiochemical.com",
+   "positioning": "수처리제·녹조이끼방지제(HAN-CLEAN), 미생물+화학 병행 녹조 관리 프로그램",
+   "keywords": "녹조제거, 이끼방지, 수처리제, 미생물제, 골프장, 저수지",
+   "title": "(주)일신바이오케미칼에 오신걸 환영합니다.",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": false,
+   "reg_date": "2009-02-20",
+   "wayback_first": "2011-01",
+   "wayback_months": 13,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 17,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "self": false,
+   "obs_src": "WebSearch 스니펫·WebFetch"
+  },
+  {
+   "id": "healingbio",
+   "name": "힐링바이오",
+   "country": "KR",
+   "region": "한국",
+   "url": "https://www.healingbio.co.kr/",
+   "domain": "healingbio.co.kr",
+   "positioning": "건강기능식품·한약 발효 + 축산 미생물(SJP 유산균) 악취저감, 분뇨·음식물 퇴비화, OEM·수출",
+   "keywords": "축산 악취 제거, 악취저감제, 돈사 암모니아 94.2%·황화수소 98.5% 저감, 미생물 발효, OEM·ODM",
+   "title": "(주)힐링바이오 / 축산 악취 제거 — (주)힐링바이오",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": "2014-05",
+   "wayback_months": 26,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 12,
+   "age_basis": "Wayback 첫 수집",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈·축산 페이지"
+  },
+  {
+   "id": "ecobiotech",
+   "name": "에코바이오텍",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://www.eco-biotech.com/",
+   "domain": "eco-biotech.com",
+   "positioning": "축산 악취 탈취제(오더프리, 미생물·천연물 발효)",
+   "keywords": "축산악취, 탈취제, 암모니아 96% 제거, 프로바이오틱스",
+   "title": "에코바이오텍",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": false,
+   "reg_date": "2003-08-29",
+   "wayback_first": "2004-02",
+   "wayback_months": 105,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 23,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "self": false,
+   "obs_src": "WebSearch 스니펫"
+  },
+  {
+   "id": "choongang",
+   "name": "중앙바이오텍",
+   "country": "KR",
+   "region": "한국",
+   "url": "https://www.choongangbio.com/",
+   "domain": "choongangbio.com",
+   "positioning": "동물약품·생균제. 축사 환경개선제, 조달청 등록제품 메뉴 운영",
+   "keywords": "생균제, 축사 환경개선제, 악취감소, 조달청등록제품, 양계·양돈",
+   "title": "중앙바이오텍",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": true,
+   "reg_date": "2000-03-10",
+   "wayback_first": "2000-12",
+   "wayback_months": 157,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 26,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈"
+  },
+  {
+   "id": "cheongho",
+   "name": "청호환경개발",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://cheongho.co/",
+   "domain": "cheongho.co",
+   "positioning": "유역통합 물관리, LID, 미생물 고착 세라믹 수질정화습지(특허)",
+   "keywords": "유역통합 물관리, LID, 비점오염, 수질정화습지, 그린뉴딜",
+   "title": "유역 통합 물관리 기술 솔루션 청호환경개발(주)",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": false,
+   "reg_date": null,
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": null,
+   "age_basis": "미확인",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.0,
+   "cred_adj": [
+    "−0.5 HTTPS 미적용"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈"
+  },
+  {
+   "id": "sinwoo",
+   "name": "신우환경화학",
+   "country": "KR",
+   "region": "한국",
+   "url": "http://watersinwoo.co.kr/",
+   "domain": "watersinwoo.co.kr",
+   "positioning": "수처리 약품 유통(환경약품·냉각탑·수영장)",
+   "keywords": "수처리약품, 환경약품, 미생물제제",
+   "title": "Design Wallet (기본 테마 제목 그대로)",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "ko",
+   "https": false,
+   "reg_date": null,
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": null,
+   "age_basis": "미확인",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.0,
+   "cred_adj": [
+    "−0.5 HTTPS 미적용"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈"
+  },
+  {
+   "id": "bangyuan",
+   "name": "北京邦源环保 (Beijing Bangyuan)",
+   "country": "CN",
+   "region": "중국",
+   "url": "http://www.bjbangyuan.com/",
+   "domain": "bjbangyuan.com",
+   "positioning": "지표수(하천·호수) 환경 거버넌스·운영. 생물제제(Bpa-1017, Eama-11, DC-BZ) + 스마트 수질설비, 사례 100+건, 신삼판 상장(838740)",
+   "keywords": "黑臭水体治理, 蓝藻治理, 富营养化治理, 水质提升, 河道治理, 水生态系统构建, 海绵城市",
+   "title": "水环境综合整治,水生态系统构建,水质提升，河道治理,黑臭水体治理，富营养化治理——北京邦源环保科技股份有限公司",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "zh",
+   "https": false,
+   "reg_date": "2010-06-02",
+   "wayback_first": "2011-02",
+   "wayback_months": 36,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 16,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용",
+    "+0.5 제3자 확인: 중국 신삼판 상장(838740, 자사 표기)"
+   ],
+   "self": false,
+   "obs_src": "WebFetch 홈·사례 페이지"
+  },
+  {
+   "id": "obao",
+   "name": "上海欧保环境 (OBAO)",
+   "country": "CN",
+   "region": "중국",
+   "url": "https://www.obao.com.cn/",
+   "domain": "obao.com.cn",
+   "positioning": "하천·호수 치리 20년·600건+. 저니 개량제, KELPBIO 조류 제어 시스템, 농촌 오수",
+   "keywords": "蓝藻治理, 河道治理, 水库, 水华, 底泥修复, 农村污水, 生态",
+   "title": "(title 태그 비어 있음)",
+   "meta_desc": "없음",
+   "schema": "없음",
+   "langs": "zh",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": "2002-06",
+   "wayback_months": 68,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 24,
+   "age_basis": "Wayback 첫 수집",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집(제목 태그 없음)"
+  },
+  {
+   "id": "whjhn",
+   "name": "武汉金华农生物",
+   "country": "CN",
+   "region": "중국",
+   "url": "http://whjhn.com/",
+   "domain": "whjhn.com",
+   "positioning": "수산 양식용 미생물·효소(蓝藻净 등) 대량 유통",
+   "keywords": "蓝藻净, 水产, 微生物, 底改",
+   "title": "蓝藻净-武汉金华农生物科技有限公司",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "zh",
+   "https": false,
+   "reg_date": "2011-03-04",
+   "wayback_first": "2013-06",
+   "wayback_months": 12,
+   "wayback_mode": "연",
+   "wayback_status": null,
+   "domain_age": 15,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "self": false,
+   "obs_src": "WebSearch 스니펫"
+  },
+  {
+   "id": "sukahan",
+   "name": "Shandong Sukahan Bio-Technology",
+   "country": "CN",
+   "region": "중국(산둥)",
+   "url": "https://www.sukahan.com/en/",
+   "domain": "sukahan.com",
+   "positioning": "산동 소재 미생물·효소 제조사(하천수용 SUKAZYM RW-100 등), 폐수·사료·농업·양식",
+   "keywords": "wastewater, microbes, river water treatment, enzymes, aquaculture, feed",
+   "title": "Shandong Sukahan Bio-Technology Co.,Ltd.",
+   "meta_desc": "없음",
+   "schema": "없음",
+   "langs": "en·zh",
+   "https": true,
+   "reg_date": "2008-11-28",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 18,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "emro",
+   "name": "EM Research Organization (EMRO)",
+   "country": "JP",
+   "region": "일본",
+   "url": "https://emrojapan.com/",
+   "domain": "emrojapan.com",
+   "positioning": "EM(유용미생물군) 원조. 농업·환경·수질 정화 사례, 세계 보급(개도국 다수)",
+   "keywords": "Effective Microorganisms, EM, sustainable, water treatment, soil, compost, case",
+   "title": "EM Research Organization (EMRO)",
+   "meta_desc": "있음",
+   "schema": "없음",
+   "langs": "en·ja 외",
+   "https": true,
+   "reg_date": "2007-10-23",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 19,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.5,
+   "cred_adj": [
+    "+0.5 도메인 10년+",
+    "+0.5 제3자 확인: Springer·Nature 학술 연구(EM 효과 검증)"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "biowish",
+   "name": "BiOWiSH Technologies",
+   "country": "US",
+   "region": "미국",
+   "url": "https://www.biowishtechnologies.com/",
+   "domain": "biowishtechnologies.com",
+   "positioning": "미생물 바이오촉매(농업·수처리·악취). 2024.12 환경관리 자산을 EnviroZyme에 매각 발표",
+   "keywords": "microbial, odor, wastewater, BOD/COD, sludge, fertilizer enhancement",
+   "title": "BiOWiSH® Fertilizer Enhancement (biowishtechnologies.com)",
+   "meta_desc": "미확인",
+   "schema": "미확인",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2004-04-12",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 22,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "WebSearch 스니펫(홈 접속 500 오류)"
+  },
+  {
+   "id": "ecolabs",
+   "name": "Ecological Laboratories (MICROBE-LIFT)",
+   "country": "US",
+   "region": "미국",
+   "url": "https://ecologicallabs.com/",
+   "domain": "ecologicallabs.com",
+   "positioning": "MICROBE-LIFT 미생물 컨소시엄. 하천·호수 생태 복원, 축산 분뇨, 양식, 해외(중국 디엔츠호 지류) 사례",
+   "keywords": "MICROBE-LIFT, ecosystem restoration, manure, wastewater, odor, aquaculture, microbial",
+   "title": "Homepage - Ecological Laboratories",
+   "meta_desc": "있음",
+   "schema": "Organization, WebSite",
+   "langs": "en·es",
+   "https": true,
+   "reg_date": "2006-01-18",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 20,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "aqualink",
+   "name": "Aqua Link",
+   "country": "US",
+   "region": "미국",
+   "url": "https://aqualinkinc.com/",
+   "domain": "aqualinkinc.com",
+   "positioning": "연못·호수 관리 서비스(조류 제어·수질 모니터링·바이오오그멘테이션·폭기)+온라인 스토어, 블로그",
+   "keywords": "pond and lake management, algae control, bio-augmentation, aeration, water quality monitoring",
+   "title": "Expert Pond Lake Management Services | Aqua Link",
+   "meta_desc": "있음",
+   "schema": "LocalBusiness",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2000-03-20",
+   "wayback_first": "2002-10",
+   "wayback_months": 115,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 26,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "newtechbio",
+   "name": "NewTechBio",
+   "country": "US",
+   "region": "미국",
+   "url": "https://newtechbio.com/",
+   "domain": "newtechbio.com",
+   "positioning": "산업용 미생물 처리제(정화조·호수·연못·그리스) 온라인 판매",
+   "keywords": "microbial remediation, lake & pond, septic, grease, sludge & muck",
+   "title": "NewTechBio",
+   "meta_desc": "있음",
+   "schema": "Organization, Offer 등 10종",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2007-03-23",
+   "wayback_first": "2007-06",
+   "wayback_months": 20,
+   "wayback_mode": "연",
+   "wayback_status": null,
+   "domain_age": 19,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "novonesis",
+   "name": "Novonesis (구 Novozymes+Chr. Hansen)",
+   "country": "DK",
+   "region": "덴마크(글로벌)",
+   "url": "https://www.novonesis.com/en",
+   "domain": "novonesis.com",
+   "positioning": "글로벌 바이오솔루션(효소·미생물). Novozymes+Chr. Hansen 합병(2024)",
+   "keywords": "biosolutions, biology, food, agriculture, industries",
+   "title": "Novonesis | The time for biosolutions is now",
+   "meta_desc": "있음",
+   "schema": "Organization, WebSite",
+   "langs": "en·de·es·fr·pt",
+   "https": true,
+   "reg_date": "2023-09-27",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 3,
+   "age_basis": "RDAP 등록일",
+   "tranco": 108414,
+   "popularity": 3,
+   "serp_hits": 0,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "bluegreen",
+   "name": "BlueGreen Water Technologies",
+   "country": "IL/US",
+   "region": "이스라엘·미국",
+   "url": "https://www.bluegreenwatertech.com/",
+   "domain": "bluegreenwatertech.com",
+   "positioning": "유해 남조류(HAB) 표적 처리(Lake Guard, 과산화수소 계열) + 위성 감시. 미생물 아님(벤치마크)",
+   "keywords": "harmful algal blooms, cyanobacteria, Lake Guard, make water safe, lakes, reservoirs",
+   "title": "BlueGreen Water Technologies",
+   "meta_desc": "없음",
+   "schema": "없음",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2022-08-29",
+   "wayback_first": "2022-09",
+   "wayback_months": 47,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 4,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 제3자 확인: 플로리다 환경보호국(FDEP) 보고서"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "actizyme",
+   "name": "Acti-Zyme Products",
+   "country": "CA",
+   "region": "캐나다",
+   "url": "https://www.actizyme.com/",
+   "domain": "actizyme.com",
+   "positioning": "바이오촉매로 라군 슬러지 제거·정화조·소화조, 캐나다 지자체 사례",
+   "keywords": "wastewater, sludge, lagoon desludging, septic, lift stations, municipal",
+   "title": "Acti-Zyme - The all purpose product for wastewater management | Canada",
+   "meta_desc": "있음",
+   "schema": "Organization, WebSite",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2012-06-21",
+   "wayback_first": "2003-07",
+   "wayback_months": 17,
+   "wayback_mode": "연",
+   "wayback_status": null,
+   "domain_age": 14,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "aquaticeng",
+   "name": "Aquatic Engineering / Pond Pro",
+   "country": "CA",
+   "region": "캐나다",
+   "url": "https://www.aquaticengineering.ca/",
+   "domain": "aquaticengineering.ca",
+   "positioning": "폭기·결빙방지·수질관리 컨설팅·설계 + 라군 생물정화(Pond Pro 제품)",
+   "keywords": "aeration, de-icing, water management, ponds, lagoon bioremediation",
+   "title": "Home | Canada | Aquatic Engineering",
+   "meta_desc": "있음",
+   "schema": "WebSite",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2020-10-08",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 6,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "advancedwater",
+   "name": "AdvancedWater",
+   "country": "CA",
+   "region": "캐나다",
+   "url": "https://www.advancedwater.ca/",
+   "domain": "advancedwater.ca",
+   "positioning": "실험실 훈련 미생물로 호수·저류지·축산용수 복원, 사례 수치 제시(62에이커 호수 슬러지)",
+   "keywords": "restore water naturally, microbes, sludge reduction, algae, storm pond, livestock water",
+   "title": "Water Health & Remediation | AdvancedWater | Raymond, AB",
+   "meta_desc": "있음",
+   "schema": "LocalBusiness",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2020-02-20",
+   "wayback_first": "2021-11",
+   "wayback_months": 4,
+   "wayback_mode": "연",
+   "wayback_status": null,
+   "domain_age": 6,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "organica",
+   "name": "Organica Biotech",
+   "country": "IN",
+   "region": "인도",
+   "url": "https://organicabiotech.com/",
+   "domain": "organicabiotech.com",
+   "positioning": "인도 대표 바이오 솔루션 기업. ETP/STP 바이오컬처(Cleanmaxx), 악취·정화조·농업. hreflang 28개(한국어 포함)",
+   "keywords": "biological solutions, wastewater, odour control, bioculture, septic, composting, agriculture",
+   "title": "Biotechnology Company - Providing Biological Solutions - Organica Biotech",
+   "meta_desc": "있음",
+   "schema": "Organization 외 다수",
+   "langs": "28개 언어(ko 포함)",
+   "https": true,
+   "reg_date": "2001-12-23",
+   "wayback_first": null,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "wayback_status": "미수집(응답 없음)",
+   "domain_age": 25,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "credibility": 3.0,
+   "cred_adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "technozyme",
+   "name": "Techno Zyme",
+   "country": "IN",
+   "region": "인도",
+   "url": "https://www.technozyme.in/",
+   "domain": "technozyme.in",
+   "positioning": "산업 생물정화·호수 정화용 미생물(LR 등), 인도 콜하푸르",
+   "keywords": "industrial bioremediation, lake bioremediation, sustainable, green technologies",
+   "title": "Techno Zyme",
+   "meta_desc": "없음",
+   "schema": "없음",
+   "langs": "en",
+   "https": true,
+   "reg_date": "2019-11-15",
+   "wayback_first": "2013-07",
+   "wayback_months": 5,
+   "wayback_mode": "연",
+   "wayback_status": null,
+   "domain_age": 7,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "greenbio",
+   "name": "Green Bio Group (Tập đoàn Green Bio)",
+   "country": "VN",
+   "region": "베트남",
+   "url": "https://tapdoangreenbio.vn/",
+   "domain": "tapdoangreenbio.vn",
+   "positioning": "베트남 수산 양식용 약품·미생물(조류 제어·바닥 정화)",
+   "keywords": "vi sinh, xử lý tảo, thuốc thủy sản, chế phẩm, xử lý nước",
+   "title": "Green Bio - Công ty Thuốc Thủy Sản Thế Hệ Mới",
+   "meta_desc": "있음",
+   "schema": "Organization 외 다수",
+   "langs": "vi",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": null,
+   "wayback_months": 0,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": null,
+   "age_basis": "미확인",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "polystamino",
+   "name": "Poly Stamino Indonesia",
+   "country": "ID",
+   "region": "인도네시아",
+   "url": "https://www.polystamino.co.id/",
+   "domain": "polystamino.co.id",
+   "positioning": "인도네시아 바이오텍. BioWaste 분해균(폐수·호수·연못), 정보성 글(수질오염 개념)",
+   "keywords": "bakteri pengurai limbah, biowaste, pengolahan limbah, pencemaran air",
+   "title": "Perusahaan Bioteknologi di Indonesia | PT. Poly Stamino Indonesia",
+   "meta_desc": "있음",
+   "schema": "Organization, WebSite",
+   "langs": "id·en",
+   "https": true,
+   "reg_date": "2017-02-06",
+   "wayback_first": "2017-03",
+   "wayback_months": 78,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 9,
+   "age_basis": "RDAP 등록일",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  },
+  {
+   "id": "bbseco",
+   "name": "BBS (bbs-eco.ru)",
+   "country": "RU",
+   "region": "러시아(중앙아 러시아어권)",
+   "url": "https://bbs-eco.ru/",
+   "domain": "bbs-eco.ru",
+   "positioning": "러시아 바이오제제(하수·토양·호수·유류). 러시아어권(중앙아) 시장 레퍼런스",
+   "keywords": "биопрепараты, очистка сточных вод, биоремедиация почвы, озер и прудов, удаление нефти",
+   "title": "Биопрепараты для очистки сточных вод - BBS Ecology",
+   "meta_desc": "있음",
+   "schema": "Organization, WebSite 등",
+   "langs": "ru",
+   "https": true,
+   "reg_date": null,
+   "wayback_first": "2024-05",
+   "wayback_months": 7,
+   "wayback_mode": "월",
+   "wayback_status": null,
+   "domain_age": 2,
+   "age_basis": "Wayback 첫 수집",
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "credibility": 2.5,
+   "cred_adj": [],
+   "self": false,
+   "obs_src": "홈 직접 수집"
+  }
+ ],
+ "serp": [
+  {
+   "lang": "ko",
+   "query": "녹조 제거 미생물 제제 업체",
+   "domains": [
+    "jinbiotics.co.kr",
+    "de-an.co.kr",
+    "ilshinbiochemical.com",
+    "newsis.com",
+    "biogenoci.com"
+   ],
+   "note": "업체 사이트 우세(상업 의도)",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "하천 수질개선 미생물 녹조 방지 업체 조달청 우수제품",
+   "domains": [
+    "waterjournal.co.kr",
+    "de-an.co.kr",
+    "cheongho.co",
+    "asansisa.com",
+    "blog.naver.com"
+   ],
+   "note": "워터저널 바이오밴 기사(제3자) 1위",
+   "biovan": false,
+   "third_party": true
+  },
+  {
+   "lang": "ko",
+   "query": "축산 악취 제거 미생물 제제 회사",
+   "domains": [
+    "healingbio.co.kr",
+    "healingbio.co.kr",
+    "jinbiotics.co.kr",
+    "eco-biotech.com",
+    "choongangbio.com"
+   ],
+   "note": "업체 사이트 우세",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "녹조 제거",
+   "domains": [
+    "journal.kci.go.kr",
+    "koreascience.kr",
+    "yna.co.kr",
+    "waterindustry.co.kr",
+    "yna.co.kr"
+   ],
+   "note": "논문·뉴스(정보 의도)",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "수질개선 미생물",
+   "domains": [
+    "ajunews.com",
+    "waterjournal.co.kr",
+    "kci.go.kr",
+    "newsje.com",
+    "jksee.or.kr"
+   ],
+   "note": "뉴스·논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "하천 정화 미생물 제제",
+   "domains": [
+    "dbpia.co.kr",
+    "kci.go.kr",
+    "jksee.or.kr",
+    "earticle.net",
+    "stdkor.com"
+   ],
+   "note": "논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "저수지 수질개선 녹조 방지",
+   "domains": [
+    "tookyung.com",
+    "kci.go.kr",
+    "jksee.or.kr",
+    "kwater.or.kr",
+    "korea.kr"
+   ],
+   "note": "정부·논문·뉴스",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "환경미생물 제제",
+   "domains": [
+    "watersinwoo.co.kr",
+    "etoday.co.kr",
+    "stdkor.com",
+    "ecolife.mcee.go.kr",
+    "ecolife.mcee.go.kr"
+   ],
+   "note": "정부(살생물제 규정)·업체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "악취 제거 미생물 하수 유수지",
+   "domains": [
+    "kci.go.kr",
+    "koreascience.kr",
+    "kci.go.kr",
+    "scienceon.kisti.re.kr",
+    "ikld.kr"
+   ],
+   "note": "논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "녹조제거제",
+   "domains": [
+    "dktools.co.kr",
+    "11st.co.kr",
+    "thepeoplemagazine.co.kr",
+    "waterindustry.co.kr",
+    "de-an.co.kr"
+   ],
+   "note": "쇼핑·업체·논란 기사",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "골프장 연못 녹조 미생물",
+   "domains": [
+    "golfin.co.kr",
+    "newsje.com",
+    "kci.go.kr",
+    "happycampus.com",
+    "ngnnews.net"
+   ],
+   "note": "업계지·논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "유류오염 토양 정화 미생물 복원",
+   "domains": [
+    "scienceon.kisti.re.kr",
+    "frontiersin.org",
+    "dbpia.co.kr",
+    "scienceon.kisti.re.kr",
+    "stdkor.com"
+   ],
+   "note": "논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "호수 물고기 폐사 방지 수질개선",
+   "domains": [
+    "yna.co.kr",
+    "koreascience.kr",
+    "news.nate.com",
+    "gangneung.grandculture.net",
+    "ecofocus.co.kr"
+   ],
+   "note": "뉴스·논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "바이오밴코리아",
+   "domains": [
+    "nicebizinfo.com",
+    "saramin.co.kr",
+    "sankun.com",
+    "bigvalue.ai"
+   ],
+   "note": "자사 사이트 미노출(기업정보 사이트만)",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "축산 악취 저감 미생물 조달청 등록",
+   "domains": [
+    "choongangbio.com",
+    "pigpeople.net",
+    "yjcc.yangju.go.kr",
+    "nias.go.kr",
+    "hongcheon.go.kr"
+   ],
+   "note": "업체·지자체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ko",
+   "query": "녹조 방제 사업 저수지 미생물",
+   "domains": [
+    "khan.co.kr",
+    "newsje.com",
+    "waterjournal.co.kr",
+    "dk.breaknews.com",
+    "scienceon.kisti.re.kr"
+   ],
+   "note": "워터저널 바이오밴 기사(제3자) 3위",
+   "biovan": false,
+   "third_party": true
+  },
+  {
+   "lang": "ko",
+   "query": "축산 악취 제거",
+   "domains": [
+    "scienceon.kisti.re.kr",
+    "aflnews.co.kr",
+    "pignpork.com",
+    "nocutnews.co.kr",
+    "exa.ai"
+   ],
+   "note": "보고서·업계지",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "pond lake algae bloom bioaugmentation beneficial bacteria company",
+   "domains": [
+    "aqualinkinc.com",
+    "pondeez.com",
+    "biolynceus.net",
+    "newtechbio.com",
+    "biogp.com"
+   ],
+   "note": "미국 업체 독점",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "microbial algae bloom control lake",
+   "domains": [
+    "exa.ai",
+    "exa.ai",
+    "mdpi.com",
+    "epa.gov",
+    "hab.whoi.edu"
+   ],
+   "note": "논문·정부",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "harmful algal bloom treatment company",
+   "domains": [
+    "floridadep.gov",
+    "floridadep.gov",
+    "ohio.gov",
+    "resetwater.com",
+    "ppodtech.com"
+   ],
+   "note": "주정부 보고서·기술업체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "river bioremediation microbial products polluted river restoration",
+   "domains": [
+    "sukahan.com",
+    "ecologicallabs.com",
+    "mdpi.com",
+    "adsabs.harvard.edu",
+    "mdpi-res.com"
+   ],
+   "note": "업체 사례+논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "livestock odor control microbial product manure lagoon",
+   "domains": [
+    "alken-murray.com",
+    "pahc.com",
+    "biogp.com",
+    "exa.ai",
+    "nebraska.gov"
+   ],
+   "note": "업체·정부",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "lake restoration bioremediation company",
+   "domains": [
+    "aquabio.us",
+    "effwa.co.in",
+    "remediate-us.com",
+    "ecologicallabs.com",
+    "malatechwater.com"
+   ],
+   "note": "업체(미국·인도)",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "Korean company microbial algae removal river reservoir export",
+   "domains": [
+    "jinbiotics.co.kr",
+    "jinbiotics.co.kr",
+    "biogenicgroup.com",
+    "de-an.co.kr",
+    "neocl.co.kr"
+   ],
+   "note": "한국 경쟁사 노출, 바이오밴 미노출",
+   "biovan": false,
+   "third_party": true
+  },
+  {
+   "lang": "en",
+   "query": "Canada bioaugmentation company lake remediation microbial products wastewater lagoon",
+   "domains": [
+    "aquaticengineering.ca",
+    "pondpro.ca",
+    "advancedwater.ca",
+    "ecoethic.ca",
+    "ecenvironmental.ca"
+   ],
+   "note": "캐나다 업체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "India microbial culture lake restoration bioremediation company sewage odour control",
+   "domains": [
+    "crestaquatech.in",
+    "technozyme.in",
+    "amalgambiotech.com",
+    "amalgambiotech.com",
+    "wastewatertreatmentindia.com"
+   ],
+   "note": "인도 업체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "bioaugmentation wastewater lagoon odor sludge reduction",
+   "domains": [
+    "wwdmag.com",
+    "tpomag.com",
+    "exa.ai",
+    "onlinelibrary.wiley.com",
+    "teamaquafix.com"
+   ],
+   "note": "업계지·논문",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "SUBION microbial BIOVAN Korea",
+   "domains": [
+    "pubchem.ncbi.nlm.nih.gov",
+    "discovery.patsnap.com",
+    "macrogen.com",
+    "biz.heraldcorp.com",
+    "discovery.patsnap.com"
+   ],
+   "note": "브랜드 혼동: 식품기업 Biovan Co. Ltd.",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "en",
+   "query": "Cambodia water treatment microbial bioremediation agriculture soil improvement",
+   "domains": [
+    "exa.ai",
+    "exa.ai",
+    "agritrop.cirad.fr",
+    "exa.ai",
+    "jstage.jst.go.jp"
+   ],
+   "note": "논문만",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "zh",
+   "query": "微生物菌剂 水体修复 黑臭水体治理 蓝藻 公司",
+   "domains": [
+    "bjbangyuan.cn",
+    "bjbangyuan.cn",
+    "bjbangyuan.com",
+    "bjbangyuan.com",
+    "obao.com.cn"
+   ],
+   "note": "邦源 사례 페이지 독점",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "zh",
+   "query": "蓝藻治理 微生物 生物制剂 厂家",
+   "domains": [
+    "bjbangyuan.com",
+    "bjbangyuan.com",
+    "bjbangyuan.com",
+    "whjhn.com",
+    "obao.com.cn"
+   ],
+   "note": "邦源·欧保",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "zh",
+   "query": "河道 水体修复 微生物菌剂",
+   "domains": [
+    "sdepi.org.cn",
+    "ndls.org.cn",
+    "guifanku.com",
+    "hjgc.ic-mag.com",
+    "antpedia.com"
+   ],
+   "note": "단체표준 T/SDEPI 046-2024",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "zh",
+   "query": "养殖场 除臭 微生物菌剂",
+   "domains": [
+    "exa.ai",
+    "shibangshengwu.com",
+    "zncda.com",
+    "cjournal.hep.com.cn",
+    "xjishu.com"
+   ],
+   "note": "업체·논문·특허",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "zh",
+   "query": "土壤修复 微生物菌剂 石油污染",
+   "domains": [
+    "cjb.ijournals.cn",
+    "cjb.ijournals.cn",
+    "ttbz.org.cn",
+    "ttbz.org.cn",
+    "knowcat.cn"
+   ],
+   "note": "논문·단체표준",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "vi",
+   "query": "chế phẩm vi sinh xử lý nước ao hồ tảo",
+   "domains": [
+    "tapdoangreenbio.vn",
+    "tapdoangreenbio.vn",
+    "enviclean.com.vn",
+    "biobluevietnam.com",
+    "thuysantamviet.com"
+   ],
+   "note": "양식(새우) 업체 우세",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "id",
+   "query": "bakteri pengurai limbah bioremediasi danau sungai produk",
+   "domains": [
+    "polystamino.co.id",
+    "polystamino.co.id",
+    "indotrading.com",
+    "starbactsalam.com",
+    "lallemandanimalnutrition.com"
+   ],
+   "note": "현지 업체·B2B 마켓",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ru",
+   "query": "биопрепарат для очистки водоемов от цветения воды",
+   "domains": [
+    "tdbiopreparat.ru",
+    "biolight.ru",
+    "vodokras.ru",
+    "vodogray.ru",
+    "bbs-eco.ru"
+   ],
+   "note": "러시아 업체",
+   "biovan": false,
+   "third_party": false
+  },
+  {
+   "lang": "ru",
+   "query": "Иссык-Куль загрязнение очистка озера биотехнология",
+   "domains": [
+    "faolex.fao.org",
+    "24.kg",
+    "24.kg",
+    "minstroy.gov.kg",
+    "minstroy.gov.kg"
+   ],
+   "note": "정부·뉴스(한국 연구진 이식쿨 기사 포함)",
+   "biovan": false,
+   "third_party": false
+  }
+ ],
+ "trends": {
+  "kr": {
+   "KR_core": {
+    "녹조": {
+     "10y": 22.6,
+     "5y": 20.3,
+     "2y": 18.9,
+     "prev": 25.3,
+     "yearly": {
+      "2016": 23.8,
+      "2017": 33.8,
+      "2018": 26.8,
+      "2019": 21.7,
+      "2020": 20.2,
+      "2021": 19.7,
+      "2022": 25.8,
+      "2023": 19.5,
+      "2024": 17.8,
+      "2025": 20.1,
+      "2026": 18.8
+     }
+    },
+    "수질개선": {
+     "10y": 2.8,
+     "5y": 3.6,
+     "2y": 4.1,
+     "prev": 1.9,
+     "yearly": {
+      "2016": 0.5,
+      "2017": 0.9,
+      "2018": 2.6,
+      "2019": 2.4,
+      "2020": 3.1,
+      "2021": 2.6,
+      "2022": 4.0,
+      "2023": 2.8,
+      "2024": 3.3,
+      "2025": 3.8,
+      "2026": 5.4
+     }
+    },
+    "악취제거": {
+     "10y": 3.7,
+     "5y": 3.8,
+     "2y": 3.6,
+     "prev": 3.5,
+     "yearly": {
+      "2016": 3.6,
+      "2017": 2.5,
+      "2018": 4.2,
+      "2019": 3.0,
+      "2020": 4.4,
+      "2021": 4.0,
+      "2022": 4.8,
+      "2023": 3.0,
+      "2024": 3.7,
+      "2025": 3.7,
+      "2026": 3.4
+     }
+    },
+    "하천정화": {
+     "10y": 0.0,
+     "5y": 0.0,
+     "2y": 0.0,
+     "prev": 0.0,
+     "yearly": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.2,
+      "2023": 0.0,
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 0.0
+     }
+    },
+    "토양오염": {
+     "10y": 21.5,
+     "5y": 24.3,
+     "2y": 25.6,
+     "prev": 18.3,
+     "yearly": {
+      "2016": 18.6,
+      "2017": 18.5,
+      "2018": 15.6,
+      "2019": 20.3,
+      "2020": 18.5,
+      "2021": 20.6,
+      "2022": 24.7,
+      "2023": 24.1,
+      "2024": 22.8,
+      "2025": 33.1,
+      "2026": 19.3
+     }
+    }
+   },
+   "KR_micro": {
+    "녹조": {
+     "10y": 32.6,
+     "5y": 29.3,
+     "2y": 27.1,
+     "prev": 36.4,
+     "yearly": {
+      "2016": 34.5,
+      "2017": 49.0,
+      "2018": 38.3,
+      "2019": 31.2,
+      "2020": 28.9,
+      "2021": 28.5,
+      "2022": 37.1,
+      "2023": 28.2,
+      "2024": 25.7,
+      "2025": 28.8,
+      "2026": 26.9
+     }
+    },
+    "미생물제제": {
+     "10y": 0.1,
+     "5y": 0.1,
+     "2y": 0.1,
+     "prev": 0.0,
+     "yearly": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.5,
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 0.3
+     }
+    },
+    "축산악취": {
+     "10y": 0.4,
+     "5y": 0.5,
+     "2y": 0.2,
+     "prev": 0.2,
+     "yearly": {
+      "2016": 0.0,
+      "2017": 0.8,
+      "2018": 0.0,
+      "2019": 0.5,
+      "2020": 0.0,
+      "2021": 0.7,
+      "2022": 1.3,
+      "2023": 0.3,
+      "2024": 0.2,
+      "2025": 0.0,
+      "2026": 0.4
+     }
+    },
+    "녹조제거": {
+     "10y": 1.2,
+     "5y": 1.1,
+     "2y": 0.6,
+     "prev": 1.3,
+     "yearly": {
+      "2016": 0.6,
+      "2017": 1.4,
+      "2018": 1.2,
+      "2019": 0.7,
+      "2020": 2.5,
+      "2021": 1.2,
+      "2022": 2.2,
+      "2023": 1.4,
+      "2024": 0.7,
+      "2025": 0.8,
+      "2026": 0.3
+     }
+    },
+    "수질정화": {
+     "10y": 4.8,
+     "5y": 5.5,
+     "2y": 5.4,
+     "prev": 4.0,
+     "yearly": {
+      "2016": 3.1,
+      "2017": 1.9,
+      "2018": 4.4,
+      "2019": 4.1,
+      "2020": 6.4,
+      "2021": 4.7,
+      "2022": 5.8,
+      "2023": 6.1,
+      "2024": 5.7,
+      "2025": 5.5,
+      "2026": 5.0
+     }
+    }
+   }
+  },
+  "nokjo_monthly": {
+   "2016-01": 10,
+   "2016-02": 12,
+   "2016-03": 17,
+   "2016-04": 16,
+   "2016-05": 14,
+   "2016-06": 20,
+   "2016-07": 12,
+   "2016-08": 50,
+   "2016-09": 49,
+   "2016-10": 29,
+   "2016-11": 33,
+   "2016-12": 24,
+   "2017-01": 8,
+   "2017-02": 19,
+   "2017-03": 30,
+   "2017-04": 25,
+   "2017-05": 69,
+   "2017-06": 65,
+   "2017-07": 37,
+   "2017-08": 30,
+   "2017-09": 40,
+   "2017-10": 33,
+   "2017-11": 28,
+   "2017-12": 22,
+   "2018-01": 11,
+   "2018-02": 16,
+   "2018-03": 27,
+   "2018-04": 30,
+   "2018-05": 35,
+   "2018-06": 30,
+   "2018-07": 33,
+   "2018-08": 54,
+   "2018-09": 25,
+   "2018-10": 25,
+   "2018-11": 21,
+   "2018-12": 14,
+   "2019-01": 12,
+   "2019-02": 9,
+   "2019-03": 23,
+   "2019-04": 31,
+   "2019-05": 28,
+   "2019-06": 26,
+   "2019-07": 23,
+   "2019-08": 23,
+   "2019-09": 23,
+   "2019-10": 18,
+   "2019-11": 29,
+   "2019-12": 15,
+   "2020-01": 10,
+   "2020-02": 10,
+   "2020-03": 10,
+   "2020-04": 19,
+   "2020-05": 18,
+   "2020-06": 26,
+   "2020-07": 22,
+   "2020-08": 29,
+   "2020-09": 29,
+   "2020-10": 19,
+   "2020-11": 30,
+   "2020-12": 21,
+   "2021-01": 20,
+   "2021-02": 13,
+   "2021-03": 17,
+   "2021-04": 25,
+   "2021-05": 19,
+   "2021-06": 24,
+   "2021-07": 23,
+   "2021-08": 22,
+   "2021-09": 21,
+   "2021-10": 19,
+   "2021-11": 19,
+   "2021-12": 14,
+   "2022-01": 14,
+   "2022-02": 16,
+   "2022-03": 20,
+   "2022-04": 23,
+   "2022-05": 21,
+   "2022-06": 23,
+   "2022-07": 26,
+   "2022-08": 52,
+   "2022-09": 38,
+   "2022-10": 29,
+   "2022-11": 27,
+   "2022-12": 20,
+   "2023-01": 14,
+   "2023-02": 14,
+   "2023-03": 20,
+   "2023-04": 25,
+   "2023-05": 30,
+   "2023-06": 21,
+   "2023-07": 20,
+   "2023-08": 20,
+   "2023-09": 19,
+   "2023-10": 21,
+   "2023-11": 16,
+   "2023-12": 14,
+   "2024-01": 12,
+   "2024-02": 12,
+   "2024-03": 14,
+   "2024-04": 14,
+   "2024-05": 16,
+   "2024-06": 20,
+   "2024-07": 20,
+   "2024-08": 25,
+   "2024-09": 21,
+   "2024-10": 22,
+   "2024-11": 20,
+   "2024-12": 17,
+   "2025-01": 12,
+   "2025-02": 19,
+   "2025-03": 17,
+   "2025-04": 17,
+   "2025-05": 19,
+   "2025-06": 21,
+   "2025-07": 26,
+   "2025-08": 26,
+   "2025-09": 21,
+   "2025-10": 22,
+   "2025-11": 23,
+   "2025-12": 18,
+   "2026-01": 16,
+   "2026-02": 13,
+   "2026-03": 19,
+   "2026-04": 17,
+   "2026-05": 21,
+   "2026-06": 24,
+   "2026-07": 21,
+   "2026-08": 22,
+   "2026-09": 16
+  },
+  "vn": {
+   "tảo": {
+    "10y": 59.2,
+    "5y": 57.0,
+    "2y": 48.9,
+    "prev": 61.7,
+    "zero_months": 0,
+    "months": 129
+   },
+   "vi sinh xử lý nước": {
+    "10y": 1.3,
+    "5y": 2.0,
+    "2y": 2.0,
+    "prev": 0.5,
+    "zero_months": 31,
+    "months": 129
+   },
+   "xử lý nước thải": {
+    "10y": 9.0,
+    "5y": 9.8,
+    "2y": 11.1,
+    "prev": 8.1,
+    "zero_months": 0,
+    "months": 129
+   }
+  },
+  "intl": {
+   "VN": {
+    "label": "베트남(VN)",
+    "terms": {
+     "tảo": {
+      "10y": 59.2,
+      "5y": 57.0,
+      "2y": 48.9,
+      "prev": 61.7,
+      "zero_months": 0,
+      "months": 129
+     },
+     "vi sinh xử lý nước": {
+      "10y": 1.3,
+      "5y": 2.0,
+      "2y": 2.0,
+      "prev": 0.5,
+      "zero_months": 31,
+      "months": 129
+     },
+     "xử lý nước thải": {
+      "10y": 9.0,
+      "5y": 9.8,
+      "2y": 11.1,
+      "prev": 8.1,
+      "zero_months": 0,
+      "months": 129
+     }
+    }
+   },
+   "RU": {
+    "label": "러시아(RU)",
+    "terms": {
+     "цветение воды": {
+      "10y": 12.2,
+      "5y": 14.8,
+      "2y": 11.8,
+      "prev": 9.1,
+      "zero_months": 58,
+      "months": 129
+     },
+     "очистка водоемов": {
+      "10y": 3.4,
+      "5y": 1.3,
+      "2y": 0.6,
+      "prev": 5.7,
+      "zero_months": 106,
+      "months": 129
+     },
+     "биопрепарат": {
+      "10y": 33.8,
+      "5y": 40.7,
+      "2y": 46.4,
+      "prev": 25.9,
+      "zero_months": 7,
+      "months": 129
+     }
+    }
+   },
+   "ID": {
+    "label": "인도네시아(ID)",
+    "terms": null
+   },
+   "IN": {
+    "label": "인도(IN)",
+    "terms": null
+   },
+   "CN_note": {
+    "label": "중국(CN·참고만)",
+    "terms": {
+     "蓝藻": {
+      "10y": 0.2,
+      "5y": 0.4,
+      "2y": 0.6,
+      "prev": 0.0,
+      "zero_months": 125,
+      "months": 129
+     },
+     "水华": {
+      "10y": 4.3,
+      "5y": 8.1,
+      "2y": 11.8,
+      "prev": 0.0,
+      "zero_months": 89,
+      "months": 129
+     },
+     "微生物菌剂": {
+      "10y": 0.2,
+      "5y": 0.3,
+      "2y": 0.7,
+      "prev": 0.0,
+      "zero_months": 126,
+      "months": 129
+     }
+    }
+   }
+  },
+  "ww_note": "전세계 영어 질의는 비정상 0값으로 폐기, 인도네시아·인도는 429(요청 제한)로 미수집. 중국은 Google 접속이 제한된 나라라 값이 거의 0이고 대표성이 매우 낮아 참고로만 표시. 지역별(시·성) 관심도 수집분은 지역 설정 오류(중국으로 고정)로 폐기"
+ },
+ "wiki": [
+  {
+   "article": "Algal_bloom",
+   "lang": "en",
+   "title": "Algal bloom",
+   "prev": 16641,
+   "w10": 12740,
+   "w5": 9347,
+   "w2": 6871
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "ko",
+   "title": "조류 대증식",
+   "prev": 56,
+   "w10": 40,
+   "w5": 33,
+   "w2": 30
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "zh",
+   "title": "水华",
+   "prev": 721,
+   "w10": 664,
+   "w5": 614,
+   "w2": 536
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "ru",
+   "title": "Цветение воды",
+   "prev": 2314,
+   "w10": 2056,
+   "w5": 1832,
+   "w2": 1192
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "vi",
+   "title": "Nước nở hoa",
+   "prev": 403,
+   "w10": 294,
+   "w5": 199,
+   "w2": 100
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "id",
+   "title": "Ledakan populasi alga",
+   "prev": 1463,
+   "w10": 882,
+   "w5": 377,
+   "w2": 122
+  },
+  {
+   "article": "Algal_bloom",
+   "lang": "ja",
+   "title": "水の華",
+   "prev": 907,
+   "w10": 779,
+   "w5": 667,
+   "w2": 527
+  },
+  {
+   "article": "Harmful_algal_bloom",
+   "lang": "en",
+   "title": "Harmful algal bloom",
+   "prev": 3680,
+   "w10": 4679,
+   "w5": 5548,
+   "w2": 5591
+  },
+  {
+   "article": "Harmful_algal_bloom",
+   "lang": "ko",
+   "title": "유해조류",
+   "prev": 46,
+   "w10": 34,
+   "w5": 29,
+   "w2": 30
+  },
+  {
+   "article": "Harmful_algal_bloom",
+   "lang": "id",
+   "title": "Ledakan alga berbahaya",
+   "prev": null,
+   "w10": 35,
+   "w5": 35,
+   "w2": 35
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "en",
+   "title": "Eutrophication",
+   "prev": 34456,
+   "w10": 26832,
+   "w5": 20202,
+   "w2": 14256
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "ko",
+   "title": "부영양화",
+   "prev": 349,
+   "w10": 410,
+   "w5": 464,
+   "w2": 436
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "zh",
+   "title": "富营养化",
+   "prev": 2702,
+   "w10": 2644,
+   "w5": 2592,
+   "w2": 1458
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "ru",
+   "title": "Эвтрофикация",
+   "prev": 2709,
+   "w10": 2419,
+   "w5": 2167,
+   "w2": 1727
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "vi",
+   "title": "Phú dưỡng",
+   "prev": 574,
+   "w10": 567,
+   "w5": 560,
+   "w2": 466
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "id",
+   "title": "Eutrofikasi",
+   "prev": 9668,
+   "w10": 5640,
+   "w5": 2138,
+   "w2": 896
+  },
+  {
+   "article": "Eutrophication",
+   "lang": "ja",
+   "title": "富栄養化",
+   "prev": 3001,
+   "w10": 2124,
+   "w5": 1361,
+   "w2": 903
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "en",
+   "title": "Bioremediation",
+   "prev": 15240,
+   "w10": 11122,
+   "w5": 7540,
+   "w2": 5087
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "ko",
+   "title": "생물적 환경정화",
+   "prev": 288,
+   "w10": 331,
+   "w5": 368,
+   "w2": 277
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "zh",
+   "title": "生物修復",
+   "prev": 423,
+   "w10": 355,
+   "w5": 303,
+   "w2": 190
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "ru",
+   "title": "Биоремедиация",
+   "prev": 577,
+   "w10": 576,
+   "w5": 576,
+   "w2": 392
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "vi",
+   "title": "Xử lý môi trường bằng thực vật",
+   "prev": 405,
+   "w10": 255,
+   "w5": 148,
+   "w2": 50
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "id",
+   "title": "Bioremediasi",
+   "prev": 4198,
+   "w10": 2846,
+   "w5": 1669,
+   "w2": 467
+  },
+  {
+   "article": "Bioremediation",
+   "lang": "ja",
+   "title": "バイオレメディエーション",
+   "prev": 1052,
+   "w10": 737,
+   "w5": 464,
+   "w2": 314
+  },
+  {
+   "article": "Bioaugmentation",
+   "lang": "en",
+   "title": "Bioaugmentation",
+   "prev": 2055,
+   "w10": 1498,
+   "w5": 1014,
+   "w2": 558
+  },
+  {
+   "article": "Bioaugmentation",
+   "lang": "zh",
+   "title": "生物强化",
+   "prev": 44,
+   "w10": 42,
+   "w5": 40,
+   "w2": 31
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "en",
+   "title": "Cyanobacteria",
+   "prev": 51073,
+   "w10": 44303,
+   "w5": 38417,
+   "w2": 33858
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "ko",
+   "title": "남세균",
+   "prev": 877,
+   "w10": 1006,
+   "w5": 1118,
+   "w2": 925
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "zh",
+   "title": "藍菌門",
+   "prev": 3327,
+   "w10": 3275,
+   "w5": 3231,
+   "w2": 2316
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "ru",
+   "title": "Цианобактерии",
+   "prev": 9281,
+   "w10": 7959,
+   "w5": 6809,
+   "w2": 4845
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "vi",
+   "title": "Vi khuẩn lam",
+   "prev": 1631,
+   "w10": 1426,
+   "w5": 1247,
+   "w2": 660
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "id",
+   "title": "Sianobakteri",
+   "prev": 2147,
+   "w10": 1450,
+   "w5": 844,
+   "w2": 745
+  },
+  {
+   "article": "Cyanobacteria",
+   "lang": "ja",
+   "title": "藍藻",
+   "prev": 6104,
+   "w10": 5660,
+   "w5": 5273,
+   "w2": 4369
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "en",
+   "title": "Water pollution",
+   "prev": 140198,
+   "w10": 96843,
+   "w5": 59143,
+   "w2": 36151
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "ko",
+   "title": "수질 오염",
+   "prev": 734,
+   "w10": 899,
+   "w5": 1042,
+   "w2": 783
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "zh",
+   "title": "水污染",
+   "prev": 3782,
+   "w10": 2943,
+   "w5": 2214,
+   "w2": 989
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "ru",
+   "title": "Загрязнение пресных вод",
+   "prev": 7455,
+   "w10": 5601,
+   "w5": 3988,
+   "w2": 1591
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "vi",
+   "title": "Ô nhiễm nước",
+   "prev": 6743,
+   "w10": 4568,
+   "w5": 2677,
+   "w2": 1169
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "id",
+   "title": "Polusi air",
+   "prev": 73,
+   "w10": 51,
+   "w5": 31,
+   "w2": 40
+  },
+  {
+   "article": "Water_pollution",
+   "lang": "ja",
+   "title": "水質汚染",
+   "prev": 4479,
+   "w10": 3007,
+   "w5": 1727,
+   "w2": 686
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "en",
+   "title": "Soil contamination",
+   "prev": 32952,
+   "w10": 24078,
+   "w5": 16361,
+   "w2": 9322
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "ko",
+   "title": "토양 오염",
+   "prev": 386,
+   "w10": 483,
+   "w5": 568,
+   "w2": 465
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "zh",
+   "title": "土地污染",
+   "prev": 516,
+   "w10": 406,
+   "w5": 310,
+   "w2": 246
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "ru",
+   "title": "Загрязнение почв",
+   "prev": 653,
+   "w10": 628,
+   "w5": 606,
+   "w2": 251
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "vi",
+   "title": "Ô nhiễm đất",
+   "prev": 3812,
+   "w10": 2820,
+   "w5": 1957,
+   "w2": 836
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "id",
+   "title": "Polusi tanah",
+   "prev": null,
+   "w10": 99,
+   "w5": 99,
+   "w2": 99
+  },
+  {
+   "article": "Soil_contamination",
+   "lang": "ja",
+   "title": "土壌汚染",
+   "prev": 2881,
+   "w10": 1872,
+   "w5": 994,
+   "w2": 591
+  },
+  {
+   "article": "Effective_microorganism",
+   "lang": "en",
+   "title": "Effective microorganism",
+   "prev": 2795,
+   "w10": 1996,
+   "w5": 1301,
+   "w2": 833
+  },
+  {
+   "article": "Effective_microorganism",
+   "lang": "ko",
+   "title": "유용미생물군",
+   "prev": 610,
+   "w10": 383,
+   "w5": 186,
+   "w2": 103
+  },
+  {
+   "article": "Effective_microorganism",
+   "lang": "vi",
+   "title": "Chế phẩm EM",
+   "prev": 286,
+   "w10": 204,
+   "w5": 132,
+   "w2": 104
+  },
+  {
+   "article": "Effective_microorganism",
+   "lang": "id",
+   "title": "Mikroorganisme efektif",
+   "prev": null,
+   "w10": 25,
+   "w5": 25,
+   "w2": 26
+  },
+  {
+   "article": "Effective_microorganism",
+   "lang": "ja",
+   "title": "有用微生物群",
+   "prev": 5826,
+   "w10": 4261,
+   "w5": 2900,
+   "w2": 2270
+  }
+ ],
+ "openalex": [
+  {
+   "query": "algal bloom microbial control",
+   "yearly": {
+    "2016": 962,
+    "2017": 1120,
+    "2018": 1258,
+    "2019": 1463,
+    "2020": 1695,
+    "2021": 1908,
+    "2022": 2160,
+    "2023": 2353,
+    "2024": 2264,
+    "2025": 3073,
+    "2026": 2307
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "United States",
+      4674
+     ],
+     [
+      "China",
+      3358
+     ],
+     [
+      "Germany",
+      1594
+     ],
+     [
+      "United Kingdom",
+      1544
+     ],
+     [
+      "France",
+      1158
+     ],
+     [
+      "Canada",
+      1128
+     ],
+     [
+      "India",
+      1017
+     ],
+     [
+      "Australia",
+      899
+     ]
+    ],
+    "2021-2026": [
+     [
+      "United States",
+      3048
+     ],
+     [
+      "China",
+      2645
+     ],
+     [
+      "Germany",
+      1087
+     ],
+     [
+      "United Kingdom",
+      986
+     ],
+     [
+      "India",
+      883
+     ],
+     [
+      "France",
+      790
+     ],
+     [
+      "Canada",
+      749
+     ],
+     [
+      "Australia",
+      597
+     ]
+    ],
+    "2024-2026": [
+     [
+      "United States",
+      1514
+     ],
+     [
+      "China",
+      1426
+     ],
+     [
+      "India",
+      560
+     ],
+     [
+      "Germany",
+      556
+     ],
+     [
+      "United Kingdom",
+      469
+     ],
+     [
+      "France",
+      383
+     ],
+     [
+      "Canada",
+      343
+     ],
+     [
+      "Australia",
+      287
+     ]
+    ]
+   }
+  },
+  {
+   "query": "bioaugmentation",
+   "yearly": {
+    "2016": 870,
+    "2017": 921,
+    "2018": 1089,
+    "2019": 1193,
+    "2020": 1442,
+    "2021": 1727,
+    "2022": 2062,
+    "2023": 2284,
+    "2024": 2138,
+    "2025": 2475,
+    "2026": 2091
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "China",
+      3841
+     ],
+     [
+      "India",
+      1761
+     ],
+     [
+      "United States",
+      1509
+     ],
+     [
+      "Nigeria",
+      741
+     ],
+     [
+      "Spain",
+      656
+     ],
+     [
+      "United Kingdom",
+      632
+     ],
+     [
+      "Brazil",
+      587
+     ],
+     [
+      "Italy",
+      586
+     ]
+    ],
+    "2021-2026": [
+     [
+      "China",
+      2985
+     ],
+     [
+      "India",
+      1381
+     ],
+     [
+      "United States",
+      989
+     ],
+     [
+      "Nigeria",
+      546
+     ],
+     [
+      "Spain",
+      495
+     ],
+     [
+      "United Kingdom",
+      421
+     ],
+     [
+      "Poland",
+      395
+     ],
+     [
+      "Italy",
+      393
+     ]
+    ],
+    "2024-2026": [
+     [
+      "China",
+      1623
+     ],
+     [
+      "India",
+      713
+     ],
+     [
+      "United States",
+      474
+     ],
+     [
+      "Nigeria",
+      299
+     ],
+     [
+      "Spain",
+      231
+     ],
+     [
+      "Indonesia",
+      226
+     ],
+     [
+      "Brazil",
+      201
+     ],
+     [
+      "United Kingdom",
+      192
+     ]
+    ]
+   }
+  },
+  {
+   "query": "river bioremediation",
+   "yearly": {
+    "2016": 1214,
+    "2017": 1440,
+    "2018": 1607,
+    "2019": 1960,
+    "2020": 2510,
+    "2021": 3329,
+    "2022": 3788,
+    "2023": 4454,
+    "2024": 4339,
+    "2025": 4832,
+    "2026": 3309
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "China",
+      4760
+     ],
+     [
+      "India",
+      3239
+     ],
+     [
+      "United States",
+      2656
+     ],
+     [
+      "Nigeria",
+      2239
+     ],
+     [
+      "Indonesia",
+      1397
+     ],
+     [
+      "United Kingdom",
+      1199
+     ],
+     [
+      "Brazil",
+      1162
+     ],
+     [
+      "Spain",
+      1055
+     ]
+    ],
+    "2021-2026": [
+     [
+      "China",
+      3707
+     ],
+     [
+      "India",
+      2649
+     ],
+     [
+      "United States",
+      1789
+     ],
+     [
+      "Nigeria",
+      1710
+     ],
+     [
+      "Indonesia",
+      1126
+     ],
+     [
+      "Brazil",
+      857
+     ],
+     [
+      "United Kingdom",
+      834
+     ],
+     [
+      "Spain",
+      818
+     ]
+    ],
+    "2024-2026": [
+     [
+      "China",
+      1836
+     ],
+     [
+      "India",
+      1413
+     ],
+     [
+      "Nigeria",
+      964
+     ],
+     [
+      "United States",
+      879
+     ],
+     [
+      "Indonesia",
+      654
+     ],
+     [
+      "Brazil",
+      422
+     ],
+     [
+      "United Kingdom",
+      406
+     ],
+     [
+      "Spain",
+      381
+     ]
+    ]
+   }
+  },
+  {
+   "query": "lake restoration microorganisms",
+   "yearly": {
+    "2016": 715,
+    "2017": 833,
+    "2018": 849,
+    "2019": 972,
+    "2020": 1167,
+    "2021": 1503,
+    "2022": 1859,
+    "2023": 2126,
+    "2024": 2469,
+    "2025": 2505,
+    "2026": 1758
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "China",
+      4021
+     ],
+     [
+      "United States",
+      2243
+     ],
+     [
+      "India",
+      857
+     ],
+     [
+      "United Kingdom",
+      793
+     ],
+     [
+      "Germany",
+      777
+     ],
+     [
+      "Italy",
+      598
+     ],
+     [
+      "Spain",
+      577
+     ],
+     [
+      "France",
+      569
+     ]
+    ],
+    "2021-2026": [
+     [
+      "China",
+      3383
+     ],
+     [
+      "United States",
+      1540
+     ],
+     [
+      "India",
+      727
+     ],
+     [
+      "United Kingdom",
+      568
+     ],
+     [
+      "Germany",
+      563
+     ],
+     [
+      "Russia",
+      498
+     ],
+     [
+      "Italy",
+      451
+     ],
+     [
+      "Spain",
+      423
+     ]
+    ],
+    "2024-2026": [
+     [
+      "China",
+      1803
+     ],
+     [
+      "United States",
+      775
+     ],
+     [
+      "India",
+      407
+     ],
+     [
+      "Russia",
+      348
+     ],
+     [
+      "United Kingdom",
+      294
+     ],
+     [
+      "Germany",
+      272
+     ],
+     [
+      "Spain",
+      225
+     ],
+     [
+      "Italy",
+      222
+     ]
+    ]
+   }
+  },
+  {
+   "query": "livestock odor microbial",
+   "yearly": {
+    "2016": 354,
+    "2017": 441,
+    "2018": 488,
+    "2019": 615,
+    "2020": 761,
+    "2021": 913,
+    "2022": 1039,
+    "2023": 1305,
+    "2024": 1429,
+    "2025": 1652,
+    "2026": 1293
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "China",
+      1367
+     ],
+     [
+      "United States",
+      1018
+     ],
+     [
+      "Indonesia",
+      564
+     ],
+     [
+      "Brazil",
+      525
+     ],
+     [
+      "India",
+      491
+     ],
+     [
+      "South Korea",
+      435
+     ],
+     [
+      "Italy",
+      372
+     ],
+     [
+      "Spain",
+      328
+     ]
+    ],
+    "2021-2026": [
+     [
+      "China",
+      1171
+     ],
+     [
+      "United States",
+      645
+     ],
+     [
+      "Indonesia",
+      475
+     ],
+     [
+      "India",
+      428
+     ],
+     [
+      "Brazil",
+      384
+     ],
+     [
+      "South Korea",
+      320
+     ],
+     [
+      "Italy",
+      295
+     ],
+     [
+      "Spain",
+      262
+     ]
+    ],
+    "2024-2026": [
+     [
+      "China",
+      698
+     ],
+     [
+      "United States",
+      312
+     ],
+     [
+      "Indonesia",
+      302
+     ],
+     [
+      "India",
+      258
+     ],
+     [
+      "Brazil",
+      232
+     ],
+     [
+      "South Korea",
+      164
+     ],
+     [
+      "Italy",
+      147
+     ],
+     [
+      "Nigeria",
+      138
+     ]
+    ]
+   }
+  },
+  {
+   "query": "oil contaminated soil bioremediation",
+   "yearly": {
+    "2016": 1280,
+    "2017": 1416,
+    "2018": 1630,
+    "2019": 1751,
+    "2020": 2264,
+    "2021": 2559,
+    "2022": 3328,
+    "2023": 3961,
+    "2024": 3514,
+    "2025": 3924,
+    "2026": 2636
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "China",
+      3270
+     ],
+     [
+      "India",
+      3069
+     ],
+     [
+      "Nigeria",
+      2432
+     ],
+     [
+      "United States",
+      1805
+     ],
+     [
+      "Brazil",
+      1124
+     ],
+     [
+      "United Kingdom",
+      930
+     ],
+     [
+      "Indonesia",
+      918
+     ],
+     [
+      "Italy",
+      902
+     ]
+    ],
+    "2021-2026": [
+     [
+      "China",
+      2509
+     ],
+     [
+      "India",
+      2428
+     ],
+     [
+      "Nigeria",
+      1762
+     ],
+     [
+      "United States",
+      1192
+     ],
+     [
+      "Brazil",
+      765
+     ],
+     [
+      "Saudi Arabia",
+      733
+     ],
+     [
+      "Russia",
+      674
+     ],
+     [
+      "Indonesia",
+      673
+     ]
+    ],
+    "2024-2026": [
+     [
+      "India",
+      1220
+     ],
+     [
+      "China",
+      1212
+     ],
+     [
+      "Nigeria",
+      981
+     ],
+     [
+      "United States",
+      571
+     ],
+     [
+      "Brazil",
+      385
+     ],
+     [
+      "Indonesia",
+      364
+     ],
+     [
+      "Saudi Arabia",
+      334
+     ],
+     [
+      "Pakistan",
+      313
+     ]
+    ]
+   }
+  },
+  {
+   "query": "effective microorganisms water",
+   "yearly": {
+    "2016": 214,
+    "2017": 268,
+    "2018": 304,
+    "2019": 405,
+    "2020": 484,
+    "2021": 656,
+    "2022": 831,
+    "2023": 955,
+    "2024": 971,
+    "2025": 967,
+    "2026": 643
+   },
+   "countries": {
+    "2016-2026": [
+     [
+      "Indonesia",
+      1522
+     ],
+     [
+      "China",
+      643
+     ],
+     [
+      "Egypt",
+      463
+     ],
+     [
+      "India",
+      417
+     ],
+     [
+      "Poland",
+      309
+     ],
+     [
+      "Malaysia",
+      284
+     ],
+     [
+      "United States",
+      176
+     ],
+     [
+      "Saudi Arabia",
+      157
+     ]
+    ],
+    "2021-2026": [
+     [
+      "Indonesia",
+      1228
+     ],
+     [
+      "China",
+      535
+     ],
+     [
+      "India",
+      320
+     ],
+     [
+      "Egypt",
+      301
+     ],
+     [
+      "Malaysia",
+      223
+     ],
+     [
+      "Poland",
+      214
+     ],
+     [
+      "Saudi Arabia",
+      140
+     ],
+     [
+      "United States",
+      131
+     ]
+    ],
+    "2024-2026": [
+     [
+      "Indonesia",
+      696
+     ],
+     [
+      "China",
+      277
+     ],
+     [
+      "India",
+      186
+     ],
+     [
+      "Egypt",
+      101
+     ],
+     [
+      "Poland",
+      93
+     ],
+     [
+      "Malaysia",
+      90
+     ],
+     [
+      "Pakistan",
+      61
+     ],
+     [
+      "Saudi Arabia",
+      61
+     ]
+    ]
+   }
+  }
+ ],
+ "snapshots": [
+  {
+   "domain": "biovankorea.com",
+   "year": "2016",
+   "title": "BIOVAN",
+   "h1": [
+    "- 생명과학을 바탕으로 인류의 생명을 중시하는 일류기업 -",
+    "- 생명과학을 바탕으로 인류의 생명을 중시하는 일류기업 -"
+   ],
+   "terms": [
+    "정화",
+    "biovan",
+    "보도자료",
+    "작성일",
+    "작성자",
+    "photo",
+    "video",
+    "work",
+    "하천",
+    "인류의"
+   ],
+   "error": null
+  },
+  {
+   "domain": "biovankorea.com",
+   "year": "2021",
+   "title": "",
+   "h1": [],
+   "terms": [],
+   "error": null
+  },
+  {
+   "domain": "biovankorea.com",
+   "year": "2024",
+   "title": "",
+   "h1": [],
+   "terms": [],
+   "error": null
+  },
+  {
+   "domain": "de-an.co.kr",
+   "year": "2016",
+   "title": "디엔텍에 오신걸 환영합니다.",
+   "h1": [],
+   "terms": [
+    "디엔텍에",
+    "오신걸",
+    "환영합니다"
+   ],
+   "error": null
+  },
+  {
+   "domain": "de-an.co.kr",
+   "year": "2021",
+   "title": "디엔텍(주)",
+   "h1": [],
+   "terms": [
+    "디엔텍"
+   ],
+   "error": null
+  },
+  {
+   "domain": "de-an.co.kr",
+   "year": "2024",
+   "title": "디엔텍",
+   "h1": [
+    "디엔텍"
+   ],
+   "terms": [
+    "하위분류",
+    "자세히보기",
+    "수질",
+    "기술",
+    "디엔텍",
+    "적조",
+    "저질",
+    "인공습지",
+    "녹조방제",
+    "water"
+   ],
+   "error": null
+  },
+  {
+   "domain": "bjbangyuan.com",
+   "year": "2016",
+   "title": "北京邦源环保科技股份有限公司-景观水治理|蓝藻治理|黑臭河道治理|富养化水体治理|河湖治理",
+   "h1": [],
+   "terms": [
+    "治理",
+    "河道",
+    "蓝藻",
+    "北京",
+    "生态",
+    "黑臭",
+    "生物",
+    "邦源",
+    "景观",
+    "水华"
+   ],
+   "error": null
+  },
+  {
+   "domain": "bjbangyuan.com",
+   "year": "2021",
+   "title": "水环境综合整治,水生态系统构建,水质提升，河道治理,黑臭水体治理，富营养化治理——北京邦源环保科技股份有限公司",
+   "h1": [
+    "地表水环境治理及运营服务商 邦源环保让您放心省心",
+    "我们能做什么"
+   ],
+   "terms": [
+    "治理",
+    "咨询",
+    "技术",
+    "生物",
+    "环境",
+    "水体",
+    "产品",
+    "水环",
+    "项目",
+    "环保"
+   ],
+   "error": null
+  },
+  {
+   "domain": "bjbangyuan.com",
+   "year": "2024",
+   "title": "水环境综合整治,水生态系统构建,水质提升，河道治理,黑臭水体治理，富营养化治理——北京邦源环保科技股份有限公司",
+   "h1": [
+    "地表水环境治理及运营服务商 邦源环保让您放心省心",
+    "我们能做什么"
+   ],
+   "terms": [
+    "治理",
+    "咨询",
+    "技术",
+    "生物",
+    "环境",
+    "水体",
+    "产品",
+    "水环",
+    "项目",
+    "蓝藻"
+   ],
+   "error": null
+  },
+  {
+   "domain": "aqualinkinc.com",
+   "year": "2016",
+   "title": "Pond Maintenance PA | Pond Maintenance NJ | Pond Management NJ | Pond Management PA | Pond Aerators | Lake Aerators | Pond Aeration Systems | Lake Aeration Systems | Pond Water Fountain | Golf Course Pond Management | Lake Management | Pond Supplies | Floating Fountains service and repair in PA, NJ, DE, NY, FL, NC, SC, VA, OH, CT, NH",
+   "h1": [
+    "Pond Aerators, Pond Fountains, Products & Services"
+   ],
+   "terms": [
+    "pond",
+    "lake",
+    "fountains",
+    "management",
+    "aeration",
+    "water",
+    "aerators",
+    "aqua",
+    "link",
+    "airlift"
+   ],
+   "error": null
+  },
+  {
+   "domain": "aqualinkinc.com",
+   "year": "2021",
+   "title": "Aqua Link | Lake Management Services Company | Pond Maintenance Services Company | PA NJ DE MD NY",
+   "h1": [
+    "Pond & Lake Management & Beyond..."
+   ],
+   "terms": [
+    "pond",
+    "lake",
+    "management",
+    "services",
+    "aqua",
+    "link",
+    "aeration",
+    "aquatic",
+    "fountains",
+    "water"
+   ],
+   "error": null
+  },
+  {
+   "domain": "aqualinkinc.com",
+   "year": "2024",
+   "title": "Aqua Link - Pond Management and Lake Management",
+   "h1": [
+    "Aqua Link's Pond Supply Store"
+   ],
+   "terms": [
+    "lake",
+    "pond",
+    "management",
+    "services",
+    "aeration",
+    "aquatic",
+    "aqua",
+    "link",
+    "water",
+    "control"
+   ],
+   "error": null
+  },
+  {
+   "domain": "organicabiotech.com",
+   "year": "2016",
+   "title": "Waste Water Treatment, Open Drain Cleaner, Sludge Reduction Manufacturer",
+   "h1": [
+    "Welcome to Organica Biotech",
+    "Our Exclusive Products"
+   ],
+   "terms": [
+    "biotech",
+    "organica",
+    "company",
+    "waste",
+    "solutions",
+    "wastewater",
+    "have",
+    "benefits",
+    "various",
+    "across"
+   ],
+   "error": null
+  },
+  {
+   "domain": "organicabiotech.com",
+   "year": "2021",
+   "title": "Sustainable Future for Generations to come | Organica Biotech",
+   "h1": [],
+   "terms": [
+    "treatment",
+    "cleaner",
+    "waste",
+    "wastewater",
+    "natural",
+    "solutions",
+    "cleaning",
+    "islands",
+    "republic",
+    "care"
+   ],
+   "error": null
+  },
+  {
+   "domain": "organicabiotech.com",
+   "year": "2024",
+   "title": "Biotechnology Company | Providing Biological Solutions",
+   "h1": [
+    "Let Innovative Biological Solutions Boost Your Business"
+   ],
+   "terms": [
+    "treatment",
+    "cleaner",
+    "wastewater",
+    "waste",
+    "natural",
+    "solutions",
+    "cleaning",
+    "shrimp",
+    "care",
+    "plant"
+   ],
+   "error": null
+  },
+  {
+   "domain": "ecologicallabs.com",
+   "year": "2016",
+   "title": "MICROBE-LIFT :: Home",
+   "h1": [],
+   "terms": [
+    "microbe-lift",
+    "reference",
+    "center",
+    "dealer",
+    "support",
+    "store",
+    "locator",
+    "garden",
+    "policy",
+    "ecological"
+   ],
+   "error": null
+  },
+  {
+   "domain": "ecologicallabs.com",
+   "year": "2021",
+   "title": "Ecological Laboratories – Ecological Laboratories",
+   "h1": [],
+   "terms": [
+    "ecological",
+    "laboratories",
+    "microbe-lift",
+    "waste",
+    "water",
+    "treatment",
+    "natural",
+    "management",
+    "aquaculture",
+    "environmental"
+   ],
+   "error": null
+  },
+  {
+   "domain": "ecologicallabs.com",
+   "year": "2024",
+   "title": "Homepage - Ecological Laboratories",
+   "h1": [],
+   "terms": [
+    "ecological",
+    "laboratories",
+    "microbe-lift",
+    "waste",
+    "water",
+    "treatment",
+    "natural",
+    "environmental",
+    "management",
+    "aquaculture"
+   ],
+   "error": null
+  },
+  {
+   "domain": "emrojapan.com",
+   "year": "2016",
+   "title": "EMRO Japan",
+   "h1": [],
+   "terms": [
+    "event",
+    "emro",
+    "research",
+    "treatment",
+    "technology",
+    "activated",
+    "global",
+    "partners",
+    "poland",
+    "japan"
+   ],
+   "error": null
+  },
+  {
+   "domain": "emrojapan.com",
+   "year": "2021",
+   "title": "EMRO - Effective Microorganisms -",
+   "h1": [
+    "Sustainable Farming and environmental conservation with a microbial approach",
+    "Video: World with EM - Soil, Plants, Food, Water and Future"
+   ],
+   "terms": [
+    "treatment",
+    "what",
+    "water",
+    "waste",
+    "case",
+    "japan",
+    "sustainable",
+    "personal",
+    "studies",
+    "agriculture"
+   ],
+   "error": null
+  },
+  {
+   "domain": "emrojapan.com",
+   "year": "2024",
+   "title": "EMRO - Effective Microorganisms -",
+   "h1": [
+    "Sustainable Farming and environmental conservation with a microbial approach",
+    "Video: World with EM - Soil, Plants, Food, Water and Future"
+   ],
+   "terms": [
+    "japan",
+    "what",
+    "project",
+    "agriculture",
+    "case",
+    "united",
+    "application",
+    "studies",
+    "costa",
+    "rica"
+   ],
+   "error": null
+  },
+  {
+   "domain": "actizyme.com",
+   "year": "2016",
+   "title": "Acti-Zyme - Wastewater Management and Sludge Removal",
+   "h1": [],
+   "terms": [
+    "acti-zyme",
+    "sludge",
+    "wastewater",
+    "treatment",
+    "town",
+    "system",
+    "water",
+    "management",
+    "technology",
+    "biological"
+   ],
+   "error": null
+  },
+  {
+   "domain": "actizyme.com",
+   "year": "2021",
+   "title": "Acti-Zyme Products Ltd. - Biological treatment options for the management of wastewater",
+   "h1": [
+    "Home"
+   ],
+   "terms": [
+    "acti-zyme",
+    "wastewater",
+    "lagoon",
+    "testimonials",
+    "systems",
+    "septic",
+    "water",
+    "stations",
+    "works",
+    "projects"
+   ],
+   "error": null
+  },
+  {
+   "domain": "actizyme.com",
+   "year": "2024",
+   "title": "Acti-Zyme - The all purpose product for wastewater management | Canada",
+   "h1": [
+    "The Natural Choice",
+    "Applications"
+   ],
+   "terms": [
+    "acti-zyme",
+    "wastewater",
+    "systems",
+    "applications",
+    "testimonials",
+    "anaerobic",
+    "learn",
+    "lagoon",
+    "water",
+    "desludging"
+   ],
+   "error": null
+  },
+  {
+   "domain": "obao.com.cn",
+   "year": "2016",
+   "title": "",
+   "h1": [],
+   "terms": [],
+   "error": null
+  },
+  {
+   "domain": "obao.com.cn",
+   "year": "2021",
+   "title": "上海欧保环境科技有限公司官网-联系方式：021-51388268",
+   "h1": [],
+   "terms": [
+    "治理",
+    "污水",
+    "环境",
+    "欧保",
+    "水面",
+    "落叶",
+    "保环",
+    "漂浮",
+    "水体",
+    "本网"
+   ],
+   "error": null
+  },
+  {
+   "domain": "obao.com.cn",
+   "year": "2024",
+   "title": "",
+   "h1": [],
+   "terms": [
+    "治理",
+    "环境",
+    "欧保",
+    "河道",
+    "污水",
+    "方案",
+    "蓝藻",
+    "生态",
+    "农村",
+    "村污"
+   ],
+   "error": null
+  },
+  {
+   "domain": "newtechbio.com",
+   "year": "2016",
+   "title": "Septic Tank Treatment - Specialized Treatments for All Septic Systems",
+   "h1": [
+    "Septic Tank Treatment"
+   ],
+   "terms": [
+    "septic",
+    "tank",
+    "treatment",
+    "clogged",
+    "nt-max",
+    "field",
+    "systems",
+    "system",
+    "drain",
+    "sewage"
+   ],
+   "error": null
+  },
+  {
+   "domain": "newtechbio.com",
+   "year": "2021",
+   "title": "Septic Tank Treatment - Specialized Treatments for All Septic Systems",
+   "h1": [
+    "Septic Tank Treatment"
+   ],
+   "terms": [
+    "septic",
+    "tank",
+    "treatment",
+    "clogged",
+    "nt-max",
+    "field",
+    "systems",
+    "system",
+    "drain",
+    "sewage"
+   ],
+   "error": null
+  },
+  {
+   "domain": "newtechbio.com",
+   "year": "2024",
+   "title": "Septic Tank Treatment - Specialized Treatments for All Septic Systems",
+   "h1": [
+    "Septic Tank Treatment"
+   ],
+   "terms": [
+    "septic",
+    "tank",
+    "treatment",
+    "clogged",
+    "nt-max",
+    "field",
+    "systems",
+    "system",
+    "drain",
+    "sewage"
+   ],
+   "error": null
+  },
+  {
+   "domain": "choongangbio.com",
+   "year": "2016",
+   "title": "페이지 이동",
+   "h1": [],
+   "terms": [
+    "페이지",
+    "이동"
+   ],
+   "error": null
+  },
+  {
+   "domain": "choongangbio.com",
+   "year": "2021",
+   "title": "주식회사 중앙바이오텍",
+   "h1": [],
+   "terms": [
+    "choongangbio",
+    "회사소개",
+    "제품소개",
+    "고객지원",
+    "조달청등록제품",
+    "주식회사",
+    "중앙바이오텍",
+    "양계",
+    "양돈",
+    "축우"
+   ],
+   "error": null
+  },
+  {
+   "domain": "choongangbio.com",
+   "year": "2024",
+   "title": "중앙바이오텍",
+   "h1": [],
+   "terms": [
+    "럼피스킨병",
+    "문의사항",
+    "하트세이버",
+    "choongangbio",
+    "중앙바이오텍",
+    "회사소개",
+    "제품소개",
+    "고객지원",
+    "제품",
+    "닫기"
+   ],
+   "error": null
+  },
+  {
+   "domain": "biowishtechnologies.com",
+   "year": "2016",
+   "title": "International - BiOWiSH Technologies",
+   "h1": [],
+   "terms": [
+    "biowish",
+    "odor",
+    "septic",
+    "treatment",
+    "technology",
+    "management",
+    "aqua",
+    "manure",
+    "multibio",
+    "wastewater"
+   ],
+   "error": null
+  }
+ ],
+ "events": {
+  "10y": [
+   "2016–2018: 한국 '녹조' 검색 관심이 여름(8월)마다 정점, 2016·2018년이 특히 높음 (Google Trends KR)",
+   "2016년 Wayback: 北京邦源 제목 '景观水治理|蓝藻治理|黑臭河道治理'(제품·문제 중심) / Aqua Link 'Pond Maintenance PA·NJ'(지역 서비스) / Organica 'Waste Water Treatment, Open Drain Cleaner'",
+   "연구 논문(OpenAlex) 'river bioremediation' 1,214건(2016) → 4,832건(2025): 약 4배. 저자 국가 상위는 중국·인도·미국·나이지리아·인도네시아",
+   "자사: 2014–2026 포트폴리오 30건, 그러나 고정 페이지는 2021 이후 미수정"
+  ],
+  "5y": [
+   "2021–2026: 한국 '수질개선' 관심 1.9(2016–20) → 3.6, '토양오염' 18.3 → 24.3 상승, '녹조'는 25.3 → 20.3 하락(비교 세트 내 상대값)",
+   "2021년 Wayback: 北京邦源 제목이 '水环境综合整治·水生态系统构建·水质提升'으로 바뀜(통합 거버넌스형) / Aqua Link 'Lake Management Services Company'",
+   "2022: BlueGreen Water Technologies 도메인 등록(RDAP) — HAB 처리·위성감시형 경쟁 등장",
+   "2023–24: Novonesis(Novozymes+Chr. Hansen) 출범, 도메인 2023-09 등록",
+   "2022 군포 반월호수 드론 살포 등 지자체 미생물 녹조 방지 사업 보도(외부 기사)"
+  ],
+  "2y": [
+   "2024–2026: 한국 '녹조' 관심 18.9로 세 기간 중 최저, '녹조제거' 0.6·'축산악취' 0.2로 낮음 / '수질개선' 4.1·'토양오염' 25.6은 최고",
+   "2024.12: EnviroZyme이 BiOWiSH 환경관리 자산 인수 발표 — 미국 미생물 수처리 시장 재편",
+   "2024.12: 중국 단체표준 'T/SDEPI 046-2024 微生物菌剂修复河道水体技术规程' 발표 — 중국어 SERP 상위",
+   "2025: 진바이오틱스 신규 도메인(첫 수집 2025-04), '조달청 등록'·AI+미생물 축산 실증 강조",
+   "2026: 국내 언론 KIST 녹조 자율방제 로봇, 대청호 저온 플라즈마 보도 — 장치·AI형 기술이 '녹조 제거' 뉴스 상위",
+   "Wikipedia 'Harmful algal bloom'(en) 월평균 5,858로 세 기간 중 최고(일반 수질 주제는 하락)",
+   "Google Trends(RU) 'биопрепарат'(생물제제) 46.4로 세 기간 중 최고(2016–20 25.9), 베트남 'xử lý nước thải'(폐수처리) 11.1로 최고 — 개도국·중앙아 시장에서 '생물제제·폐수처리' 관심 상승"
+  ]
+ },
+ "findings": {
+  "10y": "10년 동안 '녹조'는 여름마다 반복되는 계절성 이슈로 관심이 가장 큰 단어였지만 장기적으로는 완만히 하락했습니다. 반면 연구·정책은 하천·호수 생물정화로 이동했고 개도국(인도·나이지리아·인도네시아) 비중이 커졌습니다.",
+  "5y": "최근 5년은 '녹조 제거'라는 문제 키워드보다 '수질개선·수질정화·토양오염' 같은 결과·관리형 키워드의 관심이 늘었습니다. 중국 경쟁사도 제품명 대신 '수환경 종합정비'로 포지셔닝을 바꿨습니다.",
+  "2y": "최근 2년은 장치·AI·감시 기술(로봇, 플라즈마, 위성)이 녹조 뉴스를 차지하고, 미국에서는 미생물 수처리 기업 재편이 있었습니다. 바이오밴은 '데이터로 증명된 미생물 현장 성과'와 B2G 키워드(녹조 방제 사업·수질개선 사업)로 차별화가 필요합니다."
+ },
+ "reco": {
+  "ko": {
+   "label": "한국어 (주력)",
+   "primary": [
+    [
+     "녹조 제거 · 녹조 방제",
+     "Google Trends(KR)에서 비교한 용어 중 '녹조' 관심도가 가장 높음(10년 평균 22.6). 경쟁사 디엔텍이 '녹조방제사업'으로 시공사례 노출"
+    ],
+    [
+     "수질개선 · 수질정화",
+     "'수질개선' 관심도 2016–20 평균 1.9 → 2024–26 평균 4.1로 상승(같은 비교 세트 내 상대값). '수질정화'도 4.0→5.4"
+    ],
+    [
+     "악취 제거 (하천·유수지·하수)",
+     "관심도 3.5~3.8로 10년간 안정. 자사 본문에서 '악취제거' 24회로 이미 강점"
+    ],
+    [
+     "환경미생물 제제 · 복합미생물",
+     "검색 관심도는 매우 낮음(미생물제제 ≈0.1)이지만 업종 정의어. 정부(살생물제 제도) 문서가 상위 → 카테고리 설명 페이지용"
+    ]
+   ],
+   "secondary": [
+    "하천 정화",
+    "저수지 수질개선",
+    "호수 녹조",
+    "유수지 악취",
+    "축산 악취 저감",
+    "유류오염 토양 정화",
+    "토양 오염 정화(관심도 상승: 18.3→25.6)",
+    "물고기 폐사 방지",
+    "골프장 연못(해저드) 수질관리",
+    "슬러지 저감",
+    "총인·총질소(T-N·T-P) 저감",
+    "부영양화"
+   ],
+   "longtail": [
+    "저수지 녹조 방제 미생물",
+    "호수 물고기 폐사 방지 수질개선",
+    "하천 악취 제거 미생물 살포",
+    "유수지 악취 저감 사례",
+    "골프장 해저드 녹조 미생물",
+    "유류오염 토양 미생물 복원",
+    "축사 악취 저감 미생물 제제",
+    "녹조 방제 사업 사례(지자체명+연도)",
+    "녹조 제거 업체",
+    "미생물 수질정화제 독성시험(GLP)"
+   ],
+   "b2g": [
+    "녹조 방제 사업",
+    "수질개선 사업",
+    "하천 정화 사업",
+    "조달청 등록 / 나라장터 (등록 시에만 — 등록 여부 확인 필요)",
+    "혁신제품(조달청 혁신장터) — 녹조 분야 지정 사례 관찰됨(장치형)"
+   ]
+  },
+  "en": {
+   "label": "English",
+   "primary": [
+    [
+     "algal bloom control · harmful algal bloom (HAB)",
+     "Wikipedia 'Harmful algal bloom'(en) 월평균 조회 3,680(2016–20) → 5,858(2024–26)로 상승, 일반 주제는 하락"
+    ],
+    [
+     "lake & pond bioremediation · bioaugmentation",
+     "미국·캐나다·인도 업체 SERP 독점(Aqua Link, NewTechBio, AdvancedWater, Techno Zyme). 연구 논문 수 증가"
+    ],
+    [
+     "river restoration · sludge reduction",
+     "river bioremediation 논문 수 1,214(2016) → 4,832(2025, OpenAlex)"
+    ],
+    [
+     "odor control (wastewater · livestock manure)",
+     "미국·인도 업체가 'odour/odor control'을 홈 핵심어로 사용(Organica, Ecological Labs)"
+    ]
+   ],
+   "secondary": [
+    "microbial consortium",
+    "eutrophication",
+    "water quality improvement",
+    "sediment remediation",
+    "T-N / T-P reduction",
+    "oil-contaminated soil bioremediation",
+    "livestock odor reduction",
+    "fish kill prevention",
+    "golf course pond management",
+    "Korea environmental microbes"
+   ],
+   "longtail": [
+    "microbial treatment for algal blooms in reservoirs",
+    "river bioremediation case study Korea",
+    "lake sludge reduction with microbes",
+    "manure lagoon odor control microbes",
+    "non-chemical algae control for lakes",
+    "Issyk-Kul lake water quality cooperation"
+   ]
+  },
+  "zh": {
+   "label": "中文",
+   "primary": [
+    [
+     "蓝藻治理 · 水华",
+     "중국 업체(邦源·欧保)가 '蓝藻'으로 상위 점유. 자사 중문 페이지는 '绿藻'(16회)만 사용 → 용어 불일치"
+    ],
+    [
+     "黑臭水体治理 · 河道治理",
+     "邦源 사례 페이지가 SERP 독점, 2021년 이후 제목도 '水环境综合整治·水生态系统构建'으로 이동"
+    ],
+    [
+     "水体修复 · 微生物菌剂",
+     "2024.12 단체표준 'T/SDEPI 046-2024 微生物菌剂修复河道水体技术规程' 상위 노출"
+    ],
+    [
+     "富营养化治理 · 底泥修复",
+     "欧保·邦源 핵심어"
+    ]
+   ],
+   "secondary": [
+    "水质提升",
+    "生态修复",
+    "养殖场除臭",
+    "石油污染土壤修复",
+    "土壤修复 微生物"
+   ],
+   "longtail": [
+    "湖泊蓝藻 微生物治理 案例",
+    "河道黑臭 微生物菌剂 投加",
+    "水库水华 生物治理"
+   ]
+  },
+  "ru": {
+   "label": "Русский (키르기스스탄·중앙아)",
+   "primary": [
+    [
+     "цветение воды · эвтрофикация",
+     "Wikipedia ru 'Цветение воды' 월 1,386~2,314 조회. 이식쿨 관련 정부·뉴스 상위"
+    ],
+    [
+     "биопрепарат · биоремедиация озер",
+     "Google Trends(RU) 'биопрепарат' 2016–20 평균 25.9 → 2024–26 평균 46.4로 상승(같은 묶음 내 상대값). 러시아 업체(BBS 등)가 SERP 점유. 반면 'очистка водоемов'는 5.7→0.6으로 하락(값 0인 달 106/129, 신뢰도 낮음)"
+    ],
+    [
+     "очистка сточных вод · Иссык-Куль",
+     "ADB 이식쿨 하수 사업(2027 가동 목표, 예산 조사 참고)"
+    ]
+   ],
+   "secondary": [
+    "качество воды",
+    "микробиологический препарат",
+    "очистка озера"
+   ],
+   "longtail": [
+    "очистка озера Иссык-Куль биопрепарат",
+    "корейская технология очистки воды"
+   ]
+  },
+  "vi": {
+   "label": "Tiếng Việt (참고)",
+   "primary": [
+    [
+     "vi sinh xử lý nước · xử lý tảo",
+     "SERP는 새우 양식용 업체 위주. Trends VN 'xử lý nước thải' 8.1→11.1 상승"
+    ]
+   ],
+   "secondary": [
+    "xử lý nước thải",
+    "ô nhiễm nước",
+    "cải tạo hồ"
+   ],
+   "longtail": [
+    "vi sinh xử lý nước hồ",
+    "xử lý tảo hồ bằng vi sinh"
+   ]
+  },
+  "id": {
+   "label": "Bahasa Indonesia (참고)",
+   "primary": [
+    [
+     "bioremediasi · bakteri pengurai limbah",
+     "현지 업체 Poly Stamino·마켓 Indotrading 상위"
+    ]
+   ],
+   "secondary": [
+    "pengolahan limbah cair",
+    "pencemaran air",
+    "danau"
+   ],
+   "longtail": [
+    "bioremediasi sungai tercemar",
+    "bakteri pengurai limbah danau"
+   ]
+  }
+ },
+ "pages": [
+  {
+   "path": "/",
+   "name": "녹조 제거·수질개선 환경미생물",
+   "ko": "녹조 방제, 수질개선, 악취 제거, 환경미생물",
+   "en": "algal bloom control, bioremediation, odor control"
+  },
+  {
+   "path": "/about/",
+   "name": "회사소개·연혁",
+   "ko": "바이오밴코리아, 1999년, 환경미생물, ISO 9001·14001, 특허",
+   "en": "BIOVAN KOREA, environmental microbes, since 1999"
+  },
+  {
+   "path": "/technology/",
+   "name": "SUBION·BROST·BWAT-21",
+   "ko": "복합미생물 제제, 혐기·호기·통성혐기, 생물학적 처리, 슬러지 저감, GLP 독성시험",
+   "en": "microbial consortium, biological treatment, sludge reduction"
+  },
+  {
+   "path": "/solutions/#green",
+   "name": "녹조·악취",
+   "ko": "녹조 제거, 녹조 방제, 녹조 예방, 악취 제거, 부영양화",
+   "en": "algal bloom control, HAB, eutrophication"
+  },
+  {
+   "path": "/solutions/#river",
+   "name": "하천 정화",
+   "ko": "하천 정화, 하천 악취, 유수지 악취, 수질정화",
+   "en": "river restoration, river bioremediation"
+  },
+  {
+   "path": "/solutions/#reservoir",
+   "name": "저수지·호수",
+   "ko": "저수지 수질개선, 호수 녹조, 물고기 폐사 방지, 골프장 연못",
+   "en": "lake & pond bioremediation, fish kill prevention"
+  },
+  {
+   "path": "/solutions/#soil",
+   "name": "토양",
+   "ko": "유류오염 토양 정화, 토양 오염 정화, 토양 미생물 복원",
+   "en": "oil-contaminated soil bioremediation"
+  },
+  {
+   "path": "/solutions/#livestock",
+   "name": "축산",
+   "ko": "축산 악취 저감, 축사 악취, 분뇨 슬러지, 퇴비화",
+   "en": "livestock odor control, manure lagoon"
+  },
+  {
+   "path": "/projects/",
+   "name": "프로젝트(현장 사례)",
+   "ko": "녹조 방제 사례, 하천 정화 사례, 지자체명+연도, 전후 수질 데이터",
+   "en": "case studies, before/after water quality"
+  },
+  {
+   "path": "/news/",
+   "name": "소식·보도",
+   "ko": "보도자료, 세계 물의 날, 이식쿨",
+   "en": "news, Issyk-Kul cooperation"
+  },
+  {
+   "path": "/en/",
+   "name": "English",
+   "ko": "—",
+   "en": "environmental microbes Korea, algal bloom control, lake restoration"
+  }
+ ],
+ "titles": [
+  {
+   "path": "/",
+   "lang": "ko",
+   "title": "녹조 제거·수질개선 환경미생물 | 바이오밴코리아",
+   "desc": "1999년부터 환경미생물 제제 SUBION으로 녹조 방제, 하천·저수지 수질개선, 악취 제거, 토양·축산 환경을 정화합니다. 지자체 현장 30건 사례.",
+   "tlen": 26,
+   "dlen": 84
+  },
+  {
+   "path": "/",
+   "lang": "en",
+   "title": "Microbial Algal Bloom Control & Water Restoration | BIOVAN KOREA",
+   "desc": "Since 1999, BIOVAN KOREA restores rivers, lakes and reservoirs with the SUBION environmental microbial consortium: algal bloom control, odor reduction and sludge reduction.",
+   "tlen": 64,
+   "dlen": 172
+  },
+  {
+   "path": "/about/",
+   "lang": "ko",
+   "title": "회사소개·연혁 | 환경미생물 전문 바이오밴코리아",
+   "desc": "1999년 미생물 사업 착수, ISO 9001·14001 인증, 생물학적 오폐수처리 특허. 바이오밴코리아의 인사말·비전·연혁을 소개합니다.",
+   "tlen": 26,
+   "dlen": 77
+  },
+  {
+   "path": "/about/",
+   "lang": "en",
+   "title": "About BIOVAN KOREA | Environmental Microbes Since 1999",
+   "desc": "Korean environmental biotech company with ISO 9001/14001 and patented biological treatment, working on rivers, reservoirs, soil and livestock environments.",
+   "tlen": 54,
+   "dlen": 155
+  },
+  {
+   "path": "/technology/",
+   "lang": "ko",
+   "title": "SUBION 복합미생물 제제·BWAT-21 | 바이오밴코리아 기술",
+   "desc": "혐기·호기·통성혐기 미생물을 복합한 SUBION, 유기성 슬러지 처리 BROST, 생물학적 반응기 BWAT-21. GLP 독성시험·MSDS 자료 제공.",
+   "tlen": 36,
+   "dlen": 84
+  },
+  {
+   "path": "/technology/",
+   "lang": "en",
+   "title": "SUBION Microbial Consortium & BWAT-21 Bioreactor | BIOVAN",
+   "desc": "Anaerobic, aerobic and facultative microbes in one concentrate for sludge and nutrient (T-N/T-P) reduction. GLP toxicity tests and MSDS available.",
+   "tlen": 57,
+   "dlen": 146
+  },
+  {
+   "path": "/solutions/",
+   "lang": "ko",
+   "title": "녹조 방제·하천 정화·저수지 수질개선·축산 악취 | 바이오밴코리아",
+   "desc": "녹조·악취 제거, 하천 정화, 저수지·호수 수질개선과 물고기 폐사 방지, 유류오염 토양 정화, 축산 악취 저감까지 미생물로 해결합니다.",
+   "tlen": 36,
+   "dlen": 75
+  },
+  {
+   "path": "/solutions/",
+   "lang": "en",
+   "title": "Solutions: Algal Blooms, Rivers, Lakes, Soil, Livestock Odor | BIOVAN",
+   "desc": "Microbial solutions for algal bloom control, river restoration, lake and pond bioremediation, oil-contaminated soil and livestock manure odor.",
+   "tlen": 69,
+   "dlen": 142
+  },
+  {
+   "path": "/projects/",
+   "lang": "ko",
+   "title": "녹조 방제·하천 정화 현장 사례 30건 | 바이오밴코리아",
+   "desc": "군포 반월호수, 평택 배다리호수, 인천 승기천·학익유수지 등 지자체 녹조·악취·수질개선 현장 사례를 지역·분야별로 확인하세요.",
+   "tlen": 31,
+   "dlen": 70
+  },
+  {
+   "path": "/projects/",
+   "lang": "en",
+   "title": "Case Studies: Lake & River Restoration in Korea | BIOVAN",
+   "desc": "30 field projects in Korean lakes, rivers and retention ponds — algal bloom reduction, odor removal and fish-kill prevention.",
+   "tlen": 56,
+   "dlen": 125
+  },
+  {
+   "path": "/contact/",
+   "lang": "ko",
+   "title": "녹조·악취·수질개선 상담 문의 | 바이오밴코리아",
+   "desc": "현장 사진과 위치를 보내주시면 녹조·악취·수질개선 방안을 안내해 드립니다. T 032-525-2001",
+   "tlen": 26,
+   "dlen": 56
+  },
+  {
+   "path": "/contact/",
+   "lang": "en",
+   "title": "Contact BIOVAN KOREA | Water & Soil Restoration Inquiries",
+   "desc": "Send your site details for algal bloom, odor or water quality consultation. Tel +82-32-525-2001.",
+   "tlen": 57,
+   "dlen": 96
+  }
+ ],
+ "sources": [
+  {
+   "group": "키워드 SERP",
+   "id": "S-jinbiotics.co.kr",
+   "title": "jinbiotics.co.kr",
+   "publisher": "jinbiotics.co.kr",
+   "url": "https://jinbiotics.co.kr",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-de-an.co.kr",
+   "title": "de-an.co.kr",
+   "publisher": "de-an.co.kr",
+   "url": "https://de-an.co.kr",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 4,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ilshinbiochemical.com",
+   "title": "ilshinbiochemical.com",
+   "publisher": "ilshinbiochemical.com",
+   "url": "https://ilshinbiochemical.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-newsis.com",
+   "title": "newsis.com",
+   "publisher": "newsis.com",
+   "url": "https://newsis.com",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 13826,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biogenoci.com",
+   "title": "biogenoci.com",
+   "publisher": "biogenoci.com",
+   "url": "https://biogenoci.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-waterjournal.co.kr",
+   "title": "waterjournal.co.kr",
+   "publisher": "waterjournal.co.kr",
+   "url": "https://waterjournal.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-cheongho.co",
+   "title": "cheongho.co",
+   "publisher": "cheongho.co",
+   "url": "https://cheongho.co",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-asansisa.com",
+   "title": "asansisa.com",
+   "publisher": "asansisa.com",
+   "url": "https://asansisa.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-naver.com",
+   "title": "naver.com",
+   "publisher": "naver.com",
+   "url": "https://blog.naver.com",
+   "type": "marketplace_blog",
+   "type_ko": "쇼핑·블로그",
+   "credibility": 1.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 350,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-healingbio.co.kr",
+   "title": "healingbio.co.kr",
+   "publisher": "healingbio.co.kr",
+   "url": "https://healingbio.co.kr",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-eco-biotech.com",
+   "title": "eco-biotech.com",
+   "publisher": "eco-biotech.com",
+   "url": "https://eco-biotech.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-choongangbio.com",
+   "title": "choongangbio.com",
+   "publisher": "choongangbio.com",
+   "url": "https://choongangbio.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-kci.go.kr",
+   "title": "kci.go.kr",
+   "publisher": "kci.go.kr",
+   "url": "https://journal.kci.go.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 71024,
+   "popularity": 3,
+   "serp_hits": 6,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-koreascience.kr",
+   "title": "koreascience.kr",
+   "publisher": "koreascience.kr",
+   "url": "https://koreascience.kr",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 30036,
+   "popularity": 4,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-yna.co.kr",
+   "title": "yna.co.kr",
+   "publisher": "yna.co.kr",
+   "url": "https://yna.co.kr",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 5346,
+   "popularity": 5,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-waterindustry.co.kr",
+   "title": "waterindustry.co.kr",
+   "publisher": "waterindustry.co.kr",
+   "url": "https://waterindustry.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ajunews.com",
+   "title": "ajunews.com",
+   "publisher": "ajunews.com",
+   "url": "https://ajunews.com",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 40087,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-newsje.com",
+   "title": "newsje.com",
+   "publisher": "newsje.com",
+   "url": "https://newsje.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-jksee.or.kr",
+   "title": "jksee.or.kr",
+   "publisher": "jksee.or.kr",
+   "url": "https://jksee.or.kr",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-dbpia.co.kr",
+   "title": "dbpia.co.kr",
+   "publisher": "dbpia.co.kr",
+   "url": "https://dbpia.co.kr",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 40167,
+   "popularity": 4,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-earticle.net",
+   "title": "earticle.net",
+   "publisher": "earticle.net",
+   "url": "https://earticle.net",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 176431,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-stdkor.com",
+   "title": "stdkor.com",
+   "publisher": "stdkor.com",
+   "url": "https://stdkor.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-tookyung.com",
+   "title": "tookyung.com",
+   "publisher": "tookyung.com",
+   "url": "https://tookyung.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-kwater.or.kr",
+   "title": "kwater.or.kr",
+   "publisher": "kwater.or.kr",
+   "url": "https://kwater.or.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 249930,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-korea.kr",
+   "title": "korea.kr",
+   "publisher": "korea.kr",
+   "url": "https://korea.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 38421,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-watersinwoo.co.kr",
+   "title": "watersinwoo.co.kr",
+   "publisher": "watersinwoo.co.kr",
+   "url": "https://watersinwoo.co.kr",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-etoday.co.kr",
+   "title": "etoday.co.kr",
+   "publisher": "etoday.co.kr",
+   "url": "https://etoday.co.kr",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 30321,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-mcee.go.kr",
+   "title": "mcee.go.kr",
+   "publisher": "mcee.go.kr",
+   "url": "https://ecolife.mcee.go.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 341090,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-kisti.re.kr",
+   "title": "kisti.re.kr",
+   "publisher": "kisti.re.kr",
+   "url": "https://scienceon.kisti.re.kr",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 31198,
+   "popularity": 4,
+   "serp_hits": 4,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ikld.kr",
+   "title": "ikld.kr",
+   "publisher": "ikld.kr",
+   "url": "https://ikld.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 456011,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-dktools.co.kr",
+   "title": "dktools.co.kr",
+   "publisher": "dktools.co.kr",
+   "url": "https://dktools.co.kr",
+   "type": "marketplace_blog",
+   "type_ko": "쇼핑·블로그",
+   "credibility": 1.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-11st.co.kr",
+   "title": "11st.co.kr",
+   "publisher": "11st.co.kr",
+   "url": "https://11st.co.kr",
+   "type": "marketplace_blog",
+   "type_ko": "쇼핑·블로그",
+   "credibility": 1.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 11541,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-thepeoplemagazine.co.kr",
+   "title": "thepeoplemagazine.co.kr",
+   "publisher": "thepeoplemagazine.co.kr",
+   "url": "https://thepeoplemagazine.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-golfin.co.kr",
+   "title": "golfin.co.kr",
+   "publisher": "golfin.co.kr",
+   "url": "https://golfin.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-happycampus.com",
+   "title": "happycampus.com",
+   "publisher": "happycampus.com",
+   "url": "https://happycampus.com",
+   "type": "marketplace_blog",
+   "type_ko": "쇼핑·블로그",
+   "credibility": 1.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 66128,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ngnnews.net",
+   "title": "ngnnews.net",
+   "publisher": "ngnnews.net",
+   "url": "https://ngnnews.net",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-frontiersin.org",
+   "title": "frontiersin.org",
+   "publisher": "frontiersin.org",
+   "url": "https://frontiersin.org",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 870,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nate.com",
+   "title": "nate.com",
+   "publisher": "nate.com",
+   "url": "https://news.nate.com",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 3303,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-grandculture.net",
+   "title": "grandculture.net",
+   "publisher": "grandculture.net",
+   "url": "https://gangneung.grandculture.net",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 138086,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ecofocus.co.kr",
+   "title": "ecofocus.co.kr",
+   "publisher": "ecofocus.co.kr",
+   "url": "https://ecofocus.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nicebizinfo.com",
+   "title": "nicebizinfo.com",
+   "publisher": "nicebizinfo.com",
+   "url": "https://nicebizinfo.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 392723,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-saramin.co.kr",
+   "title": "saramin.co.kr",
+   "publisher": "saramin.co.kr",
+   "url": "https://saramin.co.kr",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 13783,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-sankun.com",
+   "title": "sankun.com",
+   "publisher": "sankun.com",
+   "url": "https://sankun.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 406220,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-bigvalue.ai",
+   "title": "bigvalue.ai",
+   "publisher": "bigvalue.ai",
+   "url": "https://bigvalue.ai",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-pigpeople.net",
+   "title": "pigpeople.net",
+   "publisher": "pigpeople.net",
+   "url": "https://pigpeople.net",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-yangju.go.kr",
+   "title": "yangju.go.kr",
+   "publisher": "yangju.go.kr",
+   "url": "https://yjcc.yangju.go.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 509500,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nias.go.kr",
+   "title": "nias.go.kr",
+   "publisher": "nias.go.kr",
+   "url": "https://nias.go.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-hongcheon.go.kr",
+   "title": "hongcheon.go.kr",
+   "publisher": "hongcheon.go.kr",
+   "url": "https://hongcheon.go.kr",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-khan.co.kr",
+   "title": "khan.co.kr",
+   "publisher": "khan.co.kr",
+   "url": "https://khan.co.kr",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 13635,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-breaknews.com",
+   "title": "breaknews.com",
+   "publisher": "breaknews.com",
+   "url": "https://dk.breaknews.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 115606,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-aflnews.co.kr",
+   "title": "aflnews.co.kr",
+   "publisher": "aflnews.co.kr",
+   "url": "https://aflnews.co.kr",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 422560,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-pignpork.com",
+   "title": "pignpork.com",
+   "publisher": "pignpork.com",
+   "url": "https://pignpork.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nocutnews.co.kr",
+   "title": "nocutnews.co.kr",
+   "publisher": "nocutnews.co.kr",
+   "url": "https://nocutnews.co.kr",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 62717,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-exa.ai",
+   "title": "exa.ai",
+   "publisher": "exa.ai",
+   "url": "https://exa.ai",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 31822,
+   "popularity": 4,
+   "serp_hits": 6,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-aqualinkinc.com",
+   "title": "aqualinkinc.com",
+   "publisher": "aqualinkinc.com",
+   "url": "https://aqualinkinc.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-pondeez.com",
+   "title": "pondeez.com",
+   "publisher": "pondeez.com",
+   "url": "https://pondeez.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biolynceus.net",
+   "title": "biolynceus.net",
+   "publisher": "biolynceus.net",
+   "url": "https://biolynceus.net",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-newtechbio.com",
+   "title": "newtechbio.com",
+   "publisher": "newtechbio.com",
+   "url": "https://newtechbio.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biogp.com",
+   "title": "biogp.com",
+   "publisher": "biogp.com",
+   "url": "https://biogp.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-mdpi.com",
+   "title": "mdpi.com",
+   "publisher": "mdpi.com",
+   "url": "https://mdpi.com",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 624,
+   "popularity": 5,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-epa.gov",
+   "title": "epa.gov",
+   "publisher": "epa.gov",
+   "url": "https://epa.gov",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 928,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-whoi.edu",
+   "title": "whoi.edu",
+   "publisher": "whoi.edu",
+   "url": "https://hab.whoi.edu",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 20802,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-floridadep.gov",
+   "title": "floridadep.gov",
+   "publisher": "floridadep.gov",
+   "url": "https://floridadep.gov",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 98568,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ohio.gov",
+   "title": "ohio.gov",
+   "publisher": "ohio.gov",
+   "url": "https://ohio.gov",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 5376,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-resetwater.com",
+   "title": "resetwater.com",
+   "publisher": "resetwater.com",
+   "url": "https://resetwater.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ppodtech.com",
+   "title": "ppodtech.com",
+   "publisher": "ppodtech.com",
+   "url": "https://ppodtech.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-sukahan.com",
+   "title": "sukahan.com",
+   "publisher": "sukahan.com",
+   "url": "https://sukahan.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ecologicallabs.com",
+   "title": "ecologicallabs.com",
+   "publisher": "ecologicallabs.com",
+   "url": "https://ecologicallabs.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-harvard.edu",
+   "title": "harvard.edu",
+   "publisher": "harvard.edu",
+   "url": "https://adsabs.harvard.edu",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 318,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-mdpi-res.com",
+   "title": "mdpi-res.com",
+   "publisher": "mdpi-res.com",
+   "url": "https://mdpi-res.com",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 25287,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-alken-murray.com",
+   "title": "alken-murray.com",
+   "publisher": "alken-murray.com",
+   "url": "https://alken-murray.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-pahc.com",
+   "title": "pahc.com",
+   "publisher": "pahc.com",
+   "url": "https://pahc.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 402640,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nebraska.gov",
+   "title": "nebraska.gov",
+   "publisher": "nebraska.gov",
+   "url": "https://nebraska.gov",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 14920,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-aquabio.us",
+   "title": "aquabio.us",
+   "publisher": "aquabio.us",
+   "url": "https://aquabio.us",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-effwa.co.in",
+   "title": "effwa.co.in",
+   "publisher": "effwa.co.in",
+   "url": "https://effwa.co.in",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-remediate-us.com",
+   "title": "remediate-us.com",
+   "publisher": "remediate-us.com",
+   "url": "https://remediate-us.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-malatechwater.com",
+   "title": "malatechwater.com",
+   "publisher": "malatechwater.com",
+   "url": "https://malatechwater.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biogenicgroup.com",
+   "title": "biogenicgroup.com",
+   "publisher": "biogenicgroup.com",
+   "url": "https://biogenicgroup.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-neocl.co.kr",
+   "title": "neocl.co.kr",
+   "publisher": "neocl.co.kr",
+   "url": "https://neocl.co.kr",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-aquaticengineering.ca",
+   "title": "aquaticengineering.ca",
+   "publisher": "aquaticengineering.ca",
+   "url": "https://aquaticengineering.ca",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-pondpro.ca",
+   "title": "pondpro.ca",
+   "publisher": "pondpro.ca",
+   "url": "https://pondpro.ca",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-advancedwater.ca",
+   "title": "advancedwater.ca",
+   "publisher": "advancedwater.ca",
+   "url": "https://advancedwater.ca",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ecoethic.ca",
+   "title": "ecoethic.ca",
+   "publisher": "ecoethic.ca",
+   "url": "https://ecoethic.ca",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ecenvironmental.ca",
+   "title": "ecenvironmental.ca",
+   "publisher": "ecenvironmental.ca",
+   "url": "https://ecenvironmental.ca",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-crestaquatech.in",
+   "title": "crestaquatech.in",
+   "publisher": "crestaquatech.in",
+   "url": "https://crestaquatech.in",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-technozyme.in",
+   "title": "technozyme.in",
+   "publisher": "technozyme.in",
+   "url": "https://technozyme.in",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-amalgambiotech.com",
+   "title": "amalgambiotech.com",
+   "publisher": "amalgambiotech.com",
+   "url": "https://amalgambiotech.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-wastewatertreatmentindia.com",
+   "title": "wastewatertreatmentindia.com",
+   "publisher": "wastewatertreatmentindia.com",
+   "url": "https://wastewatertreatmentindia.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-wwdmag.com",
+   "title": "wwdmag.com",
+   "publisher": "wwdmag.com",
+   "url": "https://wwdmag.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 289183,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-tpomag.com",
+   "title": "tpomag.com",
+   "publisher": "tpomag.com",
+   "url": "https://tpomag.com",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-wiley.com",
+   "title": "wiley.com",
+   "publisher": "wiley.com",
+   "url": "https://onlinelibrary.wiley.com",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 330,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-teamaquafix.com",
+   "title": "teamaquafix.com",
+   "publisher": "teamaquafix.com",
+   "url": "https://teamaquafix.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-nih.gov",
+   "title": "nih.gov",
+   "publisher": "nih.gov",
+   "url": "https://pubchem.ncbi.nlm.nih.gov",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 137,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-patsnap.com",
+   "title": "patsnap.com",
+   "publisher": "patsnap.com",
+   "url": "https://discovery.patsnap.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 27223,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-macrogen.com",
+   "title": "macrogen.com",
+   "publisher": "macrogen.com",
+   "url": "https://macrogen.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 414041,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-heraldcorp.com",
+   "title": "heraldcorp.com",
+   "publisher": "heraldcorp.com",
+   "url": "https://biz.heraldcorp.com",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 25295,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-cirad.fr",
+   "title": "cirad.fr",
+   "publisher": "cirad.fr",
+   "url": "https://agritrop.cirad.fr",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 26687,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-jst.go.jp",
+   "title": "jst.go.jp",
+   "publisher": "jst.go.jp",
+   "url": "https://jstage.jst.go.jp",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 4384,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-bjbangyuan.cn",
+   "title": "bjbangyuan.cn",
+   "publisher": "bjbangyuan.cn",
+   "url": "https://bjbangyuan.cn",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-bjbangyuan.com",
+   "title": "bjbangyuan.com",
+   "publisher": "bjbangyuan.com",
+   "url": "https://bjbangyuan.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-obao.com.cn",
+   "title": "obao.com.cn",
+   "publisher": "obao.com.cn",
+   "url": "https://obao.com.cn",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-whjhn.com",
+   "title": "whjhn.com",
+   "publisher": "whjhn.com",
+   "url": "https://whjhn.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-org.cn",
+   "title": "org.cn",
+   "publisher": "org.cn",
+   "url": "https://sdepi.org.cn",
+   "type": "ngo_industry_body",
+   "type_ko": "업계단체·표준",
+   "credibility": 3.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-guifanku.com",
+   "title": "guifanku.com",
+   "publisher": "guifanku.com",
+   "url": "https://guifanku.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 509440,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ic-mag.com",
+   "title": "ic-mag.com",
+   "publisher": "ic-mag.com",
+   "url": "https://hjgc.ic-mag.com",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-antpedia.com",
+   "title": "antpedia.com",
+   "publisher": "antpedia.com",
+   "url": "https://antpedia.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 36422,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-shibangshengwu.com",
+   "title": "shibangshengwu.com",
+   "publisher": "shibangshengwu.com",
+   "url": "https://shibangshengwu.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-zncda.com",
+   "title": "zncda.com",
+   "publisher": "zncda.com",
+   "url": "https://zncda.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-hep.com.cn",
+   "title": "hep.com.cn",
+   "publisher": "hep.com.cn",
+   "url": "https://cjournal.hep.com.cn",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 58164,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-xjishu.com",
+   "title": "xjishu.com",
+   "publisher": "xjishu.com",
+   "url": "https://xjishu.com",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 126426,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-ijournals.cn",
+   "title": "ijournals.cn",
+   "publisher": "ijournals.cn",
+   "url": "https://cjb.ijournals.cn",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 169654,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-knowcat.cn",
+   "title": "knowcat.cn",
+   "publisher": "knowcat.cn",
+   "url": "https://knowcat.cn",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 481239,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-tapdoangreenbio.vn",
+   "title": "tapdoangreenbio.vn",
+   "publisher": "tapdoangreenbio.vn",
+   "url": "https://tapdoangreenbio.vn",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-enviclean.com.vn",
+   "title": "enviclean.com.vn",
+   "publisher": "enviclean.com.vn",
+   "url": "https://enviclean.com.vn",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biobluevietnam.com",
+   "title": "biobluevietnam.com",
+   "publisher": "biobluevietnam.com",
+   "url": "https://biobluevietnam.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-thuysantamviet.com",
+   "title": "thuysantamviet.com",
+   "publisher": "thuysantamviet.com",
+   "url": "https://thuysantamviet.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-polystamino.co.id",
+   "title": "polystamino.co.id",
+   "publisher": "polystamino.co.id",
+   "url": "https://polystamino.co.id",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-indotrading.com",
+   "title": "indotrading.com",
+   "publisher": "indotrading.com",
+   "url": "https://indotrading.com",
+   "type": "marketplace_blog",
+   "type_ko": "쇼핑·블로그",
+   "credibility": 1.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 52021,
+   "popularity": 3,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-starbactsalam.com",
+   "title": "starbactsalam.com",
+   "publisher": "starbactsalam.com",
+   "url": "https://starbactsalam.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-lallemandanimalnutrition.com",
+   "title": "lallemandanimalnutrition.com",
+   "publisher": "lallemandanimalnutrition.com",
+   "url": "https://lallemandanimalnutrition.com",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 856642,
+   "popularity": 2,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-tdbiopreparat.ru",
+   "title": "tdbiopreparat.ru",
+   "publisher": "tdbiopreparat.ru",
+   "url": "https://tdbiopreparat.ru",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-biolight.ru",
+   "title": "biolight.ru",
+   "publisher": "biolight.ru",
+   "url": "https://biolight.ru",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-vodokras.ru",
+   "title": "vodokras.ru",
+   "publisher": "vodokras.ru",
+   "url": "https://vodokras.ru",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-vodogray.ru",
+   "title": "vodogray.ru",
+   "publisher": "vodogray.ru",
+   "url": "https://vodogray.ru",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-bbs-eco.ru",
+   "title": "bbs-eco.ru",
+   "publisher": "bbs-eco.ru",
+   "url": "https://bbs-eco.ru",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-fao.org",
+   "title": "fao.org",
+   "publisher": "fao.org",
+   "url": "https://faolex.fao.org",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 1850,
+   "popularity": 5,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-24.kg",
+   "title": "24.kg",
+   "publisher": "24.kg",
+   "url": "https://24.kg",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": 37710,
+   "popularity": 4,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "키워드 SERP",
+   "id": "S-minstroy.gov.kg",
+   "title": "minstroy.gov.kg",
+   "publisher": "minstroy.gov.kg",
+   "url": "https://minstroy.gov.kg",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 검색 요약으로만 확인"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "https": null,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-trends.google.com",
+   "title": "Google Trends (pytrends 비공식 API)",
+   "publisher": "trends.google.com",
+   "url": "https://trends.google.com",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 4.0,
+   "adj": [
+    "−1 비공식 수집·샘플링 값(재현성 제한)"
+   ],
+   "tranco": 1,
+   "popularity": 5,
+   "serp_hits": null,
+   "note": "KR·VN·RU 사용(CN은 참고만). 전세계(EN) 결과는 0값이 대부분이라 폐기, ID·IN은 429(요청 제한)로 미수집",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-wikimedia.org",
+   "title": "Wikimedia Pageviews API",
+   "publisher": "wikimedia.org",
+   "url": "https://wikimedia.org",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 238,
+   "popularity": 5,
+   "serp_hits": null,
+   "note": "2016-01~2026-09 월별 사용자 조회수(봇 제외)",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-openalex.org",
+   "title": "OpenAlex Works API",
+   "publisher": "openalex.org",
+   "url": "https://openalex.org",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 2025–26 전체 논문 수 집계 이상치(정규화 불가)"
+   ],
+   "tranco": 17411,
+   "popularity": 4,
+   "serp_hits": null,
+   "note": "연도별 논문 수·저자 국가",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-tranco-list.eu",
+   "title": "Tranco Top-1M (list 26Y29)",
+   "publisher": "tranco-list.eu",
+   "url": "https://tranco-list.eu",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 4.5,
+   "adj": [],
+   "tranco": 584218,
+   "popularity": 2,
+   "serp_hits": null,
+   "note": "도메인 인기 순위(학술 연구용 목록)",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-web.archive.org",
+   "title": "Internet Archive Wayback CDX",
+   "publisher": "web.archive.org",
+   "url": "https://web.archive.org",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 4.5,
+   "adj": [
+    "−0.5 일부 도메인 응답 지연·미수집"
+   ],
+   "tranco": 145,
+   "popularity": 5,
+   "serp_hits": null,
+   "note": "첫 수집일·월별 수집 수·연도별 스냅샷",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-iana.org",
+   "title": "RDAP (IANA bootstrap/Verisign 등)",
+   "publisher": "iana.org",
+   "url": "https://iana.org",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 1443,
+   "popularity": 5,
+   "serp_hits": null,
+   "note": ".com/.net 등 등록일. .kr·.cn 등은 공개 RDAP 없음",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "데이터 출처",
+   "id": "D-—",
+   "title": "WebSearch 도구 외부 인덱스",
+   "publisher": "—",
+   "url": "",
+   "type": "data_api",
+   "type_ko": "데이터 API·목록",
+   "credibility": 3.0,
+   "adj": [
+    "−1 Google/Naver 실제 순위 아님, 상위 5개만"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "note": "38개 질의 관찰",
+   "date": "2026-10-08 접속"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-biovan",
+   "title": "바이오밴코리아 (우리)",
+   "publisher": "biovankorea.com",
+   "url": "http://biovankorea.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용",
+    "+0.5 제3자 확인: 워터저널(업계지) 기사 2건 SERP 노출"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": 73,
+   "wayback_mode": "월",
+   "domain_age": 24,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-jinbiotics",
+   "title": "진바이오틱스",
+   "publisher": "jinbiotics.co.kr",
+   "url": "http://jinbiotics.co.kr/home",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 3,
+   "wayback_months": 1,
+   "wayback_mode": "월",
+   "domain_age": 1,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-dean",
+   "title": "디엔텍",
+   "publisher": "de-an.co.kr",
+   "url": "https://de-an.co.kr/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 4,
+   "wayback_months": 41,
+   "wayback_mode": "월",
+   "domain_age": 23,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-ilshin",
+   "title": "일신바이오케미칼",
+   "publisher": "ilshinbiochemical.com",
+   "url": "http://www.ilshinbiochemical.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 13,
+   "wayback_mode": "월",
+   "domain_age": 17,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-healingbio",
+   "title": "힐링바이오",
+   "publisher": "healingbio.co.kr",
+   "url": "https://www.healingbio.co.kr/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 26,
+   "wayback_mode": "월",
+   "domain_age": 12,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-ecobiotech",
+   "title": "에코바이오텍",
+   "publisher": "eco-biotech.com",
+   "url": "http://www.eco-biotech.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 105,
+   "wayback_mode": "월",
+   "domain_age": 23,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-choongang",
+   "title": "중앙바이오텍",
+   "publisher": "choongangbio.com",
+   "url": "https://www.choongangbio.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "wayback_months": 157,
+   "wayback_mode": "월",
+   "domain_age": 26,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-cheongho",
+   "title": "청호환경개발",
+   "publisher": "cheongho.co",
+   "url": "http://cheongho.co/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 HTTPS 미적용"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": null,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-sinwoo",
+   "title": "신우환경화학",
+   "publisher": "watersinwoo.co.kr",
+   "url": "http://watersinwoo.co.kr/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "−0.5 HTTPS 미적용"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": null,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-bangyuan",
+   "title": "北京邦源环保 (Beijing Bangyuan)",
+   "publisher": "bjbangyuan.com",
+   "url": "http://www.bjbangyuan.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용",
+    "+0.5 제3자 확인: 중국 신삼판 상장(838740, 자사 표기)"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "wayback_months": 36,
+   "wayback_mode": "월",
+   "domain_age": 16,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-obao",
+   "title": "上海欧保环境 (OBAO)",
+   "publisher": "obao.com.cn",
+   "url": "https://www.obao.com.cn/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "wayback_months": 68,
+   "wayback_mode": "월",
+   "domain_age": 24,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-whjhn",
+   "title": "武汉金华农生物",
+   "publisher": "whjhn.com",
+   "url": "http://whjhn.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "−0.5 HTTPS 미적용"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 12,
+   "wayback_mode": "연",
+   "domain_age": 15,
+   "https": false,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-sukahan",
+   "title": "Shandong Sukahan Bio-Technology",
+   "publisher": "sukahan.com",
+   "url": "https://www.sukahan.com/en/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 18,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-emro",
+   "title": "EM Research Organization (EMRO)",
+   "publisher": "emrojapan.com",
+   "url": "https://emrojapan.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.5,
+   "adj": [
+    "+0.5 도메인 10년+",
+    "+0.5 제3자 확인: Springer·Nature 학술 연구(EM 효과 검증)"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 19,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-biowish",
+   "title": "BiOWiSH Technologies",
+   "publisher": "biowishtechnologies.com",
+   "url": "https://www.biowishtechnologies.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 22,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-ecolabs",
+   "title": "Ecological Laboratories (MICROBE-LIFT)",
+   "publisher": "ecologicallabs.com",
+   "url": "https://ecologicallabs.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 2,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 20,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-aqualink",
+   "title": "Aqua Link",
+   "publisher": "aqualinkinc.com",
+   "url": "https://aqualinkinc.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 115,
+   "wayback_mode": "월",
+   "domain_age": 26,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-newtechbio",
+   "title": "NewTechBio",
+   "publisher": "newtechbio.com",
+   "url": "https://newtechbio.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 20,
+   "wayback_mode": "연",
+   "domain_age": 19,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-novonesis",
+   "title": "Novonesis (구 Novozymes+Chr. Hansen)",
+   "publisher": "novonesis.com",
+   "url": "https://www.novonesis.com/en",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": 108414,
+   "popularity": 3,
+   "serp_hits": 0,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 3,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-bluegreen",
+   "title": "BlueGreen Water Technologies",
+   "publisher": "bluegreenwatertech.com",
+   "url": "https://www.bluegreenwatertech.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 제3자 확인: 플로리다 환경보호국(FDEP) 보고서"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": 47,
+   "wayback_mode": "월",
+   "domain_age": 4,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-actizyme",
+   "title": "Acti-Zyme Products",
+   "publisher": "actizyme.com",
+   "url": "https://www.actizyme.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": 17,
+   "wayback_mode": "연",
+   "domain_age": 14,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-aquaticeng",
+   "title": "Aquatic Engineering / Pond Pro",
+   "publisher": "aquaticengineering.ca",
+   "url": "https://www.aquaticengineering.ca/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 6,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-advancedwater",
+   "title": "AdvancedWater",
+   "publisher": "advancedwater.ca",
+   "url": "https://www.advancedwater.ca/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 4,
+   "wayback_mode": "연",
+   "domain_age": 6,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-organica",
+   "title": "Organica Biotech",
+   "publisher": "organicabiotech.com",
+   "url": "https://organicabiotech.com/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 3.0,
+   "adj": [
+    "+0.5 도메인 10년+"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 0,
+   "wayback_months": null,
+   "wayback_mode": null,
+   "domain_age": 25,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-technozyme",
+   "title": "Techno Zyme",
+   "publisher": "technozyme.in",
+   "url": "https://www.technozyme.in/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 5,
+   "wayback_mode": "연",
+   "domain_age": 7,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-greenbio",
+   "title": "Green Bio Group (Tập đoàn Green Bio)",
+   "publisher": "tapdoangreenbio.vn",
+   "url": "https://tapdoangreenbio.vn/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 0,
+   "wayback_mode": "월",
+   "domain_age": null,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-polystamino",
+   "title": "Poly Stamino Indonesia",
+   "publisher": "polystamino.co.id",
+   "url": "https://www.polystamino.co.id/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 78,
+   "wayback_mode": "월",
+   "domain_age": 9,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "경쟁사 사이트",
+   "id": "C-bbseco",
+   "title": "BBS (bbs-eco.ru)",
+   "publisher": "bbs-eco.ru",
+   "url": "https://bbs-eco.ru/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.5,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": 1,
+   "wayback_months": 7,
+   "wayback_mode": "월",
+   "domain_age": 2,
+   "https": true,
+   "date": "2026-10-08 관찰"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "FX_WB",
+   "title": "Official exchange rate (LCU per US$, period average) PA.NUS.FCRF",
+   "publisher": "World Bank WDI",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/PA.NUS.FCRF",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 902,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026-07",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "FX_FRED",
+   "title": "H.10 annual average FX (교차검증용: AEXKOUS, AEXCHUS 등)",
+   "publisher": "Federal Reserve Board / FRED",
+   "url": "https://fred.stlouisfed.org/series/AEXKOUS",
+   "type": "official_statistics",
+   "type_ko": "공식통계",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 4799,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026-01",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_EVAL2025",
+   "title": "2025년도 성과관리 시행계획(환경부) — 분야별 예산표",
+   "publisher": "국무조정실 정부업무평가 포털(환경부 제출)",
+   "url": "https://www.evaluation.go.kr/upload2/atch/eval/20250508093648807.pdf",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025-05",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_EVAL2024",
+   "title": "2024년도 성과관리 시행계획(환경부)",
+   "publisher": "국무조정실 정부업무평가 포털(환경부 제출)",
+   "url": "https://www.evaluation.go.kr/upload2/atch/eval/20240603132605713.pdf",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2024-06",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_MOE2025PR",
+   "title": "2025년도 환경부 예산안 보도자료",
+   "publisher": "환경부/대한민국 정책브리핑",
+   "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156647664",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 38421,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2024-08-27",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_NEWSPIM2025",
+   "title": "[2025 예산안] 환경부 14조8262억…녹조 예방 및 오염원 관리 70억→95억",
+   "publisher": "뉴스핌",
+   "url": "https://m.newspim.com/news/view/20240826000534",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 34817,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2024-08-26",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_MCEE2026",
+   "title": "2026년도 기후에너지환경부 예산 및 기금 19조 1,662억 원 확정",
+   "publisher": "기후에너지환경부/대한민국 정책브리핑",
+   "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156732781",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 38421,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2025-12-03",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_ECOFOCUS2026",
+   "title": "기후부 내년 예산 19조 확정… 하수관로 1조1,168억·하수처리장 1조2,686억",
+   "publisher": "환경포커스",
+   "url": "https://www.ecofocus.co.kr/news/article.html?no=72002",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025-12",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_ENVTIMES2026",
+   "title": "환경부 2026년 예산안 15조 9,160억 원(정부안) — 하수도 포괄보조 이관",
+   "publisher": "환경타임즈",
+   "url": "http://www.envtimes.co.kr/news/articleView.html?idxno=19551",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025-09",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_NABO2016",
+   "title": "2016년도 예산안 부처별 분석 [환경노동위원회]",
+   "publisher": "국회예산정책처",
+   "url": "https://www.nabo.go.kr/board/file/bulkDown.do?bid=19&idx=5655",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2015-10",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_KEI2022",
+   "title": "4대강 수계관리제도 개선방안 마련 연구 1년차(최종) 보고서",
+   "publisher": "한국환경연구원(KEI)",
+   "url": "https://library.kei.re.kr/pyxis-api/1/digital-files/8e3bfdc1-7a8b-4d66-bc59-492996ece4c4",
+   "type": "public_research",
+   "type_ko": "공공연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2022",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_MK2025",
+   "title": "강득구 “4대강 수계관리기금 여유자금…” (환경부 제출자료 인용)",
+   "publisher": "매일경제",
+   "url": "https://www.mk.co.kr/news/politics/11443853",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 8886,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025-10-17",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_NEWSIS2027",
+   "title": "녹조 개선 5986억 편성 [2027 예산안]",
+   "publisher": "뉴시스",
+   "url": "https://www.newsis.com/view/NISX20260831_0003770175",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.5,
+   "adj": [],
+   "tranco": 13826,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2026-09-01",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_TF_GN",
+   "title": "경남도, 2030년까지 낙동강 1등급 달성…5년간 2조 95억 원 투입",
+   "publisher": "더팩트(경남도 발표 보도)",
+   "url": "https://news.tf.co.kr/read/national/2298615.htm",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.5,
+   "adj": [],
+   "tranco": 72761,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2026-03-04",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_YNA_PLASMA",
+   "title": "대청호 녹조 신기술 — 저온 플라즈마·휴면포자 퇴적물 제거 실증",
+   "publisher": "연합뉴스",
+   "url": "https://www.yna.co.kr/view/AKR20260814119700063",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.5,
+   "adj": [],
+   "tranco": 5346,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026-08-16",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_NETZERO",
+   "title": "기후위기 대응 국가 물관리 체계 대전환(제2차 국가물관리기본계획 변경)",
+   "publisher": "넷제로뉴스",
+   "url": "http://www.netzeronews.kr/news/articleView.html?idxno=5464",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_CTMAN_AI",
+   "title": "여름철 조류 발생 시기·양 예측 모형(K-water AI)",
+   "publisher": "건설기술신문",
+   "url": "https://m.ctman.kr/35093",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_CTMAN_SAT",
+   "title": "수자원공사, 위성기술 활용 낙동강 유역 녹조 공동 대응",
+   "publisher": "건설기술신문",
+   "url": "https://www.ctman.kr/35745",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_AVING_GB",
+   "title": "월드워터 녹조 저감장치 그린볼, 상수원 확산 원년",
+   "publisher": "에이빙(AVING)",
+   "url": "https://kr.aving.net/news/articleView.html?idxno=1811194",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 142217,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KR_JEJU_WISCI",
+   "title": "제주대-위사이언스, 유해조류 99% 제거 미생물 발굴",
+   "publisher": "제주도민일보",
+   "url": "https://www.jejudomin.co.kr/news/articleView.html?idxno=312988",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "OECD_T11",
+   "title": "Annual government expenditure by function (COFOG), Table 11",
+   "publisher": "OECD Data Explorer (SDMX DF_TABLE11)",
+   "url": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NASEC10@DF_TABLE11,/",
+   "type": "official_statistics",
+   "type_ko": "공식통계",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 1068,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_MOF2026",
+   "title": "关于2026年中央对地方转移支付预算的说明",
+   "publisher": "财政部预算司",
+   "url": "http://yss.mof.gov.cn/2026zyczys/202603/t20260324_3986013.htm",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 12668,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2026-03-24",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_HBZHAN2025",
+   "title": "治气340亿、治水267亿、治土44亿，2025年中央对地方转移支付预算(财政部说明 전재)",
+   "publisher": "环保在线",
+   "url": "https://www.hbzhan.com/news/detail/185997.html",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 32076,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2025-03-28",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_JCGCW2024",
+   "title": "2024年中央财政污染防治资金安排共计691亿元",
+   "publisher": "基础工程网(预算报告 인용)",
+   "url": "https://news.jcgcw.com/industry/95176.html",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2024-03",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_NPC2019",
+   "title": "国务院关于财政生态环保资金分配和使用情况的报告",
+   "publisher": "全国人大(财政部部长 보고)",
+   "url": "http://www.npc.gov.cn/c2/c30834/201912/t20191225_303979.html",
+   "type": "legislature",
+   "type_ko": "입법기관",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 14938,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2019-12-25",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_CNR2017",
+   "title": "中央财政安排环保专项资金497亿(环保部 발표)",
+   "publisher": "经济参考报/央广网",
+   "url": "http://m.cnr.cn/news/20171124/t20171124_524037468.html",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.5,
+   "adj": [],
+   "tranco": 10614,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2017-11-24",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_MOF2020",
+   "title": "关于2020年中央对地方转移支付预算的说明",
+   "publisher": "财政部预算司",
+   "url": "http://yss.mof.gov.cn/2020zyys/202006/t20200615_3532357.htm",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 12668,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2020-06-15",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_MOF2022",
+   "title": "关于2022年中央对地方转移支付预算的说明",
+   "publisher": "财政部预算司",
+   "url": "http://yss.mof.gov.cn/2022zyczys/202203/t20220324_3797804.htm",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 12668,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2022-03-24",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_W8848_2023",
+   "title": "2023年水污染防治资金安排257亿元、增加20亿元",
+   "publisher": "中国水业网(全联环境商会)",
+   "url": "http://www.water8848.com/news/202303/15/141651.html",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2023-03-14",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_CCTV2024",
+   "title": "“十四五”以来中央财政累计投入水污染防治资金891亿元",
+   "publisher": "央视网(生态环境部 발표)",
+   "url": "https://news.cctv.com/2024/08/30/ARTIsVDluwV0ahEKm59v65Ku240830.shtml",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.5,
+   "adj": [],
+   "tranco": 2296,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2024-08-30",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_MEE2026",
+   "title": "深入打好碧水保卫战，全域推进河湖保护治理 发布会",
+   "publisher": "生态环境部",
+   "url": "https://big5.mee.gov.cn/gate/big5/www.mee.gov.cn/ywdt/xwfb/202606/t20260625_1160254.shtml",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 17214,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2026-06-25",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_GAIA",
+   "title": "太湖蓝藻治理 — RhP 技术 宜兴样本",
+   "publisher": "南京盖亚生物工程(기업)",
+   "url": "http://njgaia.com/nedetail/110.html",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CN_BANGYUAN",
+   "title": "赵王河富营养化水体生物治理 案例",
+   "publisher": "北京邦源环保科技(기업)",
+   "url": "http://www.bjbangyuan.com/home-basics-casesdetail-classid-4-cid-44-id-180.html",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "미상",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_CRS96647",
+   "title": "Water Infrastructure Financing: History of EPA Appropriations (96-647)",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.everycrsreport.com/files/20190410_96-647_981dcf4b10a712aad371e7b8bce38a4430f1608d.pdf",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 67719,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2019-04-10",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_CRS_IF11485",
+   "title": "EPA Water Infrastructure Programs and FY2020 Appropriations",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.everycrsreport.com/reports/IF11485.html",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 67719,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2020",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_CRS_IF12103",
+   "title": "EPA Water Infrastructure: FY2021–FY2022 Appropriations (IF12103)",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.everycrsreport.com/files/2022-05-11_IF12103_6a9e7f74ffd3ef1dce887d8adbf5853ff1c15af9.html",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 67719,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2022-05-11",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_CRS_IF12617",
+   "title": "EPA Water Infrastructure Programs and FY2024 Appropriations (IF12617)",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.everycrsreport.com/reports/IF12617.html",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 67719,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2024-03-22",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_CRS_IF13177",
+   "title": "FY2026 Appropriations for EPA Water Infrastructure Programs (IF13177)",
+   "publisher": "Congressional Research Service",
+   "url": "https://www.everycrsreport.com/reports/IF13177.html",
+   "type": "parliament_research",
+   "type_ko": "의회조사·국책연구",
+   "credibility": 4.5,
+   "adj": [],
+   "tranco": 67719,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2026-03-19",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_GLRI",
+   "title": "GLRI Funding (by focus area, FY2010–FY2026)",
+   "publisher": "U.S. EPA Great Lakes Restoration Initiative",
+   "url": "https://www.glri.us/funding",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2026-03",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "US_HRPT828",
+   "title": "H. Rept. 118-828 — Harmful Algal Bloom and Hypoxia Research and Control Amendments Act",
+   "publisher": "U.S. House of Representatives (CBO 추계 포함)",
+   "url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt828/html/CRPT-118hrpt828-pt1.htm",
+   "type": "legislature",
+   "type_ko": "입법기관",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 4927,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2024-12",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CA_ECCC2023",
+   "title": "Water: Appearance before the Standing Committee (Freshwater Action Plan $650M)",
+   "publisher": "Environment and Climate Change Canada",
+   "url": "https://www.canada.ca/en/environment-climate-change/corporate/transparency/briefing-materials/appearance-before-standing-committee-december-14-2023/water.html",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 1241,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2023-12-14",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CA_GLPI2017",
+   "title": "The Government of Canada invests in Great Lakes Protection Initiative",
+   "publisher": "Environment and Climate Change Canada",
+   "url": "https://www.canada.ca/en/environment-climate-change/news/2017/12/the_government_ofcanadainvestsingreatlakesprotectioninitiative.html",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 1241,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2017-12",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "CA_LEAP",
+   "title": "Lake Erie Action Plan — status of actions (preventing toxic and nuisance algae)",
+   "publisher": "Canada Water Agency",
+   "url": "https://www.canada.ca/en/canada-water-agency/freshwater-ecosystem-initiatives/great-lakes/great-lakes-protection/taking-action-protect/preventing-toxic-nuisance-algae/preventing-toxic-nuisance-algae-status-of-actions.html",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 1241,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2024",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "EU_EUROSTAT",
+   "title": "General government expenditure by function (COFOG) gov_10a_exp, GF0502 Waste water management",
+   "publisher": "Eurostat",
+   "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table",
+   "type": "official_statistics",
+   "type_ko": "공식통계",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 115,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "EU_JRC2025",
+   "title": "Updated estimation of the costs of quaternary wastewater treatment in the EU (JRC144745)",
+   "publisher": "European Commission JRC",
+   "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC144745",
+   "type": "public_research",
+   "type_ko": "공공연구",
+   "credibility": 4.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 115,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "UK_OFWAT",
+   "title": "Ofwat approves £104bn upgrade (PR24 final determinations)",
+   "publisher": "Ofwat",
+   "url": "https://www.ofwat.gov.uk/ofwat-approves-104bn-upgrade-to-accelerate-delivery-of-cleaner-rivers-and-seas-and-secure-long-term-drinking-water-supplies-for-customers/",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 197208,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2024-12-19",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "IN_LS2025",
+   "title": "Lok Sabha Unstarred Q.2404 annex — year-wise funds released to NMCG",
+   "publisher": "Lok Sabha Secretariat",
+   "url": "https://sansad.in/getFile/loksabhaquestions/annex/184/AU2404_oA5xFG.pdf",
+   "type": "legislature",
+   "type_ko": "입법기관",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 72122,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2025-03",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "IN_PIB2025",
+   "title": "A Holistic Approach for Cleanliness of River Ganga",
+   "publisher": "PIB / Ministry of Jal Shakti",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2109078&lang=2&reg=3",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 8938,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025-03-07",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "IN_PIB2026",
+   "title": "Namami Gange progress (524 projects, ₹43,030 crore sanctioned, Feb 2026)",
+   "publisher": "PIB / Ministry of Jal Shakti",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2248377&lang=2&reg=3",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 8938,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2026-02",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "ID_UNPATTI",
+   "title": "Environment-Based Budget as an Effort to Optimize the Citarum Harum Program",
+   "publisher": "Pamali (Univ. Pattimura 법학저널)",
+   "url": "https://fhukum.unpatti.ac.id/jurnal/pamali/article/download/3050/pdf",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 56483,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2024",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "ID_JP2019",
+   "title": "World Bank to provide Rp 1.4 trillion for Citarum River clean-up",
+   "publisher": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/news/2019/06/12/world-bank-to-provide-rp-1-4-trillion-for-citarum-river-clean-up",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 16030,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2019-06-12",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "VN_WB2024",
+   "title": "World Bank Approves Project to Improve Living Environment… Southern Vietnam (Binh Duong)",
+   "publisher": "World Bank",
+   "url": "https://www.worldbank.org/en/news/press-release/2024/01/12/world-bank-approves-project-to-improve-living-environment-for-over-half-a-million-people-in-southern-vietnam",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 902,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2024-01-12",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "BD_WB2020",
+   "title": "Bangladesh: Dhaka Sanitation Improvement Project",
+   "publisher": "World Bank",
+   "url": "https://www.worldbank.org/en/news/loans-credits/2020/03/20/bangladesh-dhaka-sanitation-improvement-project",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 902,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2020-03-20",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "PH_DBM2022",
+   "title": "FY2022 GAA Volume I — DENR (Manila Bay Coastal Management Strategy)",
+   "publisher": "Department of Budget and Management",
+   "url": "https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2022/VolumeI/DENR/A.pdf",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 165997,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2022-01",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "PH_TEMPO2019",
+   "title": "P1.4 B for Manila Bay cleanup proposed",
+   "publisher": "Tempo (Manila Bulletin)",
+   "url": "https://tempo.mb.com.ph/2019/08/26/p1-4-b-for-manila-bay-cleanup-proposed/",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2019-08-26",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KH_METAWATER",
+   "title": "Completion of the first public sewage treatment plant in Phnom Penh (JICA grant)",
+   "publisher": "METAWATER(기업 발표)",
+   "url": "https://www.metawater.co.jp/eng/news/2024/02/completion-of-the-first-public-sewage-treatment-plant-in-phnom-penh-cambodia.html",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2024-02",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KH_ADB50102",
+   "title": "50102-002: Second Urban Environmental Management in the Tonle Sap Basin Project",
+   "publisher": "Asian Development Bank",
+   "url": "https://www.adb.org/projects/50102-002/main",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 11672,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "미상",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KG_ADB50176",
+   "title": "50176-002: Issyk-Kul Wastewater Management Project",
+   "publisher": "Asian Development Bank",
+   "url": "https://www.adb.org/projects/50176-002/main",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": 11672,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2026-09",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KG_ADB55250",
+   "title": "55250-001: Issyk-Kul Environmental Management and Sustainable Tourism Development Project",
+   "publisher": "Asian Development Bank",
+   "url": "https://www.adb.org/projects/55250-001/main",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 11672,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2024-06-21",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KG_EBRD2020",
+   "title": "EBRD and EU support the resilience of Cholpon-Ata’s water supply",
+   "publisher": "EBRD",
+   "url": "https://www.ebrd.com/home/news-and-events/news/2020/ebrd-and-eu-support-the-resilience-of-cholponatas-water-supply.html",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2020",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KG_MINSTROY",
+   "title": "Проект «Экологическое управление озером Иссык-Куль и устойчивое развитие туризма» (ToR)",
+   "publisher": "키르기스 건설·주택공공사업부",
+   "url": "https://minstroy.gov.kg/ru/news/956/show",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 5.0,
+   "adj": [],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025-09-24",
+   "note": "원문 직접 열람"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "KG_OPENKG",
+   "title": "Wastewater treatment facilities for the Issyk-Kul resort area planned by summer 2027",
+   "publisher": "open.kg",
+   "url": "https://open.kg/en/news/ecology/114458-ochistnye-sooruzhenija-dlja-kurortnoj-zony-issyk-kulja-planirujut-zapustit-k-letu-2027-goda.html",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "BR_TRATA2026",
+   "title": "Faltam R$ 431 bilhões para o Brasil alcançar a universalização do saneamento até 2033",
+   "publisher": "Instituto Trata Brasil",
+   "url": "https://tratabrasil.org.br/faltam-430bi-brasil-universalizacao-saneamento/",
+   "type": "ngo_industry_body",
+   "type_ko": "업계단체·표준",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 425789,
+   "popularity": 2,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "GL_OECD",
+   "title": "Financing a Water Secure Future (2022) / Financing Water Security (2025)",
+   "publisher": "OECD",
+   "url": "https://www.oecd.org/en/publications/financing-water-security_7cf3f5bd-en.html",
+   "type": "intl_org",
+   "type_ko": "국제기구",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 1068,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_MORDOR_BIOREM",
+   "title": "Bioremediation Market Size, Share & 2030 Trends Report",
+   "publisher": "Mordor Intelligence",
+   "url": "https://www.mordorintelligence.com/industry-reports/bioremediation-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 6870,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_GVR_BIOREM",
+   "title": "Bioremediation Market Size, Share & Trends Analysis Report 2025–2030",
+   "publisher": "Grand View Research (MarketResearch.com 목록)",
+   "url": "https://www.marketresearch.com/Grand-View-Research-v4060/Bioremediation-Size-Share-Trends-Type-38709694/",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 36595,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_SMR_ALGAE",
+   "title": "Algaecides Market Report 2024–2030",
+   "publisher": "Strategic Market Research",
+   "url": "https://www.strategicmarketresearch.com/market-report/algaecides-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 303480,
+   "popularity": 2,
+   "serp_hits": null,
+   "date": "2024",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_KS_ALGAE",
+   "title": "Algaecides Market — Forecasts from 2025 to 2030",
+   "publisher": "Knowledge Sourcing Intelligence (ResearchAndMarkets 유통)",
+   "url": "https://www.researchandmarkets.com/reports/5768710/algaecides-market-forecasts",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 11186,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_MRR_HAB",
+   "title": "Global Harmful Algal Bloom Remediation Market Strategic Research Report",
+   "publisher": "MarketResearchReports.com",
+   "url": "https://www.marketresearchreports.com/reports/global-harmful-algal-bloom-remediation-market-strategic-research-report",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 186416,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_PW_BIOAUG",
+   "title": "Worldwide Biological Augmentation Services Market 2026",
+   "publisher": "PW Consulting",
+   "url": "https://pmarketresearch.com/worldwide-biological-augmentation-services-market-research/",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 188340,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2026",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_IARC_BIOWW",
+   "title": "Global Biological Wastewater Treatment Market — Forecast (2025–2031)",
+   "publisher": "IndustryARC",
+   "url": "https://www.industryarc.com/pressrelease/4291/global-biological-wastewater-treatment-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 236994,
+   "popularity": 2,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_MI_ODOR",
+   "title": "Odor Control Systems for Livestock Market Research Report 2034",
+   "publisher": "Marketintelo",
+   "url": "https://marketintelo.com/report/odor-control-systems-for-livestock-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 185749,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_DI_ENZ",
+   "title": "Enzymatic Manure Treatment Market Research Report 2033",
+   "publisher": "Dataintelo",
+   "url": "https://dataintelo.com/report/enzymatic-manure-treatment-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 51069,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "MR_SMR_NANO",
+   "title": "Nano Bubbles Market Report 2024–2030",
+   "publisher": "Strategic Market Research",
+   "url": "https://www.strategicmarketresearch.com/market-report/nano-bubbles-market",
+   "type": "market_research",
+   "type_ko": "시장조사",
+   "credibility": 1.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 303480,
+   "popularity": 2,
+   "serp_hits": null,
+   "date": "2024",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_BG_WINROCK",
+   "title": "BlueGreen Water Technologies Partners with Winrock International to Combat HABs",
+   "publisher": "PR Newswire(기업 보도자료)",
+   "url": "https://www.prnewswire.com/news-releases/bluegreen-water-technologies-partners-with-winrock-international-to-combat-harmful-algal-blooms-across-the-globe-302489394.html",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 815,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025-06",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_BG_FLDEP",
+   "title": "Lake Guard® Oxy Water Treatment — Florida DEP sole-source notice ($7.475M)",
+   "publisher": "BidBanana(입찰공고 집계)",
+   "url": "https://bidbanana.thebidlab.com/bid/NNdem18QCke1DmknQpBX",
+   "type": "aggregator",
+   "type_ko": "집계·DB 사이트",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2026-06",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_LGSONIC",
+   "title": "MPC-Buoy — Monitor, Control & Predict Harmful Algal Blooms; Berthoud case",
+   "publisher": "LG Sonic(기업)",
+   "url": "https://www.lgsonic.com/products/mpc-buoy/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_MOLEAER",
+   "title": "From Green to Clean: Innovative Algae Treatment Hits Minnesota Lake (Pokegama)",
+   "publisher": "PR Newswire(Moleaer 보도자료)",
+   "url": "https://www.prnewswire.com/news-releases/from-green-to-clean-innovative-algae-treatment-hits-minnesota-lake-at-peak-bloom-season-302507636.html",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 815,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_WPR",
+   "title": "Wisconsin community experiments with nanobubbles to clean up lakes",
+   "publisher": "WPR (Wisconsin Public Radio)",
+   "url": "https://www.wpr.org/news/wisconsin-community-experiments-nanobubbles-clean-lakes",
+   "type": "media_major",
+   "type_ko": "주요 언론",
+   "credibility": 3.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 29721,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_FLDEP_NANO",
+   "title": "Deliverable 5: Final Report (nanobubble HAB study, 2021–2023)",
+   "publisher": "Florida DEP",
+   "url": "https://floridadep.gov/sites/default/files/INV017.pdf",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2023",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_NOVO_UNIVAR",
+   "title": "Univar Solutions and Novozymes to provide biological solutions for waste and wastewater",
+   "publisher": "Novonesis(기업)",
+   "url": "https://www.novonesis.com/en/news/univar-solutions-and-novozymes-provide-biological-solutions-waste-and-wastewater-treatment",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 108414,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "미상",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_NOVO_AR2025",
+   "title": "Novonesis Annual Report 2025",
+   "publisher": "Novonesis(기업)",
+   "url": "https://media.novonesis.com/Novonesis_Annual_Report_2025.pdf",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 108414,
+   "popularity": 3,
+   "serp_hits": null,
+   "date": "2026-02",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_BIOWISH",
+   "title": "BiOWiSH Divests Environmental Management Assets to Betco",
+   "publisher": "BiOWiSH Technologies(기업)",
+   "url": "https://www.biowishtechnologies.com/biowish-technologies-divests-environmental-management-assets-to-betco-corporation/",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2024-12",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_KURITA",
+   "title": "Results Presentation FY ended March 2025",
+   "publisher": "Kurita Water Industries(기업)",
+   "url": "https://www.kurita-water.com/assets/en/files/pdf/presentation_250509_en.pdf",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025-05-09",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_KURITA_MFC",
+   "title": "Kurita confirms operation of electrical devices by electricity generated from wastewater",
+   "publisher": "Smart Water Magazine",
+   "url": "https://smartwatermagazine.com/news/kurita-water-industries/kurita-confirms-operation-electrical-devices-electricity-generated",
+   "type": "media_trade",
+   "type_ko": "업계지·지역언론",
+   "credibility": 2.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 292942,
+   "popularity": 2,
+   "serp_hits": null,
+   "date": "2024",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_SEPRO",
+   "title": "PAK 27 product page",
+   "publisher": "SePRO(기업)",
+   "url": "https://sepro.com/aquatics/pak-27",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "미상",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_H2OHIO",
+   "title": "H2Ohio Technology Assessment — Phoslock final report",
+   "publisher": "State of Ohio (H2Ohio TAP)",
+   "url": "https://dam.assets.ohio.gov/image/upload/h2.ohio.gov/TAP/H2Ohio-Technology-Assessment-Final-Report-Phoslock-Jan-2022.pdf",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 5376,
+   "popularity": 5,
+   "serp_hits": null,
+   "date": "2022-01",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_NEREDA",
+   "title": "Aerobic Granular Sludge for cost-effective and sustainable wastewater treatment (DWC 2025)",
+   "publisher": "Royal HaskoningDHV 발표자료(IAWD)",
+   "url": "https://www.iawd.at/files/File/events/DWP/DWC_2025/Presentations/06_Whats_new_in_WW/04_Giesen.pdf",
+   "type": "company",
+   "type_ko": "기업",
+   "credibility": 2.0,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_GYBE",
+   "title": "Flying Gybe — Combining Satellite and Ground Sensors (DOE SBIR)",
+   "publisher": "SBIR.org",
+   "url": "https://sbir.org/awards/doe-DESC0020843-1",
+   "type": "government",
+   "type_ko": "정부",
+   "credibility": 4.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2020",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_NUALGI",
+   "title": "Phycoremediation of Eutrophic Lakes Using Diatom Algae",
+   "publisher": "IntechOpen(학술 챕터)",
+   "url": "https://www.intechopen.com/chapters/51401",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": 11605,
+   "popularity": 4,
+   "serp_hits": null,
+   "date": "2016",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  },
+  {
+   "group": "예산·기술 조사",
+   "id": "T_BIOCHAR",
+   "title": "Phosphorus removal mechanism of Fe/N-modified biochar (2025, batch test)",
+   "publisher": "학술논문(Exa 색인)",
+   "url": "https://exa.ai/library/publication/88tkdzzp6x5",
+   "type": "academic",
+   "type_ko": "학술",
+   "credibility": 3.5,
+   "adj": [
+    "원문 미열람(검색 요약·스니펫 확인) −0.5"
+   ],
+   "tranco": null,
+   "popularity": 1,
+   "serp_hits": null,
+   "date": "2025",
+   "note": "검색 인덱스 요약/스니펫으로 확인(원문 미열람)"
+  }
+ ],
+ "scoring": {
+  "credibility": "신뢰도 1~5: 유형 기본점수(정부·국제기구·공식통계 5 / 의회조사·국책연구 4.5 / 학술 4 / 업계단체·주요 언론 3.5 / 업계지 3 / 기업·집계 2.5 / 쇼핑·블로그·시장조사 요약 2) − 원문 미열람 0.5. 경쟁사는 기업 2.5에 도메인 10년+ +0.5, HTTPS 미적용 −0.5, 제3자 확인 +0.5.",
+  "popularity": "인기도 1~5: Tranco 상위 100만 순위(≤1만 5, ≤5만 4, ≤20만 3, ≤100만 2, 미포함 1). 보조 지표로 Wayback 월별 수집 수, 이번 38개 검색에서의 노출 횟수를 함께 표시. 인기도는 정확성과 무관한 근사 지수입니다."
+ }
+}

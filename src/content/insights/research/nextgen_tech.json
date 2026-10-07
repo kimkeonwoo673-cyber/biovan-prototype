@@ -1,0 +1,362 @@
+{
+ "meta": {
+  "generated": "2026-10-08",
+  "note": "top_rank 1~8은 바이오밴 관련성·성숙도·근거를 종합한 우선순위(주관적 판단). evidence의 기업 발표는 독립 검증이 아님."
+ },
+ "records": [
+  {
+   "id": "T01",
+   "company": "K-water·기후에너지환경부",
+   "country": "한국",
+   "category": "AI·위성·초분광 녹조 감시/예측",
+   "technology": "AI 녹조 예측모델(최소 1주 전, 대청댐 예측효율 약 80%), 초분광 드론 녹조 분포도, 낙동강 위성 클로로필-a 감시(농업용 저수지 확대), 조류경보 지점 초분광 실시간 원격감시 5→28개소(2027 정부안)",
+   "maturity": "공공 운영·확대 단계",
+   "evidence": "건설기술신문 보도(2025~2026), 2027 예산안(뉴시스)",
+   "source_ids": [
+    "KR_CTMAN_AI",
+    "KR_CTMAN_SAT",
+    "KR_NEWSIS2027"
+   ],
+   "source_urls": [
+    "https://m.ctman.kr/35093",
+    "https://www.ctman.kr/35745",
+    "https://www.newsis.com/view/NISX20260831_0003770175"
+   ],
+   "date": "2025–2026",
+   "credibility": 2.5,
+   "relevance_to_biovan": "매우 높음",
+   "threat": "중간 — 발주처가 \"데이터로 효과 입증\"을 요구하게 됨",
+   "opportunity": "바이오밴 현장 전후 데이터를 공공 감시체계(클로로필-a·피코시아닌) 형식으로 제출하면 신뢰도↑. 사이트 데이터 차트와 직결",
+   "top_rank": 1
+  },
+  {
+   "id": "T02",
+   "company": "BlueGreen Water Technologies",
+   "country": "이스라엘/미국",
+   "category": "녹조 긴급 처리(부유형 서방성 과산화물 제형)+위성·AI 감시",
+   "technology": "Lake Guard / Lake Guard Oxy: 수면에 떠서 녹조층에 직접 작용하는 서방형 살조 제형 + 위성 기반 탐지·처리 계획",
+   "maturity": "상용(다국가 현장)",
+   "evidence": "플로리다 환경보호국 Lake Guard Oxy 단독조달 공고 747.5만 달러(2026.6), Winrock International 협력(2025.6), 플로리다 적조 완화 실증",
+   "source_ids": [
+    "T_BG_FLDEP",
+    "T_BG_WINROCK"
+   ],
+   "source_urls": [
+    "https://bidbanana.thebidlab.com/bid/NNdem18QCke1DmknQpBX",
+    "https://www.prnewswire.com/news-releases/bluegreen-water-technologies-partners-with-winrock-international-to-combat-harmful-algal-blooms-across-the-globe-302489394.html"
+   ],
+   "date": "2025–2026",
+   "credibility": 2.0,
+   "relevance_to_biovan": "높음",
+   "threat": "높음 — 대형 호수 \"긴급 녹조 제거\" 수요를 선점",
+   "opportunity": "바이오밴은 \"사후 긴급 처리\"가 아닌 \"사전 예방·장기 수질 개선(영양염·퇴적층)\" 보완재로 포지셔닝. 공동 제안(긴급+예방) 가능성",
+   "top_rank": 2
+  },
+  {
+   "id": "T03",
+   "company": "K-water 금강유역본부",
+   "country": "한국",
+   "category": "저온 플라즈마 녹조·독소 분해",
+   "technology": "저온 플라즈마 반응종을 물에 주입해 남조류 세포·독소 분해. 24~48시간 반응으로 조류·독소 90%↑ 제거(정체수역), 2026 용담댐 시범·자율이동형 도입",
+   "maturity": "공공 실증(파일럿→시범)",
+   "evidence": "연합뉴스 2026.8.16 (생태독성 0 주장, 장기 수생태 모니터링 필요)",
+   "source_ids": [
+    "KR_YNA_PLASMA"
+   ],
+   "source_urls": [
+    "https://www.yna.co.kr/view/AKR20260814119700063"
+   ],
+   "date": "2024–2026",
+   "credibility": 3.5,
+   "relevance_to_biovan": "높음",
+   "threat": "높음 — 공공기관 주도 기술이 댐·저수지 녹조 시장에서 경쟁",
+   "opportunity": "전력·설비형이라 소규모 하천·연못·골프장엔 비용 부담 → 무동력 미생물 제제의 가격·운영 우위 강조",
+   "top_rank": 3
+  },
+  {
+   "id": "T04",
+   "company": "월드워터(그린볼)",
+   "country": "한국",
+   "category": "광촉매(TiO₂) 부유볼 녹조 저감",
+   "technology": "무전원·무약품 TiO₂ 광촉매 볼이 자연광으로 조류·독소 분해",
+   "maturity": "상용(국내 20여 곳)",
+   "evidence": "KRC(농어촌공사) 신기술 인증, 조달청 혁신제품, 낙동강·댐·저수지 적용(보도)",
+   "source_ids": [
+    "KR_AVING_GB"
+   ],
+   "source_urls": [
+    "https://kr.aving.net/news/articleView.html?idxno=1811194"
+   ],
+   "date": "2025–2026",
+   "credibility": 2.5,
+   "relevance_to_biovan": "매우 높음(국내 직접 경쟁)",
+   "threat": "높음 — 농어촌공사 저수지·지자체 조달에서 바이오밴과 정면 경쟁",
+   "opportunity": "바이오밴도 혁신제품·환경신기술·KRC 신기술 등 공공조달 인증 확보가 시급. \"미생물+광촉매\" 병행 제안도 가능",
+   "top_rank": 4
+  },
+  {
+   "id": "T05",
+   "company": "LG Sonic",
+   "country": "네덜란드",
+   "category": "초음파 녹조 제어 + 실시간 수질 감시",
+   "technology": "MPC-Buoy: 태양광 부이에서 초음파로 조류 부상 억제 + 클로로필-a·피코시아닌·DO 등 실시간 측정·예측, 위성 통신",
+   "maturity": "상용(상수원 저수지 다수)",
+   "evidence": "콜로라도 Berthoud 저수지 2022 설치, 2025년 처리구역 클로로필-a·이취미 감소 보고(기업 사례)",
+   "source_ids": [
+    "T_LGSONIC"
+   ],
+   "source_urls": [
+    "https://www.lgsonic.com/products/mpc-buoy/"
+   ],
+   "date": "2022–2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "높음",
+   "threat": "중간 — 상수원 저수지의 \"무약품\" 대안으로 경쟁",
+   "opportunity": "감시 부이+미생물 투입을 결합한 \"측정-처리-보고\" 패키지(BWAT-21 연계) 개발 참고 모델",
+   "top_rank": 5
+  },
+  {
+   "id": "T06",
+   "company": "Moleaer",
+   "country": "미국",
+   "category": "나노버블 산소공급(호수·퇴적층)",
+   "technology": "나노버블로 저층 DO를 높여 내부 인 용출 억제·호기성 미생물 활성화",
+   "maturity": "상용 초기(호수 실증 진행)",
+   "evidence": "미네소타 Pokegama호 대조구 대비 남조류 30% 감소(기업 발표, 2025). 플로리다 2021~23 연구는 \"효과 불확정\", 위스콘신 대규모 적용은 분석 중",
+   "source_ids": [
+    "T_MOLEAER",
+    "T_WPR",
+    "T_FLDEP_NANO"
+   ],
+   "source_urls": [
+    "https://www.prnewswire.com/news-releases/from-green-to-clean-innovative-algae-treatment-hits-minnesota-lake-at-peak-bloom-season-302507636.html",
+    "https://www.wpr.org/news/wisconsin-community-experiments-nanobubbles-clean-lakes",
+    "https://floridadep.gov/sites/default/files/INV017.pdf"
+   ],
+   "date": "2021–2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "높음",
+   "threat": "중간",
+   "opportunity": "미생물 제제 효과를 높이는 보조 기술 — BWAT-21(생물반응기)에 나노버블 산기 결합 검토 가치",
+   "top_rank": 6
+  },
+  {
+   "id": "T07",
+   "company": "Novonesis (Novozymes+Chr. Hansen, 2024 합병)",
+   "country": "덴마크",
+   "category": "미생물·효소 바이오솔루션(하수 생물증강·슬러지·바이오가스, 동물 프로바이오틱스)",
+   "technology": "산업·도시 하수용 미생물/효소 제품, Univar 등 글로벌 유통, 중국 현지 미생물 하수처리 공급",
+   "maturity": "상용(글로벌 대기업)",
+   "evidence": "기업 발표(Univar 협력), 2025 연차보고서 33개 신제품(하수 전용 신제품 명시는 미확인)",
+   "source_ids": [
+    "T_NOVO_UNIVAR",
+    "T_NOVO_AR2025"
+   ],
+   "source_urls": [
+    "https://www.novonesis.com/en/news/univar-solutions-and-novozymes-provide-biological-solutions-waste-and-wastewater-treatment",
+    "https://media.novonesis.com/Novonesis_Annual_Report_2025.pdf"
+   ],
+   "date": "2024–2026",
+   "credibility": 2.0,
+   "relevance_to_biovan": "중간~높음",
+   "threat": "중간 — 산업폐수·대형 하수장 B2B에서 브랜드·규모 압도",
+   "opportunity": "지자체 하천·연못·소규모 하수장 같은 틈새는 대기업이 덜 공략 → 현장 밀착형 서비스·실측 데이터로 차별화",
+   "top_rank": 7
+  },
+  {
+   "id": "T08",
+   "company": "위사이언스·제주대",
+   "country": "한국",
+   "category": "유해 남조류 살조 미생물(개발)",
+   "technology": "유해 남조류를 99% 제거하는 미생물 균주 발굴",
+   "maturity": "연구·상용화 준비",
+   "evidence": "지역 언론 보도(2025)",
+   "source_ids": [
+    "KR_JEJU_WISCI"
+   ],
+   "source_urls": [
+    "https://www.jejudomin.co.kr/news/articleView.html?idxno=312988"
+   ],
+   "date": "2025",
+   "credibility": 2.5,
+   "relevance_to_biovan": "매우 높음(같은 미생물 방식)",
+   "threat": "중간(잠재적 직접 경쟁)",
+   "opportunity": "특정 남조류 표적 균주는 바이오밴 복합균 제제와 결합·라이선스 협력 후보",
+   "top_rank": 8
+  },
+  {
+   "id": "T09",
+   "company": "BiOWiSH Technologies → Betco/EnviroZyme",
+   "country": "미국",
+   "category": "미생물 컨소시엄(하수 라군·악취·축산)",
+   "technology": "미생물 제제(BiOWiSH Aqua 등)로 라군 슬러지·BOD·악취 저감. 2024.12 환경관리(하수·악취) 자산을 Betco에 매각, 농업·양식에 집중",
+   "maturity": "상용 → 사업 재편",
+   "evidence": "기업 발표(2024.12 매각), 사례연구",
+   "source_ids": [
+    "T_BIOWISH"
+   ],
+   "source_urls": [
+    "https://www.biowishtechnologies.com/biowish-technologies-divests-environmental-management-assets-to-betco-corporation/"
+   ],
+   "date": "2024–2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "중간",
+   "threat": "낮음~중간",
+   "opportunity": "업계 재편(청소·위생 화학사가 미생물 하수 라인 인수) → 해외 유통 파트너 탐색 시 Betco/EnviroZyme 같은 인수 주체가 잠재 협력처 [추정]",
+   "top_rank": null
+  },
+  {
+   "id": "T10",
+   "company": "SePRO / Phoslock",
+   "country": "미국/호주",
+   "category": "인 불활성화(란탄 개질 벤토나이트)·과산화물 살조제",
+   "technology": "Phoslock: 수중·퇴적층 인 결합 / PAK 27: 과탄산나트륨 계열 EPA 등록 살조제",
+   "maturity": "상용",
+   "evidence": "오하이오 H2Ohio 기술평가(2022): PAK 27 효과적, Phoslock 인 결합은 혼재·재용출 가능",
+   "source_ids": [
+    "T_SEPRO",
+    "T_H2OHIO"
+   ],
+   "source_urls": [
+    "https://sepro.com/aquatics/pak-27",
+    "https://dam.assets.ohio.gov/image/upload/h2.ohio.gov/TAP/H2Ohio-Technology-Assessment-Final-Report-Phoslock-Jan-2022.pdf"
+   ],
+   "date": "2022",
+   "credibility": 2.0,
+   "relevance_to_biovan": "중간",
+   "threat": "중간 — 영양염 관리 시장의 대체 해법",
+   "opportunity": "\"화학 인 고정 vs 미생물 영양염 순환\" 비교 데이터로 친환경성·지속성 어필",
+   "top_rank": null
+  },
+  {
+   "id": "T11",
+   "company": "Royal HaskoningDHV (Nereda)",
+   "country": "네덜란드",
+   "category": "호기성 그래뉼 슬러지(차세대 생물 하수처리)",
+   "technology": "고밀도 그래뉼 미생물로 부지·에너지 절감형 하수처리",
+   "maturity": "상용(122개 프로젝트, 74개 가동·24개국, 2025)",
+   "evidence": "기업 발표자료(DWC 2025)",
+   "source_ids": [
+    "T_NEREDA"
+   ],
+   "source_urls": [
+    "https://www.iawd.at/files/File/events/DWP/DWC_2025/Presentations/06_Whats_new_in_WW/04_Giesen.pdf"
+   ],
+   "date": "2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "낮음~중간",
+   "threat": "낮음",
+   "opportunity": "옹진군 섬 하수장 같은 소규모 처리장 운영 보조 시 \"생물학적 처리 고도화\" 트렌드 근거로 활용",
+   "top_rank": null
+  },
+  {
+   "id": "T12",
+   "company": "Kurita Water Industries",
+   "country": "일본",
+   "category": "AI 수처리 운영(S.sensing, KuritaConnect 360)·미생물 연료전지",
+   "technology": "하수 유기물로 발전하는 미생물 연료전지(실하수 최대 550W/㎥, 2024), AI 설계 자동화·데이터 플랫폼",
+   "maturity": "상용(디지털)·실증(MFC)",
+   "evidence": "기업 실적발표(2025.5), 업계지 보도(2024)",
+   "source_ids": [
+    "T_KURITA",
+    "T_KURITA_MFC"
+   ],
+   "source_urls": [
+    "https://www.kurita-water.com/assets/en/files/pdf/presentation_250509_en.pdf",
+    "https://smartwatermagazine.com/news/kurita-water-industries/kurita-confirms-operation-electrical-devices-electricity-generated"
+   ],
+   "date": "2024–2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "낮음~중간",
+   "threat": "낮음",
+   "opportunity": "국내 대형 발주처의 \"디지털 운영\" 요구 확산 신호 — 원격 모니터링 리포트 제공 필요",
+   "top_rank": null
+  },
+  {
+   "id": "T13",
+   "company": "南京盖亚生物 / 北京邦源环保",
+   "country": "중국",
+   "category": "미생물·효소 기반 남조류 억제·흑취수체 정화",
+   "technology": "RhP 다기능 수질개선균(태호 이싱), Eama-11 생물 억조제·남조 용해효소·미생물 정수제(탕산 남호 등)",
+   "maturity": "상용(중국 내 다수 사례, 기업 주장)",
+   "evidence": "기업 사례 페이지(독립 검증 없음)",
+   "source_ids": [
+    "CN_GAIA",
+    "CN_BANGYUAN"
+   ],
+   "source_urls": [
+    "http://njgaia.com/nedetail/110.html",
+    "http://www.bjbangyuan.com/home-basics-casesdetail-classid-4-cid-44-id-180.html"
+   ],
+   "date": "2025",
+   "credibility": 2.0,
+   "relevance_to_biovan": "높음(같은 방식)",
+   "threat": "중간 — 저가 중국산의 동남아·중앙아 수출 경쟁",
+   "opportunity": "바이오밴은 GLP 독성시험·특허·ISO 등 검증 자료를 전면에 내세워 품질 차별화",
+   "top_rank": null
+  },
+  {
+   "id": "T14",
+   "company": "Gybe",
+   "country": "미국",
+   "category": "위성+현장센서 HAB 감시(저비용)",
+   "technology": "GybeMaps: 위성·지상 센서 결합 실시간 수질·HAB 탐지/예측",
+   "maturity": "스타트업(초기)",
+   "evidence": "DOE SBIR 1단계(2020, 약 20만 달러), 2025 NOAA 지원 오대호 액셀러레이터 참여",
+   "source_ids": [
+    "T_GYBE"
+   ],
+   "source_urls": [
+    "https://sbir.org/awards/doe-DESC0020843-1"
+   ],
+   "date": "2020–2025",
+   "credibility": 4.5,
+   "relevance_to_biovan": "중간",
+   "threat": "낮음",
+   "opportunity": "저비용 감시 파트너로 \"처리 전후 위성 데이터\" 확보 → 해외 제안서(키르기스·캄보디아) 신뢰도 향상",
+   "top_rank": null
+  },
+  {
+   "id": "T15",
+   "company": "Nualgi Nanobiotech",
+   "country": "인도",
+   "category": "규조류 촉진 영양제(나노실리카)로 남조류 대체",
+   "technology": "규조류 성장을 촉진해 Microcystis를 대체·인 저감",
+   "maturity": "상용(인도 소규모)·근거는 오래됨",
+   "evidence": "하이데라바드 공원 호수 23일간 인산 1.12→0.38mg/L(2014 현장, 학술 챕터)",
+   "source_ids": [
+    "T_NUALGI"
+   ],
+   "source_urls": [
+    "https://www.intechopen.com/chapters/51401"
+   ],
+   "date": "2014–2025",
+   "credibility": 3.5,
+   "relevance_to_biovan": "중간",
+   "threat": "중간 — 개도국 저가 경쟁",
+   "opportunity": "개도국에서는 가격 민감 → 현지 생산·희석형 제품 등 가격 전략 필요",
+   "top_rank": null
+  },
+  {
+   "id": "T16",
+   "company": "학계(개질 바이오차)",
+   "country": "—",
+   "category": "Fe/N 개질 바이오차 인 흡착",
+   "technology": "개질 바이오차로 실제 하천수 인 약 75%, 호수수 약 80% 제거(회분식 실험)",
+   "maturity": "연구(실험실)",
+   "evidence": "2025 학술논문(현장 규모 아님)",
+   "source_ids": [
+    "T_BIOCHAR"
+   ],
+   "source_urls": [
+    "https://exa.ai/library/publication/88tkdzzp6x5"
+   ],
+   "date": "2025",
+   "credibility": 3.5,
+   "relevance_to_biovan": "중간",
+   "threat": "낮음",
+   "opportunity": "바이오차를 미생물 담체로 쓰는 \"고정화 미생물 볼/매트\" 신제품 아이디어",
+   "top_rank": null
+  }
+ ]
+}

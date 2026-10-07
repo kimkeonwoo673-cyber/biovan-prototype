@@ -316,3 +316,55 @@ a.card:hover{transform:translateY(-3px);border-color:#b9d9d6;box-shadow:0 2px 4p
 .rv.in{opacity:1;transform:none}
 .no-js .rv{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* insights: tabs, tables, badges (vanilla, ~2KB) */
+.tabbar{position:sticky;top:68px;z-index:20;background:rgba(245,249,249,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tablist{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding:12px 0;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.tab{flex:none;scroll-snap-align:start;font-family:inherit;font-size:.9rem;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--ink-2);padding:9px 15px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab:hover{border-color:var(--teal-2)}
+.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
+.tabpanel{padding:40px 0 70px}
+.tabpanel:focus{outline:none}
+.js .tabpanel[hidden]{display:none}
+.no-js .tabpanel{border-top:1px solid var(--line)}
+.ipanel h2{font-size:1.6rem;margin-top:0}
+.ipanel h3{margin-top:30px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:14px 0}
+.tbl{width:100%;border-collapse:collapse;font-size:.86rem;min-width:640px}
+.tbl th,.tbl td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{background:#f2f7f8;font-weight:700;color:var(--ink-2);position:sticky;top:0;white-space:nowrap}
+.tbl td.n,.tbl th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.self td{background:#fffaf0}
+.tbl a{color:var(--teal-2);word-break:break-all}
+.tbl small{color:var(--muted)}
+.bdg{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;line-height:1.6}
+.b5{background:#e2f3df;color:#2f6b16}.b4{background:#e5f3f1;color:#0f5e66}.b3{background:#eef2f7;color:#3a516a}.b2{background:#fff3df;color:#8a5a0b}.b1{background:#fde8e8;color:#9b2c2c}
+.best{background:var(--warn-bg);color:var(--warn);border:1px dashed #e9c27a}
+.bofficial{background:#e2f3df;color:#2f6b16}
+.bnone{background:#f1f1f1;color:#666;border:1px dashed #bbb}
+.caveat{background:#fff4f2;border:1px solid #f3c7bd;color:#7a2e1c;border-radius:12px;padding:14px 18px;font-size:.92rem;margin:14px 0}
+.caveat b{color:#9b2c2c}
+.note{font-size:.82rem;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kpi b{display:block;font-size:1.5rem;color:var(--navy);letter-spacing:-.02em}
+.kpi span{font-size:.84rem;color:var(--ink-2)}
+.ilist{padding-left:1.1em;color:var(--ink-2)}.ilist li{margin:.45em 0}
+.kwgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.kwcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.kwcard h4{margin:0 0 10px;font-size:1rem}
+.kw{display:inline-block;background:#eaf4f3;color:var(--teal);font-weight:700;font-size:.82rem;padding:3px 10px;border-radius:999px;margin:2px 3px 2px 0}
+.kw.s{background:#eef2f7;color:#3a516a;font-weight:600}.kw.l{background:#f6f3ea;color:#6b5a2a;font-weight:600}
+.svgc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.svgc svg{width:100%;height:auto}
+.svgc figcaption{font-size:.8rem;color:var(--muted);margin-top:6px}
+.techgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.tcard h4{margin:0;font-size:1rem}.tcard p{margin:0;font-size:.88rem;color:var(--ink-2)}
+.tcard .rk{font-size:.75rem;font-weight:800;color:#fff;background:var(--teal-2);border-radius:6px;padding:1px 7px;margin-right:6px}
+details.grp{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 14px}
+details.grp summary{cursor:pointer;font-weight:700;padding:13px 0}
+details.grp[open] summary{border-bottom:1px solid var(--line)}
+details.grp .tblwrap{border:0;margin:6px -14px 0;border-radius:0}
+@media (max-width:640px){.tabbar{top:68px}.tabpanel{padding:28px 0 50px}.ipanel h2{font-size:1.35rem}}
