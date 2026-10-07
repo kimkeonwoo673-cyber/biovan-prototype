@@ -1,0 +1,21 @@
+---
+// 키워드·시장 분석의 '영상 자료 분석' 탭 본문. 메인 페이지(/insights/keywords/)가 탭을 열 때 이 페이지의 [data-frag] 부분만 가져가 끼워 넣습니다.
+// JavaScript 없이도 이 주소로 직접 볼 수 있습니다(noindex는 Layout에서 공통 적용).
+import { u } from '../../../lib/url';
+import Layout from '../../../layouts/Layout.astro';
+import TabsScript from '../../../components/TabsScript.astro';
+import VideoTab from '../../../components/VideoTab.astro';
+---
+<Layout title="영상 자료 분석 · 키워드·시장 분석" description="바이오밴코리아 키워드·시장 분석 — 영상 자료 분석 (내부 참고용 시안)">
+  <div class="phead"><div class="wrap">
+    <div class="crumbs"><a href={u('/')}>홈</a> / <a href={u('/insights/keywords/')}>키워드·시장 분석</a> / 영상 자료 분석</div>
+    <h1>영상 자료 분석</h1>
+    <p><a href={u('/insights/keywords/#video')} style="color:#bfe7e1">← 탭 화면으로 돌아가기</a></p>
+  </div></div>
+  <div class="wrap">
+    <section class="ipanel" data-frag>
+      <VideoTab />
+    </section>
+  </div>
+  <TabsScript />
+</Layout>

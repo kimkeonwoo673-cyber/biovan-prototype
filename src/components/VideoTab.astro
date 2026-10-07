@@ -1,0 +1,171 @@
+---
+// 영상 자료 분석 탭 — 경량 큐레이션 데이터(src/content/insights/video_tab.json, ~40KB)만 사용.
+// 원자료(research/videos.json 6,545건 · video_channels.json 2,669개)는 페이지에 넣지 않음.
+import D from '../content/insights/video_tab.json';
+const d: any = D;
+const nf = new Intl.NumberFormat('ko-KR');
+const fmt = (n: any) => (n == null ? '—' : nf.format(n));
+const esc = (s: any) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const pct = (x: any, dg = 1) => (x == null ? '—' : (x * 100).toFixed(dg) + '%');
+const dur = (s: any) => { if (s == null) return '—'; const m = Math.floor(s / 60), r = Math.round(s % 60); return m >= 60 ? `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}:${String(r).padStart(2, '0')}` : `${m}:${String(r).padStart(2, '0')}`; };
+const dt = (v: any) => (!v.d ? '미확인' : v.approx ? `약 ${v.d.slice(0, 4)}` : v.d);
+const W = ['10y', '5y', '2y'];
+const WL: Record<string, string> = { '10y': '10년', '5y': '5년', '2y': '2년' };
+const liftCls = (x: number) => (x >= 1.5 ? 'lf-up2' : x >= 1.1 ? 'lf-up' : x <= 0.67 ? 'lf-dn2' : x <= 0.9 ? 'lf-dn' : 'lf-eq');
+const PCOL: Record<string, string> = { yt_ko: '#0f6f78', yt_en: '#2b6cb0', yt_zh: '#b7791f', bili_zh: '#d53f8c', yt_other: '#6b46c1', yt_ja: '#718096' };
+const YEARS = Array.from({ length: 13 }, (_, i) => 2014 + i);
+function sparkSvg(t: any): string {
+  const vals = YEARS.map((y) => t.yearly[y] ?? 0), mx = Math.max(1, ...vals);
+  const w = 300, h = 128, pl = 6, pr = 6, pt = 26, pb = 22, bw = (w - pl - pr) / YEARS.length;
+  const col = PCOL[t.id] || '#0f6f78';
+  let s = `<svg viewBox="0 0 ${w} ${h}" class="vspark" role="img" aria-label="${esc(t.label)} 연도별 업로드 수(표본) 2014–2026">`;
+  // 10y/5y/2y 구간 음영
+  const x16 = pl + (2016 - 2014) * bw, x21 = pl + (2021 - 2014) * bw, x24 = pl + (2024 - 2014) * bw;
+  s += `<rect x="${x16}" y="12" width="${w - pr - x16}" height="${h - pb - 12}" fill="#f2f7f8"/>`;
+  s += `<rect x="${x21}" y="12" width="${w - pr - x21}" height="${h - pb - 12}" fill="#e6f0f2"/>`;
+  s += `<rect x="${x24}" y="12" width="${w - pr - x24}" height="${h - pb - 12}" fill="#d9e9ec"/>`;
+  YEARS.forEach((y, i) => {
+    const v = vals[i], bh = (v / mx) * (h - pt - pb), x = pl + i * bw + 2, yy = h - pb - bh;
+    const part = y === 2026;
+    s += `<g class="vb" tabindex="0"><title>${y}${part ? ' (10월 8일까지)' : ''}: ${v}개</title><rect x="${x.toFixed(1)}" y="${yy.toFixed(1)}" width="${(bw - 4).toFixed(1)}" height="${Math.max(bh, v ? 1 : 0).toFixed(1)}" fill="${col}" ${part ? 'fill-opacity=".45" stroke="' + col + '" stroke-dasharray="2 2"' : ''} rx="1.5"/>`;
+    if (v === mx || part) s += `<text x="${(x + (bw - 4) / 2).toFixed(1)}" y="${(yy - 3).toFixed(1)}" text-anchor="middle" font-size="9" fill="#33475b">${v}</text>`;
+    s += `</g>`;
+    if (i % 2 === 0) s += `<text x="${(x + (bw - 4) / 2).toFixed(1)}" y="${h - 8}" text-anchor="middle" font-size="9" fill="#6b7c8a">${String(y).slice(2)}</text>`;
+  });
+  s += `<text x="${x16 + 2}" y="9" font-size="8" fill="#6b7c8a">10y</text><text x="${x21 + 2}" y="9" font-size="8" fill="#6b7c8a">5y</text><text x="${x24 + 2}" y="9" font-size="8" fill="#6b7c8a">2y</text>`;
+  return s + `</svg>`;
+}
+// 성숙 일평균 조회 중앙값 10y→5y→2y 비교 막대(그룹별)
+function vpdSvg(): string {
+  const rows = d.trend, mx = Math.max(...rows.flatMap((t: any) => W.map((k) => t.windows[k].vpd || 0)));
+  const w = 640, rowh = 34, pl = 190, pr = 50, h = rows.length * rowh + 26;
+  let s = `<svg viewBox="0 0 ${w} ${h}" class="vvpd" role="img" aria-label="그룹별 성숙 일평균 조회 중앙값, 10년·5년·2년 구간">`;
+  const op: Record<string, number> = { '10y': 0.35, '5y': 0.65, '2y': 1 };
+  rows.forEach((t: any, r: number) => {
+    const y0 = 8 + r * rowh;
+    s += `<text x="${pl - 8}" y="${y0 + 17}" text-anchor="end" font-size="11" fill="#22313f">${esc(t.label.replace(/\(.*\)/, '').trim())}</text>`;
+    W.forEach((k, j) => {
+      const v = t.windows[k].vpd || 0, bw = (v / mx) * (w - pl - pr), y = y0 + j * 9;
+      s += `<g class="vb" tabindex="0"><title>${esc(t.label)} · ${WL[k]}: ${v.toFixed(2)}회/일 (표본 ${t.windows[k].n}개)</title><rect x="${pl}" y="${y}" width="${bw.toFixed(1)}" height="8" fill="${PCOL[t.id]}" fill-opacity="${op[k]}" rx="2"/>`;
+      s += `<text x="${(pl + bw + 4).toFixed(1)}" y="${y + 7.5}" font-size="8.5" fill="#33475b">${v.toFixed(2)}</text></g>`;
+    });
+  });
+  s += `<text x="${pl}" y="${h - 4}" font-size="9.5" fill="#6b7c8a">막대 진하기: 옅음 10년 · 중간 5년 · 진함 2년 (단위 회/일, 업로드 180일 이상 경과 영상)</text>`;
+  return s + `</svg>`;
+}
+const sparks = d.trend.map((t: any) => ({ t, svg: sparkSvg(t) }));
+const vpd = vpdSvg();
+const groups = ['ko', 'en', 'bili', 'dev', 'peer'].map((k) => ({ id: k, ...d.top[k] }));
+const bv = d.biovan;
+const kpis = [
+  { n: fmt(d.meta.n_relevant), l: '주제 관련 분석 표본', s: `YouTube ${fmt(d.meta.by_platform.youtube)} · Bilibili ${fmt(d.meta.by_platform.bilibili)}` },
+  { n: `${fmt(bv.channel.subs)}<small>명</small>`, l: '바이오밴 공식 채널 구독자', s: `영상 ${bv.channel.videos}개 · 총조회 ${fmt(bv.channel.views)} · 마지막 ${bv.channel.last}` },
+  { n: '32<small>개</small>', l: '광고추정 고조회 영상(추정)', s: '조회 10만+ & 좋아요율 0.05% 미만 · 전체 수집 14,428건 기준' },
+  { n: '0<small>건</small>', l: '자막(트랜스크립트) 수집', s: 'YouTube 봇 확인 차단 · 설명문 32건으로 대체' },
+];
+const kindCls: Record<string, string> = { '공공': 'b4', '경쟁·동종사': 'b2', '자사': 'b3' };
+---
+<p class="note">수집 시점 <b>2026-10-08</b> ({d.meta.collected}) · 원자료 영상 {fmt(d.meta.n_videos)}건 · 채널 {fmt(d.meta.n_channels)}개 중 <b>요약·상위 항목만</b> 실었습니다(전체 레코드는 <code>research/videos.json</code>, 엑셀 ‘영상 분석’ 시트). 영상은 직접 시청하지 않았고 <b>메타데이터(제목·채널·조회·좋아요·댓글·길이·태그·설명문)</b> 기준입니다. 업로드 수·리프트는 <span class="bdg b3">검색 표본 기반 근사 지수</span>이며 조회수는 계속 변합니다.</p>
+
+<div class="stats stats-light vkpi">
+  {kpis.map((k) => <div class="stat"><div class="n" set:html={k.n} /><div class="l">{k.l}</div><div class="s">{k.s}</div></div>)}
+</div>
+
+<h3>핵심 발견</h3>
+<ol class="ilist vfind">{d.findings.map((f: string) => <li>{f}</li>)}</ol>
+
+<h3>바이오밴 자체 영상 현황</h3>
+<div class="tblwrap"><table class="tbl" style="min-width:720px"><thead><tr><th>영상</th><th>채널</th><th>업로드</th><th class="n">조회</th><th class="n">좋아요</th><th class="n">길이</th></tr></thead><tbody>
+  {bv.videos.map((v: any) => <tr><td><a href={v.u} rel="noopener nofollow" target="_blank">{v.t}</a></td><td>{v.ch ?? '미확인'}{v.subs != null && <small> (구독자 {v.subs})</small>}</td><td>{dt(v)}</td><td class="n">{fmt(v.v)}</td><td class="n">{fmt(v.lk)}</td><td class="n">{dur(v.dur)}</td></tr>)}
+</tbody></table></div>
+<div class="kwgrid vbv">
+  <div class="kwcard"><h4>진단</h4><ul class="ilist" style="margin:0">{bv.diagnosis.map((x: string) => <li>{x}</li>)}</ul></div>
+  <div class="kwcard"><h4>자산</h4><p style="margin:0">{bv.assets}</p></div>
+</div>
+
+<h3>10년·5년·2년 추세 (관련도순 검색 표본)</h3>
+<p class="note">기준일 2026-10-08. 10년=2016-10-08 이후, 5년=2021-10-08 이후, 2년=2024-10-08 이후(누적 구간). 날짜순 검색 편향을 줄이려고 <b>관련도순 검색에서 잡힌 영상만</b> 집계했습니다(Bilibili는 종합·조회수순). ‘연평균 업로드’는 전체 업로드 수가 아니라 <b>표본 안의 지수</b>입니다.</p>
+<div class="tblwrap"><table class="tbl vtrend" style="min-width:900px"><thead>
+  <tr><th rowspan="2">그룹</th><th colspan="3" class="c">연평균 업로드(표본 지수)</th><th colspan="3" class="c">성숙 일평균 조회 중앙값(회/일)</th><th colspan="3" class="c">조회 중앙값</th><th colspan="3" class="c">쇼츠 비중</th></tr>
+  <tr>{[0, 1, 2, 3].map(() => W.map((k) => <th class="n">{WL[k]}</th>))}</tr></thead><tbody>
+  {d.trend.map((t: any) => <tr><th scope="row">{t.label}</th>
+    {W.map((k) => <td class="n">{t.windows[k].npy}</td>)}
+    {W.map((k) => <td class="n">{t.windows[k].vpd?.toFixed(2)}</td>)}
+    {W.map((k) => <td class="n">{fmt(Math.round(t.windows[k].vmed))}</td>)}
+    {W.map((k) => <td class="n">{pct(t.windows[k].sh, 0)}</td>)}</tr>)}
+</tbody></table></div>
+<p class="note">성숙 일평균 조회 = 조회 ÷ 업로드 후 일수, 업로드 180일 이상 지난 영상만(신규 영상 초기 급증 편향 제거). 2년 구간의 ‘조회 중앙값’이 낮은 것은 누적 기간이 짧기 때문입니다. YouTube 일본어는 표본이 작아(2년 13개) 참고용입니다.</p>
+<div class="vchart" set:html={vpd} />
+<h4 class="vh4">연도별 업로드 수 (표본, 2014–2026)</h4>
+<div class="vsgrid">
+  {sparks.map(({ t, svg }: any) => <figure class="vsfig"><figcaption>{t.label}</figcaption><div set:html={svg} /></figure>)}
+</div>
+<p class="note">음영: 10년·5년·2년 구간. 2026년(점선)은 10월 8일까지(약 9.3개월). 검색엔진이 최근 영상을 우대하므로 최근 연도가 과대표집될 수 있습니다. 막대에 마우스를 올리거나 포커스하면 값이 보입니다.</p>
+
+<details class="grp"><summary>주제별 추세 (전체 표본: 관련도순+최신순) <small class="muted">({d.topics.length}개 주제)</small></summary>
+<div class="tblwrap"><table class="tbl" style="min-width:760px"><thead><tr><th rowspan="2">주제</th><th colspan="3" class="c">영상 수</th><th colspan="3" class="c">성숙 일평균 조회 중앙값</th><th colspan="3" class="c">쇼츠 비중</th></tr>
+  <tr>{[0, 1, 2].map(() => W.map((k) => <th class="n">{WL[k]}</th>))}</tr></thead><tbody>
+  {d.topics.map((t: any) => <tr><th scope="row">{t.label}</th>{W.map((k) => <td class="n">{fmt(t.windows[k].n)}</td>)}{W.map((k) => <td class="n">{t.windows[k].vpd?.toFixed(2)}</td>)}{W.map((k) => <td class="n">{pct(t.windows[k].sh, 0)}</td>)}</tr>)}
+</tbody></table></div>
+<p class="note">한 영상이 여러 주제에 들어갈 수 있습니다. 축산 악취는 2년 구간 쇼츠 비중이 52.5%로 가장 높습니다.</p>
+</details>
+
+<h3>포맷·제목 요소별 성과 (리프트)</h3>
+<p class="note">리프트 = 해당 포맷(또는 제목 요소)을 가진 영상의 성숙 일평균 조회 중앙값 ÷ 그 포맷이 없는 영상의 중앙값(제목 요소는 그룹 전체 중앙값 대비). ×1보다 크면 유리. <b>상관관계</b>이며 방송사 채널 효과가 섞여 있습니다. 괄호는 표본 수. 
+<span class="lf lf-up2">×1.5+</span> <span class="lf lf-up">×1.1+</span> <span class="lf lf-eq">≈×1</span> <span class="lf lf-dn">×0.9−</span> <span class="lf lf-dn2">×0.67−</span></p>
+<div class="tblwrap"><table class="tbl vlift" style="min-width:760px"><thead><tr><th>포맷</th>{d.formats.cols.map((c: string) => <th class="c">{c}</th>)}</tr></thead><tbody>
+  {d.formats.rows.map((r: any) => <tr><th scope="row">{r.f}</th>{r.cells.map((c: any) => <td class="c">{c ? <span class={`lf ${liftCls(c.lift)}`}>×{c.lift}</span> : <small>—</small>}{c && <small> ({c.n})</small>}</td>)}</tr>)}
+  {d.titles.rows.map((r: any, i: number) => <tr class={i === 0 ? 'vsep' : ''}><th scope="row">제목: {r.f}</th>{r.cells.map((c: any) => <td class="c">{c ? <span class={`lf ${liftCls(c.lift)}`}>×{c.lift}</span> : <small>—</small>}{c && <small> ({c.n})</small>}</td>)}</tr>)}
+</tbody></table></div>
+<ul class="ilist">
+  <li><b>원리 설명형</b>이 한국어 ×3.5, 영어 ×2.5, YouTube 중국어 ×5.8로 가장 일관되게 강합니다. <b>전후 비교</b>는 한국어 ×3.5, 영어 ×1.7.</li>
+  <li><b>쇼츠</b>는 중앙값이 낮지만(×0.3–0.7) 상위 꼬리가 큽니다(KBS 쇼츠 73만·40만). 노출용 쇼츠 + 검색·신뢰용 3–5분 영상을 함께 운영하는 구조가 맞습니다.</li>
+  <li><b>30분 이상 장편</b>은 Bilibili(×2.3)·YouTube 중국어(×1.8)에서만 유리합니다.</li>
+</ul>
+
+<h3>그룹별 조회 상위 영상 (실측 메타데이터)</h3>
+<p class="note">링크는 외부(YouTube·Bilibili)로 열립니다. 썸네일·임베드는 넣지 않았습니다. 날짜 앞 ‘약’은 “N년 전” 표기에서 역산한 근사치(±1년), 좋아요 ‘—’는 YouTube 차단으로 미수집입니다. <span class="bdg b1">광고추정</span> = 조회 10만+ & 좋아요율 0.05% 미만(추정, 확인 불가).</p>
+<div class="subtabs" role="tablist" aria-label="영상 그룹 선택" data-sub>
+  {groups.map((g, i) => <button class="stab" role="tab" id={`vt-${g.id}`} aria-controls={`vp-${g.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{g.label.replace(/\s*\(.*\)/, '')}</button>)}
+</div>
+{groups.map((g) => (
+  <div class="subpanel" role="tabpanel" id={`vp-${g.id}`} aria-labelledby={`vt-${g.id}`} tabindex="0">
+    <p class="note" style="margin-top:0"><b>{g.label}</b> — {g.note}</p>
+    <div class="tblwrap"><table class="tbl vtop" style="min-width:860px"><thead><tr><th class="n">#</th><th>영상 · 채널</th><th>업로드</th><th class="n">조회</th><th class="n">좋아요</th><th class="n">댓글</th><th class="n">길이</th><th>포맷·표시</th></tr></thead><tbody>
+      {g.items.map((v: any, i: number) => <tr>
+        <td class="n">{i + 1}</td>
+        <td><a href={v.u} rel="noopener nofollow" target="_blank">{v.t}</a><br /><small>{v.ch}{v.subs != null ? ` · 구독자 ${fmt(v.subs)}` : ''}{v.grp ? ` · ${v.grp}` : ''}{v.p === 'bilibili' ? ' · Bilibili' : ''}</small></td>
+        <td>{dt(v)}</td><td class="n">{fmt(v.v)}</td><td class="n">{fmt(v.lk)}{v.lr != null && <><br /><small>{v.lr < 0.01 ? '<0.01' : v.lr.toFixed(2)}%</small></>}</td><td class="n">{fmt(v.cm)}</td><td class="n">{dur(v.dur)}</td>
+        <td>{v.ad && <span class="bdg b1">광고추정</span>} {v.f.map((f: string) => <span class="vtag">{f}</span>)}</td></tr>)}
+    </tbody></table></div>
+    {g.organic && (<>
+      <h4 class="vh4">광고추정이 아닌 경쟁사 영상 (좋아요율 0.2% 이상, 채널당 최대 2개)</h4>
+      <div class="tblwrap"><table class="tbl vtop" style="min-width:760px"><thead><tr><th>영상 · 채널</th><th>업로드</th><th class="n">조회</th><th class="n">좋아요(율)</th><th class="n">길이</th></tr></thead><tbody>
+        {g.organic.map((v: any) => <tr><td><a href={v.u} rel="noopener nofollow" target="_blank">{v.t}</a><br /><small>{v.ch}</small></td><td>{dt(v)}</td><td class="n">{fmt(v.v)}</td><td class="n">{fmt(v.lk)} <small>({v.lr.toFixed(2)}%)</small></td><td class="n">{dur(v.dur)}</td></tr>)}
+      </tbody></table></div>
+      <p class="note">Novonesis 상위 영상은 수처리가 아니라 브랜드·채용 캠페인입니다. 교육 시리즈(SePRO ‘Algae Corner’, 좋아요율 1–2%)가 광고 없이 반응이 가장 좋은 경쟁사 포맷입니다.</p>
+    </>)}
+  </div>
+))}
+
+<h3>경쟁·동종사 및 공공 채널 (채널 업로드 전수)</h3>
+<p class="note">YouTube 채널 탭(동영상·쇼츠) 전체 목록 기준. ‘광고추정’ 열은 수집된 영상 중 조회 10만+ & 좋아요율 0.05% 미만인 영상 수로, 유료 광고(인스트림·디스커버리) 집행 가능성을 뜻하는 <b>추정</b>입니다. 좋아요 비공개·외부 유입으로도 비율이 낮을 수 있고, 좋아요가 수집되지 않은 영상은 판정하지 않았습니다(이 열은 <code>videos.json</code> 수록 영상 기준: 전체 28개 중 이 표의 채널 해당분 25개. 상단 32개는 전체 수집 14,428건 기준). 업로드 연도는 정확일 또는 “N년 전” 근사입니다.</p>
+<div class="tblwrap"><table class="tbl vchan" style="min-width:1080px"><thead><tr><th>채널</th><th>구분</th><th class="n">구독자</th><th class="n">동영상</th><th class="n">쇼츠</th><th class="n">총조회</th><th class="n">조회 중앙값</th><th>최근 업로드</th><th class="n">업로드 10y/5y/2y</th><th class="n">광고추정</th><th>대표 영상<br /><small>채널 전체 조회 1위 · 주제 무관 가능</small></th></tr></thead><tbody>
+  {d.channels.map((c: any) => <tr class={c.kind === '자사' ? 'self' : ''}>
+    <td><a href={c.url} rel="noopener nofollow" target="_blank">{c.name}</a></td><td><span class={`bdg ${kindCls[c.kind]}`}>{c.kind}</span></td>
+    <td class="n">{fmt(c.subs)}</td><td class="n">{fmt(c.videos)}</td><td class="n">{fmt(c.shorts)}</td><td class="n">{fmt(c.vsum)}</td><td class="n">{fmt(Math.round(c.vmed))}</td><td>{c.last}</td>
+    <td class="n">{c.u10}/{c.u5}/{c.u2}</td><td class="n">{c.ad ? <span class="bdg b1">{c.ad}</span> : <small>0</small>}</td>
+    <td>{c.top.map((t: any) => <><a href={t.u} rel="noopener nofollow" target="_blank">{t.t.length > 48 ? t.t.slice(0, 48) + '…' : t.t}</a> <small>{fmt(t.v)}회</small></>)}</td></tr>)}
+</tbody></table></div>
+<p class="note">정리: 해외 동종사는 ① 대형 사례를 영화처럼 제작 → ② 유료 광고로 조회 확보 → ③ 지역 TV 출연분 재업로드 → ④ 교육 시리즈로 검색 유입 순으로 운영합니다. 국내 경쟁사(월드워터)는 자체 채널이 미미하고 전시회·지원사업 채널에 의존합니다. 채널 신뢰도·인기도 산정 방식(유형 기반 휴리스틱, 구독자 구간)은 원자료 <code>video_channels.json</code>에 있습니다.</p>
+
+<h3>권고</h3>
+<ol class="ilist">{d.recs.map((r: string) => <li>{r}</li>)}</ol>
+<div class="kwcard vtitles"><h4>제목 예시 (문제 키워드 + 장소 + 기간/숫자 + 결과/질문)</h4>
+  <ul class="ilist" style="margin:0">{d.title_ex.map(([l, t]: any) => <li><span class="vtag">{l}</span> {t}</li>)}</ul>
+  <p class="note" style="margin:.6em 0 0">근거: 한국어 표본에서 물음표 ×2.8, 숫자 ×1.8 리프트(상관관계). 실제 측정값(투명도·COD·T-P·Chl-a 등)이 있는 현장만 숫자를 넣으세요.</p>
+</div>
+
+<h3>한계</h3>
+<ul class="ilist">{d.limits.map((x: string) => <li>{x}</li>)}</ul>
+<p class="note">출처: 내부 영상 조사 <code>research/VIDEO.md</code> (16개 절) · <code>videos.json</code> · <code>video_channels.json</code> · <code>research/video/analysis.json</code>. 수집 도구: yt-dlp(검색어 113개, 10개 언어), Bilibili 공개 검색 API(검색어 18개), 추적 채널 22개 전수.</p>

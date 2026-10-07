@@ -457,3 +457,29 @@ details.grp .tblwrap{border:0;margin:6px -14px 0;border-radius:0}
 .implpos p{margin:4px 0 0}
 @media (max-width:640px){.atable .ysticky{min-width:130px;max-width:140px}}
 .atable tbody th.ysticky,.rtable tbody th.ysticky{white-space:normal}
+/* 영상 탭 */
+.vkpi{margin:14px 0 6px}.vkpi .stat{padding:18px 16px}.vkpi .stat .n{font-size:clamp(1.5rem,2.6vw,2rem)}
+.vfind li{margin:.55em 0}
+.vbv{margin-top:12px}
+.tbl th.c,.tbl td.c{text-align:center}
+.vtrend tbody th,.vlift tbody th{font-weight:600;background:#fff;white-space:normal;min-width:150px}
+.vchart{max-width:680px;margin:10px 0 4px}.vchart svg{width:100%;height:auto;display:block}
+.vh4{margin:18px 0 8px;font-size:.98rem}
+.vsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.vsfig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 10px 4px}
+.vsfig figcaption{font-size:.82rem;font-weight:700;color:var(--ink-2);margin-bottom:2px;line-height:1.35}
+.vspark{width:100%;height:auto;display:block}
+.vb:focus{outline:none}.vb:focus rect,.vb:hover rect{stroke:#0b2a3c;stroke-width:1}
+.lf{display:inline-block;font-weight:700;font-size:.8rem;padding:1px 7px;border-radius:6px;font-variant-numeric:tabular-nums}
+.lf-up2{background:#d8f0d2;color:#24600f}.lf-up{background:#ebf6e7;color:#3b6d2a}.lf-eq{background:#eef2f7;color:#3a516a}.lf-dn{background:#fff1e0;color:#8a5a0b}.lf-dn2{background:#fde3e3;color:#9b2c2c}
+.vlift tr.vsep th,.vlift tr.vsep td{border-top:2px solid #cfdde0}
+.vtag{display:inline-block;font-size:.72rem;background:#eef4f5;color:#335;border-radius:5px;padding:1px 6px;margin:1px 2px 1px 0;white-space:nowrap}
+.vtop td:nth-child(2){min-width:280px}
+.vtitles{margin-top:12px}
+@media (max-width:640px){.vkpi{grid-template-columns:1fr 1fr}.vkpi .stat{padding:14px 12px}.vsgrid{grid-template-columns:1fr}}
+.lazyph{min-height:120px;border:1px dashed var(--line);border-radius:12px;padding:16px;background:#fafcfc}
+.lazyph[data-state="error"]{border-color:#e9c27a;background:var(--warn-bg)}
+.vchan a,.vtop a,.vtitles a{word-break:normal;overflow-wrap:anywhere}
+.vchan td:first-child{min-width:150px}.vchan td:nth-child(8){white-space:nowrap}.vchan td:last-child{min-width:220px}
+.vtop td:nth-child(3){white-space:nowrap}
+@media (max-width:640px){.vchart{overflow-x:auto;-webkit-overflow-scrolling:touch}.vchart svg{min-width:560px}}

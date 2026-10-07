@@ -1,0 +1,29 @@
+---
+// 출처 신뢰도·인기도 탭 본문(~120KB) — /insights/keywords/sources/ 에서 렌더, 탭을 열 때 가져옴.
+import K from '../content/insights/keywords.json';
+const fmt = (n: number | null | undefined, d = 0) => (n === null || n === undefined || Number.isNaN(n) ? '—' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d }));
+const cb = (s: number) => (s >= 4.75 ? 'b5' : s >= 3.75 ? 'b4' : s >= 2.75 ? 'b3' : s >= 1.75 ? 'b2' : 'b1');
+const wbTxt = (c: any) => (c.wayback_months ? `Wayback ${c.wayback_months}${c.wayback_mode === '연' ? '개 연도' : '개월'} 수집` : c.group === '경쟁사 사이트' || c.domain ? 'Wayback 미수집' : null);
+const sources = K.sources as any[];
+const groups = ['데이터 출처', '경쟁사 사이트', '키워드 SERP', '예산·기술 조사'];
+---
+      <div class="kwgrid">
+        <div class="kwcard"><h4>신뢰도 (1~5, 근사 지수)</h4><p class="note" style="font-size:.88rem">{K.scoring.credibility}</p></div>
+        <div class="kwcard"><h4>인기도 (1~5, 근사 지수)</h4><p class="note" style="font-size:.88rem">{K.scoring.popularity}</p></div>
+      </div>
+      <p class="note">배지: <span class="bdg b5">5</span> <span class="bdg b4">4</span> <span class="bdg b3">3</span> <span class="bdg b2">2</span> <span class="bdg b1">1</span> — 인기도가 높다고 정확한 것은 아닙니다.</p>
+      {groups.map((g) => { const rows = sources.filter((s) => s.group === g).sort((a, b) => b.credibility - a.credibility || (a.tranco || 9e9) - (b.tranco || 9e9)); return (
+        <details class="grp" open={g === '데이터 출처'}><summary>{g} <small class="muted">({rows.length}건)</small></summary>
+          <div class="tblwrap"><table class="tbl" style="min-width:880px"><thead><tr><th>출처</th><th>유형</th><th class="n">신뢰도</th><th>보정</th><th class="n">인기도</th><th class="n">Tranco</th><th class="n">SERP 노출</th><th>비고</th></tr></thead><tbody>
+            {rows.map((s) => <tr>
+              <td>{s.url ? <a href={s.url} rel="noopener nofollow" target="_blank">{s.title}</a> : s.title}{s.publisher && s.publisher !== s.title ? <><br /><small>{s.publisher}</small></> : null}</td>
+              <td>{s.type_ko}</td>
+              <td class="n"><span class={`bdg ${cb(s.credibility)}`}>{s.credibility}</span></td>
+              <td><small>{(s.adj || []).join(' / ') || '—'}</small></td>
+              <td class="n"><span class={`bdg ${cb(s.popularity ?? 1)}`}>{s.popularity ?? '—'}</span></td>
+              <td class="n">{s.tranco ? fmt(s.tranco) : <small>100만 밖</small>}</td>
+              <td class="n">{s.serp_hits ?? '—'}</td>
+              <td><small>{[s.note, s.domain_age != null ? `도메인 ${s.domain_age}년` : null, wbTxt(s), s.date].filter(Boolean).join(' · ')}</small></td></tr>)}
+          </tbody></table></div>
+        </details>); })}
+    

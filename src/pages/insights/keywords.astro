@@ -1,42 +1,12 @@
 ---
 import { u } from '../../lib/url';
 import Layout from '../../layouts/Layout.astro';
-import BudgetYearly from '../../components/BudgetYearly.astro';
+import TabsScript from '../../components/TabsScript.astro';
 import AlgaeCompare from '../../components/AlgaeCompare.astro';
 import K from '../../content/insights/keywords.json';
 import B from '../../content/insights/research/budgets.json';
 import F from '../../content/insights/research/forecasts.json';
 import T from '../../content/insights/research/nextgen_tech.json';
-// 영상 자료(선택): src/content/insights/video/*.json 이 있으면 자동 표시
-const vidMods = import.meta.glob('../../content/insights/video/*.json', { eager: true }) as Record<string, any>;
-const vid: Record<string, any> = {};
-for (const [p, m] of Object.entries(vidMods)) vid[p.split('/').pop()!.replace('.json', '')] = (m as any).default ?? m;
-const recsOf = (x: any): any[] => (Array.isArray(x) ? x : Array.isArray(x?.records) ? x.records : Array.isArray(x?.videos) ? x.videos : Array.isArray(x?.channels) ? x.channels : []);
-const vVideos = recsOf(vid.videos).slice().sort((a: any, b: any) => (b.view_count ?? b.views ?? 0) - (a.view_count ?? a.views ?? 0));
-const vChannels = recsOf(vid.video_channels);
-const vSummary: string[] = vid.videos?.meta?.summary || vid.video_channels?.meta?.summary || vid.videos?.summary || [];
-const hasVideo = vVideos.length > 0 || vChannels.length > 0;
-const PREF = ['title', 'name', 'channel', 'channel_name', 'uploader', 'platform', 'country', 'region', 'lang', 'language', 'category', 'topic', 'theme', 'upload_date', 'published', 'date', 'view_count', 'views', 'subscribers', 'subscriber_count', 'follower_count', 'video_count', 'duration', 'duration_s', 'relevance', 'note', 'url', 'webpage_url', 'channel_url'];
-const pickCols = (rows: any[], max: number) => {
-  const keys = new Set<string>(); rows.slice(0, 50).forEach((r) => Object.keys(r || {}).forEach((k) => keys.add(k)));
-  const pref = PREF.filter((k) => keys.has(k));
-  const rest = [...keys].filter((k) => !pref.includes(k) && !/id$|^_|description|tags|thumbnail/i.test(k));
-  return [...pref, ...rest].slice(0, max);
-};
-const vVidCols = pickCols(vVideos, 9);
-const vChanCols = pickCols(vChannels, 8);
-const LBL: Record<string, string> = { title: '제목', name: '이름', channel: '채널', channel_name: '채널', uploader: '게시자', platform: '플랫폼', country: '국가', region: '지역', lang: '언어', language: '언어', category: '분류', topic: '주제', theme: '주제', upload_date: '게시일', published: '게시일', date: '날짜', view_count: '조회수', views: '조회수', subscribers: '구독자', subscriber_count: '구독자', follower_count: '팔로워', video_count: '영상 수', duration: '길이', duration_s: '길이(초)', relevance: '관련성', note: '메모', url: '링크', webpage_url: '링크', channel_url: '채널 링크' };
-const isLink = (r: any, k: string) => typeof r?.[k] === 'string' && r[k].startsWith('http');
-const colLabel = (k: string) => LBL[k] || k;
-const cell = (r: any, k: string) => {
-  const v = r?.[k];
-  if (v == null || v === '') return '—';
-  if (typeof v === 'number') return fmt(v);
-  if (typeof v === 'string' && /^\d{8}$/.test(v)) return `${v.slice(0, 4)}-${v.slice(4, 6)}-${v.slice(6)}`;
-  if (typeof v === 'object') return JSON.stringify(v).slice(0, 120);
-  return String(v);
-};
-
 const fmt = (n: number | null | undefined, d = 0) => (n === null || n === undefined || Number.isNaN(n) ? '—' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d }));
 const usd = (m: number | null | undefined) => (m === null || m === undefined ? '—' : m >= 1000 ? `$${fmt(m / 1000, 2)}B` : `$${fmt(m, m < 10 ? 1 : 0)}M`);
 const pct = (a: number | null, b: number | null) => (a == null || b == null || b === 0 ? null : Math.round((a / b - 1) * 100));
@@ -243,41 +213,10 @@ const reco: any = K.reco;
       <p class="note">관찰 시각 2026-10-08 01:40~02:00 KST. 검색 도구의 외부 인덱스 기준으로, 실제 Google·네이버 순위와 다를 수 있습니다. 검색량·순위를 만들어 넣지 않았습니다.</p>
     </section>
 
-    <!-- 예산 -->
+    <!-- 예산 (본문은 /insights/keywords/budget/ 에서 지연 로드) -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-budget" aria-labelledby="t-budget" tabindex="0">
       <h2>국가별 수질·하수·녹조 공공예산 — 연도별 (2016–2026 · 2027 정부안)</h2>
-      <div class="caveat"><b>금액을 국가끼리 순위 매기면 안 됩니다.</b> 나라마다 예산 범위(중앙/지방, 투자/운영, 보조/융자, 하수도 포함 여부)가 다릅니다. 국가 간 비교에 가장 가까운 지표는 COFOG 05.2(일반정부 폐수관리 지출) 행뿐이고, 나머지는 각국 대표 프로그램입니다. 같은 시리즈 안에서 연도별 변화를 보세요.</div>
-      <p class="note">환율: {(B as any).meta.fx_method} 값이 없는 연도는 비워 두었고 <b>보간하지 않았습니다</b>. 다년 계획·누계는 총액 행으로만 표시합니다. 영국은 OECD 일반정부 폐수관리(COFOG 05.2)가 2015–2024년 모두 0으로 보고돼(상하수도 민영) 제외했습니다.</p>
-      <BudgetYearly>
-        <h3>기간 창 요약 — 시리즈별 10·5·2년 연평균 (USD)</h3>
-        <p class="note">보조 보기입니다. 기간 창은 각 시리즈의 최신 연도부터 거꾸로 센 10·5·2년이며, 자료가 없는 연도는 평균에서 뺐습니다(보간 없음). 추세는 현지통화 기준입니다.</p>
-        
-      <div class="tblwrap"><table class="tbl" style="min-width:980px"><thead><tr><th>국가</th><th>프로그램·범위</th><th>연도별(USD)</th><th class="n">10년 창</th><th class="n">5년 창</th><th class="n">2년 창</th><th class="n">추세(2년÷10년, 현지통화)</th><th>메모</th></tr></thead><tbody>
-        {aggs.map((a) => { const sp = spark(a.series); const t = a.trend_2y_vs_10y_avg_pct_local_currency ?? a.trend_2y_vs_10y_avg_pct; return <tr>
-          <td>{a.country_ko}</td><td>{a.program_ko}<br /><small>{a.scope_category}</small></td>
-          <td>{sp ? <svg width={sp.w} height={sp.h} viewBox={`0 0 ${sp.w} ${sp.h}`} role="img" aria-label={`${a.country_ko} 연도별 금액 막대`}>{sp.bars.map((b) => <rect x={b.x} y={sp.h - b.h} width="14" height={b.h} rx="2" fill="#13808a" aria-label={`${b.y}: ${usd(b.v)}`} />)}</svg> : '—'}</td>
-          {a.window_10y || a.window_5y || a.window_2y ? <>
-          <td class="n">{a.window_10y ? <>{usd(a.window_10y.avg_usd_m)}<br /><small>{a.window_10y.years}</small></> : '—'}</td>
-          <td class="n">{a.window_5y ? <>{usd(a.window_5y.avg_usd_m)}<br /><small>{a.window_5y.years}</small></> : '—'}</td>
-          <td class="n">{a.window_2y ? <>{usd(a.window_2y.avg_usd_m)}<br /><small>{a.window_2y.years}</small></> : '—'}</td>
-          </> : <td colspan="3"><small class="muted">시점 비교만(자료 4개 미만):</small><br /><small>{(a.points || []).map((pt: any) => `${pt.year} ${usd(pt.usd_m)}`).join(' → ') || '—'}</small></td>}
-          <td class="n">{t == null ? (a.local_change_first_to_last_pct != null ? <small>처음→끝 {a.local_change_first_to_last_pct > 0 ? '+' : ''}{a.local_change_first_to_last_pct}%</small> : '—') : `${t > 0 ? '+' : ''}${t}%`}</td>
-          <td><small>{aggNote(a.note)}</small></td></tr>; })}
-      </tbody></table></div>
-      <h3>원자료 ({recs.length}행, 국가별)</h3>
-      {countries.map((c) => { const rows = recs.filter((r) => r.country_ko === c); return (
-        <details class="grp"><summary>{c} <small class="muted">({rows.length}행)</small></summary>
-          <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr><th>연도</th><th>프로그램</th><th class="n">현지 금액</th><th class="n">USD</th><th>구분</th><th>출처</th></tr></thead><tbody>
-            {rows.sort((a, b) => (a.series || '').localeCompare(b.series || '') || (a.year || 0) - (b.year || 0)).map((r) => <tr>
-              <td>{r.period || r.year || '—'}</td><td>{r.program_ko}<br /><small>{r.scope}</small></td>
-              <td class="n">{r.local_amount != null ? `${fmt(r.local_amount, 1)} ${r.local_unit || ''}` : '—'}</td>
-              <td class="n">{usd(r.usd_million)}</td>
-              <td><span class={`bdg ${statusBadge(r.official_or_estimate)}`}>{r.official_or_estimate}</span></td>
-              <td>{r.source_url ? <a href={r.source_url} rel="noopener nofollow" target="_blank">{r.source_id}</a> : r.source_id}{r.note ? <><br /><small>{r.note}</small></> : null}</td></tr>)}
-          </tbody></table></div>
-        </details>); })}
-      <p class="note">출처: 별도 조사 /research/budgets.json(작성 2026-10-08), 2027 정부안은 forecasts.json F01(뉴시스 2026-09-01).</p>
-          </BudgetYearly>
+      <div class="lazyph" data-lazy={u('/insights/keywords/budget/')}><p class="note">연도별 표·차트를 불러오는 중… <a href={u('/insights/keywords/budget/')}>별도 페이지에서 보기</a></p></div>
     </section>
 
     <!-- 전망 -->
@@ -322,48 +261,13 @@ const reco: any = K.reco;
     <!-- 영상 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-video" aria-labelledby="t-video" tabindex="0">
       <h2>영상 자료 분석</h2>
-      {hasVideo ? (
-        <>
-          <p class="note">출처: 별도 영상 조사(/research/videos.json · video_channels.json). 조회수·구독자 수는 수집 시점의 플랫폼 공개값이며, 플랫폼마다 집계 방식이 다릅니다.</p>
-          {vSummary.length > 0 && <ul class="ilist">{vSummary.map((s: string) => <li>{s}</li>)}</ul>}
-          {vChannels.length > 0 && (<>
-            <h3>채널 ({vChannels.length})</h3>
-            <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr>{vChanCols.map((k) => <th>{colLabel(k)}</th>)}</tr></thead><tbody>
-              {vChannels.map((r: any) => <tr>{vChanCols.map((k) => <td>{isLink(r, k) ? <a href={r[k]} rel="noopener nofollow" target="_blank">열기</a> : cell(r, k)}</td>)}</tr>)}
-            </tbody></table></div></>)}
-          {vVideos.length > 0 && (<>
-            <h3>영상 ({vVideos.length}{vVideos.length > 150 ? ', 상위 150개 표시' : ''})</h3>
-            <div class="tblwrap"><table class="tbl" style="min-width:1000px"><thead><tr>{vVidCols.map((k) => <th>{colLabel(k)}</th>)}</tr></thead><tbody>
-              {vVideos.slice(0, 150).map((r: any) => <tr>{vVidCols.map((k) => <td>{isLink(r, k) ? <a href={r[k]} rel="noopener nofollow" target="_blank">열기</a> : cell(r, k)}</td>)}</tr>)}
-            </tbody></table></div></>)}
-        </>
-      ) : (
-        <div class="notice-box"><b>준비 중 — 아직 데이터 없음.</b> 영상 자료 분석(국내외 경쟁사·기관 영상, 채널, 주제·조회 추이)은 별도로 조사하고 있어 이번 배포에는 반영되지 않았습니다. 조사 파일(<code>videos.json</code>·<code>video_channels.json</code>)을 <code>src/content/insights/video/</code>에 넣고 다시 빌드하면 이 탭에 자동으로 표시됩니다. 숫자를 미리 채워 넣지 않았습니다.</div>
-      )}
+      <div class="lazyph" data-lazy={u('/insights/keywords/video/')}><p class="note">영상 분석을 불러오는 중… <a href={u('/insights/keywords/video/')}>별도 페이지에서 보기</a></p></div>
     </section>
 
-    <!-- 출처 -->
+    <!-- 출처 (본문은 /insights/keywords/sources/ 에서 지연 로드) -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-sources" aria-labelledby="t-sources" tabindex="0">
       <h2>출처 신뢰도·인기도 ({sources.length}건)</h2>
-      <div class="kwgrid">
-        <div class="kwcard"><h4>신뢰도 (1~5, 근사 지수)</h4><p class="note" style="font-size:.88rem">{K.scoring.credibility}</p></div>
-        <div class="kwcard"><h4>인기도 (1~5, 근사 지수)</h4><p class="note" style="font-size:.88rem">{K.scoring.popularity}</p></div>
-      </div>
-      <p class="note">배지: <span class="bdg b5">5</span> <span class="bdg b4">4</span> <span class="bdg b3">3</span> <span class="bdg b2">2</span> <span class="bdg b1">1</span> — 인기도가 높다고 정확한 것은 아닙니다.</p>
-      {groups.map((g) => { const rows = sources.filter((s) => s.group === g).sort((a, b) => b.credibility - a.credibility || (a.tranco || 9e9) - (b.tranco || 9e9)); return (
-        <details class="grp" open={g === '데이터 출처'}><summary>{g} <small class="muted">({rows.length}건)</small></summary>
-          <div class="tblwrap"><table class="tbl" style="min-width:880px"><thead><tr><th>출처</th><th>유형</th><th class="n">신뢰도</th><th>보정</th><th class="n">인기도</th><th class="n">Tranco</th><th class="n">SERP 노출</th><th>비고</th></tr></thead><tbody>
-            {rows.map((s) => <tr>
-              <td>{s.url ? <a href={s.url} rel="noopener nofollow" target="_blank">{s.title}</a> : s.title}{s.publisher && s.publisher !== s.title ? <><br /><small>{s.publisher}</small></> : null}</td>
-              <td>{s.type_ko}</td>
-              <td class="n"><span class={`bdg ${cb(s.credibility)}`}>{s.credibility}</span></td>
-              <td><small>{(s.adj || []).join(' / ') || '—'}</small></td>
-              <td class="n"><span class={`bdg ${cb(s.popularity ?? 1)}`}>{s.popularity ?? '—'}</span></td>
-              <td class="n">{s.tranco ? fmt(s.tranco) : <small>100만 밖</small>}</td>
-              <td class="n">{s.serp_hits ?? '—'}</td>
-              <td><small>{[s.note, s.domain_age != null ? `도메인 ${s.domain_age}년` : null, wbTxt(s), s.date].filter(Boolean).join(' · ')}</small></td></tr>)}
-          </tbody></table></div>
-        </details>); })}
+      <div class="lazyph" data-lazy={u('/insights/keywords/sources/')}><p class="note">출처 표를 불러오는 중… <a href={u('/insights/keywords/sources/')}>별도 페이지에서 보기</a></p></div>
     </section>
 
     <!-- 추천 -->
@@ -400,32 +304,5 @@ const reco: any = K.reco;
     </section>
   </div>
 
-  <script is:inline>
-  (function(){
-    document.documentElement.classList.add('js');
-    function init(list,opt){
-      var tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
-      var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
-      function sel(i,focus,push){
-        tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(panels[j])panels[j].hidden=!on;});
-        if(focus)tabs[i].focus();
-        var tb=tabs[i];if(list.scrollWidth>list.clientWidth){list.scrollLeft=tb.offsetLeft-list.offsetLeft-(list.clientWidth-tb.offsetWidth)/2;}
-        if(opt.hash&&push!==false&&history.replaceState)history.replaceState(null,'','#'+tb.dataset.tab);
-      }
-      tabs.forEach(function(t,i){
-        t.addEventListener('click',function(){sel(i);});
-        t.addEventListener('keydown',function(e){
-          var k=e.key,n=tabs.length,j=null;
-          if(k==='ArrowRight')j=(i+1)%n;else if(k==='ArrowLeft')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;
-          if(j!==null){e.preventDefault();sel(j,true);}
-        });
-      });
-      var start=0;
-      if(opt.hash){var h=location.hash.slice(1);tabs.forEach(function(t,i){if(t.dataset.tab===h)start=i;});}
-      sel(start,false,false);
-    }
-    var main=document.querySelector('[data-main]');if(main)init(main,{hash:true});
-    [].forEach.call(document.querySelectorAll('[data-sub]'),function(l){init(l,{hash:false});});
-  })();
-  </script>
+  <TabsScript />
 </Layout>

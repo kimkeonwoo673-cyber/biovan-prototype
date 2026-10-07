@@ -1,0 +1,51 @@
+---
+// 탭(role=tablist) + 지연 로드. 메인 탭은 해시(#budget 등) 연동, 하위 탭([data-sub])은 해시 없음.
+// [data-lazy="URL"] 자리표시자: 해당 패널이 처음 열릴 때 URL(전체 HTML 페이지)을 받아 그 안의 [data-frag] 내용을 끼워 넣음.
+---
+<script is:inline>
+(function(){
+  document.documentElement.classList.add('js');
+  function init(list,opt){
+    var tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
+    var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
+    function sel(i,focus,push){
+      tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(panels[j])panels[j].hidden=!on;});
+      if(focus)tabs[i].focus();
+      var tb=tabs[i];if(list.scrollWidth>list.clientWidth){list.scrollLeft=tb.offsetLeft-list.offsetLeft-(list.clientWidth-tb.offsetWidth)/2;}
+      if(opt.hash&&push!==false&&history.replaceState)history.replaceState(null,'','#'+tb.dataset.tab);
+      if(panels[i])lazy(panels[i]);
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){sel(i);});
+      t.addEventListener('keydown',function(e){
+        var k=e.key,n=tabs.length,j=null;
+        if(k==='ArrowRight')j=(i+1)%n;else if(k==='ArrowLeft')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;
+        if(j!==null){e.preventDefault();sel(j,true);}
+      });
+    });
+    var start=0;
+    if(opt.hash){var h=location.hash.slice(1);tabs.forEach(function(t,i){if(t.dataset.tab===h)start=i;});}
+    sel(start,false,false);
+  }
+  function subs(root){[].forEach.call(root.querySelectorAll('[data-sub]'),function(l){if(l.getAttribute('data-ready'))return;l.setAttribute('data-ready','1');init(l,{hash:false});});}
+  function lazy(panel){
+    var ph=panel.querySelector('[data-lazy]');
+    if(!ph||ph.getAttribute('data-state'))return;
+    ph.setAttribute('data-state','loading');ph.setAttribute('aria-busy','true');
+    fetch(ph.getAttribute('data-lazy'),{credentials:'same-origin'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text();}).then(function(t){
+      var doc=new DOMParser().parseFromString(t,'text/html'),f=doc.querySelector('[data-frag]');
+      if(!f)throw new Error('fragment not found');
+      var box=document.createElement('div');box.className='lazybox';
+      while(f.firstChild)box.appendChild(document.importNode(f.firstChild,true)),f.removeChild(f.firstChild);
+      ph.parentNode.replaceChild(box,ph);
+      subs(box);panel.setAttribute('data-loaded','1');
+    }).catch(function(e){
+      ph.setAttribute('data-state','error');ph.removeAttribute('aria-busy');
+      var a=ph.querySelector('a');ph.querySelector('p').innerHTML='불러오지 못했습니다('+(e&&e.message||'오류')+'). ';
+      if(a)ph.querySelector('p').appendChild(a);
+    });
+  }
+  var main=document.querySelector('[data-main]');if(main)init(main,{hash:true});
+  subs(document);
+})();
+</script>
