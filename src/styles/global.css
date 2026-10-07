@@ -541,3 +541,17 @@ details.grp .tblwrap{border:0;margin:6px -14px 0;border-radius:0}
   .ipanel .ytab tbody th:first-child{min-width:140px;max-width:160px}
   .ipanel .tbl .w-l{min-width:220px}.ipanel .tbl .w-m{min-width:160px}
 }
+/* 휴대폰: 글 위주 표는 행을 카드처럼 세로로 쌓음(가로 스크롤 없이 읽기) */
+@media (max-width:640px){
+  .ipanel .tbl.stk{display:block;width:100%}
+  .ipanel .tbl.stk thead{display:none}
+  .ipanel .tbl.stk tbody{display:block}
+  .ipanel .tbl.stk tr{display:block;padding:10px 0;border-bottom:1px solid #e1eaec}
+  .ipanel .tbl.stk tr>*{display:block;border:0;padding:3px 14px;min-width:0 !important;max-width:none !important;position:static !important;box-shadow:none !important;text-align:left;white-space:normal;background:transparent !important}
+  .ipanel .tbl.stk tr:nth-child(even){background:#f8fbfb}
+  .ipanel .tbl.stk tr.self{background:#fff8e8}
+  .ipanel .tbl.stk tbody th{font-size:15px;padding-top:4px}
+  .ipanel .tbl.stk td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:1px}
+  .ipanel .tbl.stk td.num{text-align:left}
+  .ipanel .tbl.stk th[rowspan]{display:block}
+}

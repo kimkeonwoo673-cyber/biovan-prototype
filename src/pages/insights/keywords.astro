@@ -94,12 +94,12 @@ const todo: [string, string][] = [
       <p class="intro">공개 자료만으로 바이오밴코리아의 검색 노출, 관심도 추이, 경쟁 환경을 정리한 핵심 결과입니다.</p>
       <p class="cv">순위·관심도는 관찰값과 상대지수이며 실제 검색량이 아닙니다.</p>
       <h3>핵심 수치</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>항목</th><th>수치</th><th>의미</th></tr></thead>
-        <tbody>{v.summary.map((r: string[]) => <tr><th scope="row" class="w-s">{r[0]}</th><td class="w-m"><b>{r[1]}</b></td><td class="w-l">{r[2]}</td></tr>)}</tbody>
+        <tbody>{v.summary.map((r: string[]) => <tr><th scope="row" class="w-s">{r[0]}</th><td class="w-m"><b>{r[1]}</b></td><td class="w-l" data-l="의미">{r[2]}</td></tr>)}</tbody>
       </table></div>
       <h3>기간별 요약</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>기간</th><th>요약</th></tr></thead>
         <tbody>{v.periods.map((r: string[]) => <tr><th scope="row" class="w-s">{r[0]}</th><td>{r[1]}</td></tr>)}</tbody>
       </table></div>
@@ -159,7 +159,7 @@ const todo: [string, string][] = [
         </table></div>
 
         <h3>경쟁사·시장 변화</h3>
-        <div class="tblwrap"><table class="tbl">
+        <div class="tblwrap"><table class="tbl stk">
           <thead><tr><th>시기</th><th>내용</th></tr></thead>
           <tbody>{(K.events[wk] as string[]).map((e) => { const [p, t] = splitEvent(e); return <tr><th scope="row" class="w-s">{p}</th><td>{t}</td></tr>; })}</tbody>
         </table></div>
@@ -188,11 +188,11 @@ const todo: [string, string][] = [
       <p class="intro">경쟁사 홈페이지와 검색 결과를 직접 확인해 포지셔닝, 웹 기본기, 검색 노출을 비교했습니다. 노란 배경 행이 자사입니다.</p>
       <p class="cv">신뢰도·인기도는 1~5점 근사치이며, 검색 노출은 외부 인덱스 상위 5개 기준입니다.</p>
       <h3>개요</h3>
-      <div class="tblwrap"><table class="tbl s1">
+      <div class="tblwrap"><table class="tbl s1 stk">
         <thead><tr><th>회사</th><th>국가</th><th>포지셔닝</th><th>핵심 키워드 (관찰)</th><th>홈 제목</th><th>언어</th></tr></thead>
         <tbody>{comps.map((c) => <tr class={c.self ? 'self' : ''}>
           <th scope="row"><b>{c.name}</b><span class="sub"><a href={c.url} rel="noopener nofollow" target="_blank">{c.domain}</a></span></th>
-          <td>{c.region}</td><td class="w-l">{c.positioning}</td><td class="w-m">{c.keywords}</td><td class="w-m">{c.title}</td><td>{c.langs}</td>
+          <td data-l="국가">{c.region}</td><td class="w-l" data-l="포지셔닝">{c.positioning}</td><td class="w-m" data-l="핵심 키워드">{c.keywords}</td><td class="w-m" data-l="홈 제목">{c.title}</td><td data-l="언어">{c.langs}</td>
         </tr>)}</tbody>
       </table></div>
       <h3>웹 기본기·인지도</h3>
@@ -205,9 +205,9 @@ const todo: [string, string][] = [
         </tr>)}</tbody>
       </table></div>
       <h3>검색 노출 관찰 <span class="unit">({serp.length}개 질의, 상위 5개)</span></h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th class="c">언어</th><th>질의</th><th>상위 도메인</th><th>관찰</th><th class="c">자사</th></tr></thead>
-        <tbody>{serp.map((s) => <tr><td class="c">{s.lang}</td><th scope="row">{s.query}</th><td class="w-l">{s.domains.join(' · ')}</td><td>{s.note}</td><td class="c">{s.biovan ? '노출' : s.third_party ? '기사로만' : <span class="dim">미노출</span>}</td></tr>)}</tbody>
+        <tbody>{serp.map((s) => <tr><td class="c" data-l="언어">{s.lang}</td><th scope="row">{s.query}</th><td class="w-l" data-l="상위 도메인">{s.domains.join(' · ')}</td><td data-l="관찰">{s.note}</td><td class="c" data-l="자사">{s.biovan ? '노출' : s.third_party ? '기사로만' : <span class="dim">미노출</span>}</td></tr>)}</tbody>
       </table></div>
       <details class="mth"><summary>방법·한계</summary>
         <ul>
@@ -240,9 +240,9 @@ const todo: [string, string][] = [
         </tr>)}</tbody>
       </table></div>
       <h3>바이오밴 시사점</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>지역</th><th>항목</th><th>시사점</th></tr></thead>
-        <tbody>{fcImpl.map((f) => <tr><td>{f.region}</td><th scope="row" class="w-m">{f.id === 'F01' ? '2027 정부안 (녹조·가축분뇨)' : f.title}</th><td class="w-l">{f.impl}</td></tr>)}</tbody>
+        <tbody>{fcImpl.map((f) => <tr><td data-l="지역">{f.region}</td><th scope="row" class="w-m">{f.id === 'F01' ? '2027 정부안 (녹조·가축분뇨)' : f.title}</th><td class="w-l" data-l="시사점">{f.impl}</td></tr>)}</tbody>
       </table></div>
       <details class="mth"><summary>방법·한계</summary>
         <ul>
@@ -266,9 +266,9 @@ const todo: [string, string][] = [
         <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td class="num">{t.top_rank ?? '—'}</td><td>{t.country}</td><td class="w-m">{t.category}</td><td>{t.maturity}</td><td>{t.relevance_to_biovan}</td><td class="num">{n(t.credibility, 1)}</td></tr>)}</tbody>
       </table></div>
       <h3>기술 내용과 바이오밴 영향</h3>
-      <div class="tblwrap"><table class="tbl s1">
+      <div class="tblwrap"><table class="tbl s1 stk">
         <thead><tr><th>기업·기관</th><th>기술</th><th>위협</th><th>바이오밴 기회</th></tr></thead>
-        <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td class="w-l">{t.technology}</td><td class="w-m">{t.threat}</td><td class="w-l">{t.opportunity}</td></tr>)}</tbody>
+        <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td class="w-l" data-l="기술">{t.technology}</td><td class="w-m" data-l="위협">{t.threat}</td><td class="w-l" data-l="바이오밴 기회">{t.opportunity}</td></tr>)}</tbody>
       </table></div>
       <details class="mth"><summary>방법·한계</summary>
         <p class="mnote">{(T as any).meta.note}</p>
@@ -303,22 +303,22 @@ const todo: [string, string][] = [
       <p class="intro">관찰 근거가 있는 키워드만 언어별·용도별로 정리했습니다.</p>
       <p class="cv">관심도 수치는 상대지수이며 실제 검색량이 아닙니다.</p>
       <h3>언어별 추천 키워드</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>언어</th><th>구분</th><th>키워드</th><th>근거</th></tr></thead>
-        <tbody>{recoRows.map((r) => <tr><td>{r.lang}</td><td>{r.kind}</td><th scope="row" class="w-m">{r.kw}</th><td class="w-l">{r.why === '—' ? <span class="dim">—</span> : r.why}</td></tr>)}</tbody>
+        <tbody>{recoRows.map((r) => <tr><td data-l="언어">{r.lang}</td><td data-l="구분">{r.kind}</td><th scope="row" class="w-m">{r.kw}</th><td class="w-l" data-l="근거">{r.why === '—' ? <span class="dim">—</span> : r.why}</td></tr>)}</tbody>
       </table></div>
       <h3>페이지별 키워드 배치</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>경로</th><th>페이지</th><th>한국어</th><th>영어</th></tr></thead>
-        <tbody>{(K.pages as any[]).map((p) => <tr><td><code>{p.path}</code></td><th scope="row">{p.name}</th><td>{p.ko}</td><td>{p.en}</td></tr>)}</tbody>
+        <tbody>{(K.pages as any[]).map((p) => <tr><td data-l="경로"><code>{p.path}</code></td><th scope="row">{p.name}</th><td data-l="한국어">{p.ko}</td><td data-l="영어">{p.en}</td></tr>)}</tbody>
       </table></div>
       <h3>제목·설명문(meta) 제안</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th>경로</th><th class="c">언어</th><th>title</th><th class="num">글자</th><th>meta description</th><th class="num">글자</th></tr></thead>
-        <tbody>{(K.titles as any[]).map((t) => <tr><td><code>{t.path}</code></td><td class="c">{t.lang}</td><td class="w-m">{t.title}</td><td class="num">{t.tlen}</td><td class="w-l">{t.desc}</td><td class="num">{t.dlen}</td></tr>)}</tbody>
+        <tbody>{(K.titles as any[]).map((t) => <tr><td data-l="경로"><code>{t.path}</code></td><td class="c" data-l="언어">{t.lang}</td><td class="w-m" data-l="title">{t.title}</td><td class="num" data-l="title 글자">{t.tlen}</td><td class="w-l" data-l="meta description">{t.desc}</td><td class="num" data-l="meta 글자">{t.dlen}</td></tr>)}</tbody>
       </table></div>
       <h3>바로 할 일</h3>
-      <div class="tblwrap"><table class="tbl">
+      <div class="tblwrap"><table class="tbl stk">
         <thead><tr><th class="num">순서</th><th>항목</th><th>내용</th></tr></thead>
         <tbody>{todo.map(([a, b], i) => <tr><td class="num">{i + 1}</td><th scope="row" class="w-s">{a}</th><td>{b}</td></tr>)}</tbody>
       </table></div>
