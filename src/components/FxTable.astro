@@ -1,0 +1,15 @@
+---
+// 환율 참고표(1 USD당 현지통화, 연평균). 6개 연도씩 두 표로 나눔.
+import V from '../content/insights/view.json';
+import { n } from '../lib/num';
+const fx: any = (V as any).fx;
+const halves = [fx.years.slice(0, 6), fx.years.slice(6)];
+const dg = (r: number) => (r >= 1000 ? 0 : r >= 10 ? 1 : 4);
+---
+<p class="mnote">{fx.source} {fx.rule} <i>기울임</i> = 최근 연평균으로 대체한 추정 환율.</p>
+{halves.map((ys: number[]) => (
+  <div class="tblwrap"><table class="tbl s1">
+    <thead><tr><th>통화</th>{ys.map((y) => <th class="num">{y}</th>)}</tr></thead>
+    <tbody>{fx.rows.map((r: any) => <tr><th scope="row">{r.cur} <span class="sub">{r.name}</span></th>{ys.map((y) => { const c = r.cells[String(y)]; return <td class={`num${c.est ? ' est' : ''}`} title={c.est ? `${c.from}년 값으로 대체(추정)` : undefined}>{n(c.r, dg(c.r))}</td>; })}</tr>)}</tbody>
+  </table></div>
+))}

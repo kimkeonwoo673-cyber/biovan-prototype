@@ -18,10 +18,17 @@ for (const t of tabs) {
   out[t] = await p.$eval(`#p-${t}`, (el) => ({ hidden: el.hidden, h: el.offsetHeight, tables: el.querySelectorAll('table').length, svgs: el.querySelectorAll('svg').length, subtabs: el.querySelectorAll('[data-sub] [role=tab]').length, ready: el.querySelectorAll('[data-sub][data-ready]').length }));
 }
 // 하위 탭 동작(지연 로드된 영상·예산)
-for (const [tab, st, sp] of [['video', '#vt-peer', '#vp-peer'], ['budget', '#st-cn', '#sp-cn'], ['budget', '#st-win', '#sp-win']]) {
+for (const [tab, st, sp] of [['video', '#vt-peer', '#vp-peer'], ['budget', '#st-cn', '#sp-cn'], ['budget', '#st-win', '#sp-win'], ['sources', '#st-src-serp', '#sp-src-serp']]) {
   await p.click(`#t-${tab}`); await p.click(st);
   out[`sub:${st}`] = await p.$eval(sp, (el) => !el.hidden && el.offsetHeight > 50);
 }
+// 본문(방법·한계 제외)에 USD 외 통화 금액이 남았는지 검사
+out.nonUSD = await p.$$eval('.ipanel', (ps) => ps.flatMap((el) => {
+  const c = el.cloneNode(true); c.querySelectorAll('details.mth').forEach((d) => d.remove());
+  const t = c.textContent || '';
+  const re = /\d[\d,.]*\s*(?:조|억|천만|백만|만)?\s*원(?![가-힣])|\d\s*(?:억|조)(?![가-힣])|[€£₹¥]\s*\d|\d[\d,.]*\s*(?:亿元|万元|元)|\bcrore\b|\bRMB\b|\bKRW\s*\d|\bEUR\s*\d|\bCNY\s*\d|\$\s?\d|US\$\s?\d/g;
+  return [...t.matchAll(re)].map((m) => el.id + ': …' + t.slice(Math.max(0, m.index - 30), m.index + 30).replace(/\s+/g, ' ') + '…');
+}));
 // 해시 딥링크
 const p2 = await b.newPage(); p2.on('pageerror', (e) => errs.push('p2 pageerror: ' + e.message));
 await p2.goto(url + '#video', { waitUntil: 'networkidle' });

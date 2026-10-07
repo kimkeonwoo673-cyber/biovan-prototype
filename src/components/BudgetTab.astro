@@ -1,54 +1,90 @@
 ---
-// 국가별 예산 탭 본문. 무게(~330KB) 때문에 메인 페이지에는 넣지 않고 /insights/keywords/budget/ 에서 렌더 → 탭을 열 때 가져옴.
-import BudgetYearly from './BudgetYearly.astro';
-import B from '../content/insights/research/budgets.json';
-const fmt = (n: number | null | undefined, d = 0) => (n === null || n === undefined || Number.isNaN(n) ? '—' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d }));
-const usd = (m: number | null | undefined) => (m === null || m === undefined ? '—' : m >= 1000 ? `$${fmt(m / 1000, 2)}B` : `$${fmt(m, m < 10 ? 1 : 0)}M`);
-const aggNote = (n?: string) => (n && !/^창\(window\)은|^데이터 포인트가/.test(n) ? n : '');
-const recs = (B as any).records as any[];
-const aggs = (B as any).aggregates as any[];
-const bySeries: Record<string, any[]> = {};
-for (const r of recs) if (r.series) (bySeries[r.series] ||= []).push(r);
-const countries = [...new Set(recs.map((r) => r.country_ko))];
-const statusBadge = (s: string) => (s === '자료 미확인' ? 'bnone' : /derived|예산안|정부안|계획|약|학술|보도|기업/.test(s) ? 'best' : 'bofficial');
-function spark(series: string) {
-  const pts = (bySeries[series] || []).filter((r) => r.usd_million != null && r.year).sort((a, b) => a.year - b.year);
-  if (!pts.length) return null;
-  const max = Math.max(...pts.map((p) => p.usd_million));
-  const bw = 14, gap = 4, h = 40;
-  return { w: pts.length * (bw + gap), h, bars: pts.map((p, i) => ({ x: i * (bw + gap), h: Math.max(1, (p.usd_million / max) * (h - 4)), y: p.year, v: p.usd_million })) };
-}
+// 국가별 예산 탭(지연 로드: /insights/keywords/budget/). 모든 금액 백만 USD, 해당 연도 연평균 환율.
+import V from '../content/insights/view.json';
+import FxTable from './FxTable.astro';
+import { money, n, chg } from '../lib/num';
+const b: any = (V as any).budget;
+const YRS = Array.from({ length: 11 }, (_, i) => String(2016 + i));
+const groups = b.groups;
+const raw = b.raw;
 ---
-      <div class="caveat"><b>금액을 국가끼리 순위 매기면 안 됩니다.</b> 나라마다 예산 범위(중앙/지방, 투자/운영, 보조/융자, 하수도 포함 여부)가 다릅니다. 국가 간 비교에 가장 가까운 지표는 COFOG 05.2(일반정부 폐수관리 지출) 행뿐이고, 나머지는 각국 대표 프로그램입니다. 같은 시리즈 안에서 연도별 변화를 보세요.</div>
-      <p class="note">환율: {(B as any).meta.fx_method} 값이 없는 연도는 비워 두었고 <b>보간하지 않았습니다</b>. 다년 계획·누계는 총액 행으로만 표시합니다. 영국은 OECD 일반정부 폐수관리(COFOG 05.2)가 2015–2024년 모두 0으로 보고돼(상하수도 민영) 제외했습니다.</p>
-      <BudgetYearly>
-        <h3>기간 창 요약 — 시리즈별 10·5·2년 연평균 (USD)</h3>
-        <p class="note">보조 보기입니다. 기간 창은 각 시리즈의 최신 연도부터 거꾸로 센 10·5·2년이며, 자료가 없는 연도는 평균에서 뺐습니다(보간 없음). 추세는 현지통화 기준입니다.</p>
-        
-      <div class="tblwrap"><table class="tbl" style="min-width:980px"><thead><tr><th>국가</th><th>프로그램·범위</th><th>연도별(USD)</th><th class="n">10년 창</th><th class="n">5년 창</th><th class="n">2년 창</th><th class="n">추세(2년÷10년, 현지통화)</th><th>메모</th></tr></thead><tbody>
-        {aggs.map((a) => { const sp = spark(a.series); const t = a.trend_2y_vs_10y_avg_pct_local_currency ?? a.trend_2y_vs_10y_avg_pct; return <tr>
-          <td>{a.country_ko}</td><td>{a.program_ko}<br /><small>{a.scope_category}</small></td>
-          <td>{sp ? <svg width={sp.w} height={sp.h} viewBox={`0 0 ${sp.w} ${sp.h}`} role="img" aria-label={`${a.country_ko} 연도별 금액 막대`}>{sp.bars.map((b) => <rect x={b.x} y={sp.h - b.h} width="14" height={b.h} rx="2" fill="#13808a" aria-label={`${b.y}: ${usd(b.v)}`} />)}</svg> : '—'}</td>
-          {a.window_10y || a.window_5y || a.window_2y ? <>
-          <td class="n">{a.window_10y ? <>{usd(a.window_10y.avg_usd_m)}<br /><small>{a.window_10y.years}</small></> : '—'}</td>
-          <td class="n">{a.window_5y ? <>{usd(a.window_5y.avg_usd_m)}<br /><small>{a.window_5y.years}</small></> : '—'}</td>
-          <td class="n">{a.window_2y ? <>{usd(a.window_2y.avg_usd_m)}<br /><small>{a.window_2y.years}</small></> : '—'}</td>
-          </> : <td colspan="3"><small class="muted">시점 비교만(자료 4개 미만):</small><br /><small>{(a.points || []).map((pt: any) => `${pt.year} ${usd(pt.usd_m)}`).join(' → ') || '—'}</small></td>}
-          <td class="n">{t == null ? (a.local_change_first_to_last_pct != null ? <small>처음→끝 {a.local_change_first_to_last_pct > 0 ? '+' : ''}{a.local_change_first_to_last_pct}%</small> : '—') : `${t > 0 ? '+' : ''}${t}%`}</td>
-          <td><small>{aggNote(a.note)}</small></td></tr>; })}
-      </tbody></table></div>
-      <h3>원자료 ({recs.length}행, 국가별)</h3>
-      {countries.map((c) => { const rows = recs.filter((r) => r.country_ko === c); return (
-        <details class="grp"><summary>{c} <small class="muted">({rows.length}행)</small></summary>
-          <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr><th>연도</th><th>프로그램</th><th class="n">현지 금액</th><th class="n">USD</th><th>구분</th><th>출처</th></tr></thead><tbody>
-            {rows.sort((a, b) => (a.series || '').localeCompare(b.series || '') || (a.year || 0) - (b.year || 0)).map((r) => <tr>
-              <td>{r.period || r.year || '—'}</td><td>{r.program_ko}<br /><small>{r.scope}</small></td>
-              <td class="n">{r.local_amount != null ? `${fmt(r.local_amount, 1)} ${r.local_unit || ''}` : '—'}</td>
-              <td class="n">{usd(r.usd_million)}</td>
-              <td><span class={`bdg ${statusBadge(r.official_or_estimate)}`}>{r.official_or_estimate}</span></td>
-              <td>{r.source_url ? <a href={r.source_url} rel="noopener nofollow" target="_blank">{r.source_id}</a> : r.source_id}{r.note ? <><br /><small>{r.note}</small></> : null}</td></tr>)}
-          </tbody></table></div>
-        </details>); })}
-      <p class="note">출처: 별도 조사 /research/budgets.json(작성 2026-10-08), 2027 정부안은 forecasts.json F01(뉴시스 2026-09-01).</p>
-          </BudgetYearly>
-    
+<p class="intro">국가·프로그램별 수질·하수·녹조 공공예산을 연도별로 정리했습니다. 단위는 모두 <b>백만 USD</b>이고, 각 연도의 연평균 환율로 환산했습니다.</p>
+<p class="cv">나라마다 예산 범위(중앙/지방, 투자/운영, 하수도 포함 여부)가 달라 국가끼리 순위를 매기면 안 됩니다. 같은 시리즈 안에서 연도별 변화를 보세요.</p>
+
+<div class="subtabs" role="tablist" aria-label="국가·지역 선택" data-sub>
+  {groups.map((g: any, i: number) => <button class="stab" role="tab" id={`st-${g.id}`} aria-controls={`sp-${g.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{g.label}</button>)}
+  <button class="stab" role="tab" id="st-nf" aria-controls="sp-nf" aria-selected="false" tabindex="-1">자료 미확인</button>
+  <button class="stab" role="tab" id="st-win" aria-controls="sp-win" aria-selected="false" tabindex="-1">10·5·2년 평균</button>
+</div>
+
+{groups.map((g: any) => (
+  <div class="subpanel" role="tabpanel" id={`sp-${g.id}`} aria-labelledby={`st-${g.id}`} tabindex="0">
+    {g.rows.length > 0 && (<>
+      <h3>{g.label} — 연도별 금액 <span class="unit">(백만 USD)</span></h3>
+      <div class="tblwrap"><table class="tbl s1 ytab">
+        <thead><tr><th>시리즈</th>{YRS.map((y) => <th class="num">{y}</th>)}{g.has27 && <th class="num">2027<br />정부안</th>}</tr></thead>
+        <tbody>
+          {g.rows.map((r: any) => <tr>
+            <th scope="row">{r.name}<span class="sub">{r.scope}</span>{(r.note || r.urls.length > 0) && <span class="sub nt">{r.note}{r.note && r.urls.length > 0 && ' · '}{r.urls.map((u: string, i: number) => <a href={u} rel="noopener nofollow" target="_blank">출처{r.urls.length > 1 ? i + 1 : ''} </a>)}</span>}</th>
+            {YRS.map((y) => { const c = r.cells[y]; return c ? <td class={`num${c.est ? ' est' : ''}`} title={c.tip}>{money(c.v)}</td> : <td class="num dim">—</td>; })}
+            {g.has27 && (r.y2027 ? (r.y2027.v != null ? <td class="num" title={r.y2027.tip}>{money(r.y2027.v)}</td> : <td class="num dim">{r.y2027.text}</td>) : <td class="num dim">—</td>)}
+          </tr>)}
+        </tbody>
+      </table></div>
+      <details class="sub mob-only"><summary>시리즈별 비고·출처</summary>
+        <ul class="mlist">{g.rows.filter((r: any) => r.note || r.urls.length > 0).map((r: any) => <li><b>{r.name}</b> — {r.note}{r.note && r.urls.length > 0 && ' · '}{r.urls.map((u: string, i: number) => <a href={u} rel="noopener nofollow" target="_blank">출처{r.urls.length > 1 ? i + 1 : ''} </a>)}</li>)}</ul>
+      </details>
+      <p class="tcap">‘—’ = 이번 조사에서 공식 수치를 찾지 못한 연도(보간하지 않음). <i>기울임</i> = 추정(공식 누계·증감에서 역산). 셀에 마우스를 올리면 상태·출처 ID가 보입니다. 시리즈 이름 아래 회색 글씨가 범위와 비고입니다(휴대폰에서는 표 아래 '시리즈별 비고·출처').</p>
+    </>)}
+    {g.totals.length > 0 && (<>
+      <h3>다년 총액 <span class="unit">(백만 USD)</span></h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>프로그램</th><th>기간</th><th class="num">총액</th><th>비고</th></tr></thead>
+        <tbody>{g.totals.map((t: any) => <tr><th scope="row" class="w-m">{t.name}</th><td>{t.period}</td><td class="num">{money(t.v)}</td><td class="note-c">{t.note}{t.url && <> · <a href={t.url} rel="noopener nofollow" target="_blank">출처</a></>}</td></tr>)}</tbody>
+      </table></div>
+      <p class="tcap">연도별로 나누지 않은 계획·누계 총액입니다.</p>
+    </>)}
+    {g.id === 'dev' && (<>
+      <h3>국제기구·원조 사업 <span class="unit">(백만 USD)</span></h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>국가</th><th>사업</th><th>연도</th><th class="num">금액</th><th>비고</th></tr></thead>
+        <tbody>{b.projects.map((p: any) => <tr><td>{p.country}</td><th scope="row" class="w-m">{p.name}</th><td>{p.period}</td><td class="num">{money(p.v)}</td><td class="note-c">{p.note || '—'}{p.url && <> · <a href={p.url} rel="noopener nofollow" target="_blank">출처</a></>}</td></tr>)}</tbody>
+      </table></div>
+    </>)}
+  </div>
+))}
+
+<div class="subpanel" role="tabpanel" id="sp-nf" aria-labelledby="st-nf" tabindex="0">
+  <h3>공식 연도별 예산을 찾지 못한 국가</h3>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>국가</th><th>상태</th><th>비고</th></tr></thead>
+    <tbody>{b.notfound.map((x: any) => <tr><th scope="row">{x.country}</th><td>자료 미확인</td><td class="note-c">{x.detail || '이번 조사 범위에서 공식 연도별 예산 미확보. 값을 추정해 채우지 않음'}</td></tr>)}</tbody>
+  </table></div>
+</div>
+
+<div class="subpanel" role="tabpanel" id="sp-win" aria-labelledby="st-win" tabindex="0">
+  <h3>시리즈별 10·5·2년 연평균 <span class="unit">(백만 USD)</span></h3>
+  <div class="tblwrap"><table class="tbl s1">
+    <thead><tr><th>시리즈</th><th class="num">10년 평균</th><th class="num">5년 평균</th><th class="num">2년 평균</th><th class="num">2년 ÷ 10년</th><th>수록 기간</th></tr></thead>
+    <tbody>{b.windows.map((w: any) => <tr><th scope="row">{w.name}<span class="sub">{w.country}</span></th><td class="num">{money(w.w10)}</td><td class="num">{money(w.w5)}</td><td class="num">{money(w.w2)}</td><td class="num">{chg(w.trend)}</td><td>{w.cov}</td></tr>)}</tbody>
+  </table></div>
+  <p class="tcap">각 시리즈의 최신 연도부터 거꾸로 센 10·5·2년. 자료 없는 연도는 평균에서 제외(보간 없음). USD 기준이라 환율 변동이 섞여 있습니다.</p>
+</div>
+
+<details class="mth">
+  <summary>방법·한계</summary>
+  <ul>
+    <li>범위가 국가 간 비교에 가장 가까운 지표는 OECD·Eurostat COFOG 05.2(일반정부 폐수관리 지출) 행뿐이고, 나머지는 각국 대표 프로그램입니다.</li>
+    <li>영국은 COFOG 05.2가 2015–2024년 모두 0으로 보고돼(상하수도 민영) 제외했습니다.</li>
+    <li>미국·인도는 회계연도(FY) 기준이며 시작연도 환율을 적용했습니다. 미국 금액은 원자료가 USD입니다.</li>
+    <li>USD 추세에는 환율 변동이 섞입니다. 현지통화 기준 변화는 아래 원자료 표에서 확인하세요.</li>
+    <li>출처: 별도 조사 research/budgets.json(작성 2026-10-08), 2027 정부안은 뉴시스 2026-09-01 보도.</li>
+  </ul>
+  <h4>환율표 (1 USD당 현지통화, 연평균)</h4>
+  <FxTable />
+  <h4>원자료 ({raw.length}행 · 현지통화 금액과 적용 환율)</h4>
+  <div class="tblwrap tall"><table class="tbl">
+    <thead><tr><th>연도</th><th>국가 · 프로그램</th><th class="num">현지 금액</th><th class="num">환율</th><th class="num">백만 USD</th><th>상태 · 출처</th></tr></thead>
+    <tbody>{raw.map((r: any) => <tr><td>{r.y ?? '—'}</td><td class="w-l">{r.country} · {r.name}{r.note && <span class="sub">{r.note}</span>}</td><td class="num">{r.local}</td><td class="num">{r.fx ? <>{n(r.fx, r.fx >= 100 ? 1 : 4)}<span class="sub">{r.fxy}</span></> : '—'}</td><td class="num">{money(r.usd)}</td><td class="note-c">{r.status} · {r.url ? <a href={r.url} rel="noopener nofollow" target="_blank">{r.src}</a> : r.src}</td></tr>)}</tbody>
+  </table></div>
+</details>

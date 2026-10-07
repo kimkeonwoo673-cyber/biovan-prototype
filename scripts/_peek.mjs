@@ -1,0 +1,13 @@
+import { chromium } from 'playwright-core';
+const [tab, w = '1440', h = '2200', sub = '', y0 = '0'] = process.argv.slice(2);
+const out = `/tmp/peek-${tab}-${w}-${Date.now() % 100000}.png`;
+const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--no-sandbox'] });
+const p = await b.newPage({ viewport: { width: +w, height: 900 }, deviceScaleFactor: 1 });
+const errs = []; p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://localhost:8787/insights/keywords/#' + tab, { waitUntil: 'networkidle' });
+if (await p.$(`#p-${tab} [data-lazy]`)) await p.waitForSelector(`#p-${tab}[data-loaded="1"]`);
+if (sub) for (const s of sub.split(',')) await p.click(s);
+const el = await p.$(`#p-${tab}`); const bb = await el.boundingBox();
+await p.screenshot({ path: out, clip: { x: 0, y: bb.y + +y0, width: +w, height: Math.min(+h, bb.height - +y0) }, fullPage: true });
+console.log(out, 'height', Math.round(bb.height), errs.join('|'));
+await b.close();

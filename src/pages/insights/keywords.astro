@@ -1,95 +1,84 @@
 ---
 import { u } from '../../lib/url';
+import { n, money, chg, pctOf } from '../../lib/num';
 import Layout from '../../layouts/Layout.astro';
 import TabsScript from '../../components/TabsScript.astro';
 import AlgaeCompare from '../../components/AlgaeCompare.astro';
+import FxTable from '../../components/FxTable.astro';
 import K from '../../content/insights/keywords.json';
-import B from '../../content/insights/research/budgets.json';
+import V from '../../content/insights/view.json';
 import F from '../../content/insights/research/forecasts.json';
 import T from '../../content/insights/research/nextgen_tech.json';
-const fmt = (n: number | null | undefined, d = 0) => (n === null || n === undefined || Number.isNaN(n) ? '—' : Number(n).toLocaleString('ko-KR', { maximumFractionDigits: d, minimumFractionDigits: d }));
-const usd = (m: number | null | undefined) => (m === null || m === undefined ? '—' : m >= 1000 ? `$${fmt(m / 1000, 2)}B` : `$${fmt(m, m < 10 ? 1 : 0)}M`);
-const pct = (a: number | null, b: number | null) => (a == null || b == null || b === 0 ? null : Math.round((a / b - 1) * 100));
-const cb = (s: number) => (s >= 4.75 ? 'b5' : s >= 3.75 ? 'b4' : s >= 2.75 ? 'b3' : s >= 1.75 ? 'b2' : 'b1');
+const v: any = V;
 const TABS: [string, string][] = [
   ['summary', '요약'], ['w10', '10년 (2016–2026)'], ['w5', '5년 (2021–2026)'], ['w2', '2년 (2024–2026)'],
-  ['comp', '경쟁사 비교'], ['budget', '국가별 예산(10년·USD)'], ['forecast', '예산·시장 전망'], ['tech', '차세대 기술'], ['algae', '녹조·슬러지 업체 비교'],
+  ['comp', '경쟁사 비교'], ['budget', '국가별 예산 (USD)'], ['forecast', '예산·시장 전망'], ['tech', '차세대 기술'], ['algae', '녹조·슬러지 업체 비교'],
   ['video', '영상 자료 분석'], ['sources', '출처 신뢰도·인기도'], ['reco', '추천 키워드'],
 ];
 
-// ---- 차트 헬퍼 (인라인 SVG) ----
+// ---- 기간 탭 ----
 const mono = Object.entries(K.trends.nokjo_monthly as Record<string, number>).sort();
-function line(points: [string, number][], w = 760, h = 200, pad = 28) {
-  const n = points.length, max = Math.max(1, ...points.map((p) => p[1]));
-  const xy = points.map(([, v], i) => [pad + (i * (w - pad * 2)) / Math.max(1, n - 1), h - pad - (v / max) * (h - pad * 2)]);
-  return { d: 'M' + xy.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join('L'), xy, max };
-}
-const L = line(mono);
+const LW = 760, LH = 200, LP = 30;
+const lmax = Math.max(1, ...mono.map((p) => p[1]));
+const lxy = mono.map(([, val], i) => [LP + (i * (LW - LP * 2)) / Math.max(1, mono.length - 1), LH - LP - (val / lmax) * (LH - LP * 2)]);
+const lineD = 'M' + lxy.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join('L');
 const yearsAxis = Array.from({ length: 11 }, (_, i) => 2016 + i);
+const lineSvg = `<svg viewBox="0 0 ${LW} ${LH + 10}" role="img" aria-label="한국 '녹조' 월별 관심도 2016–2026 선 그래프">`
+  + yearsAxis.map((y, i) => { const x = LP + (i * 12 * (LW - LP * 2)) / (mono.length - 1); return `<line x1="${x}" x2="${x}" y1="14" y2="${LH - LP}" stroke="#edf3f4"/><text x="${x}" y="${LH - 10}" font-size="12" fill="#5f727c" text-anchor="middle">${y}</text>`; }).join('')
+  + `<path d="${lineD}" fill="none" stroke="#2f8f5b" stroke-width="2"/></svg>`;
 const kr: any = K.trends.kr;
-const krTerms: [string, string][] = [['KR_core', '녹조'], ['KR_core', '토양오염'], ['KR_micro', '수질정화'], ['KR_core', '수질개선'], ['KR_core', '악취제거'], ['KR_micro', '녹조제거'], ['KR_micro', '축산악취'], ['KR_micro', '미생물제제']];
+const krTerms: [string, string, string][] = [['KR_core', '녹조', 'A'], ['KR_core', '토양오염', 'A'], ['KR_core', '수질개선', 'A'], ['KR_core', '악취제거', 'A'], ['KR_micro', '수질정화', 'B'], ['KR_micro', '녹조제거', 'B'], ['KR_micro', '축산악취', 'B'], ['KR_micro', '미생물제제', 'B']];
 const winKey: Record<string, '10y' | '5y' | '2y'> = { w10: '10y', w5: '5y', w2: '2y' };
 const winLabel: Record<string, string> = { w10: '2016–2026', w5: '2021–2026', w2: '2024–2026' };
 const snapYear: Record<string, string> = { w10: '2016', w5: '2021', w2: '2024' };
 const winCountry: Record<string, string> = { w10: '2016-2026', w5: '2021-2026', w2: '2024-2026' };
+const oaStart: Record<string, string> = { w10: '2016', w5: '2021', w2: '2024' };
 const wikiPick = (K.wiki as any[]).filter((r) => ['Algal_bloom', 'Harmful_algal_bloom', 'Eutrophication', 'Bioremediation', 'Bioaugmentation', 'Effective_microorganism'].includes(r.article) && ['en', 'ko', 'zh', 'ru', 'vi', 'id'].includes(r.lang));
 const oaRows = K.openalex as any[];
-const oaYears = Array.from({ length: 10 }, (_, i) => String(2016 + i));
-const oaMax = Math.max(...oaRows.flatMap((r) => oaYears.map((y) => r.yearly[y] || 0)));
 const intlRows = Object.values((K.trends as any).intl || {}).flatMap((g: any) =>
-  g.terms ? Object.entries(g.terms).map(([term, v]: any) => ({ label: g.label, term, v })) : [{ label: g.label, term: null, v: null }]
+  g.terms ? Object.entries(g.terms).map(([term, val]: any) => ({ label: g.label, term, v: val })) : [{ label: g.label, term: null, v: null }]
 ) as any[];
-const pctTxt = (a: number | null, b: number | null) => {
-  const c = pct(a, b);
-  return c === null ? '—' : `${c > 0 ? '+' : ''}${c}%`;
+const lowSample = (x: any) => x.zero_months * 3 > x.months;
+const splitEvent = (e: string) => {
+  const m = e.match(/^([^:：]{2,26})[:：]\s*(.+)$/);
+  if (m) return [m[1], m[2]];
+  const y = e.match(/^(\d{4}(?:[–.\-~]\d{2,4})?)\s+(.+)$/);
+  return y ? [y[1], y[2]] : ['—', e];
 };
-const aggNote = (n?: string) => (n && !/^창\(window\)은|^데이터 포인트가/.test(n) ? n : '');
-const lowSample = (v: any) => v.zero_months * 3 > v.months;
-const wbTxt = (c: any) => (c.wayback_months ? `Wayback ${c.wayback_months}${c.wayback_mode === '연' ? '개 연도' : '개월'} 수집` : c.group === '경쟁사 사이트' || c.domain ? 'Wayback 미수집' : null);
-const krRows = (w: string) => {
-  const wk = winKey[w];
-  const mx = Math.max(...krTerms.map(([s, t]) => Math.max(kr[s][t][wk] ?? 0, kr[s][t]['prev'] ?? 0)));
-  return krTerms.map(([s, t]) => {
-    const v = kr[s][t][wk] ?? 0, p = kr[s][t]['prev'] ?? 0;
-    return { t, v, p, ch: pct(v, p), vw: Math.max(0.6, (v / mx) * 100), pw: (p / mx) * 100 };
-  });
-};
-const oaColor = (y: string) => (y >= '2024' ? '#13808a' : y >= '2021' ? '#3cc1b4' : '#a9d8d2');
-const oaBars = oaRows.map((r, i) =>
-  oaYears.map((y, j) => {
-    const v = r.yearly[y] || 0;
-    const hh = Math.max(1, (v / oaMax) * 24);
-    return { x: 250 + j * 50 + 8, y: 42 + i * 30 - hh, h: hh, fill: oaColor(y), label: `${r.query} ${y}: ${v}건` };
-  })
-);
 
-// ---- 예산 ----
-const recs = (B as any).records as any[];
-const aggs = (B as any).aggregates as any[];
-const bySeries: Record<string, any[]> = {};
-for (const r of recs) if (r.series) (bySeries[r.series] ||= []).push(r);
-const countries = [...new Set(recs.map((r) => r.country_ko))];
-const statusBadge = (s: string) => (s === '자료 미확인' ? 'bnone' : /derived|예산안|정부안|계획|약|학술|보도|기업/.test(s) ? 'best' : 'bofficial');
-function spark(series: string) {
-  const pts = (bySeries[series] || []).filter((r) => r.usd_million != null && r.year).sort((a, b) => a.year - b.year);
-  if (!pts.length) return null;
-  const max = Math.max(...pts.map((p) => p.usd_million));
-  const bw = 14, gap = 4, h = 40;
-  return { w: pts.length * (bw + gap), h, bars: pts.map((p, i) => ({ x: i * (bw + gap), h: Math.max(1, (p.usd_million / max) * (h - 4)), y: p.year, v: p.usd_million })) };
-}
-const forecasts = (F as any).records as any[];
-const tech = ((T as any).records as any[]).slice().sort((a, b) => (a.top_rank ?? 99) - (b.top_rank ?? 99));
-const sources = K.sources as any[];
-const groups = ['데이터 출처', '경쟁사 사이트', '키워드 SERP', '예산·기술 조사'];
-const comps = K.competitors as any[];
+// ---- 경쟁사 ----
+const comps = (K.competitors as any[]).map((c) => ({ ...c, name: c.self ? '바이오밴코리아 (자사)' : c.name }));
 const serp = K.serp as any[];
+const yn = (b: any) => (b === true ? '적용' : b === false ? '미적용' : '미확인');
+const wbTxt = (c: any) => (c.wayback_months ? `Wayback ${c.wayback_months}${c.wayback_mode === '연' ? '개 연도' : '개월'}${c.wayback_first ? ` (첫 ${c.wayback_first})` : ''}` : 'Wayback 미수집');
+
+// ---- 전망·기술·추천 ----
+const fc = v.forecasts as any[];
+const fcImpl = fc.filter((f, i) => fc.findIndex((g) => g.id === f.id) === i);
+const tech = v.tech as any[];
 const reco: any = K.reco;
+const recoRows: any[] = [];
+for (const [, r] of Object.entries(reco) as any) {
+  r.primary.forEach(([k, why]: any) => recoRows.push({ lang: r.label, kind: '주력 (제목·H1)', kw: k, why }));
+  recoRows.push({ lang: r.label, kind: '보조 (본문·H2)', kw: r.secondary.join(' · '), why: '—' });
+  recoRows.push({ lang: r.label, kind: '롱테일 (사례·FAQ)', kw: r.longtail.join(' · '), why: '—' });
+  if (r.b2g) recoRows.push({ lang: r.label, kind: 'B2G (공공 발주)', kw: r.b2g.join(' · '), why: '—' });
+}
+const todo: [string, string][] = [
+  ['기술 SEO 기본', 'HTTPS 적용, 페이지마다 고유 title·meta description(아래 제안안), 홈에 H1 1개'],
+  ['브랜드 구분', "Organization 구조화 데이터(name: BIOVAN KOREA / 바이오밴코리아, sameAs, 주소 확정 후) — 동명 식품기업 'Biovan'과 구분"],
+  ['사례 제목', '"지역 + 수체 + 문제 + 결과" 형식. 예) "평택 배다리호수 물고기 폐사 방지 — 2024~2026 여름 수질 관리"'],
+  ['사례 수치', '사례마다 전후 수질 수치(T-N·T-P·COD·클로로필-a) 표 추가 — 경쟁사(AdvancedWater·邦源)는 결과 수치로 노출'],
+  ['시즌 콘텐츠', "녹조 시즌 전(5~6월) 갱신, '녹조 Q&A' 정보형 글로 논문·뉴스가 차지한 정보 의도 검색에 대응"],
+  ['다국어', "중문은 '绿藻' 대신 '蓝藻治理·水体修复·黑臭水体治理', 영문은 HAB·bioremediation·sludge reduction 중심 축약판"],
+  ['조달 문구', "조달청 등록 여부 확인 후 등록돼 있으면 '조달청 등록' 문구 사용(진바이오틱스·중앙바이오텍이 사용 중)"],
+];
 ---
 <Layout title="키워드·시장 분석" description="바이오밴코리아 키워드·경쟁사·국가별 예산·차세대 기술 분석(내부 참고용 시안)">
   <div class="phead"><div class="wrap">
     <div class="crumbs"><a href={u('/')}>홈</a> / 인사이트</div>
     <h1>키워드·시장 분석</h1>
-    <p>국내외 경쟁사 사이트, 검색 노출 관찰, 관심도 추이(10년·5년·2년), 국가별 수질 예산과 차세대 기술을 한곳에 정리했습니다. 2026-10-08(KST) 기준으로 수집했습니다. <b style="color:#fff">순위와 관심도는 관찰값·상대지수이며 실제 검색량이 아닙니다.</b></p>
+    <p>경쟁사, 검색 노출, 관심도(10·5·2년), 국가별 예산, 차세대 기술을 표로 정리했습니다. 2026-10-08(KST) 수집. <b style="color:#fff">금액은 모두 USD(해당 연도 연평균 환율)입니다.</b></p>
   </div></div>
 
   <div class="tabbar"><div class="wrap">
@@ -102,21 +91,27 @@ const reco: any = K.reco;
     <!-- 요약 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-summary" aria-labelledby="t-summary" tabindex="0">
       <h2>요약</h2>
-      <div class="kpis">
-        <div class="kpi"><b>0 / {serp.length}</b><span>관찰한 검색 중 자사 도메인이 상위 5위에 든 횟수</span></div>
-        <div class="kpi"><b>{comps.length - 1}곳</b><span>비교한 경쟁사 (한국 8 · 중국 4 · 일본 1 · 미국·유럽·이스라엘 6 · 캐나다 3 · 인도 2 · 베트남·인니·러시아 3)</span></div>
-        <div class="kpi"><b>{fmt(kr.KR_core['녹조']['prev'], 1)} → {fmt(kr.KR_core['녹조']['2y'], 1)}</b><span>'녹조' 관심도(KR, 상대값) 2016–20 → 2024–26 평균</span></div>
-        <div class="kpi"><b>{fmt(kr.KR_core['수질개선']['prev'], 1)} → {fmt(kr.KR_core['수질개선']['2y'], 1)}</b><span>'수질개선' 관심도(같은 비교 세트)</span></div>
-      </div>
-      <h3>핵심 발견</h3>
-      <ol class="ilist">{(K.summary as string[]).map((s) => <li>{s}</li>)}</ol>
-      <h3>기간별 한 줄 요약</h3>
-      <ul class="ilist">
-        <li><b>10년:</b> {K.findings['10y']}</li>
-        <li><b>5년:</b> {K.findings['5y']}</li>
-        <li><b>2년:</b> {K.findings['2y']}</li>
-      </ul>
-      <div class="caveat"><b>읽는 법.</b> Ahrefs·Semrush·Search Console 같은 유료·계정 데이터 없이 공개 자료로 근사했습니다. 검색 노출은 검색 도구 외부 인덱스의 상위 5개 결과이며, Google·네이버 실제 순위와 다를 수 있습니다. Google Trends 값은 같은 질의 묶음 안에서만 비교할 수 있는 0~100 상대지수입니다. 자사 사이트(biovankorea.com)에는 요청을 보내지 않았고, 기존 수집본을 사용했습니다.</div>
+      <p class="intro">공개 자료만으로 바이오밴코리아의 검색 노출, 관심도 추이, 경쟁 환경을 정리한 핵심 결과입니다.</p>
+      <p class="cv">순위·관심도는 관찰값과 상대지수이며 실제 검색량이 아닙니다.</p>
+      <h3>핵심 수치</h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>항목</th><th>수치</th><th>의미</th></tr></thead>
+        <tbody>{v.summary.map((r: string[]) => <tr><th scope="row" class="w-s">{r[0]}</th><td class="w-m"><b>{r[1]}</b></td><td class="w-l">{r[2]}</td></tr>)}</tbody>
+      </table></div>
+      <h3>기간별 요약</h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>기간</th><th>요약</th></tr></thead>
+        <tbody>{v.periods.map((r: string[]) => <tr><th scope="row" class="w-s">{r[0]}</th><td>{r[1]}</td></tr>)}</tbody>
+      </table></div>
+      <details class="mth"><summary>방법·한계</summary>
+        <ul>
+          <li>Ahrefs·Semrush·Search Console 같은 유료·계정 데이터 없이 공개 자료로 근사했습니다.</li>
+          <li>검색 노출은 검색 도구 외부 인덱스의 상위 5개 결과이며, Google·네이버 실제 순위와 다를 수 있습니다.</li>
+          <li>Google Trends 값은 같은 질의 묶음 안에서만 비교할 수 있는 0~100 상대지수입니다.</li>
+          <li>자사 사이트(biovankorea.com)에는 요청을 보내지 않았고, 기존 수집본을 사용했습니다.</li>
+          <li>금액은 모두 USD로 통일했습니다. 환율 기준은 '예산·시장 전망' 탭의 방법·한계에 있습니다.</li>
+        </ul>
+      </details>
     </section>
 
     <!-- 기간 탭 -->
@@ -125,131 +120,163 @@ const reco: any = K.reco;
       return (
       <section class="tabpanel ipanel" role="tabpanel" id={`p-${w}`} aria-labelledby={`t-${w}`} tabindex="0">
         <h2>{winLabel[w]} 기간 비교</h2>
-        <p class="lead">{K.findings[wk]}</p>
-        <h3>한국 검색 관심도 (Google Trends, KR) <span class="bdg best">상대지수</span></h3>
-        <figure class="svgc">
-          <div class="hbars" role="list" aria-label={`${winLabel[w]} 평균 관심도와 2016–2020 기준 비교`}>
-            {krRows(w).map((r) => <div class="hb" role="listitem">
-              <span class="hl">{r.t}</span>
-              <div class="ht" aria-hidden="true"><i class="hbase" style={`width:${r.pw}%`}></i><i class="hcur" style={`width:${r.vw}%`}></i></div>
-              <span class="hv"><b>{fmt(r.v, 1)}</b> <small>기준 {fmt(r.p, 1)}{r.ch !== null ? ` · ${r.ch > 0 ? '+' : ''}${r.ch}%` : ''}</small></span>
-            </div>)}
-          </div>
-          <figcaption>진한 막대 = {winLabel[w]} 월평균, 옅은 막대 = 2016–2020 월평균. 위 4개(녹조·토양오염·수질개선·악취제거)는 한 묶음, 아래 4개(수질정화·녹조제거·축산악취·미생물제제)는 '녹조'와 함께 조회한 다른 묶음이라 묶음 간 절대 비교는 할 수 없습니다(수집 2026-10-08, pytrends).</figcaption>
-        </figure>
+        <p class="intro">{K.findings[wk]}</p>
+        <p class="cv">관심도는 같은 질의 묶음 안에서만 비교할 수 있는 상대지수(0~100)입니다. 기준 기간은 2016–20 평균입니다.</p>
+
+        <h3>한국 검색 관심도 <span class="unit">(Google Trends KR, 월평균 지수)</span></h3>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>검색어</th><th class="c">묶음</th><th class="num">2016–20</th><th class="num">{winLabel[w]}</th><th class="num">변화</th></tr></thead>
+          <tbody>{krTerms.map(([s, t, g]) => { const cur = kr[s][t][wk], p = kr[s][t]['prev']; return <tr><th scope="row">{t}</th><td class="c">{g}</td><td class="num">{n(p, 1)}</td><td class="num"><b>{n(cur, 1)}</b></td><td class="num">{chg(pctOf(cur, p))}</td></tr>; })}</tbody>
+        </table></div>
+        <p class="mnote">묶음 A와 B는 따로 조회해 묶음 간 값은 비교할 수 없습니다.</p>
+
         {w === 'w10' && (
           <figure class="svgc">
-            <svg viewBox="0 0 760 220" role="img" aria-label="한국 '녹조' 월별 관심도 2016–2026 선 그래프">
-              {yearsAxis.map((y, i) => <g><line x1={28 + (i * 12 * (760 - 56)) / (mono.length - 1)} x2={28 + (i * 12 * (760 - 56)) / (mono.length - 1)} y1="20" y2="172" stroke="#edf3f4" /><text x={28 + (i * 12 * (760 - 56)) / (mono.length - 1)} y="190" font-size="11" fill="#6b7d87" text-anchor="middle">{y}</text></g>)}
-              <path d={L.d} fill="none" stroke="#2f8f5b" stroke-width="2" />
-              <text x="30" y="14" font-size="12" fill="#3b4d58" font-weight="700">'녹조' 월별 관심도 (KR, 최대 = {L.max})</text>
-            </svg>
-            <figcaption>여름(대개 8월)마다 정점이 반복되는 계절성 키워드입니다. 2016·2018·2022년 정점이 높습니다. → 녹조 관련 페이지·사례는 5~6월 전에 갱신하는 게 좋습니다.</figcaption>
+            <figcaption class="tcap" style="margin-bottom:6px">'녹조' 월별 관심도 (KR, 최대 = {lmax})</figcaption>
+            <Fragment set:html={lineSvg} />
+            <p class="mnote">매년 여름(대개 8월) 정점이 반복됩니다. 녹조 페이지·사례는 5~6월 전에 갱신하는 것이 좋습니다.</p>
           </figure>
         )}
-        <h3>참고: 해외 국가별 관심도 (Google Trends) <span class="bdg best">상대지수</span></h3>
-        <div class="tblwrap"><table class="tbl"><thead><tr><th>국가</th><th>검색어</th><th class="n">2016–20</th><th class="n">{winLabel[w]}</th><th class="n">변화</th><th class="n">값 0인 달</th></tr></thead><tbody>
-          {intlRows.map((r) => r.term === null
-            ? <tr><td>{r.label}</td><td colspan="5"><span class="bdg bnone">자료 미수집</span> <small>요청 제한(429)으로 수집 실패</small></td></tr>
-            : <tr><td>{r.label}</td><td>{r.term}</td><td class="n">{fmt(r.v.prev, 1)}</td><td class="n">{fmt(r.v[wk], 1)}</td><td class="n">{pctTxt(r.v[wk], r.v.prev)}</td><td class="n"><small>{r.v.zero_months}/{r.v.months}</small>{lowSample(r.v) ? <><br /><span class="bdg bnone">표본 적음</span></> : null}</td></tr>)}
-        </tbody></table></div>
-        <p class="note">국가마다 질의 묶음이 달라 국가 간 값 비교는 의미가 없습니다. 같은 국가 안에서 기간별 변화만 보세요. '값 0인 달'이 1/3을 넘으면 검색량이 적어 신뢰도가 낮습니다(표본 적음). 중국은 Google 접속이 제한돼 대표성이 매우 낮으며, 인도네시아·인도는 요청 제한으로 수집하지 못했습니다.</p>
-        <p class="note">{K.trends.ww_note}.</p>
 
-        <h3>위키백과 월평균 조회수 <span class="bdg b5">실측(봇 제외)</span></h3>
-        <div class="tblwrap"><table class="tbl"><thead><tr><th>주제</th><th>언어·문서</th><th class="n">2016–20</th><th class="n">{winLabel[w]}</th><th class="n">변화</th></tr></thead><tbody>
-          {wikiPick.map((r) => { const v = r[w === 'w10' ? 'w10' : w === 'w5' ? 'w5' : 'w2']; const c = pct(v, r.prev); return <tr><td>{r.article.replace(/_/g, ' ')}</td><td>{r.lang} · {r.title}</td><td class="n">{fmt(r.prev)}</td><td class="n">{fmt(v)}</td><td class="n" style={c !== null && c > 0 ? 'color:#2f6b16;font-weight:700' : ''}>{c === null ? '—' : `${c > 0 ? '+' : ''}${c}%`}</td></tr>; })}
-        </tbody></table></div>
-        <p class="note">출처: Wikimedia Pageviews API(2016-01~2026-09). 일반 주제 조회는 전반적으로 감소 추세(검색 결과의 요약 답변 증가 등 영향으로 추정)이므로, 감소 폭이 작거나 증가한 주제가 상대적으로 '뜨는' 주제입니다.</p>
+        <h3>해외 국가별 관심도 <span class="unit">(Google Trends, 월평균 지수)</span></h3>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>국가</th><th>검색어</th><th class="num">2016–20</th><th class="num">{winLabel[w]}</th><th class="num">변화</th><th>비고</th></tr></thead>
+          <tbody>{intlRows.map((r) => r.term === null
+            ? <tr><th scope="row">{r.label}</th><td class="dim">—</td><td class="num dim">—</td><td class="num dim">—</td><td class="num dim">—</td><td>미수집(요청 제한)</td></tr>
+            : <tr><th scope="row">{r.label}</th><td>{r.term}</td><td class="num">{n(r.v.prev, 1)}</td><td class="num"><b>{n(r.v[wk], 1)}</b></td><td class="num">{chg(pctOf(r.v[wk], r.v.prev))}</td><td>{lowSample(r.v) ? `표본 적음 (0인 달 ${r.v.zero_months}/${r.v.months})` : ''}</td></tr>)}</tbody>
+        </table></div>
 
-        <h3>연구 논문 수 (OpenAlex) <span class="bdg b4">실측·검색식 기준</span></h3>
-        {w === 'w10' ? (
-          <figure class="svgc">
-            <svg viewBox={`0 0 760 ${oaRows.length * 30 + 40}`} role="img" aria-label="주제별 연도별 논문 수 막대">
-              {oaYears.map((y, j) => <text x={250 + j * 50 + 20} y="14" font-size="11" fill="#6b7d87" text-anchor="middle">{y}</text>)}
-              {oaRows.map((r, i) => <g>
-                <text x="0" y={38 + i * 30} font-size="12" fill="#3b4d58" font-weight="700">{r.query}</text>
-                {oaBars[i].map((b) => <rect x={b.x} y={b.y} width="24" height={b.h} rx="3" fill={b.fill} aria-label={b.label} />)}
-              </g>)}
-            </svg>
-            <figcaption>2016–2025년 연도별 논문 수(막대 높이 공통 축). 2026년은 집계 중이라 제외. OpenAlex 전체 논문 수 집계가 2025–26년에 비정상적으로 커서 비율 정규화는 하지 않았습니다.</figcaption>
-          </figure>
-        ) : null}
-        <div class="tblwrap"><table class="tbl"><thead><tr><th>검색식</th><th>{winLabel[w]} 저자 국가 상위 6</th></tr></thead><tbody>
-          {oaRows.filter((r) => r.countries[winCountry[w]]).map((r) => <tr><td>{r.query}</td><td>{r.countries[winCountry[w]].slice(0, 6).map((c: any) => `${c[0]} ${fmt(c[1])}`).join(' · ')}</td></tr>)}
-        </tbody></table></div>
+        <h3>위키백과 월평균 조회수 <span class="unit">(회, 봇 제외)</span></h3>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>주제</th><th>언어 · 문서</th><th class="num">2016–20</th><th class="num">{winLabel[w]}</th><th class="num">변화</th></tr></thead>
+          <tbody>{wikiPick.map((r) => { const cur = r[w]; return <tr><th scope="row">{r.article.replace(/_/g, ' ')}</th><td>{r.lang} · {r.title}</td><td class="num">{n(r.prev)}</td><td class="num"><b>{n(cur)}</b></td><td class="num">{chg(pctOf(cur, r.prev))}</td></tr>; })}</tbody>
+        </table></div>
+
+        <h3>연구 논문 수 <span class="unit">(OpenAlex, 건)</span></h3>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>검색식</th><th class="num">{oaStart[w]}</th><th class="num">2025</th><th class="num">변화</th><th>저자 국가 상위 3 ({winLabel[w]})</th></tr></thead>
+          <tbody>{oaRows.map((r) => { const a = r.yearly[oaStart[w]], b = r.yearly['2025']; const cs = r.countries[winCountry[w]] || []; return <tr><th scope="row">{r.query}</th><td class="num">{n(a)}</td><td class="num"><b>{n(b)}</b></td><td class="num">{chg(pctOf(b, a))}</td><td>{cs.length ? cs.slice(0, 3).map((c: any) => `${c[0]} ${n(c[1])}`).join(' · ') : '—'}</td></tr>; })}</tbody>
+        </table></div>
 
         <h3>경쟁사·시장 변화</h3>
-        <ul class="ilist">{(K.events[wk] as string[]).map((e) => <li>{e}</li>)}</ul>
-        <h3>경쟁사 홈페이지 제목 변화 (Wayback {snapYear[w]}년 7월 전후 스냅샷)</h3>
-        <div class="tblwrap"><table class="tbl"><thead><tr><th>도메인</th><th>당시 &lt;title&gt;</th><th>본문 상위 단어</th></tr></thead><tbody>
-          {(K.snapshots as any[]).filter((s) => s.year === snapYear[w]).map((s) => <tr><td>{s.domain}</td><td>{s.error ? <span class="bdg bnone">스냅샷 없음/오류</span> : (s.title || <small>(제목 없음 — 차단 화면이 보관됐을 가능성)</small>)}</td><td><small>{(s.terms || []).join(', ')}</small></td></tr>)}
-        </tbody></table></div>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>시기</th><th>내용</th></tr></thead>
+          <tbody>{(K.events[wk] as string[]).map((e) => { const [p, t] = splitEvent(e); return <tr><th scope="row" class="w-s">{p}</th><td>{t}</td></tr>; })}</tbody>
+        </table></div>
+
+        <h3>경쟁사 홈페이지 제목 <span class="unit">(Wayback {snapYear[w]}년 7월 전후)</span></h3>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>도메인</th><th>당시 제목</th><th>본문 상위 단어</th></tr></thead>
+          <tbody>{(K.snapshots as any[]).filter((s) => s.year === snapYear[w]).map((s) => <tr><th scope="row">{s.domain}</th><td>{s.error ? <span class="dim">스냅샷 없음</span> : (s.title || <span class="dim">(제목 없음)</span>)}</td><td>{(s.terms || []).slice(0, 6).join(', ') || '—'}</td></tr>)}</tbody>
+        </table></div>
+
+        <details class="mth"><summary>방법·한계</summary>
+          <ul>
+            <li>Google Trends: pytrends로 2026-10-08 수집. 값은 질의 묶음마다 최댓값=100으로 정규화한 상대지수입니다. 묶음 A(녹조·토양오염·수질개선·악취제거), 묶음 B(수질정화·녹조제거·축산악취·미생물제제, '녹조'와 함께 조회).</li>
+            <li>해외: 국가마다 질의 묶음이 달라 국가 간 비교는 의미가 없습니다. '값 0인 달'이 1/3을 넘으면 '표본 적음'으로 표시했습니다. {K.trends.ww_note}.</li>
+            <li>위키백과: Wikimedia Pageviews API(2016-01~2026-09). 일반 주제 조회는 전반적으로 감소 추세라, 감소 폭이 작거나 증가한 주제가 상대적으로 뜨는 주제입니다.</li>
+            <li>OpenAlex: 2026년은 집계 중이라 2025년과 비교했습니다. 전체 논문 수 집계가 2025–26년에 비정상적으로 커서 비율 정규화는 하지 않았습니다.</li>
+            <li>홈페이지 제목: 스냅샷이 없거나 차단 화면이 보관된 경우 '스냅샷 없음·제목 없음'으로 표시했습니다.</li>
+          </ul>
+        </details>
       </section>);
     })}
 
     <!-- 경쟁사 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-comp" aria-labelledby="t-comp" tabindex="0">
       <h2>경쟁사 비교 ({comps.length - 1}곳 + 자사)</h2>
-      <p>홈페이지를 직접 읽거나(접속 불가 시 공개 페이지 조회 도구 사용) 검색 결과 요약으로 확인했습니다. 노란 줄이 자사입니다.</p>
-      <div class="tblwrap"><table class="tbl" style="min-width:1100px"><thead><tr><th>회사</th><th>국가</th><th>포지셔닝</th><th>핵심 키워드(관찰)</th><th>홈 제목 / 설명문</th><th>HTTPS · 구조화</th><th>언어</th><th class="n">신뢰도</th><th class="n">인기도</th><th class="n">SERP 노출</th></tr></thead><tbody>
-        {comps.map((c) => <tr class={c.self ? 'self' : ''}>
-          <td><b>{c.name}</b><br /><a href={c.url} rel="noopener nofollow" target="_blank">{c.domain}</a></td>
-          <td>{c.region}</td>
-          <td>{c.positioning}</td>
-          <td><small>{c.keywords}</small></td>
-          <td><small>{c.title}</small><br /><span class={`bdg ${c.meta_desc === '있음' ? 'b5' : c.meta_desc === '없음' ? 'b1' : 'bnone'}`}>설명문 {c.meta_desc}</span></td>
-          <td><span class={`bdg ${c.https ? 'b5' : c.https === false ? 'b1' : 'bnone'}`}>{c.https ? 'HTTPS' : c.https === false ? 'HTTP만' : '미확인'}</span><br /><small>{c.schema}</small></td>
-          <td><small>{c.langs}</small></td>
-          <td class="n"><span class={`bdg ${cb(c.credibility)}`}>{c.credibility}</span></td>
-          <td class="n"><span class={`bdg ${cb(c.popularity)}`}>{c.popularity}</span><br /><small>{c.tranco ? `Tranco ${fmt(c.tranco)}위` : '100만 위 밖'}<br />{wbTxt(c)}{c.wayback_first ? ` (첫 ${c.wayback_first})` : ''}</small></td>
-          <td class="n">{c.serp_hits}</td>
-        </tr>)}
-      </tbody></table></div>
-      <h3>검색 노출 관찰 ({serp.length}개 질의, 상위 5개)</h3>
-      <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr><th>언어</th><th>질의</th><th>상위 도메인</th><th>관찰</th><th>자사</th></tr></thead><tbody>
-        {serp.map((s) => <tr><td>{s.lang}</td><td>{s.query}</td><td><small>{s.domains.join(' · ')}</small></td><td><small>{s.note}</small></td><td>{s.biovan ? <span class="bdg b5">노출</span> : s.third_party ? <span class="bdg b3">기사로만</span> : <span class="bdg b1">미노출</span>}</td></tr>)}
-      </tbody></table></div>
-      <p class="note">관찰 시각 2026-10-08 01:40~02:00 KST. 검색 도구의 외부 인덱스 기준으로, 실제 Google·네이버 순위와 다를 수 있습니다. 검색량·순위를 만들어 넣지 않았습니다.</p>
+      <p class="intro">경쟁사 홈페이지와 검색 결과를 직접 확인해 포지셔닝, 웹 기본기, 검색 노출을 비교했습니다. 노란 배경 행이 자사입니다.</p>
+      <p class="cv">신뢰도·인기도는 1~5점 근사치이며, 검색 노출은 외부 인덱스 상위 5개 기준입니다.</p>
+      <h3>개요</h3>
+      <div class="tblwrap"><table class="tbl s1">
+        <thead><tr><th>회사</th><th>국가</th><th>포지셔닝</th><th>핵심 키워드 (관찰)</th><th>홈 제목</th><th>언어</th></tr></thead>
+        <tbody>{comps.map((c) => <tr class={c.self ? 'self' : ''}>
+          <th scope="row"><b>{c.name}</b><span class="sub"><a href={c.url} rel="noopener nofollow" target="_blank">{c.domain}</a></span></th>
+          <td>{c.region}</td><td class="w-l">{c.positioning}</td><td class="w-m">{c.keywords}</td><td class="w-m">{c.title}</td><td>{c.langs}</td>
+        </tr>)}</tbody>
+      </table></div>
+      <h3>웹 기본기·인지도</h3>
+      <div class="tblwrap"><table class="tbl s1">
+        <thead><tr><th>회사</th><th class="c">HTTPS</th><th class="c">설명문(meta)</th><th>구조화 데이터</th><th class="num">신뢰도 (1–5)</th><th class="num">인기도 (1–5)</th><th class="num">검색 노출 (회)</th><th>비고</th></tr></thead>
+        <tbody>{comps.map((c) => <tr class={c.self ? 'self' : ''}>
+          <th scope="row">{c.name}</th><td class="c">{yn(c.https)}</td><td class="c">{c.meta_desc}</td><td>{c.schema}</td>
+          <td class="num">{n(c.credibility, 1)}</td><td class="num">{n(c.popularity)}</td><td class="num">{n(c.serp_hits)}</td>
+          <td>{c.tranco ? `Tranco ${n(c.tranco)}위` : 'Tranco 100만 위 밖'} · {wbTxt(c)}</td>
+        </tr>)}</tbody>
+      </table></div>
+      <h3>검색 노출 관찰 <span class="unit">({serp.length}개 질의, 상위 5개)</span></h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th class="c">언어</th><th>질의</th><th>상위 도메인</th><th>관찰</th><th class="c">자사</th></tr></thead>
+        <tbody>{serp.map((s) => <tr><td class="c">{s.lang}</td><th scope="row">{s.query}</th><td class="w-l">{s.domains.join(' · ')}</td><td>{s.note}</td><td class="c">{s.biovan ? '노출' : s.third_party ? '기사로만' : <span class="dim">미노출</span>}</td></tr>)}</tbody>
+      </table></div>
+      <details class="mth"><summary>방법·한계</summary>
+        <ul>
+          <li>홈페이지는 직접 읽거나(접속 불가 시 공개 페이지 조회 도구) 검색 결과 요약으로 확인했습니다.</li>
+          <li>검색 노출 관찰: 2026-10-08 01:40~02:00 KST, 검색 도구의 외부 인덱스 기준. 실제 Google·네이버 순위와 다를 수 있으며 검색량·순위를 만들어 넣지 않았습니다.</li>
+          <li>인기도는 Tranco 순위와 Wayback 수집 이력으로 근사했습니다. '미확인'은 확인하지 못한 항목입니다.</li>
+        </ul>
+      </details>
     </section>
 
     <!-- 예산 (본문은 /insights/keywords/budget/ 에서 지연 로드) -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-budget" aria-labelledby="t-budget" tabindex="0">
-      <h2>국가별 수질·하수·녹조 공공예산 — 연도별 (2016–2026 · 2027 정부안)</h2>
-      <div class="lazyph" data-lazy={u('/insights/keywords/budget/')}><p class="note">연도별 표·차트를 불러오는 중… <a href={u('/insights/keywords/budget/')}>별도 페이지에서 보기</a></p></div>
+      <h2>국가별 공공예산 — 연도별 (2016–2027, 백만 USD)</h2>
+      <div class="lazyph" data-lazy={u('/insights/keywords/budget/')}><p class="note">연도별 표를 불러오는 중… <a href={u('/insights/keywords/budget/')}>별도 페이지에서 보기</a></p></div>
     </section>
 
     <!-- 전망 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-forecast" aria-labelledby="t-forecast" tabindex="0">
       <h2>예산·시장 전망</h2>
-      <div class="caveat"><b>민간 추정은 공식 통계가 아닙니다.</b> '민간 추정(시장조사)'은 유료 보고서 공개 요약 수치이며, 보고서마다 정의·방법이 달라 서로 더하거나 비교하면 안 됩니다.</div>
-      <div class="tblwrap"><table class="tbl" style="min-width:1000px"><thead><tr><th>지역</th><th>내용</th><th>시계</th><th>값</th><th>구분</th><th class="n">신뢰도</th><th>출처·날짜</th><th>바이오밴 시사점</th></tr></thead><tbody>
-        {forecasts.map((f) => <tr>
-          <td>{f.region_ko}</td><td>{f.title_ko}</td><td>{f.horizon}</td><td>{f.value}<br /><small>{f.value_usd}</small></td>
-          <td><span class={`bdg ${/민간|NGO/.test(f.label) ? 'best' : /미확인|성립 여부|일정/.test(f.label) ? 'bnone' : 'bofficial'}`}>{f.label}</span></td>
-          <td class="n"><span class={`bdg ${cb(f.credibility)}`}>{f.credibility}</span></td>
-          <td><a href={f.source_url} rel="noopener nofollow" target="_blank">{f.publisher}</a><br /><small>{f.date}</small></td>
-          <td><small>{f.implication_for_biovan}</small></td></tr>)}
-      </tbody></table></div>
-      <p class="note">{(F as any).meta.note}</p>
+      <p class="intro">정부 예산안·계획과 민간 시장조사 전망을 한 표에 모았습니다. 금액은 모두 백만 USD입니다.</p>
+      <p class="cv">민간 시장조사 수치는 보고서마다 정의가 달라 서로 더하거나 비교하면 안 됩니다.</p>
+      <h3>전망 수치 <span class="unit">(금액: 백만 USD)</span></h3>
+      <div class="tblwrap"><table class="tbl s1">
+        <thead><tr><th>항목</th><th>지역</th><th>기간</th><th class="num">금액 (백만 USD)</th><th>구분</th><th class="num">신뢰도 (1–5)</th><th>출처</th></tr></thead>
+        <tbody>{fc.map((f) => <tr>
+          <th scope="row" class="w-m">{f.title}{f.note && <span class="sub nt">{f.note}</span>}</th>
+          <td>{f.region}</td><td>{f.horizon}</td><td class="num"><b>{f.v == null ? <span class="dim">금액 없음</span> : money(f.v)}</b></td>
+          <td>{f.kind}</td><td class="num">{n(f.cred, 1)}</td>
+          <td><a href={f.url} rel="noopener nofollow" target="_blank">{f.pub}</a><span class="sub">{f.date}</span></td>
+        </tr>)}</tbody>
+      </table></div>
+      <h3>바이오밴 시사점</h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>지역</th><th>항목</th><th>시사점</th></tr></thead>
+        <tbody>{fcImpl.map((f) => <tr><td>{f.region}</td><th scope="row" class="w-m">{f.id === 'F01' ? '2027 정부안 (녹조·가축분뇨)' : f.title}</th><td class="w-l">{f.impl}</td></tr>)}</tbody>
+      </table></div>
+      <details class="mth"><summary>방법·한계</summary>
+        <ul>
+          <li>{(F as any).meta.note}</li>
+          <li>'→'는 시작 연도 값 → 목표 연도 값입니다. '/년'은 연간 금액입니다. 금액 칸이 '금액 없음'인 항목은 원문에 금액이 없는 계획·일정입니다.</li>
+          <li>현지통화 금액은 해당 연도(회계연도는 시작 연도) 연평균 환율로 USD 환산했습니다. 2026·2027년은 2025년 연평균을 쓴 추정입니다. 민간 보고서의 USD 원값은 그대로 사용했습니다.</li>
+        </ul>
+        <h4>환율표 (1 USD당 현지통화, 연평균)</h4>
+        <FxTable />
+      </details>
     </section>
 
     <!-- 차세대 기술 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-tech" aria-labelledby="t-tech" tabindex="0">
       <h2>동종업계 차세대 기술</h2>
-      <p class="note">{(T as any).meta.note}</p>
-      <div class="techgrid">
-        {tech.map((t) => <article class="tcard">
-          <h4>{t.top_rank ? <span class="rk">#{t.top_rank}</span> : null}{t.company} <small class="muted">· {t.country}</small></h4>
-          <div><span class="chip">{t.category}</span></div>
-          <p>{t.technology}</p>
-          <p><b>성숙도</b> {t.maturity} · <b>관련성</b> {t.relevance_to_biovan} · <span class={`bdg ${cb(t.credibility)}`}>신뢰도 {t.credibility}</span></p>
-          <p><b>근거</b> {t.evidence}</p>
-          <p><b>위협</b> {t.threat}</p>
-          <p><b>바이오밴 기회</b> {t.opportunity}</p>
-          <p class="note">{t.date} · {(t.source_urls || []).map((s: string, i: number) => <a href={s} rel="noopener nofollow" target="_blank" style="margin-right:8px">자료{i + 1}</a>)}</p>
-        </article>)}
-      </div>
+      <p class="intro">녹조·수질·미생물 분야에서 바이오밴과 관련성이 높은 기술을 우선순위대로 정리했습니다.</p>
+      <p class="cv">성숙도·관련성은 공개 자료 기반 판단이며, 신뢰도는 1~5점 근사치입니다.</p>
+      <h3>기술 목록</h3>
+      <div class="tblwrap"><table class="tbl s1">
+        <thead><tr><th>기업·기관</th><th class="num">순위</th><th>국가</th><th>분야</th><th>성숙도</th><th>관련성</th><th class="num">신뢰도 (1–5)</th></tr></thead>
+        <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td class="num">{t.top_rank ?? '—'}</td><td>{t.country}</td><td class="w-m">{t.category}</td><td>{t.maturity}</td><td>{t.relevance_to_biovan}</td><td class="num">{n(t.credibility, 1)}</td></tr>)}</tbody>
+      </table></div>
+      <h3>기술 내용과 바이오밴 영향</h3>
+      <div class="tblwrap"><table class="tbl s1">
+        <thead><tr><th>기업·기관</th><th>기술</th><th>위협</th><th>바이오밴 기회</th></tr></thead>
+        <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td class="w-l">{t.technology}</td><td class="w-m">{t.threat}</td><td class="w-l">{t.opportunity}</td></tr>)}</tbody>
+      </table></div>
+      <details class="mth"><summary>방법·한계</summary>
+        <p class="mnote">{(T as any).meta.note}</p>
+        <div class="tblwrap"><table class="tbl">
+          <thead><tr><th>기업·기관</th><th>근거</th><th>시점</th><th>자료</th></tr></thead>
+          <tbody>{tech.map((t) => <tr><th scope="row">{t.company}</th><td>{t.evidence}</td><td>{t.date}</td><td>{(t.source_urls || []).map((s: string, i: number) => <a href={s} rel="noopener nofollow" target="_blank" style="margin-right:8px">자료{i + 1}</a>)}</td></tr>)}</tbody>
+        </table></div>
+      </details>
     </section>
 
     <!-- 녹조·슬러지 업체 비교 -->
@@ -266,41 +293,35 @@ const reco: any = K.reco;
 
     <!-- 출처 (본문은 /insights/keywords/sources/ 에서 지연 로드) -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-sources" aria-labelledby="t-sources" tabindex="0">
-      <h2>출처 신뢰도·인기도 ({sources.length}건)</h2>
+      <h2>출처 신뢰도·인기도 ({v.sources.length}건)</h2>
       <div class="lazyph" data-lazy={u('/insights/keywords/sources/')}><p class="note">출처 표를 불러오는 중… <a href={u('/insights/keywords/sources/')}>별도 페이지에서 보기</a></p></div>
     </section>
 
     <!-- 추천 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-reco" aria-labelledby="t-reco" tabindex="0">
       <h2>추천 키워드</h2>
-      <p>관찰 근거가 있는 키워드만 넣었습니다. 진한 칩은 주력(제목·H1용), 회색은 보조(본문·H2), 베이지는 롱테일(사례·FAQ 페이지)입니다.</p>
-      <div class="kwgrid">
-        {Object.entries(reco).map(([lang, r]: any) => <div class="kwcard">
-          <h4>{r.label}</h4>
-          <ul class="ilist" style="margin:0 0 10px">{r.primary.map(([k, why]: any) => <li><span class="kw">{k}</span><br /><small class="muted">{why}</small></li>)}</ul>
-          <div>{r.secondary.map((k: string) => <span class="kw s">{k}</span>)}</div>
-          <div style="margin-top:8px">{r.longtail.map((k: string) => <span class="kw l">{k}</span>)}</div>
-          {r.b2g && <div style="margin-top:10px"><b style="font-size:.85rem">B2G(공공 발주)</b><br />{r.b2g.map((k: string) => <span class="kw s">{k}</span>)}</div>}
-        </div>)}
-      </div>
+      <p class="intro">관찰 근거가 있는 키워드만 언어별·용도별로 정리했습니다.</p>
+      <p class="cv">관심도 수치는 상대지수이며 실제 검색량이 아닙니다.</p>
+      <h3>언어별 추천 키워드</h3>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>언어</th><th>구분</th><th>키워드</th><th>근거</th></tr></thead>
+        <tbody>{recoRows.map((r) => <tr><td>{r.lang}</td><td>{r.kind}</td><th scope="row" class="w-m">{r.kw}</th><td class="w-l">{r.why === '—' ? <span class="dim">—</span> : r.why}</td></tr>)}</tbody>
+      </table></div>
       <h3>페이지별 키워드 배치</h3>
-      <div class="tblwrap"><table class="tbl"><thead><tr><th>경로</th><th>페이지</th><th>한국어</th><th>영어</th></tr></thead><tbody>
-        {(K.pages as any[]).map((p) => <tr><td><code>{p.path}</code></td><td>{p.name}</td><td>{p.ko}</td><td>{p.en}</td></tr>)}
-      </tbody></table></div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>경로</th><th>페이지</th><th>한국어</th><th>영어</th></tr></thead>
+        <tbody>{(K.pages as any[]).map((p) => <tr><td><code>{p.path}</code></td><th scope="row">{p.name}</th><td>{p.ko}</td><td>{p.en}</td></tr>)}</tbody>
+      </table></div>
       <h3>제목·설명문(meta) 제안</h3>
-      <div class="tblwrap"><table class="tbl" style="min-width:900px"><thead><tr><th>경로</th><th>언어</th><th>title</th><th>meta description</th></tr></thead><tbody>
-        {(K.titles as any[]).map((t) => <tr><td><code>{t.path}</code></td><td>{t.lang}</td><td>{t.title}<br /><small>{t.tlen}자</small></td><td>{t.desc}<br /><small>{t.dlen}자</small></td></tr>)}
-      </tbody></table></div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>경로</th><th class="c">언어</th><th>title</th><th class="num">글자</th><th>meta description</th><th class="num">글자</th></tr></thead>
+        <tbody>{(K.titles as any[]).map((t) => <tr><td><code>{t.path}</code></td><td class="c">{t.lang}</td><td class="w-m">{t.title}</td><td class="num">{t.tlen}</td><td class="w-l">{t.desc}</td><td class="num">{t.dlen}</td></tr>)}</tbody>
+      </table></div>
       <h3>바로 할 일</h3>
-      <ol class="ilist">
-        <li>HTTPS 적용, 페이지마다 고유 title·meta description(위 제안안), 홈에 H1 1개.</li>
-        <li>Organization 구조화 데이터(name: BIOVAN KOREA / 바이오밴코리아, sameAs, 주소 확정 후) — 동명 식품기업 'Biovan'과 구분.</li>
-        <li>현장 사례 제목을 "지역 + 수체 + 문제 + 결과"로: 예) "평택 배다리호수 물고기 폐사 방지 — 2024~2026 여름 수질 관리".</li>
-        <li>사례마다 전후 수질 수치(T-N·T-P·COD·클로로필-a) 표 추가 — 경쟁사(AdvancedWater·邦源)는 결과 수치로 노출.</li>
-        <li>녹조 시즌 전(5~6월) 콘텐츠 갱신, '녹조 Q&amp;A' 정보형 글로 논문·뉴스가 차지한 정보 의도 검색에 대응.</li>
-        <li>중문은 '绿藻' 대신 '蓝藻治理·水体修复·黑臭水体治理' 사용, 영문은 HAB·bioremediation·sludge reduction 중심으로 축약판 재작성.</li>
-        <li>조달청 등록 여부를 확인한 뒤 등록돼 있으면 '조달청 등록' 문구 사용(진바이오틱스·중앙바이오텍이 사용 중).</li>
-      </ol>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th class="num">순서</th><th>항목</th><th>내용</th></tr></thead>
+        <tbody>{todo.map(([a, b], i) => <tr><td class="num">{i + 1}</td><th scope="row" class="w-s">{a}</th><td>{b}</td></tr>)}</tbody>
+      </table></div>
     </section>
   </div>
 
