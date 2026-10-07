@@ -1,0 +1,151 @@
+---
+// 녹조·슬러지 업체 비교 (데이터: research/algae_competitors.json → src/content/insights/research/)
+import A from '../content/insights/research/algae_competitors.json';
+const D: any = A;
+const cos: any[] = D.companies;
+const cats: any[] = D.categories;
+const rec: any = D.biovan_recommendations;
+const MAIN = ['응집·침전', '산화·살조', '물리', '생물', '저니처리'];
+// 복합형 구성 요소(각 사 메커니즘 서술 기준)
+const COMPOSITE: Record<string, string[]> = { dean: ['응집·침전', '생물', '저니처리'], ilshin: ['생물', '산화·살조', '응집·침전'], kwater_vessel: ['물리', '응집·침전'], chungho: ['외부부하 차단(흡착·습지)'] };
+const CAT_COLOR: Record<string, string> = { '응집·침전': 'mc-coag', '산화·살조': 'mc-ox', '물리': 'mc-phys', '생물': 'mc-bio', '저니처리': 'mc-sed', '복합': 'mc-mix' };
+const isCat = (c: any) => c.id.startsWith('kwater_') || c.id === 'coag_baseline';
+const shortName = (c: any) => c.name.replace(' [자사]', '').replace('[카테고리] ', '');
+function ev(c: any) {
+  const lv = (String(c.evidence_level).match(/E[1-4]/g) || []).map((x: string) => Number(x.slice(1)));
+  const m = lv.length ? Math.max(...lv) : 0;
+  const L: Record<number, [string, string]> = { 4: ['논문(독립 실측)', 'b5'], 3: ['공인시험·인증', 'b4'], 2: ['자체자료', 'b2'], 1: ['없음(자사 주장만)', 'b1'], 0: ['미확인', 'bnone'] };
+  return { label: L[m][0], cls: L[m][1], raw: c.evidence_level, range: lv.length > 1 };
+}
+function coag(c: any) {
+  const v = String(c.coagulant);
+  if (v.startsWith('yes')) return { label: '예', cls: 'cg-yes' };
+  if (v.startsWith('partial')) return { label: '부분', cls: 'cg-part' };
+  return { label: '아니오', cls: 'cg-no' };
+}
+const rows = cos.map((c) => ({ ...c, sn: shortName(c), ev: ev(c), cg: coag(c), cat: isCat(c), parts: COMPOSITE[c.id] || null }));
+const byCat = (k: string) => rows.filter((r) => r.mechanism_class === k || (r.parts && r.parts.includes(k)));
+const catInfo = (k: string) => cats.find((x) => x.id === k) || { desc: '', np: '' };
+// 매출(원 → 억원), 연도 열
+const RY = [2021, 2022, 2023, 2024, 2025];
+const eok = (v: number) => `${(v / 1e8).toLocaleString('ko-KR', { maximumFractionDigits: 2 })}억`;
+const revRows = rows.filter((r) => !r.cat).map((r) => {
+  const by: Record<string, any> = {};
+  const other: any[] = [];
+  for (const x of r.revenue || []) (typeof x.year === 'number' ? (by[String(x.year)] = x) : other.push(x));
+  const srcs = [...new Map((r.revenue || []).filter((x: any) => x.url).map((x: any) => [x.url, x.source])).entries()];
+  return { ...r, by, other, srcs, status: r.revenue_status || (r.revenue_2021 ? `2021 ${r.revenue_2021}` : '') };
+});
+const lowConf = (x: any) => /낮/.test(x.confidence || '');
+const revTip = (y: number, x: any) => `${y}년 매출 ${eok(x.amount_krw)}원\n출처: ${x.source}\n신뢰도: ${x.confidence || '—'}${x.note ? '\n' + x.note : ''}`;
+// 층 구조 다이어그램 (인라인 SVG 문자열)
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const names = (k: string) => byCat(k).filter((r) => !r.cat).map((r) => r.sn.split(' — ')[0].replace('(주)', '').replace('[자사]', '').replace(/\s*\(.*?\)/g, '').trim());
+const short3 = (a: string[], extra = '') => { const b = extra ? [...a, extra] : a; return b.length > 3 ? `${b.slice(0, 3).join(' · ')} 외 ${b.length - 3}` : b.join(' · '); };
+function layerSvg() {
+  const W = 760, H = 340;
+  const band = (y: number, h: number, fill: string, title: string, sub: string) =>
+    `<rect x="0" y="${y}" width="${W}" height="${h}" rx="10" fill="${fill}"/><text x="16" y="${y + 24}" font-size="13" font-weight="700" fill="#0d1f2a">${esc(title)}</text><text x="16" y="${y + 42}" font-size="11" fill="#3b4d58">${esc(sub)}</text>`;
+  const chip = (x: number, y: number, label: string, who: string, color: string) =>
+    `<g><rect x="${x}" y="${y}" width="250" height="42" rx="8" fill="#fff" stroke="${color}" stroke-width="1.5"/><text x="${x + 10}" y="${y + 16}" font-size="11.5" font-weight="700" fill="${color}">${esc(label)}</text><text x="${x + 10}" y="${y + 31}" font-size="10.5" fill="#3b4d58">${esc(who)}</text></g>`;
+  let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="녹조 대응 기술이 작용하는 위치: 유입, 수층, 퇴적층" xmlns="http://www.w3.org/2000/svg">`;
+  g += band(0, 70, '#eef4f7', '① 유역·유입수 (외부부하)', '하수·비점오염으로 N·P 유입');
+  g += band(80, 130, '#e8f5f3', '② 수층 — 남조류 대발생', '정체·성층·고수온 + 영양염');
+  g += band(220, 120, '#f6f1e8', '③ 퇴적층 (내부부하)', '유기 슬러지 → 혐기화');
+  g += `<text x="16" y="282" font-size="11" fill="#3b4d58">→ NH₄⁺·PO₄³⁻ 용출</text>`;
+  g += chip(250, 14, '흡착·습지로 유입 차단', names('외부부하 차단(흡착·습지)').join(' · ') || '—', '#3a516a');
+  g += chip(250, 92, '응집·침전 → 조류·P를 바닥으로', short3(names('응집·침전'), '황토·PAC'), '#8a5a0b');
+  g += chip(505, 92, '산화·살조 → 세포 파괴(영양염 재방출)', short3(names('산화·살조')), '#9b2c2c');
+  g += chip(250, 152, '물리 → 회수(소량 반출)·순환·DO', short3(names('물리'), '녹조제거선'), '#0f5e66');
+  g += chip(505, 152, '생물 → 미생물·천적·식물(흡수·수확)', short3(names('생물').filter((n) => n.indexOf('바이오밴') < 0 && n.indexOf('디엔텍') < 0)), '#2f6b16');
+  g += chip(250, 270, '저니처리 → 캡핑·흡착(용출 차단)', short3(names('저니처리')), '#6b4a12');
+  g += chip(505, 270, '생물 분해 → 유기물 무기화·탈질(N₂)', '바이오밴(SUBION·BROST) · 디엔텍(엔크린)', '#2f6b16');
+  g += `<path d="M232 318 L232 176" fill="none" stroke="#b5651d" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/><text x="16" y="304" font-size="10.5" font-weight="700" fill="#b5651d">↑ 다음 해 녹조의 씨앗</text>`;
+  g += `<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b5651d"/></marker></defs>`;
+  g += `</svg>`;
+  return g;
+}
+const svg = layerSvg();
+const httpLinks = (arr: string[]) => (arr || []).filter((s) => s.startsWith('http'));
+---
+<p class="lead">국내 녹조·하상 슬러지 대응 기업을 작동 원리별로 나누고, 응집제를 쓰는지, 질소·인 저감 주장에 어떤 근거가 있는지, 공개된 연도별 매출을 비교했습니다. 내부 검토용 정리입니다.</p>
+<div class="caveat"><b>읽는 법.</b> 근거 수준은 공개 자료 기준입니다. <span class="bdg b5">논문(독립 실측)</span> 독립 학술 측정 · <span class="bdg b4">공인시험·인증</span> 공인기관 시험성적이나 정부 심사(혁신제품·신기술·물질 등록) · <span class="bdg b2">자체자료</span> 회사가 올린 현장·시험자료(기관·대조구 불명확) · <span class="bdg b1">없음(자사 주장만)</span>. 매출은 NICE평가정보 자료를 다시 보여주는 기업정보 사이트나 회사 발표 기준이며, 찾지 못한 값은 '미확인'으로 두고 추정하지 않았습니다. 동명 법인이 많아 일부는 매칭하지 못했습니다.</div>
+
+<h3>메커니즘 지도 — 어디에 작용하나</h3>
+<figure class="svgc"><Fragment set:html={svg} /><figcaption>질소(N)는 탈질로 N₂가 되어 수계를 떠날 수 있지만, 인(P)은 분해되지 않습니다. P를 줄이는 길은 ① 결합해 묶기(금속염 침전·캡핑) ② 밖으로 꺼내기(회수·준설·식물 수확) ③ 저층을 산화 상태로 유지해 용출 막기, 세 가지뿐입니다.</figcaption></figure>
+<div class="mgrid">
+  {[...MAIN, '복합'].map((k) => (
+    <div class={`mcard ${CAT_COLOR[k]}`}>
+      <h4>{k}</h4>
+      <p>{catInfo(k).desc}</p>
+      <p class="mnp"><b>N·P 효과</b> {catInfo(k).np}</p>
+      <div>{(k === '복합' ? rows.filter((r) => r.mechanism_class === '복합') : byCat(k)).map((r) => <span class={`mchip${r.is_self ? ' self' : ''}${r.cat ? ' catg' : ''}`}>{r.sn.split(' — ')[0]}{r.parts && k !== '복합' ? ' (복합)' : ''}{k === '복합' && r.parts ? ` = ${r.parts.join('+')}` : ''}</span>)}</div>
+    </div>
+  ))}
+</div>
+
+<h3>기술 비교표</h3>
+<div class="tblwrap ywrap"><table class="tbl atable">
+  <thead><tr><th class="ysticky">기업 · 제품</th><th>메커니즘</th><th>응집제</th><th>N·P 저감 주장</th><th>근거 수준</th><th>근거 내용(요약)</th><th>인증·조달</th></tr></thead>
+  <tbody>
+    {rows.map((r) => <tr class={r.is_self ? 'self' : r.cat ? 'catrow' : ''}>
+      <th class="ysticky" scope="row"><b>{r.sn}</b>{r.cat && <small class="ysc">비교 기준(업체 아님)</small>}<small class="ysc">{(r.products || []).slice(0, 3).join(', ')}</small></th>
+      <td><span class={`mbdg ${CAT_COLOR[r.mechanism_class] || 'mc-mix'}`}>{r.mechanism_class}</span>{r.parts && <><br /><small>{r.parts.join(' + ')}</small></>}</td>
+      <td><span class={`bdg ${r.cg.cls}`}>{r.cg.label}</span>{(r.coagulant_note || !['no', 'yes', 'partial'].includes(String(r.coagulant))) && <><br /><small>{r.coagulant_note || r.coagulant}</small></>}</td>
+      <td><small>{r.np_reduction.claim}</small></td>
+      <td><span class={`bdg ${r.ev.cls}`}>{r.ev.label}</span><br /><small>{r.ev.raw}</small></td>
+      <td><small>{r.np_reduction.evidence}</small><br /><small class="mval"><b>메커니즘 타당성</b> {r.np_reduction.mechanism_validity}</small></td>
+      <td><small>{(r.certifications || []).filter((x: string) => x !== '-' && x !== '미확인').slice(0, 4).join(' · ') || '확인된 인증 없음'}</small><br /><small class="muted">{r.procurement}</small></td>
+    </tr>)}
+  </tbody>
+</table></div>
+
+<h3>연도별 매출 (억원, 공개 자료)</h3>
+<div class="tblwrap ywrap"><table class="tbl ytable rtable">
+  <thead><tr><th class="ysticky">기업</th>{RY.map((y) => <th class="n">{y}</th>)}<th>기타 공개 수치</th><th>출처 · 비고</th></tr></thead>
+  <tbody>
+    {revRows.map((r) => <tr class={r.is_self ? 'self' : ''}>
+      <th class="ysticky" scope="row"><b>{r.sn.split(' — ')[0]}</b></th>
+      {RY.map((y) => r.by[String(y)]
+        ? <td class={`yc ${lowConf(r.by[String(y)]) ? 'c-est' : 'c-official'}`} title={revTip(y, r.by[String(y)])}><span class="yl">{eok(r.by[String(y)].amount_krw)}</span>{lowConf(r.by[String(y)]) && <span class="yu">신뢰도 낮음~중</span>}</td>
+        : <td class="yc empty">미확인</td>)}
+      <td><small>{r.other.map((x: any) => `${x.year} ${eok(x.amount_krw)}원(${x.source})`).join(' / ') || '—'}</small></td>
+      <td class="ysrc"><small>{r.srcs.map(([u, s]: any) => <a href={u} rel="noopener nofollow" target="_blank" title={s}>{s.split('(')[0].trim() || '출처'}</a>)}{r.status && <span class="muted"> {r.status}</span>}</small></td>
+    </tr>)}
+  </tbody>
+</table></div>
+<p class="note">에코피스 매출에는 녹조 외 사업(해양쓰레기 로봇 등)이 포함됩니다. 정우티엔에스 2025년 값은 검색 요약 수치이고 원문은 열지 못했습니다. 매출은 기업 규모 참고용이며 녹조 사업 매출이 아닙니다.</p>
+
+<details class="grp"><summary>업체별 상세 (작동 원리 · 퇴적층 · 부작용 · 비용 구조 · 고객 · 출처)</summary>
+  <div class="adetail">
+    {rows.map((r) => <article class="acard">
+      <h4>{r.sn} <span class={`mbdg ${CAT_COLOR[r.mechanism_class] || 'mc-mix'}`}>{r.mechanism_class}</span></h4>
+      <p><b>작동 원리</b> {r.mechanism}</p>
+      <p><b>퇴적층</b> {r.sediment} · <b>대증/근본</b> {r.root_cause}</p>
+      <p><b>부작용·리스크</b> {r.side_effects}</p>
+      <p><b>비용 구조</b> {r.cost_model}</p>
+      {r.clients?.length > 0 && <p><b>공개 고객·현장</b> {r.clients.join(', ')}</p>}
+      {httpLinks(r.sources).length > 0 && <p class="note">{httpLinks(r.sources).map((u: string, i: number) => <a href={u} rel="noopener nofollow" target="_blank" style="margin-right:8px">자료{i + 1}</a>)}</p>}
+    </article>)}
+  </div>
+</details>
+
+<h3>Biovan 시사점</h3>
+<div class="impl">
+  <div class="implpos"><b>포지셔닝 제안</b><p>{rec.positioning}</p></div>
+  <div class="kwgrid">
+    <div class="kwcard"><h4>지금 공개 근거로 말할 수 있는 것 / 없는 것</h4><ul class="ilist">
+      <li><b>질소</b>: 질산화·탈질 경로가 있어 메커니즘상 가능. 다만 공개된 측정 데이터가 없음.</li>
+      <li><b>인</b>: 미생물은 인을 분해하지 못함. 결합·반출·용출 억제 경로를 측정으로 보이기 전까지 'T-P 저감'은 근거가 약함.</li>
+      <li><b>퇴적층</b>: 유기 슬러지 분해 주장에 강열감량·두께 수치가 없음. 같은 포지션의 경쟁 제품은 수치(강열감량 26.8%→18.7%)와 혁신제품 지정을 갖춤.</li>
+      <li><b>차별점</b>: 무약품·무응집·2차 슬러지 없음, 응집·살조형이 다루지 않는 내부부하(퇴적층)·질소를 겨냥.</li>
+    </ul></div>
+    <div class="kwcard"><h4>유지할 주장</h4><ul class="ilist">{rec.claims_to_keep.map((x: string) => <li>{x}</li>)}</ul>
+      <h4 style="margin-top:12px">고칠 표현</h4><ul class="ilist">{rec.claims_to_fix.map((x: string) => <li>{x}</li>)}</ul></div>
+    <div class="kwcard"><h4>준비할 시험 데이터</h4><ul class="ilist">{rec.tests_to_prepare.map((x: string) => <li>{x}</li>)}</ul></div>
+    <div class="kwcard"><h4>조달 경로</h4><ul class="ilist">{rec.procurement_path.map((x: string) => <li>{x}</li>)}</ul>
+      <h4 style="margin-top:12px">규제 확인</h4><ul class="ilist">{rec.regulatory_check.map((x: string) => <li>{x}</li>)}</ul></div>
+  </div>
+  <p class="note">시장 관찰: 신기술 보유 업체도 매출이 줄어든 경우가 있어 인증만으로 매출이 보장되지는 않습니다. 공개 매출이 늘어난 곳은 혁신제품 시범구매·공기업 실증을 확보한 업체였습니다. 학술 반론(EM류 미생물제가 인을 결합·제거하지 못했다는 Lürling et al. 2010)도 있어, 대조구를 둔 현장 데이터가 가장 중요합니다.</p>
+</div>
+<p class="note">출처: 별도 조사 /research/algae_competitors.json · ALGAE_COMPETITORS.md (2026-10-08). 바이오밴 정보는 기존 수집본만 사용했습니다. 한계: 일부 .kr 사이트·DART·NICE 원문은 직접 열지 못해 공개 페이지 조회 도구와 검색 요약으로 확인했습니다.</p>

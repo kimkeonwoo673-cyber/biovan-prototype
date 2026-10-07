@@ -1,0 +1,843 @@
+{
+  "meta": {
+    "title": "녹조·슬러지 제거 기업 메커니즘·N/P 저감·매출 비교",
+    "created": "2026-10-08",
+    "author": "Grok Bot research worker",
+    "currency": "KRW",
+    "revenue_note": "매출은 NICE평가정보/나이스디엔비 재가공 사이트(잡코리아·인크루트) 및 회사 발표 기준. 미확인은 비워두고 revenue_status에 사유 기재. 숫자 추정치 없음.",
+    "evidence_scale": {
+      "E1": "자사 주장만",
+      "E2": "자사 게시 현장·시험자료(기관/대조구 불명확)",
+      "E3": "공인기관 시험성적·정부 인증/심사(혁신제품·신기술·등록)",
+      "E4": "독립 학술 실측/동료심사"
+    },
+    "limitations": [
+      "박스 네트워크에서 .kr 사이트 curl 접속이 TLS 오류로 막혀 DART·공공데이터·NICE 원문 직접 조회 불가 — WebFetch/검색 요약 기반",
+      "바이오밴 정보는 저장 크롤(/workspace/biovan/site, newsite content)만 사용"
+    ]
+  },
+  "categories": [
+    {
+      "id": "응집·침전",
+      "desc": "황토·PAC·Ca/Mg/Al 광물로 조류·인을 엉겨 가라앉힘. 빠르고 싸지만 저층으로 옮길 뿐",
+      "np": "P 일부 수층 제거(저층 이동), N 거의 없음"
+    },
+    {
+      "id": "산화·살조",
+      "desc": "광촉매·플라즈마·살조제로 세포 파괴",
+      "np": "없음 — 세포 내 영양염·독소 재방출"
+    },
+    {
+      "id": "물리",
+      "desc": "흡입분리·필터로봇·선박 회수, 물순환·DO 공급, 초음파",
+      "np": "회수형은 바이오매스만큼 소량 반출, 순환형은 내부부하 간접 억제"
+    },
+    {
+      "id": "생물",
+      "desc": "미생물 투입(탈질·유기물 분해), 천적 동물플랑크톤, 식물",
+      "np": "N은 탈질로 실제 제거 가능, P는 분해 불가(흡수·결합·수확 필요)"
+    },
+    {
+      "id": "저니처리",
+      "desc": "제올라이트 캡핑·인 흡착·준설·저니 생물분해",
+      "np": "내부부하(퇴적층 용출) 차단 — 근본형"
+    },
+    {
+      "id": "복합",
+      "desc": "위의 조합",
+      "np": "구성에 따라 다름"
+    }
+  ],
+  "companies": [
+    {
+      "id": "biovan",
+      "name": "바이오밴코리아(주) [자사]",
+      "is_self": true,
+      "website": "https://biovankorea.com (저장 크롤 기준)",
+      "biz_no": "122-81-74140",
+      "location": "인천 (등기상 연수구 송도프라자 / 사이트상 부평 J타워)",
+      "mechanism_class": "생물",
+      "mechanism": "토착·복합 토양미생물(혐기·호기·통성) 투입(SUBION) + 현장 생물반응기(BROST: 혐기 사슬절단→호기 산화, BWAT-21)로 하상 유기슬러지 분해·자정능력 회복. 질산화-탈질에 의한 N 제거, 유기퇴적물 무기화 주장",
+      "products": [
+        "SUBION(미생물제)",
+        "BROST(유기슬러지 생물반응 공법)",
+        "BWAT-21(바이오리액터 시스템)"
+      ],
+      "coagulant": "no",
+      "coagulant_note": "'응집제 등 1회성 수질관리가 아닌' 생물학적 방법임을 핵심 차별점으로 내세움",
+      "np_reduction": {
+        "claim": "T-N·T-P 저감(사이트 문구 '#질소 인 저감'), 2014 기사에서 T-N·T-P·COD·BOD·SS·NH3-N 60% 이상 저감 주장",
+        "evidence": "공개된 측정 데이터·시험성적서 없음(사이트 전체 정량 수치 0건). 2014 워터저널 기사의 '60% 이상'이 유일한 수치이며 출처 시험기관 미표기",
+        "mechanism_validity": "N: 탈질로 수계 밖 제거 가능(타당). P: 미생물이 분해·소멸시킬 수 없음 → 결합/고정/반출 경로 설명 필요. 사이트 본문은 오히려 '침전성 인이 인분해 미생물에 의해 용해성 인으로 전환'이라고 기술해 T-P 저감 주장과 상충 소지"
+      },
+      "sediment": "유기 하상슬러지 분해(준설 대체) 주장 — 강열감량·두께 등 측정치 미공개",
+      "root_cause": "근본(내부부하) 지향 주장 / 근거 미제시",
+      "evidence_level": "E1 (자사 주장·실적 목록만)",
+      "certifications": [
+        "특허 제0451939호(2008, 생물학적 오폐수처리)",
+        "특허 제10-1238262호(2013, 미생물 제조) ※2014 기사엔 10-1238626호로 표기 — 확인 필요",
+        "ISO 9001",
+        "기술혁신 경영대상(2006)",
+        "2022 KEITI 사업화 지원(스마트 미생물 수질관리 시스템 시제품)"
+      ],
+      "procurement": "나라장터 조달업체 등록(2009-10-16). 혁신제품·우수조달·환경신기술·KRC 신기술·NIER 조류제거물질 등록 모두 미확인/없음",
+      "side_effects": "미생물 제제 일반 리스크: 투입 초기 DO 소모, 균주 동정·병원성 부재 미입증, P 재용출 가능성. 사이트 과장표현(완전 제거·바닷물 완벽 정화·햇볕에 탄화)은 신뢰도 리스크",
+      "cost_model": "제품 판매 + 시공/위탁 운영형(지자체·LH·공사) — 단가 비공개",
+      "clients": [
+        "LH(심곡천)",
+        "부여군(궁남지)",
+        "군포시(갈치천·반월호수 녹조 2021~23)",
+        "인천 중구(낙섬교·전소천)",
+        "인천 학익유수지",
+        "인천 계양구",
+        "승기천 테스트베드(2023)",
+        "평택 배다리호수(2024~26)",
+        "옹진군(연평 STP·백령·덕적)"
+      ],
+      "revenue": [
+        {
+          "year": 2022,
+          "amount_krw": 284640000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": "https://www.jobkorea.co.kr/company/43684549",
+          "confidence": "높음"
+        },
+        {
+          "year": 2023,
+          "amount_krw": 139600000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": "https://www.jobkorea.co.kr/company/43684549",
+          "confidence": "높음"
+        },
+        {
+          "year": 2024,
+          "amount_krw": 113430000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": "https://www.jobkorea.co.kr/company/43684549",
+          "confidence": "높음"
+        },
+        {
+          "year": 2025,
+          "amount_krw": 286690000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": "https://www.jobkorea.co.kr/company/43684549",
+          "confidence": "높음",
+          "note": "영업이익 4,788만원, 순이익 4,583만원"
+        }
+      ],
+      "revenue_2021": "미확인",
+      "sources": [
+        "/workspace/biovan/site/biovankorea.com (k-tech-subion, k-tech-brost, k-int-intro, k-app1-green)",
+        "/workspace/biovan/newsite/src/content/projects/*.md",
+        "https://www.waterjournal.co.kr/news/articleView.html?idxno=19082",
+        "https://www.jobkorea.co.kr/company/43684549"
+      ],
+      "notes": "등기 대표 김영희 / 사이트 인사말 김준홍(CTO 겸 대표 표기). 설립 사이트 2002 vs 법인 설립일 2008-12-23. 군포 반월저수지는 물환경보전법상 경기도 중점관리저수지 5곳 중 하나 — 자사 실적 지역"
+    },
+    {
+      "id": "dean",
+      "name": "디엔텍(주)",
+      "website": "https://de-an.co.kr/",
+      "location": "충남 금산군 군북면 군북로 1087",
+      "founded": "2003-03",
+      "mechanism_class": "복합",
+      "mechanism": "주력: Ca·Mg·Al계 천연광물 혼합분말(옥시월드DGA)이 조류를 응집·침강시키고 인산염을 AlPO4·Mg3(PO4)2·Ca-인산염(히드록시아파타이트)으로 불용화 침전(피크린). 보조: 질산화·탈질 미생물제(엔크린, Pseudomonas·Nitrosomonas·Nitrobacter 10^12 cfu/kg)+미생물 고정 제올라이트(옥시월드BZ, 저질 영양염 용출 억제) + MCS 장치(담체·폭기·현장배양·응집부상)",
+      "products": [
+        "옥시월드(DO 증진 광물제)",
+        "옥시월드DGA(녹조제거제)",
+        "피크린(인제거제)",
+        "엔크린(질소 미생물제)",
+        "옥시월드BZ(저질개선)",
+        "옥시월드DRA(적조)",
+        "MCS-B/CB/O/DC/S 장치"
+      ],
+      "coagulant": "yes(주력)+미생물 병행",
+      "coagulant_note": "DGA 자체 설명에 '분말형태로 응집기능' 명시. 다만 '단순 응집제'가 아니라 인 화학침전+미생물+장치 패키지",
+      "np_reduction": {
+        "claim": "N·P 차단·저감, 98% 조류 제거, 효과 1개월 지속(투입 20~40ppm)",
+        "evidence": "자사 게시 현장자료 '충남 D호소' 전→후: Chl-a 23.5→0.88 mg/m³(96.3%), 세포수 75,832→1,380/mL(98.2%), COD 6.2→3.4(45.2%), T-N 2.4→0.9 mg/L(62.5%), T-P 0.082→0.009 mg/L(89.1%). KTR 시험: 20ppm, 10분 77.4%·30분 77.9% 제거(Pseudokirchneriella). 생태독성: 송사리 200ppm·물벼룩 50ppm 무독성. 실험실 Microcystis·Anabaena 99%",
+        "mechanism_validity": "P: 금속-인산염 침전으로 수층 T-P 저감 메커니즘 타당(단 저층으로 이동, pH·혐기 시 재용출 가능). N: 미생물 탈질 병행 시 타당. D호소 자료는 대조구·측정기관·측정시점 미표기"
+      },
+      "sediment": "옥시월드BZ·특허 10-2099124(저질)로 퇴적층 영양염 용출 억제 주장",
+      "root_cause": "수층 P 고정(준근본) + 증상 제거 병행",
+      "evidence_level": "E2~E3 (공인기관 실험실 시험성적 + 자사 현장자료)",
+      "certifications": [
+        "벤처기업",
+        "KT(신기술)·NT 마크(사이트 표기)",
+        "ISO 9001·14001",
+        "특허 18건(10-0420253 녹조·적조 제거제, 10-1178578, 10-1139702 MCS-DC, 10-2099124 저질 등)",
+        "수처리제 제조업 등록(2005)"
+      ],
+      "procurement": "2009 첫 한국농어촌공사 수질개선사업 이후 농어촌공사 저수지 다수. 혁신제품·NIER 조류제거물질 등록 여부 미확인",
+      "side_effects": "Al계 성분 잔류·pH 변화 가능성, 침전 슬러지 저층 축적, 혐기 시 인 재용출. (사이트상 독성시험은 무독성)",
+      "cost_model": "약제 판매(연 4,000t 생산능력) + 장치(2만t당 1기) 설치형",
+      "clients": [
+        "한국농어촌공사 저수지 약 18곳+(해남 신덕지, 서산 성암지, 청양 천장지 등)",
+        "골프장 연못 약 48곳"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인 — '디엔텍' 동명 법인(김포 기계 제조, 매출 38억 등)이 다수라 NICE 자료 매칭 실패. 사업자번호 확인 후 재조회 필요",
+      "sources": [
+        "https://de-an.co.kr/ (회사소개·연혁·특허·제품 sub0201_xx 페이지·시공사례)"
+      ],
+      "notes": "사용자가 지목한 기준 경쟁사. 시공사례 게시물 등록일이 모두 2022-02-24로 일괄 업로드된 것으로 보임. DRA(적조) 시험은 '상업적 사용 불가' 단서 부기"
+    },
+    {
+      "id": "jungwoo",
+      "name": "(주)정우티엔에스 — 마이팅션",
+      "website": null,
+      "biz_no": "866-88-00072",
+      "location": "부산 해운대구",
+      "mechanism_class": "산화·살조",
+      "mechanism": "천연광물 유래(Mg·K·Zn 등) 조류제거물질이 조류 세포에 직접 작용(제조사 표현 '세포핵 공격')해 사멸. 씨엠아이와 공동개발",
+      "products": [
+        "마이팅션(녹조제거제)"
+      ],
+      "coagulant": "no(살조제)",
+      "coagulant_note": "환경부 사용지침상 국립환경과학원 등록 조류제거물질 14종(응집제 11·살조제 3) 중 살조제 계열로 소개됨",
+      "np_reduction": {
+        "claim": "N·P 저감 주장 확인 안 됨",
+        "evidence": "생태독성 시험 통과(등록 요건)",
+        "mechanism_validity": "조류 사멸 시 세포 내 N·P·독소가 다시 수중으로 방출 → 영양염 저감 효과 없음(대증)"
+      },
+      "sediment": "없음",
+      "root_cause": "대증요법",
+      "evidence_level": "E3 (정부 등록물질 — 효능·독성 심사)",
+      "certifications": [
+        "국립환경과학원 조류제거물질 등록(살조제)"
+      ],
+      "procurement": "한국농어촌공사 지사별 구매 다수 낙찰(대부분 단독 응찰 수의시담). 예: 2026-07 정읍지사 약 446~460만원(20kg×5, 단가 1,012,000원), 2026-08 영주·봉화 910.8만원, 2025-12 거창·함양 1,358만원",
+      "side_effects": "살조 후 독소(마이크로시스틴) 방출, 사체 분해로 DO 저하, 비표적 생물 영향 가능 — 사용지침상 '경계' 이상 등 조건부 사용",
+      "cost_model": "약제 판매(20kg 포대 약 101만원)",
+      "clients": [
+        "한국농어촌공사 지사(정읍, 영주·봉화, 거창·함양 등)"
+      ],
+      "revenue": [
+        {
+          "year": 2025,
+          "amount_krw": 2060000000,
+          "source": "크제비(kjebi) 입찰업체 정보 — 검색 요약만 확인, 원문 페이지는 타임아웃",
+          "url": "https://www.kjebi.com/search/smart/bidder/detail/8668800072",
+          "confidence": "낮음~중"
+        }
+      ],
+      "sources": [
+        "https://jodaln.com/bid/R26BK01651686/results",
+        "https://www.kjebi.com/search/smart/bidder/detail/8668800072",
+        "https://www.waterjournal.co.kr/news/articleView.html?idxno=85181 (등록 14종 정책 칼럼)"
+      ],
+      "notes": "공공 '녹조제거제' 구매 시장의 실질적 표준 경쟁자 — 바이오밴 미생물제가 같은 품목으로 경쟁하려면 등록·K-BPR 이슈 확인 필요"
+    },
+    {
+      "id": "worldwater",
+      "name": "월드워터 — 그린볼",
+      "website": null,
+      "location": "대구 국가물산업클러스터",
+      "ceo": "백상원",
+      "biz_no": "708-14-00682 (g2b 혁신제품 목록상 7081400682)",
+      "mechanism_class": "산화·살조",
+      "mechanism": "TiO2 광촉매 함침 HDPE 부유 볼이 햇빛으로 OH 라디칼 생성 → 조류·독소·유기물 산화. 무동력·무약품, ha당 약 500개, 수명 10년",
+      "products": [
+        "그린볼"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "직접적 N·P 저감 정량 주장 확인 안 됨",
+        "evidence": "정량 수질 데이터 미공개(보도자료·회사 발표 수준)",
+        "mechanism_validity": "산화는 유기물·세포를 분해할 뿐 P를 제거하지 못함"
+      },
+      "sediment": "없음",
+      "root_cause": "대증(상시 억제형)",
+      "evidence_level": "E3 (혁신제품·KRC 신기술 심사 통과, 데이터 비공개)",
+      "certifications": [
+        "조달청 혁신제품 2024-025(2024년 1차)",
+        "한국농어촌공사(KRC) 신기술(2025-11)",
+        "녹색기술",
+        "2024 국무총리상"
+      ],
+      "procurement": "혁신제품 수의계약 + KRC 신기술 수의계약 가능 — 공공조달 진입장벽 모두 확보",
+      "side_effects": "미세플라스틱(HDPE) 우려, 광촉매 효율 저하(부착물), 경관",
+      "cost_model": "설치형 자산(볼 구매), 유지비 낮음",
+      "clients": [
+        "강정고령보",
+        "영주댐",
+        "대구 수성못",
+        "경주 동궁과 월지",
+        "해남 송종제",
+        "강진 홈골제",
+        "창덕궁 등 약 20곳"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인 (김해 동명 개인사업자와 구분 필요)",
+      "sources": [
+        "조달청 혁신제품 목록(g2b)",
+        "언론 보도(2024~2025)",
+        "/workspace/biovan/research/nextgen_tech.json"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "genks",
+      "name": "젠스(GENKS)",
+      "website": null,
+      "mechanism_class": "산화·살조",
+      "mechanism": "광촉매 기반 녹조 저감 장치/소재",
+      "products": [
+        "광촉매 녹조 저감"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "영양염 저감 표현 보도 있음",
+        "evidence": "정량자료 미확인",
+        "mechanism_validity": "광촉매 산화로 P 제거 불가"
+      },
+      "sediment": "없음",
+      "root_cause": "대증",
+      "evidence_level": "E1~E2",
+      "certifications": [
+        "미확인"
+      ],
+      "procurement": "2025-10 아산 신정호·진도 천망저수지 사업 수주(보도)",
+      "side_effects": "광촉매 일반 리스크",
+      "cost_model": "설치형",
+      "clients": [
+        "아산시(신정호)",
+        "진도 천망저수지"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인",
+      "sources": [
+        "언론 보도(2025-10)"
+      ],
+      "notes": "정보 부족 — 보조 비교 대상"
+    },
+    {
+      "id": "cmsco",
+      "name": "씨엠스코(주)",
+      "website": "https://cmsco.co.kr",
+      "biz_no": "786-87-00444",
+      "location": "충남 당진",
+      "ceo": "안동권",
+      "founded": "2016",
+      "mechanism_class": "물리",
+      "mechanism": "'고효율 녹조복합제거장치' — 표층수 흡입 후 녹조·유기물 85% 이상 분리 회수",
+      "products": [
+        "고효율 녹조복합제거장치"
+      ],
+      "coagulant": "no(장치) — 분리 공정 상세 미확인",
+      "np_reduction": {
+        "claim": "녹조 바이오매스 회수로 간접적 N·P 반출",
+        "evidence": "환경부 신기술 검증(세부 성적 미열람)",
+        "mechanism_validity": "조류 체내 N·P를 물 밖으로 꺼내므로 소량이나 실제 반출. 외부·내부부하는 그대로"
+      },
+      "sediment": "없음",
+      "root_cause": "대증(제거형)",
+      "evidence_level": "E3 (환경신기술·혁신제품)",
+      "certifications": [
+        "환경부 환경신기술",
+        "조달청 혁신제품"
+      ],
+      "procurement": "2024 아산 신정호 혁신제품 시범구매 15.4억(조달청 전액 부담)",
+      "side_effects": "수거 슬러지 처리 필요, 국소 효과",
+      "cost_model": "장치 판매/임대·운영 용역(대청호·낙동강 운영 인력 채용)",
+      "clients": [
+        "아산시 신정호",
+        "대청호·낙동강 현장(운영)"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인 (종업원 약 10~23명)",
+      "sources": [
+        "https://cmsco.co.kr",
+        "언론 보도(2024 신정호)"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "ecopeace",
+      "name": "에코피스(주)",
+      "website": "https://eco-peace.co.kr",
+      "location": "광주",
+      "ceo": "채인원",
+      "mechanism_class": "물리",
+      "mechanism": "자율주행 수면 로봇 ECO-BOT이 연속식 금속필터로 녹조를 여과·회수(무약품)",
+      "products": [
+        "ECO-BOT 녹조제거 로봇",
+        "해양쓰레기·레저 로봇"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "조류 회수",
+        "evidence": "혁신제품 지정, 정량 N·P 미공개",
+        "mechanism_validity": "바이오매스 반출 — 소량 N·P 제거"
+      },
+      "sediment": "없음",
+      "root_cause": "대증(제거형)",
+      "evidence_level": "E3",
+      "certifications": [
+        "조달청 혁신제품(2020)",
+        "CES 혁신상"
+      ],
+      "procurement": "혁신제품 시범구매·수의계약",
+      "side_effects": "수거물 처리, 기상 제약",
+      "cost_model": "로봇 판매·임대·운영",
+      "clients": [
+        "지자체·공공기관(혁신제품 시범구매)"
+      ],
+      "revenue": [
+        {
+          "year": 2022,
+          "amount_krw": 2690000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2023,
+          "amount_krw": 3930000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2024,
+          "amount_krw": 5310000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2025,
+          "amount_krw": 7660000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중",
+          "note": "영업이익 약 3.92억. 녹조 외 해양쓰레기·레저 로봇 매출 포함"
+        }
+      ],
+      "sources": [
+        "잡코리아 기업정보(NICE)",
+        "https://eco-peace.co.kr"
+      ],
+      "notes": "녹조 분야 '테크·로봇' 이미지로 가장 빠르게 성장한 경쟁사"
+    },
+    {
+      "id": "koreaentec",
+      "name": "코리아엔텍 — 부력수차",
+      "website": null,
+      "ceo": "안병준",
+      "mechanism_class": "물리",
+      "mechanism": "부력수차로 물순환·성층 파괴·DO 공급 → 남조류 우점 조건(정체·성층) 제거. 초음파 병행 실증 중",
+      "products": [
+        "부력수차"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "N·P보다 물리적 조건(체류·성층)이 녹조를 좌우한다는 입장(팔당 vs 대청 비교)",
+        "evidence": "광교저수지 2024년 3기 설치 후 녹조 미발생(회사 발표); 2025 안동·영주·남강댐 설치",
+        "mechanism_validity": "DO 회복으로 저층 혐기성 인 용출을 억제할 수 있어 내부부하 간접 저감 가능"
+      },
+      "sediment": "간접(저층 DO 개선)",
+      "root_cause": "조건 제어형(예방)",
+      "evidence_level": "E2~E3",
+      "certifications": [
+        "조달청 혁신제품(2022-12)"
+      ],
+      "procurement": "혁신제품 + K-water 댐 설치",
+      "side_effects": "설치·유지비, 소음·경관 미미",
+      "cost_model": "장비 판매·설치",
+      "clients": [
+        "수원 광교저수지",
+        "K-water 안동·영주·남강댐"
+      ],
+      "revenue": [
+        {
+          "year": "2023~2024 누적",
+          "amount_krw": 900000000,
+          "source": "회사 발표(워터저널 2025-10, 부력수차 관련 매출)",
+          "url": null,
+          "confidence": "낮음"
+        }
+      ],
+      "revenue_status": "법인 전체 NICE 매출 미확인 — '코리아엔텍' 153억 자료는 동명 타법인(대표 이해윤)",
+      "sources": [
+        "워터저널 2025-10 인터뷰 기사"
+      ],
+      "notes": "바이오밴과 결합(순환+미생물) 제안 가능한 보완재"
+    },
+    {
+      "id": "hacheon",
+      "name": "하천환경종합기술연구소 — 루미라이트",
+      "website": null,
+      "location": "경북 경주",
+      "ceo": "박기호",
+      "mechanism_class": "저니처리",
+      "mechanism": "제타전위 처리 클리노프틸로라이트(CEC 333meq/100g)가 조류·부유물과 플록 형성 후 약 8분 내 침강 → 저층에 얇은 피복층 형성해 영양염 용출 차단 → 피복층 미생물이 유기물 분해",
+      "products": [
+        "루미라이트"
+      ],
+      "coagulant": "yes(흡착·응집 침강)+캡핑",
+      "np_reduction": {
+        "claim": "N(암모늄 이온교환)·P 용출 차단",
+        "evidence": "일본 ETV 검증, 6개월 강열감량 26.8%→18.7%, 약 50개 현장",
+        "mechanism_validity": "제올라이트 캡핑은 국제적으로 연구된 내부부하 저감법(P 결합력은 Phoslock 등 La 계열보다 약함)"
+      },
+      "sediment": "예 — 캡핑+유기물 감소(강열감량 데이터)",
+      "root_cause": "근본(내부부하)형",
+      "evidence_level": "E3 (해외 ETV + 혁신제품)",
+      "certifications": [
+        "조달청 혁신제품 2025-132(2025-06)",
+        "일본 ETV"
+      ],
+      "procurement": "혁신제품 수의계약 가능",
+      "side_effects": "저서생물 피복 영향, 반복 투입 필요",
+      "cost_model": "자재 판매·살포 시공",
+      "clients": [
+        "국내외 약 50개 현장"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인",
+      "sources": [
+        "혁신제품 지정 보도(2025-06)"
+      ],
+      "notes": "바이오밴 BROST와 가장 직접적으로 '저니(슬러지) 정화' 포지션이 겹치며, 강열감량이라는 측정 지표를 먼저 제시"
+    },
+    {
+      "id": "chungho",
+      "name": "청호환경개발",
+      "website": null,
+      "location": "광주·장성",
+      "ceo": "임형엽",
+      "mechanism_class": "복합",
+      "mechanism": "인 흡착 팽창 세라믹 담체(PEC/M-PEC)·지하흐름 인공습지(EADS)로 유입수·비점오염의 T-P·SS 저감",
+      "products": [
+        "PEC/M-PEC 인흡착 세라믹",
+        "EADS"
+      ],
+      "coagulant": "no(흡착)",
+      "np_reduction": {
+        "claim": "T-P·SS 80% 이상 제거(EADS)",
+        "evidence": "국토부 녹조 R&D(2015~2019)·녹조저감 인흡착 세라믹 과제 참여",
+        "mechanism_validity": "흡착 담체로 P를 실제 회수 가능 — 외부부하 차단형"
+      },
+      "sediment": "없음(유입 차단)",
+      "root_cause": "근본(외부부하)형",
+      "evidence_level": "E3 (정부 R&D)",
+      "certifications": [
+        "국가 R&D 과제 실적"
+      ],
+      "procurement": "관급 비점오염저감시설",
+      "side_effects": "담체 포화·교체",
+      "cost_model": "시설 설치형",
+      "clients": [
+        "지자체 비점오염 사업"
+      ],
+      "revenue": [
+        {
+          "year": 2023,
+          "amount_krw": 3850000000,
+          "source": "나이스디엔비(인크루트 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2024,
+          "amount_krw": 3190000000,
+          "source": "나이스디엔비(인크루트 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2025,
+          "amount_krw": 1380000000,
+          "source": "나이스디엔비(인크루트 기업정보)",
+          "url": null,
+          "confidence": "중",
+          "note": "당기순손실 약 6.3억"
+        }
+      ],
+      "sources": [
+        "인크루트 기업정보(나이스디엔비)"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "assum",
+      "name": "아썸(ASSUM)",
+      "website": null,
+      "mechanism_class": "생물",
+      "mechanism": "Neo-ACT: 조류 섭식 동물플랑크톤(천적) 배양·투입(생물조작) + 인공식물섬(식물 영양염 흡수)",
+      "products": [
+        "Neo-ACT",
+        "인공식물섬"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "식물섬 영양염 흡수, 천적에 의한 조류 저감",
+        "evidence": "환경신기술 제446호(2014), 건설신기술 제360호",
+        "mechanism_validity": "식물 수확 시 N·P 반출 가능, 동물플랑크톤은 남조류 섭식 한계 있음"
+      },
+      "sediment": "없음",
+      "root_cause": "생태 조절형",
+      "evidence_level": "E3",
+      "certifications": [
+        "환경신기술 제446호",
+        "건설신기술 제360호"
+      ],
+      "procurement": "신기술 활용 관급",
+      "side_effects": "생태계 교란 가능성 낮음, 효과 변동 큼",
+      "cost_model": "시공·운영",
+      "clients": [
+        "지자체 호소"
+      ],
+      "revenue": [
+        {
+          "year": 2021,
+          "amount_krw": 6480000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2022,
+          "amount_krw": 4630000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2023,
+          "amount_krw": 3205000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중"
+        },
+        {
+          "year": 2024,
+          "amount_krw": 1955000000,
+          "source": "NICE평가정보(잡코리아 기업정보)",
+          "url": null,
+          "confidence": "중",
+          "note": "영업손실 약 5.86억"
+        }
+      ],
+      "sources": [
+        "잡코리아 기업정보(NICE)"
+      ],
+      "notes": "'생물학적 녹조 대책' 포지션의 선행 사례 — 신기술 보유에도 매출 하락 추세"
+    },
+    {
+      "id": "jinbiotics",
+      "name": "진바이오틱스",
+      "website": "https://jinbiotics.co.kr",
+      "location": "경기 용인",
+      "mechanism_class": "생물",
+      "mechanism": "MCOD 미생물제(골프장 해저드·오폐수)로 유기물·질소 분해 주장",
+      "products": [
+        "해저드 클린(20L 11만원)",
+        "MCOD"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "유기물·질소 분해",
+        "evidence": "정량자료 없음",
+        "mechanism_validity": "N 일부 가능, P 불가"
+      },
+      "sediment": "주장 수준",
+      "root_cause": "주장만",
+      "evidence_level": "E1",
+      "certifications": [
+        "미확인"
+      ],
+      "procurement": "미확인",
+      "side_effects": "미생물제 일반",
+      "cost_model": "제품 판매(소매가 공개)",
+      "clients": [
+        "골프장"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인(진바이오텍 등 동명 주의)",
+      "sources": [
+        "https://jinbiotics.co.kr"
+      ],
+      "notes": "바이오밴과 가장 유사한 '미생물제 판매형' — 가격 벤치마크"
+    },
+    {
+      "id": "ilshin",
+      "name": "일신바이오케미칼 — HAN-CLEAN",
+      "website": null,
+      "biz_no": "114-81-65688",
+      "location": "경기 하남",
+      "mechanism_class": "복합",
+      "mechanism": "미생물제 + 필요 시 살조제 + 응집제를 묶은 프로그램",
+      "products": [
+        "HAN-CLEAN"
+      ],
+      "coagulant": "partial",
+      "np_reduction": {
+        "claim": "수질개선",
+        "evidence": "정량자료 없음",
+        "mechanism_validity": "-"
+      },
+      "sediment": "미확인",
+      "root_cause": "혼합",
+      "evidence_level": "E1",
+      "certifications": [
+        "미확인"
+      ],
+      "procurement": "조달 등록 이력",
+      "side_effects": "살조제 병용 시 독소 방출",
+      "cost_model": "제품 유통",
+      "clients": [
+        "미확인"
+      ],
+      "revenue": [],
+      "revenue_status": "비공개/미확인(종업원 약 3명, 일신바이오베이스와 무관)",
+      "sources": [
+        "사업자 정보 검색"
+      ],
+      "notes": "소규모"
+    },
+    {
+      "id": "kwater_vessel",
+      "name": "[카테고리] K-water 녹조제거선·이동식 녹조제거장치(임차 업체 다수)",
+      "website": null,
+      "mechanism_class": "복합",
+      "mechanism": "선박/장치로 표층 녹조 흡입 → PAC 등 응집(30mg/L)·부상분리 → 회수",
+      "products": [
+        "녹조제거선",
+        "이동식 녹조제거장치"
+      ],
+      "coagulant": "yes(PAC)",
+      "np_reduction": {
+        "claim": "없음(조류 제거)",
+        "evidence": "박별님 외(2023) 이동식 장치 Chl-a 평균 41.5% 저감, 녹조제거능(RC) 최대 6.64%/day",
+        "mechanism_validity": "대증"
+      },
+      "sediment": "없음",
+      "root_cause": "대증('땜질식' 비판)",
+      "evidence_level": "E4 (학술 실측)",
+      "certifications": [
+        "-"
+      ],
+      "procurement": "K-water 연간 임차, 낙동강 9척",
+      "side_effects": "응집 슬러지 처리, 국소·일시 효과",
+      "cost_model": "선박 1척당 연 약 1.6억 임차",
+      "clients": [
+        "K-water"
+      ],
+      "revenue": [],
+      "revenue_status": "해당 없음(카테고리)",
+      "sources": [
+        "경남도민일보 2025-09-02",
+        "박별님·김·조(2023) 환경영향평가 32(6):419-430 (KCI)"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "kwater_plasma",
+      "name": "[카테고리] K-water 저온 플라즈마 실증(협력사 비공개)",
+      "website": null,
+      "mechanism_class": "산화·살조",
+      "mechanism": "저온 플라즈마로 활성종 생성 → 조류·독소 분해",
+      "products": [
+        "플라즈마 녹조 처리장치"
+      ],
+      "coagulant": "no",
+      "np_reduction": {
+        "claim": "없음",
+        "evidence": "실증에서 조류·독소 90% 이상 제거(정체수역, 보도)",
+        "mechanism_validity": "대증"
+      },
+      "sediment": "없음",
+      "root_cause": "대증",
+      "evidence_level": "E2~E3(공기업 실증)",
+      "certifications": [
+        "-"
+      ],
+      "procurement": "K-water R&D/실증",
+      "side_effects": "전력 소요",
+      "cost_model": "장치형",
+      "clients": [
+        "K-water"
+      ],
+      "revenue": [],
+      "revenue_status": "해당 없음",
+      "sources": [
+        "중도일보 2026-02-04",
+        "연합뉴스 2026-08"
+      ],
+      "notes": "차세대 기술 동향"
+    },
+    {
+      "id": "coag_baseline",
+      "name": "[카테고리] 황토·PAC 등 등록 응집제 살포(지자체 직접)",
+      "website": null,
+      "mechanism_class": "응집·침전",
+      "mechanism": "황토·PAC·기타 등록 응집제로 조류 응집 침강",
+      "products": [
+        "황토",
+        "PAC",
+        "NIER 등록 응집제 11종"
+      ],
+      "coagulant": "yes",
+      "np_reduction": {
+        "claim": "PAC는 인 일부 응집 제거",
+        "evidence": "KEC(2012) 기술별 효율 29.9~97.8% 범위 보고(박 외 2023 인용)",
+        "mechanism_validity": "침강된 조류·P가 저층에 쌓여 재용출·재발생(바이오밴 2014 기사 논리)"
+      },
+      "sediment": "악화 가능(유기 퇴적 증가)",
+      "root_cause": "대증",
+      "evidence_level": "E4",
+      "certifications": [
+        "NIER 조류제거물질 등록(응집제 11종)"
+      ],
+      "procurement": "지자체·농어촌공사 약품 구매(예: 경기도 2025 기흥·왕송저수지 예방·제거 약품비 6,600만원)",
+      "side_effects": "저층 슬러지 증가, Al 잔류, 탁도",
+      "cost_model": "저가 약품",
+      "clients": [
+        "지자체",
+        "K-water",
+        "농어촌공사"
+      ],
+      "revenue": [],
+      "revenue_status": "해당 없음",
+      "sources": [
+        "https://www.newsro.kr/articles/750992",
+        "박별님 외(2023) KCI"
+      ],
+      "notes": ""
+    }
+  ],
+  "biovan_recommendations": {
+    "positioning": "'녹조를 없애는 약'이 아니라 '녹조의 원인인 유기 퇴적층(내부부하)과 질소를 줄이는 생물학적 저니 정화' — 응집·살조·회수형과 병행 가능한 예방·근본 관리",
+    "claims_to_keep": [
+      "질소(T-N, NH4-N) 저감 — 질산화·탈질 경로 제시",
+      "유기퇴적물(강열감량·TOC·두께) 감소",
+      "저층 DO 회복·악취(H2S·NH3) 저감",
+      "약품 무투입·2차 슬러지 없음"
+    ],
+    "claims_to_fix": [
+      "'T-P 저감'은 측정 데이터와 메커니즘(미생물 체내 축적·Ca/Fe 결합·저층 산화로 용출 억제) 제시 전까지 '인 용출 억제 목표'로 완화",
+      "'준설 없이 완전 제거', '바닷물 완벽 정화', '햇볕에 탄화' 등 과장 문구 삭제",
+      "특허번호(10-1238262 vs 10-1238626)·대표자·설립연도 표기 정리"
+    ],
+    "tests_to_prepare": [
+      "공인기관(KTR·KOTITI·보건환경연구원) 대조구 포함 현장 전후 모니터링: T-N, NH4-N, NO3-N, T-P, PO4-P, COD/TOC, Chl-a, 남조류 세포수, 피코시아닌, DO, 수온·pH",
+      "퇴적물: 강열감량, TOC, AVS, 두께, 인 용출 플럭스(코어 배양)",
+      "생태독성: 물벼룩·어류·발광박테리아",
+      "균주 동정(16S), 병원균·중금속 부재 성적",
+      "녹조제거능(RC) 지표 산출로 타 기술과 동일 척도 비교",
+      "K-water K-테스트베드·혁신제품·KRC 신기술 신청용 패키지"
+    ],
+    "procurement_path": [
+      "반월저수지 등 경기도 중점관리저수지 예방사업(약품비 지원) 대상 제안",
+      "한국농어촌공사 신기술 설명회(2026)·KRC 신기술 지정",
+      "조달청 혁신제품(수의계약) — 시험성적 확보 후",
+      "코리아엔텍 부력수차 등 물리형과 '순환+미생물' 컨소시엄"
+    ],
+    "regulatory_check": [
+      "환경부 조류제거물질 사용지침: '녹조 제거제'로 살포하려면 NIER 등록 대상인지 확인",
+      "화학제품안전법(K-BPR): 미생물이 살조 효능을 표방하면 살생물제품 해당 가능 — '수질개선·퇴적물 정화제'로 표방 시 범위 확인 필요(미검증)"
+    ]
+  }
+}

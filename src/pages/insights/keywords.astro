@@ -1,6 +1,8 @@
 ---
 import { u } from '../../lib/url';
 import Layout from '../../layouts/Layout.astro';
+import BudgetYearly from '../../components/BudgetYearly.astro';
+import AlgaeCompare from '../../components/AlgaeCompare.astro';
 import K from '../../content/insights/keywords.json';
 import B from '../../content/insights/research/budgets.json';
 import F from '../../content/insights/research/forecasts.json';
@@ -41,7 +43,7 @@ const pct = (a: number | null, b: number | null) => (a == null || b == null || b
 const cb = (s: number) => (s >= 4.75 ? 'b5' : s >= 3.75 ? 'b4' : s >= 2.75 ? 'b3' : s >= 1.75 ? 'b2' : 'b1');
 const TABS: [string, string][] = [
   ['summary', '요약'], ['w10', '10년 (2016–2026)'], ['w5', '5년 (2021–2026)'], ['w2', '2년 (2024–2026)'],
-  ['comp', '경쟁사 비교'], ['budget', '국가별 예산(10년·USD)'], ['forecast', '예산·시장 전망'], ['tech', '차세대 기술'],
+  ['comp', '경쟁사 비교'], ['budget', '국가별 예산(10년·USD)'], ['forecast', '예산·시장 전망'], ['tech', '차세대 기술'], ['algae', '녹조·슬러지 업체 비교'],
   ['video', '영상 자료 분석'], ['sources', '출처 신뢰도·인기도'], ['reco', '추천 키워드'],
 ];
 
@@ -121,7 +123,7 @@ const reco: any = K.reco;
   </div></div>
 
   <div class="tabbar"><div class="wrap">
-    <div class="tablist" role="tablist" aria-label="분석 항목">
+    <div class="tablist" role="tablist" aria-label="분석 항목" data-main>
       {TABS.map(([id, label], i) => <button class="tab" role="tab" id={`t-${id}`} aria-controls={`p-${id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-tab={id}>{label}</button>)}
     </div>
   </div></div>
@@ -243,10 +245,13 @@ const reco: any = K.reco;
 
     <!-- 예산 -->
     <section class="tabpanel ipanel" role="tabpanel" id="p-budget" aria-labelledby="t-budget" tabindex="0">
-      <h2>국가별 수질·하수·녹조 공공예산 (2016–2026, USD 환산)</h2>
-      <div class="caveat"><b>금액을 국가끼리 순위 매기면 안 됩니다.</b> 나라마다 예산 범위(중앙/지방, 투자/운영, 보조/융자, 하수도 포함 여부)가 다릅니다. 국가 간 비교에 가장 가까운 지표는 COFOG 05.2(일반정부 폐수관리 지출) 행뿐이고, 나머지는 각국 대표 프로그램입니다. 환율은 World Bank 연평균(현지통화/USD)이며 2026년은 2025년 평균으로 대신했습니다(추정).</div>
-      <p class="note">표기: <span class="bdg bofficial">공식</span> 정부·국제기구 원문 / <span class="bdg best">역산·정부안·계획·추정</span> 확정 전이거나 계산값 / <span class="bdg bnone">자료 미확인</span> 이번 조사에서 공식 수치를 찾지 못함.</p>
-      <h3>시리즈별 기간 평균 (연평균 USD)</h3>
+      <h2>국가별 수질·하수·녹조 공공예산 — 연도별 (2016–2026 · 2027 정부안)</h2>
+      <div class="caveat"><b>금액을 국가끼리 순위 매기면 안 됩니다.</b> 나라마다 예산 범위(중앙/지방, 투자/운영, 보조/융자, 하수도 포함 여부)가 다릅니다. 국가 간 비교에 가장 가까운 지표는 COFOG 05.2(일반정부 폐수관리 지출) 행뿐이고, 나머지는 각국 대표 프로그램입니다. 같은 시리즈 안에서 연도별 변화를 보세요.</div>
+      <p class="note">환율: {(B as any).meta.fx_method} 값이 없는 연도는 비워 두었고 <b>보간하지 않았습니다</b>. 다년 계획·누계는 총액 행으로만 표시합니다. 영국은 OECD 일반정부 폐수관리(COFOG 05.2)가 2015–2024년 모두 0으로 보고돼(상하수도 민영) 제외했습니다.</p>
+      <BudgetYearly>
+        <h3>기간 창 요약 — 시리즈별 10·5·2년 연평균 (USD)</h3>
+        <p class="note">보조 보기입니다. 기간 창은 각 시리즈의 최신 연도부터 거꾸로 센 10·5·2년이며, 자료가 없는 연도는 평균에서 뺐습니다(보간 없음). 추세는 현지통화 기준입니다.</p>
+        
       <div class="tblwrap"><table class="tbl" style="min-width:980px"><thead><tr><th>국가</th><th>프로그램·범위</th><th>연도별(USD)</th><th class="n">10년 창</th><th class="n">5년 창</th><th class="n">2년 창</th><th class="n">추세(2년÷10년, 현지통화)</th><th>메모</th></tr></thead><tbody>
         {aggs.map((a) => { const sp = spark(a.series); const t = a.trend_2y_vs_10y_avg_pct_local_currency ?? a.trend_2y_vs_10y_avg_pct; return <tr>
           <td>{a.country_ko}</td><td>{a.program_ko}<br /><small>{a.scope_category}</small></td>
@@ -271,7 +276,8 @@ const reco: any = K.reco;
               <td>{r.source_url ? <a href={r.source_url} rel="noopener nofollow" target="_blank">{r.source_id}</a> : r.source_id}{r.note ? <><br /><small>{r.note}</small></> : null}</td></tr>)}
           </tbody></table></div>
         </details>); })}
-      <p class="note">기간 창은 각 시리즈의 최신 연도부터 거꾸로 센 10·5·2년이며, 자료가 없는 연도는 평균에서 뺐습니다. 추세는 현지통화 기준(환율 효과 제외)입니다. 출처: 별도 조사 /research/budgets.json(작성 2026-10-08). 환율 방법: {(B as any).meta.fx_method}</p>
+      <p class="note">출처: 별도 조사 /research/budgets.json(작성 2026-10-08), 2027 정부안은 forecasts.json F01(뉴시스 2026-09-01).</p>
+          </BudgetYearly>
     </section>
 
     <!-- 전망 -->
@@ -305,6 +311,12 @@ const reco: any = K.reco;
           <p class="note">{t.date} · {(t.source_urls || []).map((s: string, i: number) => <a href={s} rel="noopener nofollow" target="_blank" style="margin-right:8px">자료{i + 1}</a>)}</p>
         </article>)}
       </div>
+    </section>
+
+    <!-- 녹조·슬러지 업체 비교 -->
+    <section class="tabpanel ipanel" role="tabpanel" id="p-algae" aria-labelledby="t-algae" tabindex="0">
+      <h2>녹조·슬러지 업체 비교</h2>
+      <AlgaeCompare />
     </section>
 
     <!-- 영상 -->
@@ -390,26 +402,30 @@ const reco: any = K.reco;
 
   <script is:inline>
   (function(){
-    var root=document.documentElement; root.classList.add('js');
-    var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
-    var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
-    function sel(i,focus,push){
-      tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;panels[j].hidden=!on;});
-      if(focus)tabs[i].focus();
-      var tl=tabs[i].parentNode,tb=tabs[i];if(tl.scrollWidth>tl.clientWidth){tl.scrollLeft=tb.offsetLeft-(tl.clientWidth-tb.offsetWidth)/2;}
-      if(push!==false&&history.replaceState)history.replaceState(null,'','#'+tabs[i].dataset.tab);
-    }
-    tabs.forEach(function(t,i){
-      t.addEventListener('click',function(){sel(i);});
-      t.addEventListener('keydown',function(e){
-        var k=e.key,n=tabs.length,j=null;
-        if(k==='ArrowRight')j=(i+1)%n;else if(k==='ArrowLeft')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;
-        if(j!==null){e.preventDefault();sel(j,true);}
+    document.documentElement.classList.add('js');
+    function init(list,opt){
+      var tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
+      var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
+      function sel(i,focus,push){
+        tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(panels[j])panels[j].hidden=!on;});
+        if(focus)tabs[i].focus();
+        var tb=tabs[i];if(list.scrollWidth>list.clientWidth){list.scrollLeft=tb.offsetLeft-list.offsetLeft-(list.clientWidth-tb.offsetWidth)/2;}
+        if(opt.hash&&push!==false&&history.replaceState)history.replaceState(null,'','#'+tb.dataset.tab);
+      }
+      tabs.forEach(function(t,i){
+        t.addEventListener('click',function(){sel(i);});
+        t.addEventListener('keydown',function(e){
+          var k=e.key,n=tabs.length,j=null;
+          if(k==='ArrowRight')j=(i+1)%n;else if(k==='ArrowLeft')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;
+          if(j!==null){e.preventDefault();sel(j,true);}
+        });
       });
-    });
-    var h=location.hash.slice(1),start=0;
-    tabs.forEach(function(t,i){if(t.dataset.tab===h)start=i;});
-    sel(start,false,false);
+      var start=0;
+      if(opt.hash){var h=location.hash.slice(1);tabs.forEach(function(t,i){if(t.dataset.tab===h)start=i;});}
+      sel(start,false,false);
+    }
+    var main=document.querySelector('[data-main]');if(main)init(main,{hash:true});
+    [].forEach.call(document.querySelectorAll('[data-sub]'),function(l){init(l,{hash:false});});
   })();
   </script>
 </Layout>
